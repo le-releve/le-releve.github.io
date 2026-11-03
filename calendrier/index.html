@@ -17,6 +17,17 @@ body { margin: 0; }
 .site-nav a:hover { color: var(--ink); text-decoration: underline; }
 .site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
 .site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-categorie { position: relative; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; }
+.site-nav .site-categorie > summary { list-style: none; cursor: pointer; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; border-radius: 4px; }
+.site-nav .site-categorie > summary::-webkit-details-marker { display: none; }
+.site-nav .site-categorie > summary::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 0.15s; }
+.site-nav .site-categorie[open] > summary::after { transform: translateY(1px) rotate(-135deg); }
+.site-nav .site-categorie > summary:hover { color: var(--ink); }
+.site-nav .site-categorie > summary:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav .site-categorie.actif > summary { color: var(--ink); font-weight: 600; }
+.site-nav .site-categorie ul { list-style: none; margin: 0; padding: 6px; position: absolute; top: calc(100% + 8px); left: -6px; z-index: 20; min-width: 260px; max-width: calc(100vw - 32px); background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
+.site-nav .site-categorie li a { display: block; padding: 8px 10px; border-radius: 6px; }
+.site-nav .site-categorie li a:hover { background: var(--ligne); text-decoration: none; }
 .site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
 </style>
 <link rel="stylesheet" href="../polices/archivo.css">
@@ -162,10 +173,23 @@ select { max-width: 220px; }
 
 <nav class="site-nav" aria-label="Navigation du site"><div>
 <a class="site-marque" href="../">Le Relevé</a>
-<a href="../mur/">Le mur des conflits</a>
-<a href="../en-cours/">Les conflits en cours</a>
-<a href="../calendrier/" aria-current="page">Le calendrier des négociations</a>
+<details class="site-categorie actif">
+<summary>Relations de travail</summary>
+<ul>
+  <li><a href="../mur/">Le mur des conflits</a></li>
+  <li><a href="../en-cours/">Les conflits en cours</a></li>
+  <li><a href="../calendrier/" aria-current="page">Le calendrier des négociations</a></li>
+</ul>
+</details>
 </div></nav>
+<script>
+(function () {
+  var menu = document.querySelector(".site-categorie");
+  if (!menu) return;
+  document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
+})();
+</script>
 <div class="page">
   <header>
     <div class="surtitre">Le Relevé · Relations de travail au Québec <span class="pastille">Prototype</span></div>
