@@ -1,0 +1,45 @@
+﻿annee,indicateur,le_releve,ministere,ecart,ecart_pct,source_ministere,preliminaire
+2016,observes,145.0,145.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2016,declenches,102.0,102.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2016,travailleurs,30335.0,30335.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2016,jpp,274939.0,274939.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2017,observes,197.0,197.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2017,declenches,186.0,186.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2017,travailleurs,175530.0,175530.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2017,jpp,651974.0,651974.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2018,observes,222.0,222.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2018,declenches,100.0,100.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2018,travailleurs,20781.0,20781.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2018,jpp,408868.0,408868.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2019,observes,71.0,71.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2019,declenches,62.0,62.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2019,travailleurs,12320.0,12320.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2019,jpp,267667.0,267667.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2020,observes,34.0,34.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2020,declenches,28.0,28.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2020,travailleurs,18951.0,18951.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2020,jpp,145406.0,145406.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2021,observes,171.0,170.0,1.0,0.5882352941176471,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2021,declenches,168.0,167.0,1.0,0.5988023952095808,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2021,travailleurs,261717.0,260986.0,731.0,0.28009165242580064,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2021,jpp,795987.0,789839.0,6148.0,0.7783864812955552,"Bilan des arrêts de travail 2022, tableau 1, p. 6",False
+2022,observes,162.0,162.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",True
+2022,declenches,137.0,137.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",True
+2022,travailleurs,49288.0,49288.0,0.0,0.0,"Bilan des arrêts de travail 2022, tableau 1, p. 6",True
+2022,jpp,553236.33,553236.0,0.3299999999580905,5.964904669220559e-05,"Bilan des arrêts de travail 2022, tableau 1, p. 6",True
+2023,observes,211.0,,,,,True
+2023,declenches,158.0,,,,,True
+2023,travailleurs,424392.0,,,,,True
+2023,jpp,1910794.0499999998,,,,,True
+2024,observes,199.0,,,,,True
+2024,declenches,130.0,,,,,True
+2024,travailleurs,416869.0,,,,,True
+2024,jpp,633879.7999999999,,,,,True
+2025,observes,166.0,,,,,True
+2025,declenches,116.0,,,,,True
+2025,travailleurs,119009.0,,,,,True
+2025,jpp,1600991.1600000001,,,,,True
+2026,observes,90.0,90.0,0.0,0.0,ligne de totaux du fichier liste_donnees_-regroupees_septembre_2026.xlsx,True
+2026,declenches,50.0,,,,ligne de totaux du fichier liste_donnees_-regroupees_septembre_2026.xlsx,True
+2026,travailleurs,20757.0,20757.0,0.0,0.0,ligne de totaux du fichier liste_donnees_-regroupees_septembre_2026.xlsx,True
+2026,jpp,364732.6,364732.6,0.0,0.0,ligne de totaux du fichier liste_donnees_-regroupees_septembre_2026.xlsx,True

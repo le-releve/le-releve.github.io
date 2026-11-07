@@ -17,17 +17,6 @@ body { margin: 0; }
 .site-nav a:hover { color: var(--ink); text-decoration: underline; }
 .site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
 .site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
-.site-nav .site-categorie { position: relative; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; }
-.site-nav .site-categorie > summary { list-style: none; cursor: pointer; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; border-radius: 4px; }
-.site-nav .site-categorie > summary::-webkit-details-marker { display: none; }
-.site-nav .site-categorie > summary::after { content: ""; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 0.15s; }
-.site-nav .site-categorie[open] > summary::after { transform: translateY(1px) rotate(-135deg); }
-.site-nav .site-categorie > summary:hover { color: var(--ink); }
-.site-nav .site-categorie > summary:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
-.site-nav .site-categorie.actif > summary { color: var(--ink); font-weight: 600; }
-.site-nav .site-categorie ul { list-style: none; margin: 0; padding: 6px; position: absolute; top: calc(100% + 8px); left: -6px; z-index: 20; min-width: 260px; max-width: calc(100vw - 32px); background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); }
-.site-nav .site-categorie li a { display: block; padding: 8px 10px; border-radius: 6px; }
-.site-nav .site-categorie li a:hover { background: var(--ligne); text-decoration: none; }
 .site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
 </style>
 <link rel="stylesheet" href="./polices/archivo.css">
@@ -80,7 +69,7 @@ h1 {
 h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
 .chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
 
-.theme { display: flex; flex-direction: column; gap: 12px; }
+.theme { display: flex; flex-direction: column; gap: 12px; scroll-margin-top: 16px; }
 .cartes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .carte {
   background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px;
@@ -108,23 +97,9 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
 
 <nav class="site-nav" aria-label="Navigation du site"><div>
 <a class="site-marque" href="./" aria-current="page">Le Relevé</a>
-<details class="site-categorie">
-<summary>Relations de travail</summary>
-<ul>
-  <li><a href="./mur/">Le mur des conflits</a></li>
-  <li><a href="./en-cours/">Les conflits en cours</a></li>
-  <li><a href="./calendrier/">Le calendrier des négociations</a></li>
-</ul>
-</details>
+<a href="./#travail">Travail</a>
+<a href="./comment-on-a-fait/">Comment on a fait</a>
 </div></nav>
-<script>
-(function () {
-  var menu = document.querySelector(".site-categorie");
-  if (!menu) return;
-  document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
-})();
-</script>
 <div class="page">
   <header>
     <div class="surtitre">Données ouvertes du Québec <span class="pastille">Prototype</span></div>
@@ -132,8 +107,8 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
     <p class="chapeau">Des données publiques du Québec, présentées sous forme de graphiques et de listes à consulter et à filtrer.</p>
   </header>
 
-  <section class="theme" aria-labelledby="titre-travail">
-    <h2 id="titre-travail">Relations de travail</h2>
+  <section class="theme" id="travail" aria-labelledby="titre-travail">
+    <h2 id="titre-travail">Travail</h2>
     <div class="cartes">
       <a class="carte" href="mur/">
         <h3>Le mur des conflits</h3>
@@ -161,11 +136,19 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
           <span class="libelle">conventions, données au 14 octobre 2026</span>
         </div>
       </a>
+      <a class="carte" href="salaires/">
+        <h3>Les salaires négociés</h3>
+        <p>Les taux de croissance des salaires prévus par les conventions collectives du fichier publié par le ministère du Travail, à chercher par employeur ou syndicat.</p>
+        <div class="chiffre">
+          <span class="valeur">7 212</span>
+          <span class="libelle">lignes, signées de 1983 à 2026</span>
+        </div>
+      </a>
     </div>
   </section>
 
   <section class="en-bref" aria-label="En bref">
-    <p><strong>Source :</strong> ministère du Travail du Québec, sur <a href="https://www.donneesquebec.ca/" target="_blank" rel="noopener">Données Québec</a> (licence CC-BY 4.0). Chaque page indique sa source exacte, la date de ses données et ses principales limites.</p>
-    <p>Le Relevé n'est pas un site gouvernemental et n'est affilié à aucun employeur ni à aucun syndicat.</p>
+    <p><strong>Source :</strong> les jeux de données publiés sur <a href="https://www.donneesquebec.ca/" target="_blank" rel="noopener">Données Québec</a>. Chaque page indique sa source exacte, sa licence, la date de ses données et ses principales limites.</p>
+    <p>Le Relevé n'est pas un site gouvernemental et n'est affilié à aucun organisme public, employeur ou syndicat.</p>
   </section>
 </div>

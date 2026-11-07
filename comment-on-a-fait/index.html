@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Comment on a fait — Le Relevé</title>
+<style>
+/* Mise en page : la fiche de transparence (D-013, I-007), commune au mur, aux conflits en cours
+   et au calendrier. Les marques {{…}} sont remplacées par pipeline/construire_site.py. */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --greve: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --greve: #3987e5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --greve: #3987e5; color-scheme: dark;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 26px; margin: 0; text-wrap: balance; }
+h3 { font-size: 15px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--greve); outline-offset: 2px; }
+
+.sommaire { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; margin: 0; padding: 0; list-style: none; }
+.partie { display: flex; flex-direction: column; gap: 16px; padding-top: 24px; border-top: 1px solid var(--axis); scroll-margin-top: 12px; }
+.fiche { display: flex; flex-direction: column; gap: 16px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 6px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.fiche strong { color: var(--ink); font-weight: 600; }
+.note { font-size: 13px; color: var(--ink-2); line-height: 1.5; margin: 0; max-width: 80ch; }
+code { font-family: ui-monospace, Consolas, monospace; font-size: 0.92em; overflow-wrap: anywhere; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+thead tr:first-child th { text-align: center; color: var(--ink-2); }
+tbody tr:last-child td { border-bottom: 0; }
+th:first-child, td:first-child { text-align: left; }
+td.ecart { font-weight: 700; color: var(--ink); }
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../comment-on-a-fait/" aria-current="page">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Relations de travail au Québec <span class="pastille">Prototype</span></div>
+    <h1>Comment on a fait</h1>
+    <p class="chapeau">D'où viennent les chiffres du mur des conflits, des conflits en cours et du calendrier des négociations, ce qu'on en fait et ce qu'ils ne permettent pas de dire.</p>
+  </header>
+
+  <ul class="sommaire" aria-label="Sur cette page">
+    <li><a href="#arrets">Le mur et les conflits en cours</a></li>
+    <li><a href="#calendrier">Le calendrier des négociations</a></li>
+    <li><a href="#mises-a-jour">Les mises à jour</a></li>
+    <li><a href="#fichiers">Les fichiers</a></li>
+    <li><a href="#corrections">Corrections</a></li>
+  </ul>
+
+  <section class="partie" id="arrets" aria-labelledby="titre-arrets">
+    <h2 id="titre-arrets">Le mur des conflits et les conflits en cours</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère du Travail du Québec, <a href="https://www.donneesquebec.ca/recherche/dataset/liste-des-arrets-de-travail-au-quebec" target="_blank" rel="noopener">Liste regroupée des arrêts de travail au Québec</a> (Données Québec, licence CC-BY 4.0). Les définitions citées ci-dessous viennent du document « <a href="https://www.donneesquebec.ca/recherche/dataset/cdbc394b-8c24-4e34-8fc9-35b8b69408a7/resource/efaeb0c4-2398-44a1-b42f-575eb1965217/download/mtrav-definition_concept_vf_2025-09-11_bsma.pdf" target="_blank" rel="noopener">Définition des concepts</a> » du ministère, joint à ce jeu de données.</p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p>Données au 30 septembre 2026, extraites le 31 octobre 2026. La fiche du jeu de données indique une mise à jour mensuelle ; nous n'avons pas de date pour la prochaine version. Selon le ministère, les données de 2022 et des années suivantes sont préliminaires. Elles peuvent encore être révisées.</p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li><strong>Un arrêt de travail.</strong> Selon le ministère, il peut prendre la forme d'une grève, d'un lock-out ou des deux. Le ministère indique comptabiliser tous les arrêts, de compétence provinciale ou fédérale, légaux ou non.</li>
+          <li><strong>Liste regroupée.</strong> Plusieurs événements d'une même négociation commune comptent pour un seul arrêt, même s'ils concernent plusieurs accréditations ou employeurs. Le ministère indique que ses bilans annuels reposent sur ces données regroupées.</li>
+          <li><strong>Le mur.</strong> Tous les arrêts actifs à un moment depuis le 1er janvier 2016, soit 1 309 arrêts. Cela comprend 43 arrêts commencés avant 2016 : leur ligne est coupée au bord gauche, et le détail donne leur vraie date de début.</li>
+          <li><strong>Les conflits en cours.</strong> Les arrêts qui figurent sans date de fin dans le fichier le plus récent du ministère, soit 56 arrêts au 30 septembre 2026.</li>
+          <li><strong>Travailleurs touchés.</strong> Selon le ministère, c'est la moyenne entre le nombre de travailleurs touchés au début de l'arrêt et le nombre de ceux qui ont réintégré le travail à la reprise des activités.</li>
+          <li><strong>Jours-personnes perdus.</strong> Selon le ministère, c'est le nombre moyen de travailleurs touchés multiplié par le nombre de jours ouvrables perdus, en tenant compte des retours progressifs et des jours fériés chômés. Le chiffre affiché est le total publié depuis le début de l'arrêt.</li>
+          <li><strong>Durée.</strong> C'est notre calcul, en jours civils, du premier au dernier jour inclus. Pour un arrêt en cours, le calcul s'arrête à la date des données. Le ministère définit une durée en jours civils, mais précise qu'elle n'est pas compilée dans ses fichiers.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Transformations</h3>
+        <ul>
+          <li><strong>Une ligne par arrêt.</strong> Un arrêt qui couvre plusieurs années figure dans plusieurs fichiers annuels. Les 1 668 lignes annuelles donnent ainsi 1 309 arrêts. Un arrêt est reconnu à son numéro d'accréditation et à sa date de début ou, sans accréditation, aux noms publiés et à sa date de début. Les valeurs affichées sont celles du fichier le plus récent où il figure.</li>
+          <li><strong>Dates de début révisées.</strong> Un arrêt sans date de fin qui reparaît au fichier de l'année suivante, avec la même accréditation et une date de début décalée de 30 jours au plus, est considéré comme le même arrêt. Les autres arrêts de même accréditation qui se suivent ou se chevauchent sont examinés un à un.</li>
+          <li><strong>Arrêts sans date de fin qui quittent les fichiers.</strong> Au 30 septembre 2026, 54 arrêts sont dans ce cas. Sur le mur, leur ligne s'arrête à la fin de la période du dernier fichier où ils figurent, avec une extrémité estompée. Ils ne sont pas comptés parmi les conflits en cours.</li>
+          <li><strong>Noms.</strong> Le nom publié n'est jamais modifié et reste visible dans le détail quand il diffère du nom affiché. Le nom affiché regroupe les variantes d'écriture d'un même nom, sans fusionner d'entités juridiques ni de sections locales distinctes : 925 noms d'employeurs publiés donnent 803 noms regroupés, et 760 noms d'associations en donnent 632. Les noms qui ne diffèrent que par la forme juridique ou l'article ont été examinés avant d'être regroupés.</li>
+          <li><strong>Accents, virgules et majuscules.</strong> Les fichiers récents ont perdu des accents, et des virgules y sont devenues des points. On les rétablit dans le nom affiché quand la correction est évidente, d'après les noms qui ont gardé leur graphie et une liste de mots vérifiés.</li>
+          <li><strong>Centrale syndicale.</strong> Quand la colonne contient autre chose qu'une centrale reconnue, par exemple le nom de l'association, on la laisse vide.</li>
+          <li><strong>Choix du fichier.</strong> On lit les fichiers XLSX. Pour 2020, on lit le CSV : le XLSX compte 33 arrêts et le CSV 34, le nombre donné par le bilan du ministère, et trois dates diffèrent entre les deux.</li>
+          <li><strong>Valeurs non corrigées.</strong> À part ce qui est décrit ici, on reprend les valeurs publiées, même quand l'une d'elles paraît inexacte.</li>
+          <li><strong>Épaisseur des lignes du mur.</strong> Elle suit la racine carrée du nombre de travailleurs touchés, de 2 à 26 pixels. Elle n'est donc pas proportionnelle : pour 80 fois plus de travailleurs, une ligne de 80 000 travailleurs est environ 5,5 fois plus épaisse qu'une ligne de 1 000. Le sélecteur « Épaisseur » permet de passer à un mur uniforme.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul>
+          <li>Un arrêt commencé ou terminé depuis le 30 septembre 2026 n'apparaît pas encore.</li>
+          <li>Le ministère ne publie pas la date de fin des 54 arrêts décrits plus haut. La fin estompée et la durée calculée ne donnent donc pas nécessairement leur vraie durée.</li>
+          <li>15 arrêts n'ont pas de nombre de travailleurs publié : leur ligne est la plus fine du mur.</li>
+          <li>195 arrêts affichent 0 jour-personne perdu, dont 21 arrêts en cours. Cette valeur est reprise telle quelle ; les documents que nous avons lus n'en donnent pas la raison.</li>
+          <li>Le fichier de 2016 n'indique pas si le secteur est privé ou public : 134 arrêts sont donc présentés comme « non précisé ». Les définitions du ministère décrivent quatre secteurs, alors que les fichiers n'en utilisent que deux. Les documents lus ne précisent pas la correspondance.</li>
+          <li>Certaines valeurs de région ne désignent pas une seule région, par exemple « Plus d'une région » ou « Toutes les régions ».</li>
+          <li>68 arrêts n'ont pas de numéro d'accréditation valide dans les fichiers. Ils sont reconnus à leurs noms, qui peuvent changer d'un fichier à l'autre.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <p>On compare nos totaux annuels au <a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/travail/publications-adm/rapports/BIL_Arrets_TRAV_2022.pdf" target="_blank" rel="noopener">bilan 2022 du ministère</a> (tableau 1, p. 6) pour 2016 à 2022, et à la ligne de totaux du fichier du ministère pour l'année en cours. Comme dans ce bilan, le compte principal est celui des arrêts observés, c'est-à-dire actifs pendant l'année. Les arrêts déclenchés sont ceux qui ont commencé dans l'année. Un même arrêt peut donc être observé plusieurs années.</p>
+        <p><strong>27 comparaisons concordent sur 31</strong> (écart inférieur à une unité). Les écarts portent sur 2021. Les documents que nous avons lus ne les expliquent pas. Nos totaux suivent les fichiers du ministère, et les écarts restent affichés.</p>
+      </section>
+    </div>
+    <div class="carte">
+      <div class="defile">
+        <table>
+          <thead>
+            <tr><th scope="col" rowspan="2">Année</th><th scope="colgroup" colspan="2">Arrêts observés</th><th scope="colgroup" colspan="2">Arrêts déclenchés</th><th scope="colgroup" colspan="2">Travailleurs touchés</th><th scope="colgroup" colspan="2">Jours-personnes perdus</th></tr>
+            <tr><th scope="col">Le Relevé</th><th scope="col">Ministère</th><th scope="col">Le Relevé</th><th scope="col">Ministère</th><th scope="col">Le Relevé</th><th scope="col">Ministère</th><th scope="col">Le Relevé</th><th scope="col">Ministère</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2016</td><td>145</td><td>145</td><td>102</td><td>102</td><td>30 335</td><td>30 335</td><td>274 939</td><td>274 939</td></tr>
+            <tr><td>2017</td><td>197</td><td>197</td><td>186</td><td>186</td><td>175 530</td><td>175 530</td><td>651 974</td><td>651 974</td></tr>
+            <tr><td>2018</td><td>222</td><td>222</td><td>100</td><td>100</td><td>20 781</td><td>20 781</td><td>408 868</td><td>408 868</td></tr>
+            <tr><td>2019</td><td>71</td><td>71</td><td>62</td><td>62</td><td>12 320</td><td>12 320</td><td>267 667</td><td>267 667</td></tr>
+            <tr><td>2020</td><td>34</td><td>34</td><td>28</td><td>28</td><td>18 951</td><td>18 951</td><td>145 406</td><td>145 406</td></tr>
+            <tr><td>2021</td><td class="ecart">171</td><td class="ecart">170</td><td class="ecart">168</td><td class="ecart">167</td><td class="ecart">261 717</td><td class="ecart">260 986</td><td class="ecart">795 987</td><td class="ecart">789 839</td></tr>
+            <tr><td>2022 (préliminaire)</td><td>162</td><td>162</td><td>137</td><td>137</td><td>49 288</td><td>49 288</td><td>553 236</td><td>553 236</td></tr>
+            <tr><td>2023 (préliminaire)</td><td>211</td><td>–</td><td>158</td><td>–</td><td>424 392</td><td>–</td><td>1 910 794</td><td>–</td></tr>
+            <tr><td>2024 (préliminaire)</td><td>199</td><td>–</td><td>130</td><td>–</td><td>416 869</td><td>–</td><td>633 880</td><td>–</td></tr>
+            <tr><td>2025 (préliminaire)</td><td>166</td><td>–</td><td>116</td><td>–</td><td>119 009</td><td>–</td><td>1 600 991</td><td>–</td></tr>
+            <tr><td>2026 (préliminaire)</td><td>90</td><td>90</td><td>50</td><td>–</td><td>20 757</td><td>20 757</td><td>364 733</td><td>364 733</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">En gras : les valeurs où nos totaux s'écartent de ceux du ministère. Un tiret veut dire que nous n'avons pas de chiffre du ministère à comparer. Le 31 octobre 2026, la page des publications du ministère n'offrait aucun bilan après celui de 2022.</p>
+    </div>
+    <div class="fiche">
+      <section>
+        <h3>Comment citer</h3>
+        <p>Le Relevé, « Le mur des conflits », d'après le ministère du Travail du Québec, Liste regroupée des arrêts de travail au Québec, données au 30 septembre 2026, extraites le 31 octobre 2026. https://le-releve.github.io/mur/</p>
+        <p>Le Relevé, « Les conflits en cours », d'après le ministère du Travail du Québec, Liste regroupée des arrêts de travail au Québec, données au 30 septembre 2026, extraites le 31 octobre 2026. https://le-releve.github.io/en-cours/</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="partie" id="calendrier" aria-labelledby="titre-calendrier">
+    <h2 id="titre-calendrier">Le calendrier des négociations</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère du Travail du Québec, <a href="https://www.donneesquebec.ca/recherche/dataset/la-liste-des-conventions-collectives-en-vigueur-au-quebec" target="_blank" rel="noopener">Liste des conventions collectives en vigueur au Québec</a> (Données Québec, licence CC-BY 4.0). On lit le fichier XLSX.</p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p>Données au 14 octobre 2026, extraites le 1er novembre 2026. La date des données est lue dans le nom du fichier du ministère. La fiche du jeu de données indique une mise à jour mensuelle ; nous n'avons pas de date pour la prochaine version. La liste montre un seul moment, sans historique.</p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li><strong>La liste.</strong> Selon le ministère, elle contient les conventions en vigueur relevant du Code du travail québécois, y compris celles de dernière génération expirées depuis moins de trois ans.</li>
+          <li><strong>Une convention.</strong> Le calendrier compte chaque ligne de la liste comme une convention, soit 8 462 lignes. Parmi elles, 155 sont publiées comme une entente modifiant la durée de la convention ou une sentence de différend.</li>
+          <li><strong>Salariés visés.</strong> C'est le nombre publié par le ministère pour chaque convention. Ce n'est pas le nombre de personnes syndiquées.</li>
+          <li><strong>À venir ou échue.</strong> Une convention est échue si sa date d'expiration précède la date des données, soit 1 571 conventions au 14 octobre 2026.</li>
+          <li><strong>La frise.</strong> Elle couvre 24 mois à partir du mois des données et ne compte que les conventions à venir. Le premier mois n'est donc pas complet : il commence à la date des données.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Transformations</h3>
+        <ul>
+          <li>Aucune ligne n'est retirée, et les noms ne sont pas regroupés : chaque ligne reste distincte.</li>
+          <li><strong>Noms.</strong> Les accents, virgules et majuscules initiales perdus sont rétablis dans le nom affiché quand la correction est évidente. Le nom publié reste visible dans le détail quand il diffère.</li>
+          <li><strong>Libellés.</strong> Les régions, les secteurs et les types de document sont remplacés par leur forme accentuée, d'après une liste fermée. Deux libellés de secteur, coupés à 100 caractères dans la source, sont complétés d'après les titres de la classification des activités économiques.</li>
+          <li><strong>Barre coupée.</strong> Quand un mois dépasse 2,5 fois le deuxième mois de la frise, l'échelle suit ce deuxième mois. La barre trop haute est coupée, et sa valeur est écrite au-dessus.</li>
+          <li><strong>Mention « Arrêt de travail en cours ».</strong> Elle paraît quand le numéro d'accréditation de la convention est celui d'un arrêt en cours dans la liste des arrêts du 30 septembre 2026.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul>
+          <li>Une convention échue peut déjà avoir été renouvelée sans que la nouvelle soit encore déposée au ministère.</li>
+          <li>Une convention expirée depuis trois ans ou plus ne figure plus dans la liste, même si aucun renouvellement n'y paraît.</li>
+          <li>La liste porte sur les conventions relevant du Code du travail québécois ; elle ne couvre normalement pas les milieux de compétence fédérale. La liste des arrêts de travail, elle, comprend ces milieux.</li>
+          <li>Le rapprochement trouve une convention pour 26 des 56 arrêts en cours. L'absence de mention ne veut donc pas dire qu'aucun arrêt n'est en cours dans ce milieu.</li>
+          <li>Les deux listes n'ont pas la même date (30 septembre 2026 et 14 octobre 2026). Un arrêt peut avoir commencé ou pris fin entre les deux.</li>
+          <li>2 conventions sont publiées avec 0 salarié visé.</li>
+          <li>Certaines valeurs de région ne désignent pas une seule région, par exemple « Toutes les régions » ou « Hors Québec ».</li>
+          <li>Certains noms restent sans accents : la correction n'est faite que lorsqu'elle est évidente.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <p>Nous n'avons pas de bilan ni de total du ministère auquel comparer cette liste. Les chiffres du calendrier ne sont donc pas vérifiés de cette façon.</p>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p>Le Relevé, « Le calendrier des négociations », d'après le ministère du Travail du Québec, Liste des conventions collectives en vigueur au Québec, données au 14 octobre 2026, extraites le 1er novembre 2026. https://le-releve.github.io/calendrier/</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="partie" id="mises-a-jour" aria-labelledby="titre-mises-a-jour">
+    <h2 id="titre-mises-a-jour">Les mises à jour</h2>
+    <div class="fiche">
+      <section>
+        <ul>
+          <li>Chaque semaine, une tâche automatique regarde si le ministère a publié de nouveaux fichiers. Chaque version est conservée telle quelle, avec sa date d'extraction.</li>
+          <li>Si le format d'un fichier change, par exemple une colonne ou une valeur inconnue, le traitement s'arrête et rien n'est publié.</li>
+          <li>Une nouvelle version sans alerte est publiée automatiquement, sans relecture préalable. Une alerte suspend la publication jusqu'à son approbation : par exemple un nouveau conflit de 1 000 travailleurs ou plus, un chiffre clé qui varie de plus de 10 % ou un écart nouveau ou accru avec les bilans du ministère.</li>
+          <li>Ces mises à jour peuvent changer les chiffres d'un mois à l'autre, notamment parce que le ministère peut réviser ses données préliminaires.</li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="partie" id="fichiers" aria-labelledby="titre-fichiers">
+    <h2 id="titre-fichiers">Les fichiers</h2>
+    <div class="fiche">
+      <section>
+        <p>Les données nettoyées, pour refaire vos propres calculs. Ces fichiers CSV sont encodés en UTF-8.</p>
+        <ul>
+          <li><a href="../donnees/arrets.csv" download>Les arrêts de travail</a> (646 Ko) : une ligne par arrêt, avec les noms publiés et regroupés, et le fichier et la ligne d'où viennent les valeurs (colonne <code>derniere_source</code>).</li>
+          <li><a href="../donnees/noms_employeurs.csv" download>Les noms d'employeurs</a> (80 Ko) et <a href="../donnees/noms_associations.csv" download>les noms d'associations</a> (116 Ko) : la correspondance entre nom publié et nom regroupé.</li>
+          <li><a href="../donnees/controles.csv" download>Les comparaisons</a> (4 Ko) : nos totaux annuels et ceux du ministère.</li>
+          <li><a href="../donnees/conventions.csv" download>Les conventions collectives</a> (4,5 Mo) : une ligne par convention, avec les valeurs publiées et les valeurs affichées.</li>
+        </ul>
+        <p>Le code du traitement n'est pas publié pour l'instant.</p>
+      </section>
+    </div>
+  </section>
+
+  <section class="partie" id="corrections" aria-labelledby="titre-corrections">
+    <h2 id="titre-corrections">Corrections</h2>
+    <div class="fiche">
+      <section>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
