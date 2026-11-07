@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Les lésions professionnelles</title>
+<style>
+/* Page légère de la série 2026-11 (D-034, D-037) : nombre annuel de lésions acceptées, réparti selon une colonne
+   du fichier, puis un tableau par catégorie. Aucun tri par nombre (D-009) ; fiche « Comment on a fait » (D-013). */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+}
+
+[hidden] { display: none !important; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; }
+a { color: inherit; }
+
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.champ label { font-size: 13px; color: var(--ink-2); flex: 0 0 auto; }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 100%; min-width: 0; }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+.bouton:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible, .choisir:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p, .notes p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.notes { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.titre-graphique { font-size: 15px; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+.sous-titre { font-size: 13px; color: var(--ink-2); margin: 0; }
+.barres { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 10px; align-items: center; margin: 0; padding: 0; list-style: none; }
+.barres li { display: contents; }
+.an { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.piste { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.barre { height: 18px; background: var(--barre); border-radius: 2px; flex: none; min-width: 1px; }
+.valeur { font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.part { color: var(--muted); }
+
+.compte { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); }
+.defile { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 180px; max-width: 320px; position: sticky; left: 0; background: var(--surface); }
+td.codes { text-align: left; color: var(--ink-2); white-space: normal; min-width: 120px; }
+tr.choisie td { background: var(--survol); }
+tr.choisie td:first-child { box-shadow: inset 3px 0 0 var(--barre); }
+tr.ensemble td { font-weight: 600; border-top: 1px solid var(--axis); }
+.choisir { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--axis); text-underline-offset: 3px; }
+.publie { font-size: 12px; letter-spacing: 0.02em; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 640px) {
+  .champ { width: 100%; }
+  .champ select { flex: 1 1 auto; }
+  th:first-child, td:first-child { min-width: 140px; }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail" aria-current="page">Travail</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Travail <span class="pastille">Prototype</span></div>
+    <h1>Les lésions professionnelles</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <div class="commandes" role="group" aria-label="Choix de la répartition">
+    <div class="champ">
+      <label for="dimension">Répartir selon</label>
+      <select id="dimension"><option value="">Aucune répartition</option></select>
+    </div>
+    <div class="champ" id="champ-categorie" hidden>
+      <label for="categorie">Catégorie</label>
+      <select id="categorie"></select>
+    </div>
+  </div>
+
+  <section class="carte" aria-labelledby="titre-graphique">
+    <p class="titre-graphique" id="titre-graphique"></p>
+    <p class="sous-titre" id="sous-titre"></p>
+    <ol class="barres" id="barres"></ol>
+  </section>
+
+  <div class="notes" id="notes" aria-live="polite"></div>
+
+  <section class="colonne" id="tableau" aria-labelledby="titre-tableau" hidden>
+    <div class="section-titre">
+      <h2 id="titre-tableau"></h2>
+      <p id="aide-tableau"></p>
+    </div>
+    <div class="compte">
+      <span id="compte-tableau"></span>
+      <span class="champ" id="champ-tri">
+        <label for="tri">Ordre</label>
+        <select id="tri">
+          <option value="cnesst">Ordre de la fiche de la CNESST</option>
+          <option value="alpha">Ordre alphabétique</option>
+        </select>
+      </span>
+    </div>
+    <div class="carte">
+      <div class="defile">
+        <table>
+          <thead id="tete"></thead>
+          <tbody id="corps"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> Commission des normes, de l'équité, de la santé et de la sécurité du travail (CNESST), <a href="https://www.donneesquebec.ca/recherche/dataset/lesions-professionnelles" target="_blank" rel="noopener">Lésions professionnelles</a> (Données Québec, licence CC-BY 4.0). Fichiers <span class="periode"></span>, extraits le <span class="extraction"></span>.</p>
+    <p><strong>Ce qu'on compte :</strong> les réclamations pour des lésions professionnelles inscrites au cours d'une année et acceptées au plus tard le 1er mars de l'année suivante, telles que publiées par la CNESST. Chaque ligne du fichier porte un numéro de cas anonyme attribué par la CNESST ; on compte les lignes.</p>
+    <p><strong>Principale limite :</strong> ce sont des nombres, pas des taux. Le jeu de données ne donne pas le nombre de travailleurs, ni au total ni par secteur. Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>CNESST, <a href="https://www.donneesquebec.ca/recherche/dataset/lesions-professionnelles" target="_blank" rel="noopener">Lésions professionnelles</a>, sur Données Québec, licence Creative Commons Attribution 4.0 (CC-BY 4.0). Un fichier CSV par année, et une <a id="lien-fiche-pdf" href="#" target="_blank" rel="noopener">fiche de métadonnées</a> (PDF) qui décrit les variables et leurs valeurs.</p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li>Selon la CNESST, le jeu présente les réclamations pour des lésions professionnelles inscrites au cours d'une année civile et acceptées au plus tard le 1er mars de l'année suivante. Les lésions sont inscrites dans les systèmes de la CNESST à la réception des réclamations.</li>
+          <li>Ces réclamations visent des travailleuses et des travailleurs couverts par le régime d'assurance en santé et sécurité du travail dont la CNESST est responsable.</li>
+          <li>Chaque ligne porte un numéro séquentiel anonyme, attribué à chaque cas par la CNESST pour le jeu de données.</li>
+          <li><strong>Nature</strong> : la ou les principales caractéristiques physiques de la blessure ou de la maladie. <strong>Siège</strong> : la partie du corps touchée. <strong>Genre d'accident ou d'exposition</strong> : la manière dont la blessure ou la maladie a été produite ou infligée. <strong>Agent causal</strong> : l'objet, la substance, l'exposition ou le mouvement qui l'a produite ou infligée directement. Ces définitions résument celles de la fiche de métadonnées.</li>
+          <li><strong>Secteur</strong> : le secteur d'activité SCIAN (Système de classification des industries de l'Amérique du Nord) auquel appartenait la personne au moment de la lésion. La CNESST regroupe les codes SCIAN à 4 positions en 21 secteurs ; un cas dont le code est absent ou hors de ces regroupements est classé « Autres ou non codés ». Les codes de chaque regroupement sont repris de la fiche.</li>
+          <li><strong>Groupe d'âge</strong> : l'âge au moment de la lésion. <strong>Sexe</strong> : celui de la travailleuse ou du travailleur ; le fichier ne contient que les valeurs « femme » et « homme ».</li>
+          <li><strong>Indicateurs</strong> : ajoutés en août 2022 selon la CNESST, ils signalent une surdité professionnelle, une lésion en lien avec les machines, des troubles musculosquelettiques, une lésion psychologique (attribuable à la violence ou au stress en milieu de travail, selon la fiche) ou une lésion en lien avec la COVID-19. Les fichiers de toutes les années les contiennent. Un même cas peut porter plus d'un indicateur.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Traitement</h3>
+        <ul>
+          <li>Chaque fichier annuel est archivé tel que téléchargé (compressé, sans modification du contenu), avec la réponse de l'API de Données Québec et l'empreinte de chaque fichier.</li>
+          <li>Pour chaque année, on compte les lignes du fichier, puis les lignes par valeur de chaque colonne. Aucune ligne n'est retirée, aucune valeur n'est corrigée.</li>
+          <li>Les libellés de secteur, de sexe et de groupe d'âge sont présentés en minuscules accentuées. Les libellés de nature, de siège, de genre et d'agent causal sont laissés tels que publiés par la CNESST, en majuscules abrégées ; leurs définitions sont dans la fiche de métadonnées.</li>
+          <li id="fiche-lignes"></li>
+          <li id="fiche-vides"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul>
+          <li>Le jeu ne contient pas le nombre de travailleurs, ni au total ni par secteur. Les nombres ne sont donc pas des taux et ne permettent pas, à eux seuls, de comparer le risque d'un secteur à l'autre.</li>
+          <li>L'année est celle de l'inscription de la réclamation. Le fichier ne donne pas la date de l'accident ou du début de la maladie.</li>
+          <li>Selon la description du jeu, une réclamation inscrite dans l'année n'est comptée que si elle a été acceptée au plus tard le 1er mars de l'année suivante. La CNESST ne précise pas, dans la fiche, si les chiffres d'une année sont révisés après leur publication.</li>
+          <li>Le fichier ne distingue pas les accidents du travail des maladies professionnelles. La fiche ne précise pas si les rechutes, récidives ou aggravations sont comptées.</li>
+          <li id="fiche-non-codes"></li>
+          <li>La période inscrite dans les métadonnées de Données Québec va de 2014 à 2021, alors que les fichiers vont jusqu'à <span class="dernier"></span>.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul>
+          <li>Pour chaque année, la somme des cas par secteur, par sexe, par groupe d'âge, par nature, par siège, par genre et par agent causal redonne le nombre de lignes du fichier.</li>
+          <li>Chaque numéro de cas n'apparaît qu'une fois dans son fichier.</li>
+          <li>Nous n'avons pas trouvé, sur Données Québec, de total publié par la CNESST auquel comparer ces nombres.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p>Les nombres de cas par année d'inscription, pour l'ensemble et pour chaque valeur de chaque colonne, avec les libellés publiés. Les fichiers détaillés, une ligne par cas, sont sur Données Québec.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/lesions.csv" download>Télécharger les données (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = {"annees":[2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],"total":[88046,87618,90414,96135,103406,107465,104732,105692,161962,114345],"dims":[{"id":"secteur","colonne":"SECTEUR_SCIAN","titre":"Secteur d'activité (SCIAN)","valeurs":[{"v":"AGRICULTURE","l":"Agriculture","c":"1111 à 1129, 1151 à 1152","n":[840,837,921,985,1014,986,875,890,864,884]},{"v":"FORESTERIE, EXPLOITATION FORESTIERE ET ACTIVITES DE SOUTIEN A LA FORESTERIE","l":"Foresterie, exploitation forestière et activités de soutien à la foresterie","c":"1131 à 1133, 1153","n":[415,402,360,382,331,340,275,346,285,387]},{"v":"PECHE, CHASSE ET PIEGEAGE","l":"Pêche, chasse et piégeage","c":"1141 à 1142","n":[27,28,38,28,36,27,23,21,22,24]},{"v":"EXTRACTION MINIERE, EXPLOITATION EN CARRIERE ET EXTRACTION DE PETROLE ET DE GAZ","l":"Extraction minière, exploitation en carrière et extraction de pétrole et de gaz","c":"2111 à 2131","n":[855,845,889,967,1019,954,761,744,890,875]},{"v":"SERVICES PUBLICS","l":"Services publics","c":"2211 à 2213","n":[391,371,379,366,361,333,249,309,299,416]},{"v":"CONSTRUCTION","l":"Construction","c":"2361 à 2389","n":[6871,6416,6207,6592,7443,8234,7599,8826,9502,9590]},{"v":"FABRICATION DE BIENS DURABLES","l":"Fabrication de biens durables","c":"3211 à 3219, 3271 à 3279, 3311 à 3379","n":[11031,10499,10312,10187,11095,11289,8925,9778,10297,10547]},{"v":"FABRICATION DE BIENS NON DURABLES","l":"Fabrication de biens non durables","c":"3111 à 3169, 3221 à 3262, 3391 à 3399","n":[7608,7556,7461,7908,8400,8579,7994,7873,7883,7540]},{"v":"COMMERCE DE GROS","l":"Commerce de gros","c":"4111 à 4191","n":[3009,3141,3130,3321,3686,3682,3045,3054,3144,3252]},{"v":"COMMERCE DE DETAIL","l":"Commerce de détail","c":"4411 à 4543","n":[7198,7023,7240,7658,7783,8120,7230,7325,7216,7266]},{"v":"TRANSPORT ET ENTREPOSAGE","l":"Transport et entreposage","c":"4811 à 4931","n":[5401,5288,5112,5487,5912,6246,5115,5087,6193,5739]},{"v":"FINANCE ET ASSURANCES","l":"Finance et assurances","c":"5211 à 5242, 5261 à 5269","n":[427,410,382,362,367,364,230,176,179,215]},{"v":"SERVICES IMMOBILIERS ET SERVICES DE LOCATION ET DE LOCATION A BAIL","l":"Services immobiliers et services de location et de location à bail","c":"5311 à 5331","n":[654,612,675,718,666,539,380,347,439,422]},{"v":"SERVICES PROFESSIONNELS, SCIENTIFIQUES ET TECHNIQUES","l":"Services professionnels, scientifiques et techniques","c":"5411 à 5419","n":[663,701,667,760,867,761,654,674,791,754]},{"v":"SERVICES AUX ENTREPRISES, SERVICES RELATIFS AUX BATIMENTS ET AUTRES SERVICES DE SOUTIEN","l":"Services aux entreprises, services relatifs aux bâtiments et autres services de soutien","c":"5511 à 5629","n":[3976,3979,4139,4330,4410,4910,4136,4335,5565,4545]},{"v":"SERVICES D'ENSEIGNEMENT","l":"Services d'enseignement","c":"6111 à 6117","n":[3579,3582,3658,4024,4429,4952,3640,4626,5625,5803]},{"v":"SOINS DE SANTE ET ASSISTANCE SOCIALE","l":"Soins de santé et assistance sociale","c":"6211 à 6244","n":[15764,16145,16414,17200,18154,18009,31652,26589,74517,34944]},{"v":"INFORMATION, CULTURE ET LOISIRS","l":"Information, culture et loisirs","c":"5111 à 5191, 7111 à 7139","n":[1898,1751,1885,1917,1838,1986,889,901,1249,1257]},{"v":"HEBERGEMENT ET SERVICES DE RESTAURATION","l":"Hébergement et services de restauration","c":"7211 à 7225","n":[3702,3859,3818,4077,4190,4261,2355,2170,2822,3052]},{"v":"AUTRES SERVICES","l":"Autres services","c":"8111 à 8141","n":[2881,2943,2975,2946,3296,3079,2333,2365,2546,2779]},{"v":"ADMINISTRATIONS PUBLIQUES","l":"Administrations publiques","c":"9111 à 9191","n":[5007,4842,4775,4915,4978,5111,4393,4495,5728,5155]},{"v":"AUTRES OU NON CODES","l":"Autres ou non codés","c":"code absent ou hors des regroupements","n":[5849,6388,8977,11005,13131,14703,11979,14761,15906,8899]}]},{"id":"sexe","colonne":"SEXE_PERS_PHYS","titre":"Sexe","valeurs":[{"v":"FEMME","l":"Femme","n":[29805,30277,31475,33714,36407,38042,44991,41902,84802,51428]},{"v":"HOMME","l":"Homme","n":[58241,57341,58939,62421,66999,69423,59741,63790,77160,62917]}]},{"id":"age","colonne":"GROUPE_AGE","titre":"Groupe d'âge","valeurs":[{"v":"MOINS DE 20","l":"Moins de 20 ans","n":[2505,2532,2518,2663,2852,3102,2875,3198,3921,2759]},{"v":"20 A 24","l":"20 à 24 ans","n":[8193,7888,7691,8130,8471,8442,8293,8283,12924,8213]},{"v":"25 A 34","l":"25 à 34 ans","n":[17726,17671,17748,18496,19811,20151,20467,20388,34095,22652]},{"v":"35 A 44","l":"35 à 44 ans","n":[18864,19024,19026,20188,21683,22688,22878,22223,36683,24840]},{"v":"45 A 54","l":"45 à 54 ans","n":[22575,21955,21721,22318,22875,23343,23238,22270,35194,24856]},{"v":"55 A 64","l":"55 à 64 ans","n":[14727,14873,16981,18299,20313,21207,20133,20937,29431,22071]},{"v":"65 OU PLUS","l":"65 ans ou plus","n":[3456,3675,4729,6041,7401,8532,6848,8393,9714,8954]}]},{"id":"type","colonne":"IND_LESION_*","titre":"Type de lésion (indicateurs)","valeurs":[{"v":"IND_LESION_SURDITE","l":"Surdité professionnelle","n":[4781,4896,7307,8872,10608,11712,9024,11826,11350,9789]},{"v":"IND_LESION_MACHINE","l":"Lésion en lien avec les machines","n":[3863,3470,3184,3662,3408,3622,3922,3914,3930,4605]},{"v":"IND_LESION_TMS","l":"Troubles musculosquelettiques","n":[25918,25559,25993,28539,28225,28738,25552,28466,26814,26624]},{"v":"IND_LESION_PSY","l":"Lésion psychologique","n":[2420,2544,2802,3120,3595,3897,3889,4401,4190,5532]},{"v":"IND_LESION_COVID_19","l":"Lésion en lien avec la COVID-19","n":[0,0,0,0,0,0,16614,10742,67202,18662]},{"v":"Aucun des cinq indicateurs","n":[51923,51913,51885,52769,58312,60323,46759,47318,49433,50306]}]},{"id":"nature","colonne":"NATURE_LESION","titre":"Nature de la lésion","valeurs":[{"v":"AUTRES BLES.,TROUBLES TRAUMA.","n":[2317,1832,1777,1413,1502,1244,1365,1456,1339,1191]},{"v":"AUTRES MALAD. INFECT.,PARASITAIRES","n":[17,68,30,12,15,25,4,3,4,2]},{"v":"AUTRES MALADIES,ETATS,TROUBLES,NCA","n":[55,43,60,46,90,32,11,15,10,26]},{"v":"BLES. TRAUMA. MUSCLES,TENDONS,ETC.","n":[35758,35586,35405,38928,38617,40832,34624,38470,37351,35188]},{"v":"BLES. TRAUMA. OS,NERFS,MOELLE EPINI.","n":[6398,6332,6034,6807,6740,7544,6637,8013,8794,7690]},{"v":"BLES.,TROUBLE TRAUMATIQUE,NP","n":[938,715,721,1096,1117,537,301,322,402,572]},{"v":"BLES.,TROUBLES TRAUMA. MULT.","n":[1870,1997,1667,1882,2940,2771,1957,996,918,875]},{"v":"BLESSURE INTRACRANIENNE","n":[827,977,1071,1352,1501,2607,2143,3214,3455,3240]},{"v":"BRULURE","n":[1507,1606,1356,1461,1479,1393,1109,1127,1080,1143]},{"v":"DOMMAGES AUX APPAREILS PROSTHETIQUES","n":[834,834,721,749,685,639,642,696,627,599]},{"v":"EFFET DES CONDITIONS AMBIANTES","n":[57,69,55,49,98,71,71,56,56,66]},{"v":"INFECTION VIRALE","n":[1241,1263,1089,995,1313,970,550,206,409,282]},{"v":"MALAD. BACTERIENNE","n":[33,20,29,32,22,28,48,14,9,23]},{"v":"MALAD. DE L'APPAREIL CIRCULATOIRE","n":[26,23,31,20,30,22,22,13,17,15]},{"v":"MALAD. DE L'APPAREIL RESPIRATOIRE","n":[205,260,186,217,216,194,9220,7218,18086,4487]},{"v":"MALAD. DE LA PEAU,TISSU SOUS-CUTANE","n":[359,405,353,313,334,350,400,321,254,299]},{"v":"MALAD. DU SANG,PATHOLOGIE HEMATO.,NP","n":[0,1,0,0,1,0,0,0,0,1]},{"v":"MALAD. INFECTIEUSE DES INTESTINS","n":[12,7,10,4,6,5,11,11,5,22]},{"v":"MALAD. INFECTIEUSE OU PARASITAIRE,NP","n":[13,18,32,19,27,14,0,0,1,3]},{"v":"MALAD. SYST. NERVEUX,ORGANES SENSO.","n":[5353,5511,7256,8181,9134,9708,8810,11658,12049,10040]},{"v":"MALAD. TRANSMISE PAR DES ARTHROPODES","n":[0,0,0,0,0,0,0,0,0,1]},{"v":"MALAD.,TROUBLE APP. GENITO-URINAIRE","n":[0,0,1,0,1,1,2,0,1,1]},{"v":"MALAD.,TROUBLE DE L'APP. DIGESTIF","n":[492,452,442,425,345,311,213,175,214,221]},{"v":"MALAD.,TROUBLE SYST. MUSC.-SQUEL.","n":[6475,6169,6767,7978,8002,8639,8087,8021,8009,8487]},{"v":"MALAD.,TROUBLE SYSTEMIQUE,NCA","n":[4,4,2,3,3,5,5,8,18,4]},{"v":"MALAD.,TROUBLE SYSTEMIQUE,NP","n":[2,2,0,1,6,3,2,0,0,1]},{"v":"MALADIES,ETATS OU TROUBLES MULT.","n":[587,361,784,1156,926,676,880,318,1258,3651]},{"v":"MYCOSE","n":[2,2,2,2,0,4,2,1,3,5]},{"v":"NE PEUT ETRE CLASSE","n":[613,521,1372,401,791,1205,847,39,13,24]},{"v":"NEOPLASME,CANCER","n":[72,70,81,88,99,84,69,51,75,141]},{"v":"NON CODE","n":[2825,3486,5034,3114,7539,7584,2746,2198,147,1299]},{"v":"PLAIE OUVERTE","n":[6802,6700,6323,6637,6516,6335,5655,6773,6319,6197]},{"v":"PLAIE,CONTUSION SUPERFICIELLE","n":[11293,11200,10599,11407,11595,11508,8534,8666,9783,11415]},{"v":"RESULTATS ANORMAUX","n":[0,0,2,0,1,0,0,0,0,0]},{"v":"SYMPTOME,SIGNE,ETAT MAL DEFINI MULT.","n":[3,3,3,12,16,45,25,7,9,6]},{"v":"SYMPTOME,SIGNE,ETAT MAL DEFINI,NCA","n":[0,7,5,32,63,150,7822,3801,49435,14670]},{"v":"SYMPTOME,SYST. NERVEUX,MUSC.-SQUEL.","n":[79,70,84,88,92,71,111,140,125,133]},{"v":"TROUBLE,SYNDROME MENTAL","n":[977,1004,1029,1214,1544,1858,1805,1684,1686,2325]},{"v":"TUMEUR BENIGNE","n":[0,0,1,1,0,0,2,1,1,0]}]},{"id":"siege","colonne":"SIEGE_LESION","titre":"Siège de la lésion","valeurs":[{"v":"ABDOMEN","n":[280,275,291,288,274,242,202,207,224,231]},{"v":"APPAREILS PROSTHETIQUES (PROTHESES)","n":[1263,1154,1031,1008,926,858,689,744,628,600]},{"v":"AUTRES SIEGES,NCA","n":[71,90,132,147,180,49,4,2,2,2]},{"v":"BRAS","n":[3994,4079,4152,4304,4706,4759,3887,4347,4164,4326]},{"v":"CHEVILLE(S)","n":[4171,4121,4096,4340,4569,4641,4149,4669,4785,4447]},{"v":"COU,SAUF SIEGE INTERNE","n":[41,61,59,44,53,42,37,35,37,48]},{"v":"DOIGT(S),ONGLE(S)","n":[8496,8503,8217,8291,8612,8720,7279,8235,7931,8077]},{"v":"DOS,COLONNE VERTEBRALE,MOELLE EPINI.","n":[21304,20831,20736,21554,22264,22679,19191,21013,19553,19277]},{"v":"EPAULES","n":[6060,5809,6354,6921,7200,7674,6813,6872,6838,6895]},{"v":"JAMBE(S)","n":[7089,6878,6887,7317,7487,7848,6509,7253,7311,7350]},{"v":"LARYNX","n":[5,3,2,3,1,1,3,1,2,3]},{"v":"MAIN(S),SAUF: DOIGT(S) SEULEMENT","n":[3150,3155,3088,3241,3297,3207,2603,2844,2919,2737]},{"v":"MEMBRES INFERIEURS,NCA","n":[13,16,12,19,32,32,23,11,22,24]},{"v":"MEMBRES INFERIEURS,NP","n":[40,35,28,22,27,17,17,25,30,61]},{"v":"MEMBRES SUPERIEURS,NCA","n":[36,32,54,51,55,34,78,28,29,34]},{"v":"MEMBRES SUPERIEURS,NP","n":[48,37,30,46,67,57,28,32,24,52]},{"v":"NE PEUT ETRE CLASSE","n":[426,607,682,647,1071,753,277,388,35,325]},{"v":"OREILLE(S)","n":[4901,4995,7412,8993,10717,11812,9114,11928,11467,9877]},{"v":"ORTEIL(S),ONGLE(S) D'ORTEIL(S)","n":[459,517,479,521,501,493,412,452,383,446]},{"v":"PHARYNX","n":[3,1,0,1,2,5,1,2,1,1]},{"v":"PIED(S),SAUF: ORTEIL(S) SEULEMENT","n":[2351,2270,2223,2352,2367,2433,2018,2176,2136,2138]},{"v":"POIGNET(S)","n":[2828,2812,3037,3313,3345,3636,3085,3225,3181,2923]},{"v":"REGION CRANIENNE,Y COMPRIS LE CRANE","n":[1714,1813,2223,2462,2733,3654,2974,3861,4203,3932]},{"v":"REGION PELVIENNE","n":[892,874,847,896,928,897,736,792,867,909]},{"v":"SIEGE INT. DU COU NP,REG. CERVICALE","n":[2396,2396,2435,2477,2513,2705,2066,2545,2089,2065]},{"v":"SIEGES INTERNES DU COU,NCA","n":[1,0,4,3,3,3,3,3,5,1]},{"v":"SIEGES INTERNES MULTIPLES DU COU","n":[0,0,0,0,0,2,0,0,1,2]},{"v":"SIEGES MULTIPLES","n":[5945,6226,6314,7018,8412,9427,6955,4925,6777,8678]},{"v":"SIEGES MULTIPLES DE LA TETE","n":[98,79,98,92,104,116,117,58,141,161]},{"v":"SIEGES MULTIPLES DU TRONC","n":[579,555,580,616,723,546,359,255,569,699]},{"v":"SIEGES MULTIPLES MEMBRES INFERIEURS","n":[437,483,505,623,686,764,670,565,652,858]},{"v":"SIEGES MULTIPLES MEMBRES SUPERIEURS","n":[565,553,546,744,887,920,760,580,813,817]},{"v":"SYSTEMES CORPORELS","n":[2887,2838,2710,2727,3352,3243,19402,12997,69446,21521]},{"v":"TETE NCA,TEMPE","n":[47,32,31,20,15,47,49,30,70,27]},{"v":"TETE,NP","n":[198,215,165,158,225,196,107,98,72,93]},{"v":"THORAX","n":[1861,2000,1929,2047,2085,2135,1793,1868,2035,2109]},{"v":"TRACHEE","n":[0,1,0,0,0,0,0,0,0,0]},{"v":"TRONC,NCA","n":[6,3,3,7,7,9,12,9,12,7]},{"v":"TRONC,NP","n":[14,16,19,11,23,20,12,5,12,11]},{"v":"VISAGE","n":[3377,3253,3003,2811,2957,2789,2298,2612,2496,2581]}]},{"id":"genre","colonne":"GENRE","titre":"Genre d'accident ou d'exposition","valeurs":[{"v":"ACC. HORS ROUTE,SAUF FER.,AER.,NAUT.","n":[276,250,235,329,289,359,385,328,264,346]},{"v":"ACCIDENT D'AERONEF","n":[6,5,6,3,4,5,1,2,3,10]},{"v":"ACCIDENT DE LA ROUTE","n":[1145,1046,1013,1118,1200,1320,1009,994,1159,1462]},{"v":"ACCIDENT DE TRANSPORT,NP","n":[22,31,20,29,24,17,12,27,15,11]},{"v":"ACCIDENT DE VEHICULE NAUTIQUE","n":[12,5,6,6,13,17,4,6,15,11]},{"v":"ACCIDENT FERROVIAIRE","n":[3,6,10,12,2,5,3,10,3,7]},{"v":"ACCIDENTS DE TRANSPORT,NCA","n":[10,7,13,10,16,26,16,7,13,4]},{"v":"ATTAQUE PAR DES ANIMAUX","n":[109,97,102,105,119,125,139,195,105,116]},{"v":"AUTRE EVEN. EXPOS.,PREV.,PERDU MER","n":[70,69,86,89,193,68,91,20,14,15]},{"v":"BLESS. INFLIGEE INTENTION. PAR VICT.","n":[0,0,5,1,3,12,2,3,9,2]},{"v":"CHUTE A UN NIVEAU INFERIEUR","n":[4464,4258,3943,4369,4750,5096,4683,5408,4919,4787]},{"v":"CHUTE AU MEME NIVEAU","n":[8314,8423,8496,10385,9954,11706,9525,8027,11054,11382]},{"v":"CHUTE,NCA","n":[1223,855,862,974,1049,679,411,71,381,93]},{"v":"CHUTE,NP","n":[380,111,227,121,318,305,140,178,114,48]},{"v":"COINCE,ECRASE PAR EQUIPEMENT,OBJET","n":[4391,4289,4021,4406,4489,4523,3670,3824,4050,4157]},{"v":"COINCE,ECRASE PAR MATER. S'EFFONDRE","n":[39,38,50,53,51,82,79,72,91,63]},{"v":"CONTACT AVEC LE COURANT ELECTRIQUE","n":[211,203,165,162,165,186,137,153,192,198]},{"v":"CONTACT AVEC OBJETS OU EQUIPEMENT,NP","n":[78,53,115,317,379,460,264,51,48,150]},{"v":"CONTACT AVEC OBJETS,EQUIPEMENT,NCA","n":[552,843,755,636,660,1067,697,204,89,98]},{"v":"CONTACT AVEC TEMPERATURES EXTREMES","n":[1240,1278,1057,1178,1155,1064,816,787,660,849]},{"v":"EFFORT EXCESSIF","n":[15989,14292,14121,15758,17661,16901,16772,17772,16990,19431]},{"v":"ETAT CORPOREL,NCA","n":[48,29,30,21,21,32,15,15,139,37]},{"v":"EXPLOSION","n":[61,50,56,61,45,38,47,64,49,66]},{"v":"EXPOS. A SUBST.,ENVIRONN. NOCIF,NP","n":[30,45,47,84,122,92,80,28,36,14]},{"v":"EXPOS. EVEN. TRAUMAT.,STRESS.,NCA","n":[456,448,471,588,636,717,704,659,656,868]},{"v":"EXPOS. SUBST. CAUST.,NOCIVE,ALLERG.","n":[2541,2549,2287,2099,2411,2113,18329,12120,69164,21002]},{"v":"EXPOS. SUBST.,ENVIRONN. NOCIF,NCA","n":[129,224,192,153,188,178,96,53,45,39]},{"v":"EXPOSITION AU BRUIT","n":[4328,4529,6313,7059,8140,8509,7855,10934,11323,9289]},{"v":"EXPOSITION AU RAYONNEMENT","n":[71,29,33,44,52,26,31,36,21,47]},{"v":"EXPOSITION CHANGEMENTS PRESSION AIR","n":[6,8,6,3,10,5,5,3,8,10]},{"v":"FEU NON INTENTIONNEL OU NON CONTROLE","n":[8,10,8,8,26,16,19,14,20,17]},{"v":"FEU OU EXPLOSION,NP","n":[7,9,8,4,4,4,6,9,3,4]},{"v":"FRAPPE PAR UN OBJET","n":[9248,8872,8446,9056,8893,9475,7611,9910,10593,9891]},{"v":"FROTTEM.,ABRAS.,SECOUS. PAR VIBRAT.","n":[89,59,75,131,113,100,169,322,192,274]},{"v":"FROTTEM.,ABRAS.PAR FRICTION,PRESSION","n":[3322,3417,3139,3097,2880,2087,2099,3268,2126,2813]},{"v":"HEURTER UN OBJET","n":[4949,4924,4976,5227,5592,6278,4868,4945,4998,4552]},{"v":"INSUFFISANCE D'OXYGENE,NCA","n":[0,2,2,1,2,1,2,1,0,1]},{"v":"MOUVEMENT REPETITIF","n":[1218,1016,1290,1903,1481,1619,2099,1892,2171,2009]},{"v":"NE PEUT ETRE CLASSIFIE,INCONNU","n":[1394,1639,2671,1907,2283,3050,2384,900,517,447]},{"v":"NON CODE","n":[2825,3486,5034,3114,7539,7584,2746,2198,147,1299]},{"v":"PIETON HEURTE PAR VEHIC.,EQUIP. MOB.","n":[147,113,86,110,118,111,126,130,106,104]},{"v":"POSTURE STAT. AVEC APPL. FORCE OBJET","n":[79,54,62,103,107,290,105,122,100,151]},{"v":"POSTURE STAT. SANS APPL. FORCE OBJET","n":[68,70,40,66,52,74,61,133,67,75]},{"v":"REACTION DU CORPS","n":[14007,14236,14269,15724,13648,14430,10211,13535,13808,12507]},{"v":"REACTION DU CORPS ET EFFORT,NCA","n":[1872,2852,2728,2309,2615,2116,1973,1769,987,433]},{"v":"REACTION DU CORPS ET EFFORT,NP","n":[370,471,358,460,672,1073,772,455,587,187]},{"v":"SAUT A UN NIVEAU INFERIEUR","n":[210,165,153,175,142,139,188,203,172,176]},{"v":"VOIES DE FAIT ET ACTE VIOLENT,NP","n":[14,13,20,26,136,124,28,16,10,7]},{"v":"VOIES FAIT,ACTE VIOLENT PAR PERSONNE","n":[2015,2140,2306,2541,2984,3161,3247,3819,3729,4786]}]},{"id":"agent","colonne":"AGENT_CAUSAL_LESION","titre":"Agent causal","valeurs":[{"v":"ACCESSOIRES DE HISSAGE","n":[145,134,139,111,99,126,119,154,124,148]},{"v":"ACIDES","n":[56,55,43,46,47,59,41,29,46,55]},{"v":"AERONEFS","n":[28,15,32,14,23,27,16,21,18,29]},{"v":"AGENTS INFECTIEUX ET PARASITES","n":[211,387,290,208,309,215,15306,10795,67375,18713]},{"v":"ALCALIS","n":[69,83,72,93,79,84,42,29,38,42]},{"v":"ANIMAUX & PRODUITS D'ORIGINE ANIMALE","n":[441,402,437,439,472,450,403,478,465,439]},{"v":"AUTRES AGENTS NCA,ART. PATE & PAPIER","n":[143,13,40,53,371,309,88,23,20,27]},{"v":"AUTRES APPAREILS","n":[150,147,113,132,131,165,145,148,157,173]},{"v":"AUTRES ELEMENTS DE STRUCTURE","n":[1976,1891,1765,1890,1973,2034,1626,2043,2245,2271]},{"v":"AUTRES OUTILS,INSTRUMENTS & MATERIEL","n":[665,829,992,1320,1237,1102,664,544,450,559]},{"v":"AUTRES PRODUITS CHIMIQUES","n":[157,168,169,164,182,166,162,124,111,145]},{"v":"BACHE ET FEUILLE CONTINUE NON METAL.","n":[40,37,34,29,42,48,41,71,61,86]},{"v":"CASIERS,RANGEMENTS,PANIERS,ETAGERES","n":[636,597,511,586,597,647,510,688,757,795]},{"v":"CHARBON,GAZ NATUREL,CARBURANT PETRO.","n":[36,44,38,44,41,33,35,51,34,59]},{"v":"CONDIT. ATMOSPHERIQUES ET AMBIANTES","n":[5814,5673,7762,8421,9905,10498,8662,11511,11848,9879]},{"v":"CONTENANTS A LA PRESSION ATMOSPHERI.","n":[4315,3897,3556,3800,4133,3822,3595,4442,4425,5197]},{"v":"CONTENANTS A RETENUE VARIABLE","n":[476,456,311,296,322,377,332,510,528,545]},{"v":"CONTENANTS SOUS PRESSION","n":[364,308,286,343,381,364,326,520,468,464]},{"v":"CONTENANTS,NCA","n":[144,122,121,97,96,215,82,177,130,227]},{"v":"CONTENANTS,NP","n":[60,19,24,32,41,58,28,123,91,82]},{"v":"DECHETS,REBUTS,DEBRIS","n":[1099,1082,924,881,835,846,633,776,552,669]},{"v":"ECHELLES","n":[543,524,647,599,542,540,538,549,704,649]},{"v":"EQUIPEMENT PHOTOGRAPHIQUE","n":[16,18,19,14,15,35,22,30,37,87]},{"v":"GOUDRON,MATERIAUX ETANCHEITE,ISOLANT","n":[46,46,48,63,48,57,54,49,51,51]},{"v":"HALOGENES & COMPOSES INTER HALOGENES","n":[28,24,36,20,27,21,21,12,19,34]},{"v":"HYDROCARBURES AROMATIQUES,DERIVES","n":[32,21,24,14,26,29,19,28,29,21]},{"v":"INSTRUMENTS MEDICAUX ET CHIRURGICAUX","n":[125,75,82,74,78,95,101,364,186,88]},{"v":"MACH.& APP.CHAUFFAGE,REFROID.,NETT.","n":[420,358,311,381,348,340,290,378,353,430]},{"v":"MACH.CONSTR.,MINE,OUTILLAGE FOREST.","n":[161,159,145,195,145,160,176,225,188,200]},{"v":"MACH.TRAV.MATERIAUX SPEC.,BOIS,METAL","n":[384,399,366,383,304,381,413,583,479,461]},{"v":"MACHINERIE DE MANUTENTION","n":[311,311,273,282,289,347,317,512,406,407]},{"v":"MACHINES AGRICOLES ET DE JARDIN","n":[33,38,34,35,28,34,33,41,34,43]},{"v":"MACHINES DE BUREAU ET COMPTABLES","n":[73,47,48,57,43,54,41,57,54,57]},{"v":"MACHINES DIVERSES","n":[351,284,269,366,321,354,358,182,305,291]},{"v":"MACHINES POUR PROCEDES SPECIAUX","n":[257,218,170,247,237,241,254,281,261,284]},{"v":"MACHINES,NP","n":[328,342,261,251,264,219,357,508,594,435]},{"v":"MATERIAUX CONSTRUC.-ELEMENTS SOLIDES","n":[3268,3157,3068,3128,3229,3602,3146,4666,4728,4551]},{"v":"MATERIAUX METALLIQUES NON TRANSFORMES","n":[273,207,205,201,183,156,147,113,106,133]},{"v":"MATERIEL PROTECTION,SAUF VETEMENTS","n":[29,28,23,41,35,34,64,97,58,62]},{"v":"MATERIEL RECREATIF ET D'ATHLETISME","n":[307,303,323,362,401,542,313,544,579,805]},{"v":"MINERAUX METALLIQUES","n":[13,7,8,8,10,11,2,2,6,4]},{"v":"MINERAUX NON METAL.,SAUF CARBURANT","n":[453,414,418,416,456,415,348,351,339,395]},{"v":"MOBILIER","n":[1237,1189,1025,1173,1160,1251,1026,1230,1228,1421]},{"v":"MOBILIERS ET APPAREILS,NCA","n":[17,41,50,32,39,70,15,26,37,31]},{"v":"MOBILIERS ET APPAREILS,NP","n":[9,11,21,25,12,28,18,40,37,34]},{"v":"MUNITIONS","n":[1,0,0,0,0,1,1,4,3,1]},{"v":"NE PEUT ETRE CLASSIFIE,INCONNU,CONV.","n":[4455,3926,5318,4302,4568,6582,7431,3447,1876,1192]},{"v":"NON CODE","n":[2825,3486,5034,3114,7539,7584,2746,2198,147,1299]},{"v":"ORGANE ASSEMBLAGE,CONNECTEUR,CORDE","n":[727,667,624,592,676,745,626,872,751,825]},{"v":"OUTILS A MAIN-ALIMENT. NON DETER.","n":[297,317,344,391,266,284,220,156,108,90]},{"v":"OUTILS A MAIN-MECANIQUES","n":[595,549,502,491,416,477,442,536,493,585]},{"v":"OUTILS A MAIN-NON MECANIQUES","n":[2548,2389,2107,2250,2229,2433,1869,2201,2451,2417]},{"v":"OUTILS,INSTRUMENTS ET MATERIEL,NP","n":[79,78,87,93,183,133,103,167,504,464]},{"v":"PAPIERS,LIVRES,MAGAZINES,REVUES","n":[49,43,37,32,55,43,32,32,32,38]},{"v":"PARTICULE METAL.,POUSSIERE,EMANATION","n":[243,326,270,296,344,286,290,357,618,276]},{"v":"PATINS,PALETTES","n":[731,655,614,749,768,661,648,733,778,775]},{"v":"PERS.-AUTRE QUE TRAV. BLESSE,MALADE","n":[6474,6006,6288,6455,7236,7097,6700,8600,8260,10095]},{"v":"PERSONNE,PLANTE,ANIMAL & MINERAI,NCA","n":[4,8,17,7,10,12,6,69,9,0]},{"v":"PERSONNE-TRAVAILLEUR BLESSE,MALADE","n":[22567,24815,25683,30005,30060,29666,23844,21890,21864,19129]},{"v":"PIECE DE MACHINE,D'OUTIL,ELECTRIQUE","n":[1172,1335,1107,1088,1150,1197,989,1318,1313,1504]},{"v":"PIECES DE VEHICULE,D'APPAREIL MOBILE","n":[1127,1033,895,892,876,901,945,1143,1015,1363]},{"v":"PIECES ET MATERIAUX,NCA","n":[1928,1019,889,941,923,822,733,370,922,348]},{"v":"PIECES ET MATERIAUX,NP","n":[614,1003,1196,949,992,473,393,776,958,1444]},{"v":"PLANCHERS,PASSAGES,SURFACES DE SOL","n":[9997,9666,8798,10583,9935,11822,10982,11279,13552,14634]},{"v":"PLANTE,ARBRE,VEGET. NON TRANSFORM.","n":[281,306,271,253,286,258,223,307,313,299]},{"v":"PRODUIT AGROCHIMIQUE & AUTRE PESTIC.","n":[1,3,6,3,2,6,1,6,10,7]},{"v":"PRODUIT ALIMENT. FRAIS OU TRANSFORM.","n":[352,386,370,395,370,321,324,375,308,374]},{"v":"PRODUITS CHIMIQUES EN GENERAL","n":[373,340,363,300,261,261,285,285,213,249]},{"v":"PRODUITS ET COMPOSES CHIMIQUES,NP","n":[92,88,58,60,56,39,56,87,94,111]},{"v":"REVETEMENT SOL,MURAL,COUVRE-FENETRE","n":[81,97,60,80,110,84,74,73,57,61]},{"v":"STRUCTURES","n":[417,405,340,346,361,380,347,394,432,364]},{"v":"STRUCTURES ET SURFACES,NCA","n":[45,32,20,14,52,19,27,16,87,157]},{"v":"STRUCTURES ET SURFACES,NP","n":[150,146,49,39,25,19,91,67,68,62]},{"v":"SYSTEMES DE CONSTRUCTION","n":[4,6,2,1,7,17,2,11,13,4]},{"v":"VAISSELLE,TASSES,VERRES","n":[155,160,148,156,168,125,68,92,110,106]},{"v":"VALISES,SACS A MAIN","n":[115,117,94,110,115,102,58,44,83,143]},{"v":"VAPEUR D'EAU,VAPEURS,LIQUIDES,NCA","n":[398,439,313,367,387,410,276,260,243,269]},{"v":"VEHIC. MECAN. USINE,INDUST.,TRACTEUR","n":[559,470,439,524,547,604,575,733,654,813]},{"v":"VEHIC. TOUT TERRAIN NON INDUSTRIELS","n":[76,66,63,103,67,80,73,67,77,86]},{"v":"VEHIC. USINE,INDUST.,NON MECANIQUE","n":[784,753,701,777,782,866,756,752,840,1023]},{"v":"VEHICULES FERROVIAIRES","n":[11,14,19,18,15,14,9,14,16,17]},{"v":"VEHICULES NAUTIQUES","n":[41,26,30,36,30,34,24,24,33,32]},{"v":"VEHICULES ROUTIERS MOTORISES","n":[1474,1370,1396,1574,1605,1558,1283,1604,1522,1834]},{"v":"VEHICULES ROUTIERS NON MOTORISES","n":[33,32,35,33,44,45,29,55,51,48]},{"v":"VEHICULES,NCA","n":[227,245,149,163,153,98,62,28,140,39]},{"v":"VEHICULES,NP","n":[196,162,128,160,160,222,143,98,165,168]},{"v":"VETEMENTS ET TEXTILES","n":[9,54,17,27,21,23,17,27,18,22]}]}]};
+const META = {"archive":"2026-11-07","metadata_modified":"2025-05-16","fichiers":[{"annee":2014,"fichier":"lesions-2014.csv","modifie":"2022-08-23","lignes":88046,"multiples":859,"vides":0},{"annee":2015,"fichier":"lesions-2015.csv","modifie":"2022-08-23","lignes":87618,"multiples":764,"vides":0},{"annee":2016,"fichier":"lesions-2016.csv","modifie":"2022-08-23","lignes":90414,"multiples":757,"vides":0},{"annee":2017,"fichier":"lesions-2017.csv","modifie":"2022-08-23","lignes":96135,"multiples":827,"vides":0},{"annee":2018,"fichier":"lesions-2018.csv","modifie":"2022-08-23","lignes":103406,"multiples":742,"vides":0},{"annee":2019,"fichier":"lesions-2019.csv","modifie":"2022-08-23","lignes":107465,"multiples":827,"vides":0},{"annee":2020,"fichier":"lesions-2020.csv","modifie":"2022-08-23","lignes":104732,"multiples":1028,"vides":0},{"annee":2021,"fichier":"lesions-2021.csv","modifie":"2022-08-25","lignes":105692,"multiples":975,"vides":0},{"annee":2022,"fichier":"lesions-2022.csv","modifie":"2023-07-24","lignes":161962,"multiples":957,"vides":0},{"annee":2023,"fichier":"lesions-2023.csv","modifie":"2025-01-21","lignes":114345,"multiples":1173,"vides":0}],"fiche_pdf":"https://www.donneesquebec.ca/recherche/dataset/0e3ba082-a963-4771-95a2-accc43ae244c/resource/8b1c1105-2d9c-4b5a-9865-19faef905b5f/download/fiche-de-metadonnees-lesions_vf-2022.pdf","lignes_propre":2530,"licence":"Attribution (CC-BY 4.0)"};
+
+const fmtNb = new Intl.NumberFormat("fr-CA");
+const fmtPct = new Intl.NumberFormat("fr-CA", { style: "percent", maximumFractionDigits: 1 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const $ = id => document.getElementById(id);
+const nb = n => fmtNb.format(n);
+
+const ANS = DONNEES.annees, TOTAL = DONNEES.total;
+const premier = ANS[0], dernier = ANS[ANS.length - 1], iDernier = ANS.length - 1;
+const libelle = v => v.l ?? v.v;
+const publie = v => v.l ? echapper(v.l) : `<span class="publie">${echapper(v.v)}</span>`;
+const dims = Object.fromEntries(DONNEES.dims.map(d => [d.id, d]));
+
+// En-tête, en bref et fiche : tous les chiffres viennent des données insérées.
+$("chapeau").innerHTML = `Selon les fichiers de la CNESST, <strong>${nb(TOTAL[iDernier])} réclamations</strong> pour des lésions professionnelles inscrites en ${dernier} avaient été acceptées au plus tard le 1er mars ${dernier + 1}. Voici ces nombres pour chaque année depuis ${premier}, et leur répartition selon les caractéristiques que publie la CNESST.`;
+$("fraicheur").textContent = `Fichiers ${premier} à ${dernier} de la CNESST, extraits le ${dateFr(META.archive)}. Selon Données Québec, le fichier de ${dernier} a été modifié pour la dernière fois le ${dateFr(META.fichiers[iDernier].modifie)}.`;
+document.querySelectorAll(".periode").forEach(e => e.textContent = `${premier} à ${dernier}`);
+document.querySelectorAll(".extraction").forEach(e => e.textContent = dateFr(META.archive));
+document.querySelectorAll(".dernier").forEach(e => e.textContent = dernier);
+$("lien-fiche-pdf").href = META.fiche_pdf;
+// Dates de dernière modification des fichiers, regroupées par mois pour les années consécutives.
+const groupes = [];
+for (const f of META.fichiers) {
+  const g = groupes[groupes.length - 1];
+  if (g && g.mois === f.modifie.slice(0, 7)) { g.fin = f.annee; g.dates.add(f.modifie); }
+  else groupes.push({ mois: f.modifie.slice(0, 7), debut: f.annee, fin: f.annee, dates: new Set([f.modifie]) });
+}
+const moisFr = m => dateFr(m + "-15").replace(/^\S+ /, "");
+const morceaux = groupes.map(g => (g.debut === g.fin ? `celui de ${g.debut}` : `ceux de ${g.debut} à ${g.fin}`)
+  + (g.dates.size === 1 ? ` le ${dateFr([...g.dates][0])}` : ` en ${moisFr(g.mois)}`));
+const enumerer = l => l.length > 1 ? `${l.slice(0, -1).join(", ")} et ${l[l.length - 1]}` : l[0];
+$("fiche-fraicheur").textContent = `Archive du ${dateFr(META.archive)}. Selon Données Québec, les fichiers ont été modifiés pour la dernière fois ainsi : ${enumerer(morceaux)}. Les métadonnées indiquent une mise à jour annuelle ; aucune date de prochaine mise à jour n'est publiée.`;
+const totalLignes = META.fichiers.reduce((s, f) => s + f.lignes, 0);
+$("fiche-lignes").textContent = `Lignes lues : ${nb(totalLignes)} au total, de ${nb(Math.min(...TOTAL))} à ${nb(Math.max(...TOTAL))} selon l'année. Le fichier de données offert ici compte ${nb(META.lignes_propre)} lignes de nombres agrégés.`;
+const vides = META.fichiers.reduce((s, f) => s + f.vides, 0);
+$("fiche-vides").textContent = vides === 0
+  ? "Aucune valeur vide dans les colonnes de nature, de siège, de genre, d'agent causal, de sexe, d'âge et de secteur. Les colonnes d'indicateurs contiennent « OUI » ou une case vide ; la fiche ne décrit pas ces valeurs. On compte les « OUI »."
+  : `${nb(vides)} valeurs vides dans les colonnes descriptives. Les colonnes d'indicateurs contiennent « OUI » ou une case vide ; la fiche ne décrit pas ces valeurs. On compte les « OUI ».`;
+const autresSect = dims.secteur.valeurs.find(v => v.v === "AUTRES OU NON CODES").n;
+const nonCode = dims.nature.valeurs.find(v => v.v === "NON CODE")?.n ?? ANS.map(() => 0);
+$("fiche-non-codes").textContent = `Le nombre de cas sans valeur précise varie d'une année à l'autre : de ${nb(Math.min(...autresSect))} à ${nb(Math.max(...autresSect))} cas classés « Autres ou non codés » pour le secteur, et de ${nb(Math.min(...nonCode))} à ${nb(Math.max(...nonCode))} cas « NON CODE » pour la nature de la lésion. La fiche n'en donne pas la raison. Ces variations sont à garder en tête pour comparer les années.`;
+$("fiche-citer").textContent = `Le Relevé, « Les lésions professionnelles », d'après la CNESST, Lésions professionnelles (Données Québec, CC-BY 4.0), fichiers ${premier} à ${dernier}, extraits le ${dateFr(META.archive)}. https://le-releve.github.io/lesions/`;
+
+// Commandes
+for (const d of DONNEES.dims) $("dimension").insertAdjacentHTML("beforeend", `<option value="${d.id}">${echapper(d.titre)}</option>`);
+let dim = null, choix = 0;
+
+// Ordre par défaut de chaque répartition ; les autres sont déjà en ordre alphabétique (aucun tri par nombre : D-009).
+const ORDRES = { secteur: "Ordre de la fiche de la CNESST", age: "Du plus jeune au plus âgé", type: "Ordre des colonnes du fichier" };
+function ordonnees(d) {
+  const idx = d.valeurs.map((_, i) => i);
+  if (ORDRES[d.id] && $("tri").value === "alpha") idx.sort((a, b) => libelle(d.valeurs[a]).localeCompare(libelle(d.valeurs[b]), "fr"));
+  return idx;
+}
+
+function notes() {
+  const p = [];
+  const i22 = ANS.indexOf(2022), covid = dims.type.valeurs.find(v => v.v === "IND_LESION_COVID_19").n;
+  if (!dim) {
+    p.push("Chaque barre compte les réclamations inscrites dans l'année et acceptées au plus tard le 1er mars suivant.");
+    if (i22 >= 0) p.push(`En 2022, ${nb(covid[i22])} des ${nb(TOTAL[i22])} cas du fichier portent l'indicateur « lésion en lien avec la COVID-19 ». Choisissez « Type de lésion (indicateurs) » pour voir cet indicateur année par année.`);
+  } else if (dim.id === "secteur") {
+    p.push("Le fichier ne donne pas le nombre de travailleurs par secteur : ces nombres ne sont pas des taux et ne permettent pas, à eux seuls, de comparer le risque d'un secteur à l'autre.");
+    p.push(`Les cas dont le code SCIAN est absent ou hors des regroupements de la CNESST sont comptés à part, dans « Autres ou non codés » : de ${nb(Math.min(...autresSect))} à ${nb(Math.max(...autresSect))} selon l'année.`);
+  } else if (dim.id === "sexe" || dim.id === "age") {
+    p.push(`Le fichier ne donne pas le nombre de travailleurs par ${dim.id === "sexe" ? "sexe" : "groupe d'âge"} : ces nombres ne sont pas des taux.`);
+  } else if (dim.id === "type") {
+    p.push("Ces cinq indicateurs ont été ajoutés au jeu en août 2022, selon la CNESST ; les fichiers de toutes les années les contiennent. Un même cas peut en porter plus d'un : les nombres ne s'additionnent pas.");
+  } else {
+    p.push("Libellés tels que publiés par la CNESST, abrégés. Leurs définitions sont dans la fiche de métadonnées. Le nombre de cas « NON CODE » ou « NE PEUT ETRE CLASSE » (« CLASSIFIE » pour le genre et l'agent causal) varie d'une année à l'autre ; la fiche n'en donne pas la raison.");
+  }
+  $("notes").innerHTML = p.map(t => `<p>${echapper(t)}</p>`).join("");
+}
+
+function graphique() {
+  const v = dim ? dim.valeurs[choix] : null;
+  const serie = v ? v.n : TOTAL;
+  const max = Math.max(...serie, 1);
+  $("titre-graphique").innerHTML = v ? `${echapper(dim.titre)} : ${publie(v)}` : "Ensemble des lésions acceptées";
+  $("sous-titre").textContent = v
+    ? `Nombre de cas par année d'inscription, et part de l'ensemble des cas de l'année${dim.id === "type" ? " (un cas peut porter plus d'un indicateur)" : ""}.`
+    : "Nombre de cas par année d'inscription de la réclamation.";
+  $("barres").innerHTML = ANS.map((a, i) => {
+    const largeur = serie[i] / max * 100;
+    const part = v ? ` <span class="part">(${fmtPct.format(serie[i] / TOTAL[i])})</span>` : "";
+    return `<li><span class="an">${a}</span><span class="piste"><span class="barre" style="width:calc((100% - 9em) * ${largeur.toFixed(3)} / 100)"></span><span class="valeur">${nb(serie[i])}${part}</span></span></li>`;
+  }).join("");
+}
+
+function tableau() {
+  $("tableau").hidden = !dim;
+  if (!dim) return;
+  const codes = dim.id === "secteur";
+  $("titre-tableau").textContent = `${dim.titre}, par année`;
+  $("aide-tableau").textContent = "Nombre de cas par année d'inscription. Choisissez une catégorie pour l'afficher dans le graphique." + (codes ? " Les codes SCIAN de chaque regroupement sont ceux de la fiche de la CNESST." : "");
+  const ordre = ORDRES[dim.id];
+  $("champ-tri").hidden = !ordre;
+  if (ordre) $("tri").options[0].textContent = ordre;
+  $("compte-tableau").textContent = `${dim.valeurs.length} catégories${ordre ? "" : ", en ordre alphabétique"}`;
+  $("tete").innerHTML = `<tr><th scope="col">Catégorie</th>${codes ? '<th scope="col" class="codes">Codes SCIAN</th>' : ""}${ANS.map(a => `<th scope="col">${a}</th>`).join("")}</tr>`;
+  const lignes = ordonnees(dim).map(i => {
+    const v = dim.valeurs[i];
+    return `<tr${i === choix ? ' class="choisie"' : ""}><td><button type="button" class="choisir" data-i="${i}" aria-pressed="${i === choix}">${publie(v)}</button></td>${codes ? `<td class="codes">${echapper(v.c)}</td>` : ""}${v.n.map(n => `<td>${nb(n)}</td>`).join("")}</tr>`;
+  });
+  lignes.push(`<tr class="ensemble"><td>Ensemble des lésions</td>${codes ? "<td></td>" : ""}${TOTAL.map(n => `<td>${nb(n)}</td>`).join("")}</tr>`);
+  $("corps").innerHTML = lignes.join("");
+}
+
+function categories() {
+  $("champ-categorie").hidden = !dim;
+  if (!dim) return;
+  $("categorie").innerHTML = ordonnees(dim).map(i => `<option value="${i}"${i === choix ? " selected" : ""}>${echapper(libelle(dim.valeurs[i]))}</option>`).join("");
+}
+
+function tout() { categories(); graphique(); tableau(); notes(); }
+
+$("dimension").addEventListener("change", e => { dim = dims[e.target.value] ?? null; choix = 0; tout(); });
+$("categorie").addEventListener("change", e => { choix = +e.target.value; graphique(); tableau(); });
+$("tri").addEventListener("change", () => { categories(); tableau(); });
+$("corps").addEventListener("click", e => {
+  const b = e.target.closest(".choisir");
+  if (!b) return;
+  choix = +b.dataset.i;
+  $("categorie").value = String(choix);
+  graphique(); tableau();
+  $("titre-graphique").scrollIntoView({ behavior: "smooth", block: "center" });
+});
+tout();
+</script>
