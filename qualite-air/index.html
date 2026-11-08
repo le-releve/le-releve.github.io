@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>La qualité de l'air par station</title>
+<style>
+/* Page légère de la série 2026-11 (D-034) : liste des stations pour une année, puis une station année par année. */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Accents de la page : trois catégories ordonnées, d'une seule teinte (aucun code d'alerte). */
+  --c-bon: #a9cbef; --c-acceptable: #3f86d6; --c-mauvais: #15355c; --c-vide: transparent;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+    --c-bon: #2a4c74; --c-acceptable: #4f97e6; --c-mauvais: #d3e5fa;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+  --c-bon: #2a4c74; --c-acceptable: #4f97e6; --c-mauvais: #d3e5fa;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+a { color: inherit; }
+
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.champ label { font-size: 13px; color: var(--ink-2); }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 280px; min-width: 0; }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+.lien { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: var(--axis); text-underline-offset: 3px; }
+.lien:hover { text-decoration-color: currentColor; }
+button:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.lecture { font-size: 14px; line-height: 1.5; font-variant-numeric: tabular-nums; margin: 0; }
+.lecture strong { font-weight: 650; }
+.legende { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); margin: 0; padding: 0; list-style: none; }
+.legende li { display: inline-flex; align-items: center; gap: 6px; }
+.legende i { width: 11px; height: 11px; border-radius: 2px; display: inline-block; border: 1px solid var(--ligne); }
+
+/* Barre 100 % des heures d'observation */
+.barre { display: flex; height: 14px; border-radius: 3px; overflow: hidden; background: var(--grid); min-width: 0; }
+.barre span { display: block; height: 100%; }
+.barre .b { background: var(--c-bon); }
+.barre .a { background: var(--c-acceptable); }
+.barre .m { background: var(--c-mauvais); }
+
+.region { display: flex; flex-direction: column; }
+.region h3 { font-family: var(--font-titre); font-stretch: 85%; font-size: 16px; font-weight: 700; padding: 14px 0 6px; border-bottom: 1px solid var(--axis); }
+.station { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr) minmax(0, 13rem); gap: 6px 16px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--grid); font-size: 13px; font-variant-numeric: tabular-nums; }
+.station .nom { font-size: 14px; font-weight: 600; line-height: 1.35; }
+.station .code { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 4px; white-space: nowrap; }
+.station .milieu { display: flex; flex-direction: column; gap: 6px; min-width: 0; padding-top: 2px; }
+.station .valeurs { color: var(--ink-2); line-height: 1.45; }
+.station .obs { color: var(--ink-2); line-height: 1.45; }
+.station.absente .milieu, .station.absente .obs { color: var(--muted); }
+.note { color: var(--ink); font-weight: 600; }
+.etiquette-vide { font-style: italic; }
+
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; vertical-align: middle; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; }
+td.g, th.g { text-align: left; }
+td .barre { width: 140px; }
+tr.absente td { color: var(--muted); }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul, .fiche ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 760px) {
+  .station { grid-template-columns: minmax(0, 1fr); }
+  .champ { flex-wrap: wrap; }
+  select { max-width: 100%; }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement" aria-current="page">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Environnement et territoire</div>
+    <h1 id="titre">La qualité de l'air par station</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <section class="colonne" aria-labelledby="titre-annee">
+    <div class="section-titre">
+      <h2 id="titre-annee">Toutes les stations, pour une année</h2>
+      <p>Pour chaque station, la barre répartit les heures d'observation de l'année entre les trois catégories de l'indice. Les stations sont présentées par région administrative, dans l'ordre des numéros de région puis de station.</p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages de la liste">
+      <div class="champ">
+        <label for="annee">Année</label>
+        <select id="annee"></select>
+      </div>
+      <div class="champ">
+        <label for="region">Région</label>
+        <select id="region"><option value="">Toutes les régions</option></select>
+      </div>
+    </div>
+    <div class="carte">
+      <p class="lecture" id="lecture-annee" aria-live="polite"></p>
+      <ul class="legende" id="legende"></ul>
+      <p class="fraicheur" id="definitions"></p>
+      <div id="liste"></div>
+    </div>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-station">
+    <div class="section-titre">
+      <h2 id="titre-station">Une station, année par année</h2>
+      <p>Les heures de chaque catégorie, les heures d'observation et la part de l'année qu'elles représentent, pour chaque année du fichier.</p>
+    </div>
+    <div class="commandes" role="group" aria-label="Choix de la station">
+      <div class="champ">
+        <label for="station">Station</label>
+        <select id="station"></select>
+      </div>
+    </div>
+    <div class="carte">
+      <p class="lecture" id="lecture-station" aria-live="polite"></p>
+      <p class="fraicheur" id="legende-table"></p>
+      <div class="defile">
+        <table>
+          <thead><tr><th scope="col">Année</th><th scope="col" class="g">Répartition</th><th scope="col">Bon (h)</th><th scope="col">Acceptable (h)</th><th scope="col">Mauvais (h)</th><th scope="col">Heures d'observation</th><th scope="col">Part de l'année</th><th scope="col" class="g">Représentatif</th><th scope="col" class="g">Autres paramètres avec un total</th></tr></thead>
+          <tbody id="table-station"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs, jeu <a href="https://www.donneesquebec.ca/recherche/dataset/rsqaq-statistiques-indice-qualite-air" target="_blank" rel="noopener">RSQAQ - Statistiques de l'indice de la qualité de l'air</a> (Données Québec, licence CC-BY 4.0). <span id="bref-date"></span></p>
+    <p><strong>Ce qu'on compte :</strong> pour chaque station et chaque année civile, le nombre d'heures où l'indice de la qualité de l'air (IQA) était « bon » (25 ou moins), « acceptable » (de 26 à 50) ou « mauvais » (plus de 50), selon les définitions de la fiche, tel que publié.</p>
+    <p><strong>Principale limite :</strong> <span id="bref-limite"></span> Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs (Direction de la surveillance de la qualité de l'air et du climat), <a href="https://www.donneesquebec.ca/recherche/dataset/rsqaq-statistiques-indice-qualite-air" target="_blank" rel="noopener">RSQAQ - Statistiques de l'indice de la qualité de l'air</a>, ressource « RSQAQ - statistiques IQA » (XLSX), licence CC-BY 4.0. Définitions : description des champs de la fiche du jeu et <a href="https://www.iqa.environnement.gouv.qc.ca/contenu/index.asp" target="_blank" rel="noopener">page de l'indice de la qualité de l'air</a> du ministère, vers laquelle renvoie la fiche.</p>
+        <p id="fiche-archive"></p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li>Selon la fiche, l'IQA « est un outil d'information et de sensibilisation conçu pour renseigner la population sur la qualité de l'air ambiant au Québec ».</li>
+          <li>Selon la page de l'IQA du ministère, l'indice d'une station est calculé chaque heure à partir des sous-indices des contaminants disponibles à la station, parmi cinq (ozone, particules fines, dioxyde de soufre, dioxyde d'azote et monoxyde de carbone) ; il correspond au sous-indice le plus élevé, arrondi à l'entier le plus proche, puis classé « bon », « acceptable » ou « mauvais ».</li>
+          <li>Les trois catégories, selon la description des champs de la fiche : « Bon », les heures où les valeurs de l'IQA sont inférieures ou égales à 25 ; « Acceptable », les heures où elles se trouvent entre 26 et 50 ; « Mauvais », les heures où elles sont supérieures à 50.</li>
+          <li>Selon la fiche, les résultats en heures sont basés sur les valeurs horaires de l'IQA et correspondent au nombre d'heures d'observation ; ils sont calculés avec les données horaires validées de l'IQA. La colonne « Total » donne le nombre total d'heures. Nous l'appelons « heures d'observation ».</li>
+          <li>La colonne « Validation » indique, selon la fiche, si le résultat est représentatif (oui ou non) pour la période visée. La fiche ne précise pas le critère retenu.</li>
+          <li>Part d'une catégorie : ses heures divisées par les heures d'observation de la même ligne. Part de l'année : les heures d'observation divisées par le nombre d'heures de l'année civile (8 760, ou 8 784 les années bissextiles). Ces deux parts sont nos calculs.</li>
+          <li id="fiche-regions"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Traitement, étape par étape</h3>
+        <ol id="fiche-etapes"></ol>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul id="fiche-limites"></ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul id="fiche-verifs"></ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p id="fiche-fichiers"></p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/qualite_air_iqa_annuel.csv" download>Télécharger les statistiques annuelles (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = [[0,2015,7676,1041,6,8723,1,6],[0,2016,8055,691,null,8746,1,6],[0,2017,7965,748,null,8713,1,6],[0,2018,7430,1303,4,8737,1,6],[0,2019,7850,904,null,8754,1,6],[0,2020,7915,851,1,8767,1,6],[0,2021,8074,660,8,8742,1,6],[0,2022,7896,786,null,8682,1,6],[0,2023,7500,1163,79,8742,1,6],[0,2024,7649,553,24,8226,1,6],[0,2025,7531,1108,72,8711,1,6],[1,2015,8204,543,6,8753,1,12],[1,2016,8416,354,3,8773,1,12],[1,2017,8242,461,3,8706,1,12],[1,2018,8121,631,1,8753,1,12],[1,2019,8430,313,null,8743,1,12],[1,2020,8380,385,2,8767,1,12],[1,2021,8305,429,2,8736,1,12],[1,2022,7902,800,2,8704,1,14],[1,2023,7058,1472,199,8729,1,14],[1,2024,7227,1347,198,8772,1,14],[1,2025,7868,762,119,8749,1,14],[2,2015,7910,774,58,8742,1,6],[2,2016,8254,488,12,8754,1,6],[2,2017,8176,543,9,8728,1,6],[2,2018,7673,1028,37,8738,1,6],[2,2019,8013,731,8,8752,1,6],[2,2020,8188,570,15,8773,1,6],[2,2021,8108,602,35,8745,1,6],[2,2022,7812,710,14,8536,1,6],[2,2023,7449,1168,124,8741,1,6],[2,2024,8159,575,40,8774,1,22],[2,2025,7938,647,165,8750,1,22],[3,2015,8051,671,2,8724,1,6],[3,2016,8297,327,null,8624,1,6],[3,2017,7993,752,null,8745,1,6],[3,2018,7680,1033,4,8717,1,6],[3,2019,8142,604,null,8746,1,6],[3,2020,8069,526,8,8603,1,6],[3,2021,7547,769,63,8379,1,6],[3,2022,7989,675,null,8664,1,6],[3,2023,7397,1048,205,8650,1,6],[3,2024,7932,626,50,8608,1,6],[3,2025,7874,749,93,8716,1,6],[4,2015,7348,1159,105,8612,1,62],[4,2016,7886,856,42,8784,1,62],[4,2017,7706,951,44,8701,1,62],[4,2018,7565,986,48,8599,1,62],[4,2019,8050,671,34,8755,1,62],[4,2020,7554,1072,121,8747,1,62],[4,2021,7771,845,90,8706,1,62],[4,2022,7976,710,40,8726,1,62],[4,2023,7650,1043,66,8759,1,62],[4,2024,8131,591,62,8784,1,62],[4,2025,7505,1028,222,8755,1,62],[5,2015,7464,1212,80,8756,1,22],[5,2016,7774,929,68,8771,1,22],[5,2017,7528,1146,81,8755,1,22],[5,2018,7185,1403,141,8729,1,22],[5,2019,7580,1054,109,8743,1,22],[5,2020,7240,1290,248,8778,1,22],[5,2021,7419,1180,156,8755,1,22],[5,2022,7314,1137,127,8578,1,22],[5,2023,7337,1265,150,8752,1,22],[5,2024,7978,724,67,8769,1,6],[5,2025,7683,725,216,8624,1,6],[6,2015,7452,1255,53,8760,1,22],[6,2016,7825,779,13,8617,1,22],[6,2017,7921,826,7,8754,1,22],[6,2018,7327,1379,26,8732,1,22],[6,2019,7851,721,40,8612,1,22],[6,2020,7548,1154,64,8766,1,22],[6,2021,7700,971,89,8760,1,22],[6,2022,7666,918,72,8656,1,22],[6,2023,7527,1173,52,8752,1,22],[6,2024,8093,600,28,8721,1,22],[6,2025,7804,698,244,8746,1,22],[7,2020,6715,1122,72,7909,1,6],[7,2021,7615,999,121,8735,1,6],[7,2022,7550,1010,87,8647,1,6],[7,2023,6947,1202,100,8249,1,6],[7,2024,7684,1041,56,8781,1,6],[7,2025,7673,776,239,8688,1,6],[8,2018,741,171,33,945,0,62],[8,2019,7913,761,86,8760,1,62],[8,2020,7443,1188,120,8751,1,62],[8,2021,7724,919,117,8760,1,62],[8,2022,7884,780,57,8721,1,62],[8,2023,7355,1290,114,8759,1,62],[8,2024,7563,1061,156,8780,1,62],[8,2025,7384,955,412,8751,1,62],[9,2015,7549,911,null,8460,1,6],[9,2016,8145,609,4,8758,1,6],[9,2017,8102,642,null,8744,1,6],[9,2018,7529,1225,null,8754,1,6],[9,2019,7920,735,3,8658,1,6],[9,2020,7772,721,19,8512,1,6],[9,2021,7846,694,39,8579,1,6],[9,2022,8063,574,null,8637,1,6],[9,2023,7488,1205,51,8744,1,6],[9,2024,7827,687,13,8527,1,6],[9,2025,7884,616,200,8700,1,6],[10,2015,7947,460,null,8407,1,4],[10,2016,8285,309,null,8594,1,4],[10,2017,8363,370,null,8733,1,4],[10,2018,2039,393,null,2432,0,4],[11,2015,7671,767,null,8438,1,4],[11,2016,7994,511,null,8505,1,4],[11,2017,7949,592,null,8541,1,4],[11,2018,7097,1320,null,8417,1,4],[11,2019,7765,908,null,8673,1,4],[11,2020,4036,713,null,4749,0,4],[12,2015,7432,1194,81,8707,1,14],[12,2016,7798,845,55,8698,1,14],[12,2017,7819,899,40,8758,1,14],[12,2018,7324,1397,27,8748,1,14],[12,2019,7835,874,17,8726,1,14],[12,2020,7566,1117,97,8780,1,14],[12,2021,4530,748,25,5303,0,14],[12,2022,7675,837,21,8533,1,14],[12,2023,5505,479,31,6015,0,14],[12,2024,7771,896,60,8727,1,30],[12,2025,7489,1005,178,8672,1,30],[13,2015,6772,1807,169,8748,1,14],[13,2016,7432,1241,82,8755,1,14],[13,2017,7687,1031,42,8760,1,14],[13,2018,7454,1243,41,8738,1,14],[13,2019,7624,1050,80,8754,1,14],[13,2020,7297,1328,159,8784,1,14],[13,2021,7407,1252,98,8757,1,14],[13,2022,7595,944,59,8598,1,14],[13,2023,5826,470,39,6335,0,14],[13,2024,7833,889,59,8781,1,14],[13,2025,7782,831,140,8753,1,14],[14,2015,2862,485,54,3401,0,2],[15,2015,7845,842,69,8756,1,10],[15,2016,8344,384,28,8756,1,10],[15,2017,8266,444,44,8754,1,10],[15,2018,8147,577,25,8749,1,10],[15,2019,8347,362,38,8747,1,10],[15,2020,7493,904,53,8450,1,14],[15,2021,7648,1047,43,8738,1,6],[15,2022,7765,966,21,8752,1,6],[15,2023,7327,1306,121,8754,1,6],[15,2024,7847,880,37,8764,1,6],[15,2025,7461,1105,182,8748,1,6],[16,2015,7692,1029,21,8742,1,6],[16,2016,8016,753,5,8774,1,6],[16,2017,8095,657,3,8755,1,6],[16,2018,7346,1229,10,8585,1,6],[16,2019,7244,1004,35,8283,1,6],[16,2020,7430,994,65,8489,1,6],[16,2021,7846,882,30,8758,1,6],[16,2022,7809,906,10,8725,1,6],[16,2023,7153,1447,142,8742,1,6],[16,2024,8059,682,12,8753,1,6],[16,2025,7581,1002,160,8743,1,6],[17,2015,7983,749,1,8733,1,6],[17,2016,7604,428,6,8038,1,6],[17,2017,8181,515,null,8696,1,6],[17,2018,6851,743,3,7597,1,6],[17,2019,7925,772,7,8704,1,6],[17,2020,7976,618,10,8604,1,6],[17,2021,6821,636,37,7494,1,6],[18,2015,7583,1152,12,8747,1,6],[18,2016,8002,760,10,8772,1,6],[18,2017,7853,856,3,8712,1,6],[18,2018,7320,1407,23,8750,1,6],[18,2019,7337,1389,26,8752,1,6],[18,2020,7575,1181,25,8781,1,6],[18,2021,7601,1090,67,8758,1,6],[18,2022,1105,157,20,1282,0,6],[19,2023,5609,1285,68,6962,1,6],[19,2024,7909,850,9,8768,1,22],[19,2025,7754,895,101,8750,1,22],[20,2021,2763,126,null,2889,0,6],[20,2022,6402,1329,29,7760,1,6],[20,2023,6954,1689,107,8750,1,6],[20,2024,7534,1129,34,8697,1,6],[20,2025,6966,1322,152,8440,1,6],[21,2015,7007,1332,null,8339,1,6],[21,2016,5062,1068,null,6130,0,6],[22,2015,7458,1288,null,8746,1,6],[22,2016,7768,1006,null,8774,1,6],[22,2017,7797,878,null,8675,1,6],[22,2018,7506,1198,null,8704,1,6],[22,2019,7404,1240,7,8651,1,6],[22,2020,6797,982,null,7779,1,6],[22,2021,7529,1164,32,8725,1,6],[22,2022,7637,1083,null,8720,1,6],[22,2023,7432,1200,102,8734,1,6],[22,2024,7889,862,5,8756,1,6],[22,2025,7178,1448,99,8725,1,6],[23,2015,7840,851,39,8730,1,30],[23,2016,8024,741,15,8780,1,30],[23,2017,7833,835,36,8704,1,30],[23,2018,7392,1251,18,8661,1,30],[23,2019,7784,965,11,8760,1,30],[23,2020,7874,821,78,8773,1,30],[23,2021,7557,1079,38,8674,1,30],[23,2022,7921,803,36,8760,1,30],[23,2023,7463,1150,136,8749,1,30],[23,2024,7892,839,53,8784,1,30],[23,2025,7668,912,162,8742,1,30],[24,2015,3793,321,null,4114,0,20],[24,2020,7746,739,74,8559,1,30],[24,2021,7818,801,21,8640,1,30],[24,2022,7888,771,25,8684,1,30],[24,2023,7456,1167,111,8734,1,30],[24,2024,7848,856,62,8766,1,30],[24,2025,7537,981,197,8715,1,30],[25,2015,8106,604,47,8757,1,26],[25,2016,8451,313,14,8778,1,26],[25,2017,8274,430,35,8739,1,26],[25,2018,8108,537,21,8666,1,26],[26,2015,6356,1660,124,8140,1,2],[27,2015,6867,680,53,7600,1,54],[27,2016,7909,820,53,8782,1,54],[27,2017,7795,871,56,8722,1,54],[27,2018,7494,1176,86,8756,1,54],[27,2019,7810,892,56,8758,1,54],[27,2020,7877,711,98,8686,1,54],[27,2021,7697,979,75,8751,1,54],[27,2022,7614,1028,44,8686,1,54],[27,2023,7446,1150,162,8758,1,54],[27,2024,7982,765,37,8784,1,54],[27,2025,7739,748,185,8672,1,54],[28,2015,7296,1387,74,8757,1,54],[28,2016,7816,939,25,8780,1,54],[28,2017,7861,828,52,8741,1,54],[28,2018,7400,1327,32,8759,1,54],[28,2019,7691,1023,34,8748,1,54],[28,2020,7857,764,70,8691,1,54],[28,2021,7826,904,27,8757,1,54],[28,2022,7826,922,12,8760,1,54],[28,2023,7344,1265,127,8736,1,54],[28,2024,7626,1090,60,8776,1,22],[28,2025,7609,971,180,8760,1,22],[29,2016,7461,643,13,8117,1,62],[29,2017,8086,640,12,8738,1,62],[29,2018,7786,901,12,8699,1,62],[29,2019,8154,597,7,8758,1,62],[29,2020,7936,817,31,8784,1,62],[29,2021,7865,879,16,8760,1,62],[29,2022,7977,760,15,8752,1,62],[29,2023,7619,1033,103,8755,1,62],[29,2024,7796,940,39,8775,1,62],[29,2025,7671,907,171,8749,1,62],[30,2015,7569,695,32,8296,1,2],[30,2016,6080,501,55,6636,1,2],[30,2017,7814,583,54,8451,1,2],[30,2018,7664,703,53,8420,1,2],[30,2019,7640,474,17,8131,1,2],[30,2020,7786,368,51,8205,1,2],[30,2021,7901,426,21,8348,1,2],[30,2022,8399,324,18,8741,1,2],[30,2023,8133,475,130,8738,1,2],[30,2024,8409,328,36,8773,1,2],[30,2025,7360,380,173,7913,1,2],[31,2015,7974,776,null,8750,1,52],[31,2016,7784,964,20,8768,1,54],[31,2017,7761,873,53,8687,1,54],[31,2018,7099,1306,11,8416,1,54],[31,2019,7684,1025,23,8732,1,54],[31,2020,7844,869,65,8778,1,54],[31,2021,7731,931,29,8691,1,54],[31,2022,7636,981,21,8638,1,54],[31,2023,7364,1239,92,8695,1,54],[31,2024,7662,999,76,8737,1,54],[31,2025,7624,964,165,8753,1,54],[32,2015,8525,229,null,8754,1,60],[33,2015,7688,1015,41,8744,1,54],[33,2016,7927,838,17,8782,1,54],[33,2017,7857,765,29,8651,1,54],[33,2018,7410,1234,36,8680,1,54],[33,2019,7845,879,6,8730,1,54],[33,2020,7660,1029,65,8754,1,54],[33,2021,7514,1213,33,8760,1,54],[33,2022,7792,949,16,8757,1,54],[33,2023,7364,1184,103,8651,1,54],[33,2024,7744,1014,25,8783,1,22],[33,2025,7563,1003,182,8748,1,22],[34,2015,1537,10,null,1547,0,20],[35,2015,7853,886,null,8739,1,30],[35,2016,8003,772,3,8778,1,30],[35,2017,8033,689,11,8733,1,30],[35,2018,7599,1098,39,8736,1,30],[35,2019,8083,662,1,8746,1,30],[35,2020,7972,750,45,8767,1,30],[35,2021,7958,793,9,8760,1,30],[35,2022,8435,307,18,8760,1,30],[35,2023,7555,1115,90,8760,1,30],[35,2024,7747,994,43,8784,1,30],[35,2025,7712,874,174,8760,1,30],[36,2015,7499,1216,36,8751,1,30],[36,2016,7739,1023,22,8784,1,30],[36,2017,6515,664,29,7208,1,30],[36,2018,7051,1689,20,8760,1,30],[36,2019,7744,1003,6,8753,1,30],[36,2020,8109,620,45,8774,1,30],[36,2021,7493,1230,32,8755,1,30],[36,2022,7879,856,25,8760,1,30],[36,2023,7041,1577,111,8729,1,30],[36,2024,7878,864,22,8764,1,30],[36,2025,7563,901,158,8622,1,30],[37,2016,8182,589,9,8780,1,22],[37,2017,7975,762,21,8758,1,22],[37,2018,7647,1066,29,8742,1,22],[37,2019,7777,807,52,8636,1,22],[37,2020,7835,881,67,8783,1,22],[37,2021,7756,964,40,8760,1,22],[37,2022,7480,1221,46,8747,1,22],[37,2023,7494,1008,159,8661,1,22],[37,2024,7837,875,28,8740,1,22],[37,2025,7718,852,188,8758,1,22],[38,2015,7659,1085,11,8755,1,62],[38,2016,7805,975,4,8784,1,62],[38,2017,7957,789,null,8746,1,62],[38,2018,7499,1249,null,8748,1,62],[38,2019,7686,1072,2,8760,1,62],[38,2020,7681,1095,5,8781,1,62],[38,2021,7582,1116,41,8739,1,62],[38,2022,7688,922,18,8628,1,62],[38,2023,7141,1422,190,8753,1,22],[38,2024,7662,923,null,8585,1,22],[38,2025,7542,1001,157,8700,1,22],[39,2015,7440,1297,null,8737,1,6],[39,2016,7407,1011,null,8418,1,6],[39,2017,7575,798,3,8376,1,6],[39,2018,7050,1100,null,8150,1,6],[39,2019,7337,868,1,8206,1,6],[39,2020,5069,111,null,5180,0,6],[39,2021,7299,1024,32,8355,1,6],[39,2022,7305,864,3,8172,1,6],[39,2023,6926,1231,204,8361,1,6],[39,2024,7852,610,null,8462,1,6],[39,2025,7441,1108,135,8684,1,6],[40,2023,269,4,4,277,0,8],[40,2024,8515,161,96,8772,1,8],[40,2025,8425,149,156,8730,1,8],[41,2015,7675,878,56,8609,1,14],[41,2016,7869,775,72,8716,1,14],[41,2017,7844,863,40,8747,1,14],[41,2018,7407,1274,40,8721,1,14],[41,2019,7589,1078,76,8743,1,14],[41,2020,7877,642,72,8591,1,14],[41,2021,7787,797,174,8758,1,14],[41,2022,7675,1028,51,8754,1,14],[41,2023,7075,1343,339,8757,1,14],[41,2024,7838,923,15,8776,1,14],[41,2025,7260,1285,209,8754,1,14],[42,2015,7463,118,90,7671,1,8],[42,2016,8390,205,162,8757,1,8],[42,2017,8493,139,116,8748,1,8],[42,2018,8250,208,173,8631,1,8],[42,2019,8425,175,146,8746,1,8],[42,2020,8440,165,154,8759,1,8],[42,2021,7384,206,143,7733,1,8],[42,2022,8470,131,108,8709,1,8],[42,2023,8276,272,199,8747,1,8],[42,2024,8492,182,98,8772,1,8],[42,2025,8426,152,168,8746,1,8],[43,2015,6628,1731,385,8744,1,14],[43,2016,6665,1661,453,8779,1,14],[43,2017,6724,1526,510,8760,1,14],[43,2018,5993,1956,704,8653,1,14],[43,2019,7131,1422,183,8736,1,14],[43,2020,7538,1084,152,8774,1,14],[43,2021,6957,1484,214,8655,1,14],[43,2022,7116,1529,109,8754,1,14],[43,2023,6288,1930,520,8738,1,14],[43,2024,7503,938,28,8469,1,14],[43,2025,7606,954,155,8715,1,14],[44,2015,7850,822,3,8675,1,6],[44,2016,8166,588,null,8754,1,6],[44,2017,8116,627,5,8748,1,6],[44,2018,7724,951,23,8698,1,6],[44,2019,7797,933,12,8742,1,6],[44,2020,8066,651,2,8719,1,6],[44,2021,7834,820,88,8742,1,6],[44,2022,7914,818,2,8734,1,6],[44,2023,7218,1180,351,8749,1,6],[44,2024,8045,669,35,8749,1,6],[44,2025,7820,759,143,8722,1,6],[45,2024,3565,63,21,3649,0,6],[45,2025,8059,517,71,8647,1,6],[46,2017,773,3,null,776,0,6],[46,2018,7820,548,8,8376,1,6],[46,2019,8237,503,null,8740,1,6],[46,2020,8625,144,null,8769,1,6],[46,2021,8416,328,6,8750,1,6],[46,2022,8321,430,null,8751,1,6],[46,2023,7516,785,442,8743,1,6],[46,2024,8190,522,36,8748,1,6],[46,2025,8127,526,90,8743,1,6],[47,2015,6576,936,58,7570,1,6],[48,2015,7657,1051,25,8733,1,30],[48,2016,8146,552,4,8702,1,30],[48,2017,7949,722,1,8672,1,30],[48,2018,7301,1288,6,8595,1,30],[48,2019,7878,775,28,8681,1,30],[48,2020,7773,969,42,8784,1,30],[48,2021,7733,903,55,8691,1,30],[48,2022,7853,857,4,8714,1,30],[48,2023,7534,1169,51,8754,1,30],[48,2024,8101,661,17,8779,1,30],[48,2025,7943,642,171,8756,1,30],[49,2015,7291,1229,null,8520,1,6],[49,2016,7964,622,null,8586,1,6],[49,2017,7876,770,null,8646,1,6],[49,2018,7491,1173,null,8664,1,6],[49,2019,7734,762,null,8496,1,6],[49,2020,7204,522,23,7749,1,6],[49,2021,7289,421,38,7748,1,6],[49,2022,8056,681,null,8737,1,6],[49,2023,7288,1317,40,8645,1,6],[49,2024,8083,655,17,8755,1,6],[49,2025,3645,448,36,4129,0,6],[50,2015,7004,1739,null,8743,1,6],[50,2016,7250,1449,null,8699,1,6],[50,2017,7228,1355,null,8583,1,6],[50,2018,6686,1733,null,8419,1,6],[50,2019,6523,1330,12,7865,1,6],[50,2020,7245,1428,null,8673,1,6],[50,2021,7382,1305,22,8709,1,6],[50,2022,7360,1281,null,8641,1,6],[50,2023,6555,2026,59,8640,1,6],[50,2024,7366,1364,4,8734,1,6],[50,2025,3262,1072,35,4369,0,6],[51,2015,7217,1417,109,8743,1,54],[51,2016,7582,1141,53,8776,1,54],[51,2017,7454,1220,73,8747,1,54],[51,2018,6957,1705,98,8760,1,54],[51,2019,7493,970,34,8497,1,54],[51,2020,7589,1059,102,8750,1,54],[51,2021,7403,1305,50,8758,1,54],[51,2022,7733,972,35,8740,1,54],[51,2023,6616,1230,28,7874,1,54],[51,2024,7711,1014,43,8768,1,54],[51,2025,7639,932,179,8750,1,54],[52,2016,897,182,3,1082,0,22],[52,2017,7254,1344,135,8733,1,22],[52,2018,6849,1726,125,8700,1,22],[52,2019,7278,1096,56,8430,1,22],[52,2020,7040,1318,177,8535,1,22],[52,2021,7163,1425,115,8703,1,22],[52,2022,7187,1451,119,8757,1,22],[52,2023,7245,1324,185,8754,1,22],[52,2024,7576,1109,89,8774,1,22],[52,2025,7228,1154,154,8536,1,22],[53,2015,7364,1309,80,8753,1,54],[53,2016,8030,734,null,8764,1,54],[53,2017,3867,728,16,4611,0,54],[54,2015,7510,1233,null,8743,1,6],[54,2016,7881,889,null,8770,1,6],[54,2017,7683,931,null,8614,1,6],[54,2018,7263,1453,null,8716,1,6],[54,2019,7653,1072,null,8725,1,6],[54,2020,7687,1041,null,8728,1,6],[54,2021,7606,1051,38,8695,1,6],[54,2022,7262,920,null,8182,1,6],[54,2023,6962,1532,148,8642,1,6],[54,2024,7562,692,5,8259,1,6],[54,2025,7454,1042,188,8684,1,6],[55,2015,7904,846,null,8750,1,6],[55,2016,8137,549,null,8686,1,6],[55,2017,8137,607,null,8744,1,6],[55,2018,7775,949,null,8724,1,6],[55,2019,7526,838,3,8367,1,6],[55,2020,8236,527,null,8763,1,6],[55,2021,8028,612,72,8712,1,6],[55,2022,8124,604,null,8728,1,6],[55,2023,7495,1032,213,8740,1,6],[55,2024,8352,405,6,8763,1,6],[55,2025,7663,995,12,8670,1,6],[56,2015,7164,1445,56,8665,1,22],[56,2016,7731,1039,11,8781,1,22],[56,2017,7381,992,12,8385,1,22],[56,2018,7076,1401,22,8499,1,22],[56,2019,7810,945,3,8758,1,22],[56,2020,7771,872,53,8696,1,22],[56,2021,7544,1168,40,8752,1,22],[56,2022,7550,1179,23,8752,1,22],[56,2023,7115,1483,159,8757,1,22],[56,2024,7424,1193,57,8674,1,22],[56,2025,7487,1107,160,8754,1,22],[57,2016,6892,860,2,7754,1,30],[57,2017,7299,1084,17,8400,1,30],[57,2018,7232,1254,14,8500,1,30],[57,2019,7279,825,5,8109,1,30],[57,2020,7650,1056,17,8723,1,30],[57,2021,7605,1093,55,8753,1,30],[57,2022,7562,1018,61,8641,1,30],[57,2023,7256,1248,145,8649,1,30],[57,2024,7610,1016,58,8684,1,22],[57,2025,7499,1096,152,8747,1,22],[58,2015,7684,1017,53,8754,1,22],[58,2016,5980,692,1,6673,1,22],[59,2015,7583,1167,6,8756,1,22],[59,2016,7682,705,5,8392,1,22],[59,2017,7924,812,13,8749,1,22],[59,2018,7649,1089,9,8747,1,22],[59,2019,7766,988,2,8756,1,22],[59,2020,7875,880,28,8783,1,22],[59,2021,7583,1137,37,8757,1,22],[59,2022,7889,863,7,8759,1,22],[59,2023,7256,1135,78,8469,1,22],[59,2024,7944,818,11,8773,1,22],[59,2025,7894,742,118,8754,1,22],[60,2015,7500,1004,48,8552,1,6],[60,2016,8132,538,null,8670,1,6],[60,2017,8185,527,8,8720,1,6],[60,2018,7536,1051,7,8594,1,6],[60,2019,7623,945,4,8572,1,6],[60,2020,7626,1014,44,8684,1,6],[60,2021,7789,901,46,8736,1,6],[60,2022,7844,863,4,8711,1,6],[60,2023,4004,1003,83,5090,0,6],[61,2015,8722,27,5,8754,1,8],[61,2016,8773,null,null,8773,1,8],[61,2017,1113,null,null,1113,0,8],[62,2015,8517,121,116,8754,1,8],[62,2016,8658,105,17,8780,1,8],[62,2017,8640,100,9,8749,1,8],[62,2018,8664,71,16,8751,1,8],[62,2019,8581,84,21,8686,1,8],[62,2020,8728,42,6,8776,1,8],[62,2021,8060,41,7,8108,1,8],[62,2022,8687,51,7,8745,1,8],[62,2023,3120,24,8,3152,0,8],[62,2024,7110,1061,54,8225,1,14],[62,2025,7382,1114,260,8756,1,14],[63,2015,7032,1270,33,8335,1,30],[63,2016,562,42,6,610,0,14],[64,2015,7408,1277,17,8702,1,54],[64,2016,7879,891,13,8783,1,54],[64,2017,7677,1011,10,8698,1,54],[64,2018,7018,1093,null,8111,1,62],[64,2019,7544,1144,null,8688,1,62],[64,2020,7969,802,13,8784,1,62],[64,2021,7388,1226,53,8667,1,62],[64,2022,7476,1037,5,8518,1,62],[64,2023,7070,1494,143,8707,1,62],[64,2024,7920,844,7,8771,1,62],[64,2025,7382,1176,159,8717,1,62],[65,2020,265,48,10,323,0,22],[65,2021,7553,1150,53,8756,1,22],[65,2022,7864,839,38,8741,1,22],[65,2023,7288,1346,120,8754,1,6],[65,2024,7858,826,42,8726,1,6],[65,2025,7543,1045,140,8728,1,6],[66,2015,7910,487,49,8446,1,26],[66,2016,8541,230,1,8772,1,10],[66,2017,8392,346,19,8757,1,10],[66,2018,8326,413,4,8743,1,10],[66,2019,8234,264,10,8508,1,10],[66,2020,8414,285,71,8770,1,10],[66,2021,8354,373,20,8747,1,10],[66,2022,8508,230,2,8740,1,14],[66,2023,7556,1184,14,8754,1,14],[66,2024,8016,677,59,8752,1,14],[66,2025,7644,924,166,8734,1,14],[67,2015,7329,1234,30,8593,1,6],[67,2016,8088,615,null,8703,1,6],[67,2017,7749,963,11,8723,1,6],[67,2018,7286,1450,null,8736,1,6],[67,2019,7540,968,37,8545,1,6],[67,2020,7632,999,64,8695,1,6],[67,2021,7752,987,20,8759,1,6],[67,2022,7934,781,3,8718,1,6],[67,2023,7359,1297,90,8746,1,6],[67,2024,7324,733,25,8082,1,6],[67,2025,7803,730,137,8670,1,6],[68,2015,7357,1390,null,8747,1,6],[68,2016,7777,994,null,8771,1,6],[68,2017,7403,1120,1,8524,1,6],[68,2018,6835,1305,2,8142,1,6],[68,2019,7407,1302,21,8730,1,6],[68,2020,7429,1277,3,8709,1,6],[68,2021,7385,1246,22,8653,1,6],[68,2022,7791,950,1,8742,1,6],[68,2023,6797,1858,90,8745,1,6],[68,2024,7571,1172,11,8754,1,6],[68,2025,7102,1473,164,8739,1,6],[69,2015,7306,1429,12,8747,1,38],[69,2016,5289,1050,null,6339,0,38]];
+const META = {"archive":"2026-11-08","fichier":"statistiques_iqa_station_pbi.xlsx","xlsx_modifie":"2026-07-29T20:20:24.856073","fiche_modifiee":"2026-07-29T20:30:18.216388","periode_fiche":"De 2015 à 2025","frequence":"annual","annees":[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"parametres":["IQA","PM2,5","O3","SO2","NO2","CO"],"regions":{"01":"Bas-Saint-Laurent","02":"Saguenay–Lac-Saint-Jean","03":"Capitale-Nationale","04":"Mauricie","05":"Estrie","06":"Montréal","07":"Outaouais","08":"Abitibi-Témiscamingue","09":"Côte-Nord","10":"Nord-du-Québec","12":"Chaudière-Appalaches","13":"Laval","14":"Lanaudière","15":"Laurentides","16":"Montérégie","17":"Centre-du-Québec"},"archive_s013":"2026-11-07","stations":[["01","01810","Auclair"],["02","02016","Saguenay - Parc Powell"],["02","02022","Saguenay - UQAC"],["02","02610","Rés. F. Ashuapmushuan - Pemonca"],["03","03006","Québec - Vieux-Limoilou"],["03","03021","Québec - École Les Primevères"],["03","03028","Québec - Collège St-Charles-Garnier"],["03","03039","Québec - Charlesbourg"],["03","03052","Québec - Henri-IV"],["03","03200","Deschambault"],["03","03701","Sainte-Catherine-de-la-Jacques-Cartier"],["03","03712","Saint-François-de-l'Île-d'Orléans"],["04","04021","Trois-Rivières - École MEES"],["04","04048","Trois-Rivières - Cap-de-la-Madeleine"],["04","04126","Shawinigan - Saint-Joseph"],["04","04130","Shawinigan - Saint-Marc"],["04","04740","Charette"],["04","04750","Lac-Édouard"],["05","05018","Sherbrooke - Parc Cambron"],["05","05019","Sherbrooke - Parc Sylvie-Daigle"],["05","05100","Granby - Parc Poitevin"],["05","05800","Eastman - Lac Stukely"],["05","05810","La Patrie"],["06","06003","Montréal - Saint-Jean-Baptiste"],["06","06006","Montréal - Anjou"],["06","06007","Montréal - Chénier"],["06","06013","Montréal - Drummond"],["06","06028","Montréal - Échangeur Décarie"],["06","06030","Montréal - Caserne 17"],["06","06031","Montréal - St-Dominique"],["06","06054","Montréal - Hochelaga-Maisonneuve"],["06","06055","Montréal - Rivière-des-Prairies"],["06","06061","Montréal - Maisonneuve"],["06","06066","Montréal - Aéroport de Montréal 1"],["06","06068","Montréal - Verdun"],["06","06081","Montréal - Saint-Joseph"],["06","06099","Montréal - Sainte-Anne-de-Bellevue"],["06","06103","Montréal - York/Roberval"],["07","07002","Gatineau - Hull"],["07","07400","Parc de la Gatineau - La-Pêche"],["08","08008","Rouyn-Noranda - rue des Lilas"],["08","08042","Rouyn-Noranda - Parc Tremblay"],["08","08044","Rouyn-Noranda - Mgr Rhéaume Est"],["08","08401","Témiscaming"],["08","08450","Senneterre"],["09","09001","Sept-Îles"],["10","10200","Radisson"],["12","03061","Lévis - Charny"],["12","03062","Lévis - Parc Georges Maranda"],["12","03720","Notre-Dame-du-Rosaire"],["12","03730","Saint-Hilaire-de-Dorset"],["13","06205","Laval - Chomedey"],["14","06300","Terrebonne - Parc Vaillant"],["14","06500","L'Assomption"],["15","06501","Saint-Faustin-Lac-Carré"],["15","07200","Mont-St-Michel"],["16","06600","Longueuil"],["16","06603","Brossard - Parc Sorbonne"],["16","06613","Varennes - Ch. de la Baronnie"],["16","06620","Saint-Jean-sur-Richelieu - L'Acadie"],["16","06641","Saint-Simon"],["16","06672","Sorel-Tracy - Vieux-Sorel"],["16","06678","Saint-Joseph-de-Sorel - École Martel"],["16","06760","Brossard - Parc Océanie"],["16","06804","Saint-Anicet"],["17","04203","Drummondville - Stade Jacques-Desautels"],["17","04504","Bécancour"],["17","04711","Saint-Zéphirin-de-Courval"],["17","04730","Tingwick"],["17","04761","Lemieux"]],"heures_annee":{"2015":8760,"2016":8784,"2017":8760,"2018":8760,"2019":8760,"2020":8784,"2021":8760,"2022":8760,"2023":8760,"2024":8784,"2025":8760},"controles":{"lignes_annuel":7032,"lignes_mensuel":13704,"stations":70,"stations_annees":586,"iqa_sans_total":0,"iqa_non_representatif":26,"vides":{"Bon":0,"Acceptable":2,"Mauvais":87},"zeros":{"Bon":0,"Acceptable":0,"Mauvais":0,"Total":0},"somme_differente_total":0,"recoupement_mensuel_ecarts":0,"recoupement_mensuel_absents":0,"recoupement_mensuel_compares":586,"mois_incomplets":34,"stations_coordonnees_variables":27,"ecart_coordonnees_degres":4.899000032310141e-07,"lignes_sans_total_par_parametre":{"IQA":0,"PM2,5":47,"O3":55,"SO2":376,"NO2":335,"CO":481}},"lignes_csv":7032};
+
+const $ = id => document.getElementById(id);
+const fmtNb = new Intl.NumberFormat("fr-CA", { maximumFractionDigits: 0 });
+const fmtPct = new Intl.NumberFormat("fr-CA", { style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s.slice(0, 10) + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const C = META.controles;
+const ANNEES = META.annees, A0 = ANNEES[0], A1 = ANNEES[ANNEES.length - 1];
+const CAT = [["Bon", "b"], ["Acceptable", "a"], ["Mauvais", "m"]];
+// Part affichée à une décimale ; une part non nulle sous 0,05 % s'affiche « moins de 0,1 % »,
+// et une part inférieure à 100 % qui s'arrondirait à 100,0 % s'affiche « plus de 99,9 % ».
+const pct = (v, t) => v > 0 && v / t < 0.0005 ? "moins de 0,1 %" : v < t && v / t >= 0.9995 ? "plus de 99,9 %" : fmtPct.format(v / t);
+const heures = n => `${fmtNb.format(n)} heure${n >= 2 ? "s" : ""}`;
+const pluriel = (n, s, p) => `${fmtNb.format(n)} ${n >= 2 ? p : s}`;
+
+// Stations : [code région, numéro, nom]. Lignes : [station, année, bon, acceptable, mauvais, total, représentatif, masque des paramètres].
+const STATIONS = META.stations.map(([ra, code, nom], i) => ({ i, ra, code, nom, annees: {} }));
+for (const [s, a, bon, acc, mau, tot, rep, masque] of DONNEES) {
+  STATIONS[s].annees[a] = { bon, acc, mau, tot, rep, params: META.parametres.filter((p, k) => masque & (1 << k)) };
+}
+const nomRegion = ra => `${ra} – ${META.regions[ra]}`;
+const REGIONS = Object.keys(META.regions).sort();
+
+// Années de présence regroupées en plages : « 2015 à 2018, 2020 à 2025 ».
+function plages(st) {
+  const pres = ANNEES.filter(a => st.annees[a]);
+  const out = [];
+  for (const a of pres) {
+    const der = out[out.length - 1];
+    if (der && der[1] === a - 1) der[1] = a; else out.push([a, a]);
+  }
+  return out.map(([d, f]) => d === f ? `${d}` : f === d + 1 ? `${d} et ${f}` : `${d} à ${f}`).join(", ");
+}
+
+function barre(o, label) {
+  const parts = [[o.bon, "b"], [o.acc, "a"], [o.mau, "m"]]
+    .filter(([v]) => v !== null && v > 0)
+    .map(([v, k]) => `<span class="${k}" style="width:${(100 * v / o.tot).toFixed(4)}%"></span>`).join("");
+  return `<div class="barre" role="img" aria-label="${echapper(label)}">${parts}</div>`;
+}
+function valeurCat(v, t) { return v === null ? `<span class="etiquette-vide">case vide</span>` : `${fmtNb.format(v)} h (${pct(v, t)})`; }
+function resume(o) {
+  return CAT.map(([lib, k], j) => { const v = [o.bon, o.acc, o.mau][j]; return v === null ? `${lib} : case vide` : `${lib} : ${fmtNb.format(v)} h, ${pct(v, o.tot)}`; }).join(" ; ");
+}
+
+// ---------------------------------------------------------------- En-tête, En bref, fiche
+const presentsDerniere = STATIONS.filter(s => s.annees[A1]).length;
+$("chapeau").innerHTML = `Le nombre d'heures où l'indice de la qualité de l'air (IQA) était « bon », « acceptable » ou « mauvais », pour chacune des <strong>${fmtNb.format(STATIONS.length)} stations</strong> du fichier du ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs, de ${A0} à ${A1}, tel que publié. Le fichier ne publie pas des heures pour toutes les stations toutes les années, ni pour toutes les heures de l'année.`;
+$("fraicheur").textContent = `Fichier « ${META.fichier} », modifié le ${dateFr(META.xlsx_modifie)} selon Données Québec, extrait le ${dateFr(META.archive)}. Années civiles ${A0} à ${A1}.`;
+$("bref-date").textContent = `Années ${A0} à ${A1} ; fichier modifié le ${dateFr(META.xlsx_modifie)}, extrait le ${dateFr(META.archive)}.`;
+$("bref-limite").textContent = `les stations n'ont pas le même nombre d'heures d'observation ni les mêmes années dans le fichier, et, selon la page de l'IQA du ministère, l'indice est calculé avec les contaminants disponibles à chaque station, parmi cinq possibles. La même page indique que les résultats de l'IQA sont influencés par des facteurs humains et naturels dont l'influence « est spécifique à chaque station mesurant l'IQA ».`;
+$("fiche-archive").textContent = `Version archivée : extraction du ${dateFr(META.archive)}, fichier « ${META.fichier} » (ressource modifiée le ${dateFr(META.xlsx_modifie)} selon Données Québec), avec la page de l'IQA du ministère telle que consultée le même jour.`;
+$("fiche-fraicheur").textContent = `La fiche annonce une mise à jour annuelle et la période « ${META.periode_fiche} ». Le fichier archivé va de ${A0} à ${A1}. La fiche du jeu a été modifiée le ${dateFr(META.fiche_modifiee)}.`;
+$("fiche-regions").textContent = `Régions : le fichier donne le numéro de la région administrative (« RA »). Les noms affichés viennent des codes et noms de régions administratives publiés par le ministère de l'Éducation et le ministère de l'Enseignement supérieur dans le jeu « Localisation des établissements d'enseignement du réseau scolaire au Québec » (archive du ${dateFr(META.archive_s013)}). Pour ${pluriel(META.stations.filter(([ra, code]) => !code.startsWith(ra)).length, "station", "stations")}, les deux premiers chiffres du numéro de station ne sont pas ceux du numéro de région ; la fiche ne décrit pas la composition du numéro de station. Nous suivons la colonne « RA ».`;
+$("fiche-citer").textContent = `Le Relevé, « La qualité de l'air par station », d'après le ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs, RSQAQ - Statistiques de l'indice de la qualité de l'air (CC-BY 4.0), extrait le ${dateFr(META.archive)}. https://le-releve.github.io/qualite-air/`;
+$("fiche-fichiers").textContent = `L'onglet « Annuel » du classeur, en entier (${fmtNb.format(META.lignes_csv)} lignes : heures et jours, IQA et autres paramètres), avec les valeurs publiées. Les cases vides restent vides. Nous ajoutons le nom de la région et, pour les lignes en heures, le nombre d'heures de l'année et les parts calculées, avec six décimales.`;
+const li = t => `<li>${t}</li>`;
+$("fiche-etapes").innerHTML = [
+  `Lecture des onglets « Annuel » (${fmtNb.format(C.lignes_annuel)} lignes) et « Mensuel » (${fmtNb.format(C.lignes_mensuel)} lignes) du classeur archivé, sans modification des valeurs. Le traitement s'arrête si les colonnes, les unités (« Heures », « Jours ») ou les paramètres (${META.parametres.join(", ")}) ne sont pas ceux attendus.`,
+  `La page retient les lignes de l'onglet « Annuel » dont l'unité est « Heures » et le paramètre « IQA » : ${fmtNb.format(C.stations_annees)} lignes, une par station et par année, pour ${fmtNb.format(C.stations)} stations. Aucune ligne n'est retirée ni ajoutée.`,
+  "Les cases vides sont gardées vides : elles ne sont jamais remplacées par zéro, ni comptées dans un calcul.",
+  "Parts : heures de chaque catégorie divisées par les heures d'observation ; heures d'observation divisées par les heures de l'année civile.",
+  `Pour chaque station et chaque année, liste des autres paramètres (${META.parametres.slice(1).join(", ")}) pour lesquels l'onglet « Annuel » publie un total en heures.`,
+  "Une station absente du fichier pour une année est affichée comme telle ; aucune valeur n'est estimée.",
+].map(li).join("");
+$("fiche-limites").innerHTML = [
+  `Les stations n'ont pas les mêmes heures d'observation ni les mêmes années. ${fmtNb.format(C.iqa_non_representatif)} des ${fmtNb.format(C.stations_annees)} résultats annuels sont indiqués comme non représentatifs (« Validation » : non) ; ils sont affichés tels quels et signalés.`,
+  `Cases vides : dans les lignes retenues, ${pluriel(C.vides.Mauvais, "case « Mauvais » est vide", "cases « Mauvais » sont vides")} et ${pluriel(C.vides.Acceptable, "case « Acceptable »", "cases « Acceptable »")}. Les colonnes Bon, Acceptable et Mauvais ne contiennent aucun zéro. La fiche ne précise pas ce que signifie une case vide. Dans chaque ligne, la somme des cases remplies égale le total publié. La page affiche « case vide », sans pourcentage, et ne dessine rien pour cette catégorie.`,
+  "Selon la page de l'IQA du ministère, les résultats de l'IQA sont influencés par des facteurs humains (sources d'émissions de contaminants atmosphériques) et naturels (conditions climatiques et topographie), et l'influence de ces facteurs est spécifique à chaque station. La même page indique que l'indice est calculé avec les contaminants disponibles à chaque station. Le tableau d'une station montre pour quels autres paramètres le fichier publie un total ; la fiche ne précise pas si ces paramètres sont ceux qui ont servi au calcul de l'indice.",
+  "Selon la même page, les stations sont divisées en deux groupes, urbaines ou régionales, selon leur représentativité. Le fichier n'indique pas à quel groupe appartient chaque station.",
+  "Selon la fiche, ces statistiques sont calculées avec les données horaires validées. Selon la page de l'IQA, qui présente aussi la carte de l'indice, l'IQA est calculé « en utilisant les données non validées » des contaminants disponibles à chaque station, et « les résultats validés pourraient donc être légèrement différents ».",
+  `Le fichier publie aussi des résultats en jours (valeur horaire maximale de l'IQA au cours d'une journée, selon la fiche) et des lignes pour chaque paramètre. La fiche indique seulement que le paramètre « indique à quel paramètre est associé le résultat ». La page ne montre que les lignes « IQA » en heures ; le fichier téléchargeable contient tout.`,
+  `Pour ${pluriel(C.stations_coordonnees_variables, "station", "stations")}, les coordonnées publiées diffèrent d'une année à l'autre ${C.ecart_coordonnees_degres < 1e-6 ? "de moins d'un millionième de degré" : `d'au plus ${String(C.ecart_coordonnees_degres).replace(".", ",")} degré`}, écrites avec plus ou moins de décimales. Le nom et le numéro de région d'une station ne changent jamais dans le fichier.`,
+  "La page de l'IQA accompagne les catégories de messages santé et écocivique. Nous ne les reproduisons pas ici.",
+].map(li).join("");
+$("fiche-verifs").innerHTML = [
+  `Recoupement entre les deux onglets du classeur : pour les ${fmtNb.format(C.recoupement_mensuel_compares)} lignes annuelles retenues, la somme des mois de l'onglet « Mensuel » (heures) redonne exactement les heures « Bon », « Acceptable », « Mauvais » et le total de l'onglet « Annuel »${C.recoupement_mensuel_ecarts ? `, sauf pour ${fmtNb.format(C.recoupement_mensuel_ecarts)} lignes` : ""}. Une case annuelle vide correspond chaque fois à des cases mensuelles toutes vides.`,
+  `Dans les ${fmtNb.format(C.stations_annees)} lignes retenues, la somme des cases remplies égale la colonne « Total »${C.somme_differente_total ? `, sauf ${fmtNb.format(C.somme_differente_total)}` : ""}, et aucun total ne dépasse le nombre d'heures de l'année.`,
+  "Pour chaque station et chaque année présentes dans le fichier, l'onglet « Annuel » contient 12 lignes (2 unités × 6 paramètres), sans doublon.",
+  "Nous n'avons pas trouvé, dans la fiche ni sur la page de l'IQA, de total publié par le ministère, hors de ce classeur, auquel comparer ces chiffres. Le tableau de bord du ministère n'a pas été utilisé.",
+].map(li).join("");
+
+// ---------------------------------------------------------------- Liste par année
+$("annee").innerHTML = ANNEES.slice().reverse().map(a => `<option value="${a}">${a}</option>`).join("");
+$("region").innerHTML += REGIONS.map(ra => `<option value="${ra}">${echapper(nomRegion(ra))}</option>`).join("");
+$("legende").innerHTML = CAT.map(([lib, k]) => `<li><i style="background:var(--c-${lib === "Bon" ? "bon" : lib === "Acceptable" ? "acceptable" : "mauvais"})"></i>${lib}</li>`).join("");
+$("definitions").textContent = "Selon la fiche : « Bon », valeurs de l'IQA inférieures ou égales à 25 ; « Acceptable », entre 26 et 50 ; « Mauvais », supérieures à 50.";
+
+function dessinerListe() {
+  const a = +$("annee").value, rf = $("region").value;
+  const visibles = STATIONS.filter(s => !rf || s.ra === rf);
+  const pres = visibles.filter(s => s.annees[a]);
+  const nonRep = pres.filter(s => s.annees[a].rep === 0).length;
+  const abs = visibles.length - pres.length;
+  $("lecture-annee").innerHTML = `<strong>${a}</strong>${rf ? ` (${echapper(nomRegion(rf))})` : ""} : ${pluriel(pres.length, "station a", "stations ont")} des heures publiées dans le fichier${nonRep ? ` (résultat indiqué comme non représentatif pour ${pluriel(nonRep, "d'entre elles", "d'entre elles")})` : ""}. ${abs ? `${pluriel(abs, "autre station du fichier n'a", "autres stations du fichier n'ont")} aucune ligne pour cette année.` : ""}`;
+  const html = [];
+  for (const ra of REGIONS) {
+    if (rf && ra !== rf) continue;
+    const sts = visibles.filter(s => s.ra === ra);
+    html.push(`<div class="region"><h3>${echapper(nomRegion(ra))}</h3>`);
+    for (const s of sts) {
+      const o = s.annees[a];
+      const nom = `<div class="nom"><button type="button" class="lien" data-station="${s.i}" title="Voir cette station année par année">${echapper(s.nom)}</button><span class="code">no ${echapper(s.code)}</span></div>`;
+      if (!o) {
+        html.push(`<div class="station absente">${nom}<div class="milieu">Aucune ligne dans le fichier pour ${a}.</div><div class="obs">Années présentes : ${plages(s)}.</div></div>`);
+        continue;
+      }
+      const label = `${s.nom}, ${a} : ${resume(o)}.`;
+      const vals = CAT.map(([lib], j) => `${lib} : ${valeurCat([o.bon, o.acc, o.mau][j], o.tot)}`).join(" · ");
+      const rep = o.rep === 0 ? `<br><span class="note">Résultat non représentatif selon le fichier.</span>` : "";
+      html.push(`<div class="station">${nom}<div class="milieu">${barre(o, label)}<div class="valeurs">${vals}</div></div><div class="obs">${heures(o.tot)} d'observation, ${pct(o.tot, META.heures_annee[a])} des heures de l'année${rep}</div></div>`);
+    }
+    html.push(`</div>`);
+  }
+  $("liste").innerHTML = html.join("");
+}
+$("liste").addEventListener("click", e => {
+  const b = e.target.closest("[data-station]");
+  if (!b) return;
+  $("station").value = b.dataset.station;
+  dessinerStation();
+  $("titre-station").scrollIntoView({ behavior: "smooth", block: "start" });
+  $("station").focus({ preventScroll: true });
+});
+["annee", "region"].forEach(id => $(id).addEventListener("input", dessinerListe));
+
+// ---------------------------------------------------------------- Une station
+$("station").innerHTML = REGIONS.map(ra => `<optgroup label="${echapper(nomRegion(ra))}">${STATIONS.filter(s => s.ra === ra).map(s => `<option value="${s.i}">${echapper(s.nom)} (no ${echapper(s.code)})</option>`).join("")}</optgroup>`).join("");
+$("legende-table").textContent = "Heures publiées et, entre parenthèses, part des heures d'observation. « Case vide » : la case est vide dans le fichier.";
+
+function dessinerStation() {
+  const s = STATIONS[+$("station").value];
+  const pres = ANNEES.filter(a => s.annees[a]);
+  const nonRep = pres.filter(a => s.annees[a].rep === 0);
+  const manquantes = ANNEES.filter(a => !s.annees[a]);
+  $("lecture-station").innerHTML = `<strong>${echapper(s.nom)}</strong> (no ${echapper(s.code)}, ${echapper(nomRegion(s.ra))}) : présente dans le fichier pour ${pluriel(pres.length, "année", "années")} sur ${ANNEES.length} (${plages(s)}).`
+    + (manquantes.length ? ` Aucune ligne pour ${manquantes.length === 1 ? "l'année" : "les années"} ${manquantes.join(", ")}.` : "")
+    + (nonRep.length ? ` Résultat non représentatif selon le fichier : ${nonRep.join(", ")}.` : "");
+  $("table-station").innerHTML = ANNEES.map(a => {
+    const o = s.annees[a];
+    if (!o) return `<tr class="absente"><td>${a}</td><td class="g" colspan="8">Aucune ligne dans le fichier pour cette année.</td></tr>`;
+    return `<tr><td>${a}</td><td class="g">${barre(o, `${a} : ${resume(o)}.`)}</td>${[o.bon, o.acc, o.mau].map(v => `<td>${valeurCat(v, o.tot)}</td>`).join("")}<td>${fmtNb.format(o.tot)}</td><td>${pct(o.tot, META.heures_annee[a])}</td><td class="g">${o.rep === 1 ? "oui" : o.rep === 0 ? "<strong>non</strong>" : "case vide"}</td><td class="g">${o.params.length ? echapper(o.params.join(", ")) : "aucun"}</td></tr>`;
+  }).join("");
+}
+$("station").addEventListener("input", dessinerStation);
+
+dessinerListe();
+dessinerStation();
+</script>
