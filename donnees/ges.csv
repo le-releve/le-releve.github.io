@@ -1,0 +1,1685 @@
+﻿annee,secteur,sous_secteur,categorie,emissions_t_eq_co2
+1990,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",125236.026666667
+1990,Agriculture,Fermentation entérique,Fermentation entérique,3646817.73102031
+1990,Agriculture,Gestion des fumiers,Gestion des fumiers,1550981.97919462
+1990,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1596375.5149448
+1990,Industries,Combustion industrielle,Agriculture et foresterie,289225.1241
+1990,Industries,Combustion industrielle,Autres manufacturiers,3691352.61790936
+1990,Industries,Combustion industrielle,Construction,457220.9337
+1990,Industries,Combustion industrielle,Exploitation minière,1357712.4756883
+1990,Industries,Combustion industrielle,Industries chimiques,1882261.59679
+1990,Industries,Combustion industrielle,Industries de raffinage du pétrole,3127745.60852
+1990,Industries,Combustion industrielle,Production de minéraux non métalliques,1059635.12568
+1990,Industries,Combustion industrielle,Production de métaux ferreux,1168256.42357
+1990,Industries,Combustion industrielle,Production de métaux non ferreux,683833.3725
+1990,Industries,Combustion industrielle,Usines de pâtes et papiers,4511401.78982
+1990,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,712613.173002453
+1990,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,76488.7121660145
+1990,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,10091296.69839
+1990,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1665062.245
+1990,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,844521.27246
+1990,Industries,Émissions fugitives,Pétrole et gaz naturel,260789.417608448
+1990,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,212790.71982
+1990,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,6236151.75711614
+1990,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,61476.5594943285
+1990,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8250.46779234899
+1990,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,304641.101261859
+1990,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,378022.0952868
+1990,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,3860299.0462266
+1990,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,440380.35959563
+1990,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,6145551.3178
+1990,Transports,Autres transports,Pipelines,25962.8094
+1990,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,807106.673735577
+1990,Transports,Autres transports,Véhicules hors route - Autres,523651.819919045
+1990,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,828280.759132237
+1990,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",1990587.12579316
+1990,Transports,Autres transports,Véhicules hors route - Résidentiel,83089.575939576
+1990,Transports,Transport aérien,Transport aérien intérieur,931775.148902647
+1990,Transports,Transport aérien,Transport aérien militaire,19595.3671829176
+1990,Transports,Transport ferroviaire,Transport ferroviaire,643512.715997147
+1990,Transports,Transport maritime,Transport maritime intérieur,634410.704912888
+1990,Transports,Transport maritime,Transport maritime militaire,3163.84098612534
+1990,Transports,Transport maritime,Transport maritime pêcheries,33813.0216489369
+1990,Transports,Transport routier,Automobiles,12156323.3213282
+1990,Transports,Transport routier,Autres transports routiers,82473.3749195744
+1990,Transports,Transport routier,Camions légers,4352462.63324494
+1990,Transports,Transport routier,Véhicules lourds,4214247.67872396
+1990,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,1391904.0673215
+1990,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,41586.32888
+1991,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",156988.626666667
+1991,Agriculture,Fermentation entérique,Fermentation entérique,3623412.73724623
+1991,Agriculture,Gestion des fumiers,Gestion des fumiers,1518461.62809176
+1991,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1554452.46742138
+1991,Industries,Combustion industrielle,Agriculture et foresterie,373154.2114
+1991,Industries,Combustion industrielle,Autres manufacturiers,2713117.60575093
+1991,Industries,Combustion industrielle,Construction,398390.1858
+1991,Industries,Combustion industrielle,Exploitation minière,1233467.4996317
+1991,Industries,Combustion industrielle,Industries chimiques,1889337.1275
+1991,Industries,Combustion industrielle,Industries de raffinage du pétrole,2940141.07384
+1991,Industries,Combustion industrielle,Production de minéraux non métalliques,883983.86436
+1991,Industries,Combustion industrielle,Production de métaux ferreux,1017277.99953
+1991,Industries,Combustion industrielle,Production de métaux non ferreux,715449.48916
+1991,Industries,Combustion industrielle,Usines de pâtes et papiers,4474608.52824
+1991,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,547884.188514486
+1991,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,75451.0053671955
+1991,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,10868518.2565
+1991,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1293868.695
+1991,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,767913.29618
+1991,Industries,Émissions fugitives,Pétrole et gaz naturel,220770.106081938
+1991,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,193941.99507
+1991,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,6374825.41424058
+1991,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,69403.3117374729
+1991,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8798.82479234899
+1991,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,306121.41449664
+1991,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,406063.3259936
+1991,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,3741816.77509695
+1991,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,450198.729259599
+1991,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5500900.9031
+1991,Transports,Autres transports,Pipelines,27796.887
+1991,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,669791.442013408
+1991,Transports,Autres transports,Véhicules hors route - Autres,521114.11204529
+1991,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,781481.148091326
+1991,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",1885168.06065911
+1991,Transports,Autres transports,Véhicules hors route - Résidentiel,88961.7289247358
+1991,Transports,Transport aérien,Transport aérien intérieur,827096.10480544
+1991,Transports,Transport aérien,Transport aérien militaire,17390.0238713362
+1991,Transports,Transport ferroviaire,Transport ferroviaire,580925.625371151
+1991,Transports,Transport maritime,Transport maritime intérieur,649053.766383989
+1991,Transports,Transport maritime,Transport maritime militaire,3163.81287368039
+1991,Transports,Transport maritime,Transport maritime pêcheries,33811.5287045771
+1991,Transports,Transport routier,Automobiles,11423846.1104886
+1991,Transports,Transport routier,Autres transports routiers,77428.6198223265
+1991,Transports,Transport routier,Camions légers,4210660.99871843
+1991,Transports,Transport routier,Véhicules lourds,3993376.56201902
+1991,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,357460.49367
+1991,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,33475.17424
+1992,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",157301.026666667
+1992,Agriculture,Fermentation entérique,Fermentation entérique,3552130.0075655
+1992,Agriculture,Gestion des fumiers,Gestion des fumiers,1517790.44226745
+1992,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1576318.60075831
+1992,Industries,Combustion industrielle,Agriculture et foresterie,442350.7826
+1992,Industries,Combustion industrielle,Autres manufacturiers,2958553.14682214
+1992,Industries,Combustion industrielle,Construction,370327.2493
+1992,Industries,Combustion industrielle,Exploitation minière,1213099.6453521
+1992,Industries,Combustion industrielle,Industries chimiques,1675177.85765
+1992,Industries,Combustion industrielle,Industries de raffinage du pétrole,2629428.82586
+1992,Industries,Combustion industrielle,Production de minéraux non métalliques,796765.28459
+1992,Industries,Combustion industrielle,Production de métaux ferreux,1046916.39275
+1992,Industries,Combustion industrielle,Production de métaux non ferreux,716622.88019
+1992,Industries,Combustion industrielle,Usines de pâtes et papiers,4159278.65123
+1992,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,498242.167125
+1992,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,71275.3572089348
+1992,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,10026211.023
+1992,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1201761.106
+1992,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,829969.47741
+1992,Industries,Émissions fugitives,Pétrole et gaz naturel,241452.872881911
+1992,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,201240.53359
+1992,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5423151.8210519
+1992,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,77014.1117853965
+1992,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,2162.26775063793
+1992,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9031.58879234899
+1992,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,312677.50052035
+1992,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,335253.1572952
+1992,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4134900.84807008
+1992,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,491644.967871766
+1992,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5814349.5093
+1992,Transports,Autres transports,Pipelines,30432.8364
+1992,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,630170.550638621
+1992,Transports,Autres transports,Véhicules hors route - Autres,561937.297651907
+1992,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,811123.546380069
+1992,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",1958080.46965082
+1992,Transports,Autres transports,Véhicules hors route - Résidentiel,101469.205870999
+1992,Transports,Transport aérien,Transport aérien intérieur,774422.495959803
+1992,Transports,Transport aérien,Transport aérien militaire,17423.0836367252
+1992,Transports,Transport ferroviaire,Transport ferroviaire,586597.516497156
+1992,Transports,Transport maritime,Transport maritime intérieur,663867.201975053
+1992,Transports,Transport maritime,Transport maritime militaire,3163.78476123543
+1992,Transports,Transport maritime,Transport maritime pêcheries,33810.1240250742
+1992,Transports,Transport routier,Automobiles,11628726.8209515
+1992,Transports,Transport routier,Autres transports routiers,80125.7618612321
+1992,Transports,Transport routier,Camions légers,4432881.63847835
+1992,Transports,Transport routier,Véhicules lourds,4076666.47084148
+1992,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,828734.752369
+1992,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,44179.41261
+1993,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",139156.306666667
+1993,Agriculture,Fermentation entérique,Fermentation entérique,3474431.97073136
+1993,Agriculture,Gestion des fumiers,Gestion des fumiers,1536295.52203945
+1993,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1544979.85062757
+1993,Industries,Combustion industrielle,Agriculture et foresterie,345710.4072
+1993,Industries,Combustion industrielle,Autres manufacturiers,3127423.73201355
+1993,Industries,Combustion industrielle,Construction,286924.1406
+1993,Industries,Combustion industrielle,Exploitation minière,1272379.0374622
+1993,Industries,Combustion industrielle,Industries chimiques,1471443.15809
+1993,Industries,Combustion industrielle,Industries de raffinage du pétrole,3003678.1478
+1993,Industries,Combustion industrielle,Production de minéraux non métalliques,876111.75858
+1993,Industries,Combustion industrielle,Production de métaux ferreux,918552.33512
+1993,Industries,Combustion industrielle,Production de métaux non ferreux,717364.5643
+1993,Industries,Combustion industrielle,Usines de pâtes et papiers,4130240.06941
+1993,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,506508.08909
+1993,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,70002.3151701932
+1993,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,10744987.2752
+1993,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1339500.067
+1993,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,960302.40326
+1993,Industries,Émissions fugitives,Pétrole et gaz naturel,252162.15758469
+1993,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,182164.72978
+1993,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5297934.27318236
+1993,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,84074.8872037847
+1993,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,9356.33433475862
+1993,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9052.78879234899
+1993,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,312389.184753045
+1993,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,267440.363944
+1993,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4346196.69825133
+1993,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,474257.858577015
+1993,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5837472.1933
+1993,Transports,Autres transports,Pipelines,26521.104
+1993,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,610043.688598844
+1993,Transports,Autres transports,Véhicules hors route - Autres,590892.457430309
+1993,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,750544.774616702
+1993,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",1972463.4107296
+1993,Transports,Autres transports,Véhicules hors route - Résidentiel,118773.934505741
+1993,Transports,Transport aérien,Transport aérien intérieur,722460.409869172
+1993,Transports,Transport aérien,Transport aérien militaire,18579.8104156932
+1993,Transports,Transport ferroviaire,Transport ferroviaire,591070.05046208
+1993,Transports,Transport maritime,Transport maritime intérieur,678062.527639251
+1993,Transports,Transport maritime,Transport maritime militaire,3163.75664879049
+1993,Transports,Transport maritime,Transport maritime pêcheries,33808.4093079806
+1993,Transports,Transport routier,Automobiles,11981835.8658019
+1993,Transports,Transport routier,Autres transports routiers,84997.8221312688
+1993,Transports,Transport routier,Camions légers,4761925.82443417
+1993,Transports,Transport routier,Véhicules lourds,4421423.65153675
+1993,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,141051.0533625
+1993,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,52603.447
+1994,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",187742.426666667
+1994,Agriculture,Fermentation entérique,Fermentation entérique,3524035.95635356
+1994,Agriculture,Gestion des fumiers,Gestion des fumiers,1543247.7277563
+1994,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1518265.55731731
+1994,Industries,Combustion industrielle,Agriculture et foresterie,329047.7442
+1994,Industries,Combustion industrielle,Autres manufacturiers,2951940.91079505
+1994,Industries,Combustion industrielle,Construction,273218.4806
+1994,Industries,Combustion industrielle,Exploitation minière,1284990.1997367
+1994,Industries,Combustion industrielle,Industries chimiques,1409660.67969
+1994,Industries,Combustion industrielle,Industries de raffinage du pétrole,3142662.58024
+1994,Industries,Combustion industrielle,Production de minéraux non métalliques,1062403.57215
+1994,Industries,Combustion industrielle,Production de métaux ferreux,975083.42856
+1994,Industries,Combustion industrielle,Production de métaux non ferreux,708608.70447
+1994,Industries,Combustion industrielle,Usines de pâtes et papiers,4118046.63422
+1994,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,511019.482315
+1994,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,73377.1142633257
+1994,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,10356502.1618
+1994,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1567521.845
+1994,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,944383.42177
+1994,Industries,Émissions fugitives,Pétrole et gaz naturel,231778.792787725
+1994,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,125839.03708
+1994,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5215719.54948222
+1994,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,91302.7168782675
+1994,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,16550.4009188793
+1994,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9052.78879234899
+1994,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,318311.052306105
+1994,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,440565.7629
+1994,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4259573.25268504
+1994,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,451295.76315839
+1994,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5789225.7744
+1994,Transports,Autres transports,Pipelines,27350.7162
+1994,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,633388.462588849
+1994,Transports,Autres transports,Véhicules hors route - Autres,724300.42863046
+1994,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,809730.026699823
+1994,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2109334.05008864
+1994,Transports,Autres transports,Véhicules hors route - Résidentiel,137845.945651894
+1994,Transports,Transport aérien,Transport aérien intérieur,727340.565910637
+1994,Transports,Transport aérien,Transport aérien militaire,26533.2167136513
+1994,Transports,Transport ferroviaire,Transport ferroviaire,679336.318595423
+1994,Transports,Transport maritime,Transport maritime intérieur,693555.683593316
+1994,Transports,Transport maritime,Transport maritime militaire,3163.72853634553
+1994,Transports,Transport maritime,Transport maritime pêcheries,33807.3375428679
+1994,Transports,Transport routier,Automobiles,12056411.6450391
+1994,Transports,Transport routier,Autres transports routiers,88986.1361831341
+1994,Transports,Transport routier,Camions légers,5034514.95445956
+1994,Transports,Transport routier,Véhicules lourds,4955394.79958835
+1994,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,199390.5560175
+1994,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,68848.97593
+1995,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",191796.586666667
+1995,Agriculture,Fermentation entérique,Fermentation entérique,3572618.4099134
+1995,Agriculture,Gestion des fumiers,Gestion des fumiers,1584981.6362309
+1995,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1552890.56918436
+1995,Industries,Combustion industrielle,Agriculture et foresterie,301305.7319
+1995,Industries,Combustion industrielle,Autres manufacturiers,2860319.33007818
+1995,Industries,Combustion industrielle,Construction,187046.4766
+1995,Industries,Combustion industrielle,Exploitation minière,1283567.7935822
+1995,Industries,Combustion industrielle,Industries chimiques,1452400.78648
+1995,Industries,Combustion industrielle,Industries de raffinage du pétrole,3096998.37994
+1995,Industries,Combustion industrielle,Production de minéraux non métalliques,1175084.37836
+1995,Industries,Combustion industrielle,Production de métaux ferreux,1019990.81875
+1995,Industries,Combustion industrielle,Production de métaux non ferreux,729576.62623
+1995,Industries,Combustion industrielle,Usines de pâtes et papiers,4015848.37698
+1995,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",90803.5976479507
+1995,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,533012.89502
+1995,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,78742.9333714146
+1995,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,9587768.48814
+1995,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1741183.593
+1995,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1053451.02571
+1995,Industries,Émissions fugitives,Pétrole et gaz naturel,218011.975398365
+1995,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,183766.03261
+1995,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5433627.47950297
+1995,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,102053.065767857
+1995,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,17446.0272176638
+1995,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9052.78879234899
+1995,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,313614.67376758
+1995,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,433106.1327047
+1995,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4558182.68437705
+1995,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,475202.975978366
+1995,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5417299.5704
+1995,Transports,Autres transports,Pipelines,24565.2378
+1995,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,641286.5805802
+1995,Transports,Autres transports,Véhicules hors route - Autres,937311.529341934
+1995,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1000350.35975255
+1995,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2274052.61716727
+1995,Transports,Autres transports,Véhicules hors route - Résidentiel,144329.513392876
+1995,Transports,Transport aérien,Transport aérien intérieur,738928.64424492
+1995,Transports,Transport aérien,Transport aérien militaire,39029.7349641158
+1995,Transports,Transport ferroviaire,Transport ferroviaire,656034.787986848
+1995,Transports,Transport maritime,Transport maritime intérieur,707130.311732759
+1995,Transports,Transport maritime,Transport maritime militaire,3163.70042390058
+1995,Transports,Transport maritime,Transport maritime pêcheries,33805.335833085
+1995,Transports,Transport routier,Automobiles,11588402.759418
+1995,Transports,Transport routier,Autres transports routiers,89354.256450387
+1995,Transports,Transport routier,Camions légers,5128248.39526512
+1995,Transports,Transport routier,Véhicules lourds,5117838.06080262
+1995,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,146351.845577
+1995,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,59354.25434
+1996,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",208302.306666667
+1996,Agriculture,Fermentation entérique,Fermentation entérique,3598854.67858512
+1996,Agriculture,Gestion des fumiers,Gestion des fumiers,1615931.83198512
+1996,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1608208.47865179
+1996,Industries,Combustion industrielle,Agriculture et foresterie,274689.0629
+1996,Industries,Combustion industrielle,Autres manufacturiers,2944408.90893385
+1996,Industries,Combustion industrielle,Construction,188379.5978
+1996,Industries,Combustion industrielle,Exploitation minière,1373894.8870746
+1996,Industries,Combustion industrielle,Industries chimiques,1696918.62983
+1996,Industries,Combustion industrielle,Industries de raffinage du pétrole,3241235.20998
+1996,Industries,Combustion industrielle,Production de minéraux non métalliques,1116933.15568
+1996,Industries,Combustion industrielle,Production de métaux ferreux,1121399.31536
+1996,Industries,Combustion industrielle,Production de métaux non ferreux,762898.37469
+1996,Industries,Combustion industrielle,Usines de pâtes et papiers,4149200.44113
+1996,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",150398.098111529
+1996,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,538167.896555
+1996,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,72118.7922774869
+1996,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,8558116.2618
+1996,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1703495.7
+1996,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1275236.98527
+1996,Industries,Émissions fugitives,Pétrole et gaz naturel,250716.76297623
+1996,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,189985.73589
+1996,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4911917.41390264
+1996,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,110161.114193486
+1996,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,18341.6535164483
+1996,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9226.62879234899
+1996,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,313758.670146579
+1996,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,163125.904614
+1996,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4762650.63800841
+1996,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,485084.146917193
+1996,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5806338.8346
+1996,Transports,Autres transports,Pipelines,18167.085
+1996,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,560303.367523662
+1996,Transports,Autres transports,Véhicules hors route - Autres,922049.324323936
+1996,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,844964.853278407
+1996,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2019512.59410602
+1996,Transports,Autres transports,Véhicules hors route - Résidentiel,159018.475201633
+1996,Transports,Transport aérien,Transport aérien intérieur,747378.330148813
+1996,Transports,Transport aérien,Transport aérien militaire,15855.2466675199
+1996,Transports,Transport ferroviaire,Transport ferroviaire,592837.952088554
+1996,Transports,Transport maritime,Transport maritime intérieur,722876.929504633
+1996,Transports,Transport maritime,Transport maritime militaire,3157.34935982979
+1996,Transports,Transport maritime,Transport maritime pêcheries,33804.5676392694
+1996,Transports,Transport routier,Automobiles,11720292.7755896
+1996,Transports,Transport routier,Autres transports routiers,94530.4508574809
+1996,Transports,Transport routier,Camions légers,5491751.24187896
+1996,Transports,Transport routier,Véhicules lourds,5289533.56061207
+1996,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,131579.104249001
+1996,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,54393.16514
+1997,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",195854.706666667
+1997,Agriculture,Fermentation entérique,Fermentation entérique,3696024.3204377
+1997,Agriculture,Gestion des fumiers,Gestion des fumiers,1754088.83856063
+1997,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1661073.05094906
+1997,Industries,Combustion industrielle,Agriculture et foresterie,287514.4846
+1997,Industries,Combustion industrielle,Autres manufacturiers,3297854.08964869
+1997,Industries,Combustion industrielle,Construction,222888.375
+1997,Industries,Combustion industrielle,Exploitation minière,1374796.4156237
+1997,Industries,Combustion industrielle,Industries chimiques,1702085.04056
+1997,Industries,Combustion industrielle,Industries de raffinage du pétrole,3222072.81928
+1997,Industries,Combustion industrielle,Production de minéraux non métalliques,998067.47817
+1997,Industries,Combustion industrielle,Production de métaux ferreux,1103328.46562
+1997,Industries,Combustion industrielle,Production de métaux non ferreux,809608.34665
+1997,Industries,Combustion industrielle,Usines de pâtes et papiers,4031218.04653
+1997,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",205902.474948173
+1997,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,485101.52816
+1997,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,78878.9410622595
+1997,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,8779133.53666
+1997,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1570922.5102
+1997,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1307060.62018
+1997,Industries,Émissions fugitives,Pétrole et gaz naturel,255001.311579432
+1997,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,177997.22868
+1997,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4737974.41682446
+1997,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,117085.516154818
+1997,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,20657.5172597328
+1997,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9226.62879234899
+1997,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,313636.526066523
+1997,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,158032.9458208
+1997,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4771536.63729249
+1997,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,535566.337944938
+1997,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5460744.599
+1997,Transports,Autres transports,Pipelines,26176.23
+1997,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,627704.652334244
+1997,Transports,Autres transports,Véhicules hors route - Autres,960915.794823789
+1997,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,830233.404990934
+1997,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2287048.62112404
+1997,Transports,Autres transports,Véhicules hors route - Résidentiel,168448.920843685
+1997,Transports,Transport aérien,Transport aérien intérieur,715413.068811389
+1997,Transports,Transport aérien,Transport aérien militaire,18452.3126275819
+1997,Transports,Transport ferroviaire,Transport ferroviaire,542224.954868441
+1997,Transports,Transport maritime,Transport maritime intérieur,738070.358459042
+1997,Transports,Transport maritime,Transport maritime militaire,3150.99829575901
+1997,Transports,Transport maritime,Transport maritime pêcheries,33803.5366625421
+1997,Transports,Transport routier,Automobiles,11459293.7319878
+1997,Transports,Transport routier,Autres transports routiers,99157.7082828182
+1997,Transports,Transport routier,Camions légers,5756459.74736626
+1997,Transports,Transport routier,Véhicules lourds,5596550.67864722
+1997,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,182870.2775675
+1997,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,49911.52355
+1998,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",209734.066666667
+1998,Agriculture,Fermentation entérique,Fermentation entérique,3660333.10337564
+1998,Agriculture,Gestion des fumiers,Gestion des fumiers,1751488.80818973
+1998,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1744711.93917803
+1998,Industries,Combustion industrielle,Agriculture et foresterie,256209.7969
+1998,Industries,Combustion industrielle,Autres manufacturiers,2954297.95661944
+1998,Industries,Combustion industrielle,Construction,186203.5603
+1998,Industries,Combustion industrielle,Exploitation minière,1323650.0045798
+1998,Industries,Combustion industrielle,Industries chimiques,1663724.1514
+1998,Industries,Combustion industrielle,Industries de raffinage du pétrole,3234986.37793
+1998,Industries,Combustion industrielle,Production de minéraux non métalliques,1079358.32702
+1998,Industries,Combustion industrielle,Production de métaux ferreux,1362750.20596
+1998,Industries,Combustion industrielle,Production de métaux non ferreux,800298.43757
+1998,Industries,Combustion industrielle,Usines de pâtes et papiers,3882540.43943
+1998,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",303550.373458091
+1998,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,508143.420265
+1998,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,101552.143782351
+1998,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,8961785.78939
+1998,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1710202.2086
+1998,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1216472.67045
+1998,Industries,Émissions fugitives,Pétrole et gaz naturel,260783.022530515
+1998,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,174465.23789
+1998,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4860418.51363717
+1998,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,123208.735714244
+1998,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,22973.3810030172
+1998,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9226.62879234899
+1998,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,318593.974446746
+1998,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,175352.2944963
+1998,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4433312.82793043
+1998,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,439814.382730544
+1998,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4746086.4052
+1998,Transports,Autres transports,Pipelines,16482.5364
+1998,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,619679.856296286
+1998,Transports,Autres transports,Véhicules hors route - Autres,1054203.3754906
+1998,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,875538.696325278
+1998,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2285877.17237799
+1998,Transports,Autres transports,Véhicules hors route - Résidentiel,180394.265755754
+1998,Transports,Transport aérien,Transport aérien intérieur,721821.43890772
+1998,Transports,Transport aérien,Transport aérien militaire,14464.3192463814
+1998,Transports,Transport ferroviaire,Transport ferroviaire,570138.772784905
+1998,Transports,Transport maritime,Transport maritime intérieur,754417.741461535
+1998,Transports,Transport maritime,Transport maritime militaire,3144.64723168822
+1998,Transports,Transport maritime,Transport maritime pêcheries,33803.0360016199
+1998,Transports,Transport routier,Automobiles,11370954.8083382
+1998,Transports,Transport routier,Autres transports routiers,105368.320753588
+1998,Transports,Transport routier,Camions légers,6102217.18647846
+1998,Transports,Transport routier,Véhicules lourds,5844784.17319447
+1998,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,1556989.5738155
+1998,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,40494.10133
+1999,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",199906.666666667
+1999,Agriculture,Fermentation entérique,Fermentation entérique,3706230.76945453
+1999,Agriculture,Gestion des fumiers,Gestion des fumiers,1807565.30929107
+1999,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1763120.77783929
+1999,Industries,Combustion industrielle,Agriculture et foresterie,261308.7588
+1999,Industries,Combustion industrielle,Autres manufacturiers,2969194.18596777
+1999,Industries,Combustion industrielle,Construction,189604.3851
+1999,Industries,Combustion industrielle,Exploitation minière,1308679.7493728
+1999,Industries,Combustion industrielle,Industries chimiques,1475268.8618
+1999,Industries,Combustion industrielle,Industries de raffinage du pétrole,3068315.62887
+1999,Industries,Combustion industrielle,Production de minéraux non métalliques,1119284.75164
+1999,Industries,Combustion industrielle,Production de métaux ferreux,1398770.25483
+1999,Industries,Combustion industrielle,Production de métaux non ferreux,810713.95675
+1999,Industries,Combustion industrielle,Usines de pâtes et papiers,3881813.61605
+1999,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",405921.334935315
+1999,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,473613.53721
+1999,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,119406.999148386
+1999,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,7943595.81411
+1999,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1750022.539
+1999,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,940876.1137
+1999,Industries,Émissions fugitives,Pétrole et gaz naturel,257747.709997022
+1999,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,178403.23217
+1999,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5604799.27478249
+1999,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,126658.679046664
+1999,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,26675.6670135517
+1999,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9227.24091234899
+1999,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,321626.895239194
+1999,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,208671.6615726
+1999,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4431994.89735732
+1999,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,480475.628638499
+1999,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5003797.5689
+1999,Transports,Autres transports,Pipelines,25004.16
+1999,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,654162.554394422
+1999,Transports,Autres transports,Véhicules hors route - Autres,1124063.30868253
+1999,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,919178.487256496
+1999,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2410502.24255597
+1999,Transports,Autres transports,Véhicules hors route - Résidentiel,189995.59353305
+1999,Transports,Transport aérien,Transport aérien intérieur,752240.678486861
+1999,Transports,Transport aérien,Transport aérien militaire,13930.5207952039
+1999,Transports,Transport ferroviaire,Transport ferroviaire,492746.178119116
+1999,Transports,Transport maritime,Transport maritime intérieur,768635.960989636
+1999,Transports,Transport maritime,Transport maritime militaire,3138.29616761743
+1999,Transports,Transport maritime,Transport maritime pêcheries,33801.5570684468
+1999,Transports,Transport routier,Automobiles,11200378.6582724
+1999,Transports,Transport routier,Autres transports routiers,112892.161096849
+1999,Transports,Transport routier,Camions légers,6361915.84671887
+1999,Transports,Transport routier,Véhicules lourds,6009752.65122622
+1999,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,6977.803
+1999,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,937687.841053999
+1999,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,42979.50362
+2000,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",183934.666666667
+2000,Agriculture,Fermentation entérique,Fermentation entérique,3529966.24166548
+2000,Agriculture,Gestion des fumiers,Gestion des fumiers,1854732.05996006
+2000,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1741543.37773361
+2000,Industries,Combustion industrielle,Agriculture et foresterie,262066.3175
+2000,Industries,Combustion industrielle,Autres manufacturiers,2919249.02416653
+2000,Industries,Combustion industrielle,Construction,190574.3086
+2000,Industries,Combustion industrielle,Exploitation minière,1380452.8917197
+2000,Industries,Combustion industrielle,Industries chimiques,1401236.09436
+2000,Industries,Combustion industrielle,Industries de raffinage du pétrole,3375597.43068
+2000,Industries,Combustion industrielle,Production de minéraux non métalliques,1153391.49381
+2000,Industries,Combustion industrielle,Production de métaux ferreux,1398093.65125
+2000,Industries,Combustion industrielle,Production de métaux non ferreux,814554.86147
+2000,Industries,Combustion industrielle,Usines de pâtes et papiers,3792918.19505
+2000,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",514182.979508707
+2000,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,455141.54511
+2000,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,125288.609927462
+2000,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,7870719.55846
+2000,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1796748.997
+2000,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1084395.18341
+2000,Industries,Émissions fugitives,Pétrole et gaz naturel,241856.629956003
+2000,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,192562.47119
+2000,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4861350.77266653
+2000,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,128579.647978902
+2000,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,30377.9530240862
+2000,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8613.04091234899
+2000,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,320969.745442711
+2000,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,330532.1844322
+2000,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,5168482.19764964
+2000,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,533198.429354993
+2000,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5201656.1517
+2000,Transports,Autres transports,Pipelines,107935.7106
+2000,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,659328.391788498
+2000,Transports,Autres transports,Véhicules hors route - Autres,1177456.00556589
+2000,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,878775.121791656
+2000,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2450838.69614085
+2000,Transports,Autres transports,Véhicules hors route - Résidentiel,202568.94837692
+2000,Transports,Transport aérien,Transport aérien intérieur,729359.908065906
+2000,Transports,Transport aérien,Transport aérien militaire,19260.6290441079
+2000,Transports,Transport ferroviaire,Transport ferroviaire,538867.349544911
+2000,Transports,Transport maritime,Transport maritime intérieur,784111.97354535
+2000,Transports,Transport maritime,Transport maritime militaire,3131.94510354665
+2000,Transports,Transport maritime,Transport maritime pêcheries,33800.6531791388
+2000,Transports,Transport routier,Automobiles,11080557.480996
+2000,Transports,Transport routier,Autres transports routiers,112182.245429321
+2000,Transports,Transport routier,Camions légers,6319006.4260782
+2000,Transports,Transport routier,Véhicules lourds,5761802.63084264
+2000,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,6667.2725
+2000,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,331465.375423
+2000,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,50473.95275
+2001,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",252379.6
+2001,Agriculture,Fermentation entérique,Fermentation entérique,3571428.60619595
+2001,Agriculture,Gestion des fumiers,Gestion des fumiers,1911213.60918683
+2001,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1822394.79391054
+2001,Industries,Combustion industrielle,Agriculture et foresterie,229026.2027
+2001,Industries,Combustion industrielle,Autres manufacturiers,2766891.34184259
+2001,Industries,Combustion industrielle,Construction,193814.4155
+2001,Industries,Combustion industrielle,Exploitation minière,1226691.3175979
+2001,Industries,Combustion industrielle,Industries chimiques,1516439.54935
+2001,Industries,Combustion industrielle,Industries de raffinage du pétrole,3073030.94652
+2001,Industries,Combustion industrielle,Production de minéraux non métalliques,1264078.0227
+2001,Industries,Combustion industrielle,Production de métaux ferreux,1384319.04975
+2001,Industries,Combustion industrielle,Production de métaux non ferreux,799866.29404
+2001,Industries,Combustion industrielle,Usines de pâtes et papiers,3562202.36687
+2001,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",588431.74411699
+2001,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,444167.68237
+2001,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,137214.024904061
+2001,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,7927757.38026
+2001,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1842595.921
+2001,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,362309.14044
+2001,Industries,Émissions fugitives,Pétrole et gaz naturel,231887.342705759
+2001,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,195437.98651
+2001,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5011854.25876061
+2001,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,129691.219983658
+2001,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,58827.9530898362
+2001,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8264.28155234899
+2001,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,320197.176168853
+2001,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,181129.7382225
+2001,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,5140648.37379212
+2001,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,480845.697927858
+2001,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4667860.3087
+2001,Transports,Autres transports,Pipelines,202653.5692
+2001,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,598562.486464776
+2001,Transports,Autres transports,Véhicules hors route - Autres,1267662.33914418
+2001,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,925277.559918366
+2001,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2258464.67807195
+2001,Transports,Autres transports,Véhicules hors route - Résidentiel,213677.108816893
+2001,Transports,Transport aérien,Transport aérien intérieur,656217.645355234
+2001,Transports,Transport aérien,Transport aérien militaire,14440.3730027235
+2001,Transports,Transport ferroviaire,Transport ferroviaire,567335.618248053
+2001,Transports,Transport maritime,Transport maritime intérieur,804015.723306775
+2001,Transports,Transport maritime,Transport maritime militaire,3119.36814208919
+2001,Transports,Transport maritime,Transport maritime pêcheries,33800.7379826806
+2001,Transports,Transport routier,Automobiles,10931341.144537
+2001,Transports,Transport routier,Autres transports routiers,120653.136679544
+2001,Transports,Transport routier,Camions légers,6388350.60307031
+2001,Transports,Transport routier,Véhicules lourds,5319926.86574134
+2001,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,7527.07798
+2001,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,366260.326836501
+2001,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,51283.49635
+2002,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",236055.6
+2002,Agriculture,Fermentation entérique,Fermentation entérique,3586560.347989
+2002,Agriculture,Gestion des fumiers,Gestion des fumiers,1942656.0268813
+2002,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1874433.55303579
+2002,Industries,Combustion industrielle,Agriculture et foresterie,264516.3765
+2002,Industries,Combustion industrielle,Autres manufacturiers,2853472.80347652
+2002,Industries,Combustion industrielle,Construction,260424.959
+2002,Industries,Combustion industrielle,Exploitation minière,1282967.5876569
+2002,Industries,Combustion industrielle,Industries chimiques,1528264.58806
+2002,Industries,Combustion industrielle,Industries de raffinage du pétrole,2994831.64974
+2002,Industries,Combustion industrielle,Production de minéraux non métalliques,1262926.17394
+2002,Industries,Combustion industrielle,Production de métaux ferreux,1331563.83694
+2002,Industries,Combustion industrielle,Production de métaux non ferreux,770484.61499
+2002,Industries,Combustion industrielle,Usines de pâtes et papiers,3517281.79627
+2002,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",667215.525714992
+2002,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,417901.147125
+2002,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,106974.010948883
+2002,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,8141671.31026
+2002,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1864175.923
+2002,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,432888.68524
+2002,Industries,Émissions fugitives,Pétrole et gaz naturel,221651.635513549
+2002,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,198523.11039
+2002,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5074709.46274941
+2002,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,130749.112363545
+2002,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,55093.5631254062
+2002,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,7992.67455234899
+2002,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,311343.822505631
+2002,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,193061.5837134
+2002,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,5586421.09383352
+2002,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,487064.56814891
+2002,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4877414.1289
+2002,Transports,Autres transports,Pipelines,330461.0778
+2002,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,611096.171173969
+2002,Transports,Autres transports,Véhicules hors route - Autres,1422174.70354161
+2002,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1114084.99365224
+2002,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2253281.72301655
+2002,Transports,Autres transports,Véhicules hors route - Résidentiel,211474.624110776
+2002,Transports,Transport aérien,Transport aérien intérieur,612658.272555909
+2002,Transports,Transport aérien,Transport aérien militaire,11700.1899372195
+2002,Transports,Transport ferroviaire,Transport ferroviaire,546411.490953246
+2002,Transports,Transport maritime,Transport maritime intérieur,823900.472189104
+2002,Transports,Transport maritime,Transport maritime militaire,3106.79118063173
+2002,Transports,Transport maritime,Transport maritime pêcheries,33800.8105952459
+2002,Transports,Transport routier,Automobiles,10877501.3199731
+2002,Transports,Transport routier,Autres transports routiers,125979.071536213
+2002,Transports,Transport routier,Camions légers,6483855.82800636
+2002,Transports,Transport routier,Véhicules lourds,5521634.59279055
+2002,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,18915.39231
+2002,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,235595.031629
+2002,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,50666.72045
+2003,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",209831.6
+2003,Agriculture,Fermentation entérique,Fermentation entérique,3529192.6773773
+2003,Agriculture,Gestion des fumiers,Gestion des fumiers,1954243.68920536
+2003,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1856428.55898618
+2003,Industries,Combustion industrielle,Agriculture et foresterie,369035.9266
+2003,Industries,Combustion industrielle,Autres manufacturiers,2756125.34485241
+2003,Industries,Combustion industrielle,Construction,310009.8985
+2003,Industries,Combustion industrielle,Exploitation minière,1465535.2649684
+2003,Industries,Combustion industrielle,Industries chimiques,1801284.38071
+2003,Industries,Combustion industrielle,Industries de raffinage du pétrole,3340397.5437
+2003,Industries,Combustion industrielle,Production de minéraux non métalliques,1284985.21384
+2003,Industries,Combustion industrielle,Production de métaux ferreux,1353244.99755
+2003,Industries,Combustion industrielle,Production de métaux non ferreux,714064.49281
+2003,Industries,Combustion industrielle,Usines de pâtes et papiers,3567833.98641
+2003,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",741247.553315258
+2003,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,421713.81164
+2003,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,123668.546263698
+2003,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,7845411.71669
+2003,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1861190.46718
+2003,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,700504.52985
+2003,Industries,Émissions fugitives,Pétrole et gaz naturel,228489.625849789
+2003,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,201784.54184
+2003,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5256166.85791206
+2003,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,131943.438954327
+2003,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,57403.0082531617
+2003,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8461.27455234899
+2003,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,311330.30310092
+2003,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,323973.4415369
+2003,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,6167494.44891899
+2003,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,504308.363447907
+2003,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5427804.8285
+2003,Transports,Autres transports,Pipelines,357270.476965
+2003,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,688658.74549583
+2003,Transports,Autres transports,Véhicules hors route - Autres,1334789.72491336
+2003,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,950789.708966382
+2003,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2325796.4048122
+2003,Transports,Autres transports,Véhicules hors route - Résidentiel,229754.407546636
+2003,Transports,Transport aérien,Transport aérien intérieur,630867.502239112
+2003,Transports,Transport aérien,Transport aérien militaire,9605.73573159305
+2003,Transports,Transport ferroviaire,Transport ferroviaire,561701.071052497
+2003,Transports,Transport maritime,Transport maritime intérieur,842032.269650495
+2003,Transports,Transport maritime,Transport maritime militaire,3094.21421917427
+2003,Transports,Transport maritime,Transport maritime pêcheries,33800.126027295
+2003,Transports,Transport routier,Automobiles,11379555.6474693
+2003,Transports,Transport routier,Autres transports routiers,141530.341843144
+2003,Transports,Transport routier,Camions légers,7035563.91793659
+2003,Transports,Transport routier,Véhicules lourds,6432447.86007613
+2003,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,21960.94977
+2003,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,1508950.4184725
+2003,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,65642.74648
+2004,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",232535.6
+2004,Agriculture,Fermentation entérique,Fermentation entérique,3669597.11769439
+2004,Agriculture,Gestion des fumiers,Gestion des fumiers,2004835.7325791
+2004,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1900936.21538059
+2004,Industries,Combustion industrielle,Agriculture et foresterie,339947.8163
+2004,Industries,Combustion industrielle,Autres manufacturiers,2648790.62010172
+2004,Industries,Combustion industrielle,Construction,338712.8873
+2004,Industries,Combustion industrielle,Exploitation minière,1516542.6992523
+2004,Industries,Combustion industrielle,Industries chimiques,1943495.38667
+2004,Industries,Combustion industrielle,Industries de raffinage du pétrole,3261765.20593
+2004,Industries,Combustion industrielle,Production de minéraux non métalliques,1428190.22902
+2004,Industries,Combustion industrielle,Production de métaux ferreux,1360455.40272
+2004,Industries,Combustion industrielle,Production de métaux non ferreux,659547.89589
+2004,Industries,Combustion industrielle,Usines de pâtes et papiers,3597010.75529
+2004,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",867318.186472626
+2004,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,474013.52183
+2004,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,127285.145391611
+2004,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,7103113.39442
+2004,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1970793.27587
+2004,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1048406.59358
+2004,Industries,Émissions fugitives,Pétrole et gaz naturel,238803.52178632
+2004,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,202152.50568
+2004,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4562068.6915508
+2004,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,133525.535269461
+2004,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,53926.7826821772
+2004,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8245.35555234899
+2004,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,314751.809033989
+2004,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,289372.385029
+2004,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,5340109.23964888
+2004,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,490144.966332968
+2004,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5891675.3344
+2004,Transports,Autres transports,Pipelines,251116.77825
+2004,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,733857.415160596
+2004,Transports,Autres transports,Véhicules hors route - Autres,1305450.94595831
+2004,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,961242.822021825
+2004,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2406020.70953473
+2004,Transports,Autres transports,Véhicules hors route - Résidentiel,236705.736518087
+2004,Transports,Transport aérien,Transport aérien intérieur,738996.28674012
+2004,Transports,Transport aérien,Transport aérien militaire,15303.3753907781
+2004,Transports,Transport ferroviaire,Transport ferroviaire,571710.126168014
+2004,Transports,Transport maritime,Transport maritime intérieur,862018.237313996
+2004,Transports,Transport maritime,Transport maritime militaire,3081.63725771681
+2004,Transports,Transport maritime,Transport maritime pêcheries,33800.2450866846
+2004,Transports,Transport routier,Automobiles,11278419.4141105
+2004,Transports,Transport routier,Autres transports routiers,154534.070664446
+2004,Transports,Transport routier,Camions légers,7231199.25078388
+2004,Transports,Transport routier,Véhicules lourds,6555852.15953697
+2004,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,27084.14194
+2004,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,1254674.9350945
+2004,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,69319.59507
+2005,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",187435.6
+2005,Agriculture,Fermentation entérique,Fermentation entérique,3627147.28543097
+2005,Agriculture,Gestion des fumiers,Gestion des fumiers,2013496.08700073
+2005,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1889830.92425886
+2005,Industries,Combustion industrielle,Agriculture et foresterie,366513.743
+2005,Industries,Combustion industrielle,Autres manufacturiers,2656809.58812511
+2005,Industries,Combustion industrielle,Construction,310972.0586
+2005,Industries,Combustion industrielle,Exploitation minière,1342935.9799159
+2005,Industries,Combustion industrielle,Industries chimiques,1959920.54522
+2005,Industries,Combustion industrielle,Industries de raffinage du pétrole,3253448.79649
+2005,Industries,Combustion industrielle,Production de minéraux non métalliques,1461320.87403
+2005,Industries,Combustion industrielle,Production de métaux ferreux,1294192.7298
+2005,Industries,Combustion industrielle,Production de métaux non ferreux,691348.02204
+2005,Industries,Combustion industrielle,Usines de pâtes et papiers,3273772.75633
+2005,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",965025.625550494
+2005,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,478546.828925
+2005,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,109608.041053633
+2005,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,7054158.27076
+2005,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1976162.77129
+2005,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,767141.21369
+2005,Industries,Émissions fugitives,Pétrole et gaz naturel,262767.427952833
+2005,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,196987.58934
+2005,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4787800.67127533
+2005,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,134773.614145986
+2005,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,54968.6500344507
+2005,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8321.15955234899
+2005,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,312405.105704969
+2005,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,217523.0274701
+2005,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,5080255.26777865
+2005,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,467279.126964069
+2005,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,5058776.6273
+2005,Transports,Autres transports,Pipelines,334880.996405
+2005,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,767165.081660159
+2005,Transports,Autres transports,Véhicules hors route - Autres,1298010.3402222
+2005,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1008234.23436699
+2005,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2491739.32595681
+2005,Transports,Autres transports,Véhicules hors route - Résidentiel,239943.914119753
+2005,Transports,Transport aérien,Transport aérien intérieur,751402.054626296
+2005,Transports,Transport aérien,Transport aérien militaire,12095.6536707254
+2005,Transports,Transport ferroviaire,Transport ferroviaire,667009.22686598
+2005,Transports,Transport maritime,Transport maritime intérieur,882425.568349566
+2005,Transports,Transport maritime,Transport maritime militaire,3069.06029625935
+2005,Transports,Transport maritime,Transport maritime pêcheries,33800.5356591944
+2005,Transports,Transport routier,Automobiles,10897215.0384495
+2005,Transports,Transport routier,Autres transports routiers,164020.116258792
+2005,Transports,Transport routier,Camions légers,7229003.62877257
+2005,Transports,Transport routier,Véhicules lourds,6538517.56712346
+2005,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,60680.64141
+2005,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,377335.798643499
+2005,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,61278.90187
+2006,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",198744.333333333
+2006,Agriculture,Fermentation entérique,Fermentation entérique,3619666.42301995
+2006,Agriculture,Gestion des fumiers,Gestion des fumiers,2041898.6778351
+2006,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1840984.28629039
+2006,Industries,Combustion industrielle,Agriculture et foresterie,327316.2395
+2006,Industries,Combustion industrielle,Autres manufacturiers,2706574.21817738
+2006,Industries,Combustion industrielle,Construction,308743.9529
+2006,Industries,Combustion industrielle,Exploitation minière,1706654.9792503
+2006,Industries,Combustion industrielle,Industries chimiques,1838171.72968
+2006,Industries,Combustion industrielle,Industries de raffinage du pétrole,3792986.69807
+2006,Industries,Combustion industrielle,Production de minéraux non métalliques,1451742.96407
+2006,Industries,Combustion industrielle,Production de métaux ferreux,1341793.98383
+2006,Industries,Combustion industrielle,Production de métaux non ferreux,669055.17619
+2006,Industries,Combustion industrielle,Usines de pâtes et papiers,2648466.65937
+2006,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",1011783.5617364
+2006,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,499570.197155
+2006,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,96151.4855735331
+2006,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,6950905.74471
+2006,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2041731.89508
+2006,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,700686.38396
+2006,Industries,Émissions fugitives,Pétrole et gaz naturel,297005.603382959
+2006,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,196465.99762
+2006,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4844661.73003351
+2006,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,135620.922970012
+2006,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,63602.6010224441
+2006,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,8512.47455234899
+2006,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,316252.583479908
+2006,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,254738.8855893
+2006,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4388719.00138036
+2006,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,422962.08316905
+2006,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4526752.68
+2006,Transports,Autres transports,Pipelines,281685.499265
+2006,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,752085.437085761
+2006,Transports,Autres transports,Véhicules hors route - Autres,1204863.32002291
+2006,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,949199.606424885
+2006,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2429340.10237752
+2006,Transports,Autres transports,Véhicules hors route - Résidentiel,235735.214362289
+2006,Transports,Transport aérien,Transport aérien intérieur,742414.480104762
+2006,Transports,Transport aérien,Transport aérien militaire,11982.5414674525
+2006,Transports,Transport ferroviaire,Transport ferroviaire,690548.287073772
+2006,Transports,Transport maritime,Transport maritime intérieur,867962.579310628
+2006,Transports,Transport maritime,Transport maritime militaire,3065.10888974692
+2006,Transports,Transport maritime,Transport maritime pêcheries,33798.6026655188
+2006,Transports,Transport routier,Automobiles,10746146.346947
+2006,Transports,Transport routier,Autres transports routiers,167199.512043222
+2006,Transports,Transport routier,Camions légers,7245002.19274331
+2006,Transports,Transport routier,Véhicules lourds,6914284.97859408
+2006,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,73167.12384
+2006,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,687995.123483
+2006,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,54028.31349
+2007,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",200085.6
+2007,Agriculture,Fermentation entérique,Fermentation entérique,3600100.92673875
+2007,Agriculture,Gestion des fumiers,Gestion des fumiers,2092998.08646775
+2007,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2016546.29721391
+2007,Industries,Combustion industrielle,Agriculture et foresterie,363445.0377
+2007,Industries,Combustion industrielle,Autres manufacturiers,2753329.39326561
+2007,Industries,Combustion industrielle,Construction,315158.3547
+2007,Industries,Combustion industrielle,Exploitation minière,1663190.5051917
+2007,Industries,Combustion industrielle,Industries chimiques,1748378.33446
+2007,Industries,Combustion industrielle,Industries de raffinage du pétrole,3740449.05833
+2007,Industries,Combustion industrielle,Production de minéraux non métalliques,1363434.27489
+2007,Industries,Combustion industrielle,Production de métaux ferreux,1440737.15501
+2007,Industries,Combustion industrielle,Production de métaux non ferreux,618513.92026
+2007,Industries,Combustion industrielle,Usines de pâtes et papiers,2298559.87175
+2007,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",1143845.0637093
+2007,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,630319.99098
+2007,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,101549.782003618
+2007,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,6205133.23577
+2007,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1985304.10604
+2007,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,942413.84327
+2007,Industries,Émissions fugitives,Pétrole et gaz naturel,291800.145482819
+2007,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,195146.76218
+2007,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,5060006.70435119
+2007,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,136654.88156671
+2007,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,50064.6826454152
+2007,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9505.47955234899
+2007,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,319071.704844617
+2007,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,273470.1831506
+2007,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4321246.95734448
+2007,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,456170.183151618
+2007,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4907841.7314
+2007,Transports,Autres transports,Pipelines,264970.211925
+2007,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,669345.342447879
+2007,Transports,Autres transports,Véhicules hors route - Autres,1167916.2168682
+2007,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,814926.370007888
+2007,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2191203.52877258
+2007,Transports,Autres transports,Véhicules hors route - Résidentiel,248805.64898431
+2007,Transports,Transport aérien,Transport aérien intérieur,781349.701733463
+2007,Transports,Transport aérien,Transport aérien militaire,17368.69311151
+2007,Transports,Transport ferroviaire,Transport ferroviaire,604181.461508797
+2007,Transports,Transport maritime,Transport maritime intérieur,855049.241169975
+2007,Transports,Transport maritime,Transport maritime militaire,3061.15748323449
+2007,Transports,Transport maritime,Transport maritime pêcheries,33797.3087731372
+2007,Transports,Transport routier,Automobiles,11239665.432716
+2007,Transports,Transport routier,Autres transports routiers,178889.585500098
+2007,Transports,Transport routier,Camions légers,7776425.63112305
+2007,Transports,Transport routier,Véhicules lourds,7632148.19119213
+2007,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,71271.38883
+2007,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,2062111.10349
+2007,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,62212.48544
+2008,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",171825.866666667
+2008,Agriculture,Fermentation entérique,Fermentation entérique,3576237.22372537
+2008,Agriculture,Gestion des fumiers,Gestion des fumiers,2115611.92021478
+2008,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1987678.60293373
+2008,Industries,Combustion industrielle,Agriculture et foresterie,330825.6427
+2008,Industries,Combustion industrielle,Autres manufacturiers,3013830.51385499
+2008,Industries,Combustion industrielle,Construction,310871.6177
+2008,Industries,Combustion industrielle,Exploitation minière,1914744.9782156
+2008,Industries,Combustion industrielle,Industries chimiques,1418011.34639
+2008,Industries,Combustion industrielle,Industries de raffinage du pétrole,3526445.33516
+2008,Industries,Combustion industrielle,Production de minéraux non métalliques,1330591.97241
+2008,Industries,Combustion industrielle,Production de métaux ferreux,1668804.23236
+2008,Industries,Combustion industrielle,Production de métaux non ferreux,565447.17322
+2008,Industries,Combustion industrielle,Usines de pâtes et papiers,1908851.65141
+2008,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",1139806.89945325
+2008,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,684494.365855
+2008,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,115904.622245557
+2008,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,6315545.88634
+2008,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1903361.253
+2008,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,513249.1032
+2008,Industries,Émissions fugitives,Pétrole et gaz naturel,285011.031317563
+2008,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,158970.55529
+2008,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4833344.53212802
+2008,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,137300.326234501
+2008,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,40383.6651785462
+2008,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,9502.53955234899
+2008,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,327960.443329858
+2008,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,235867.4197707
+2008,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4004128.19124931
+2008,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,438915.425350883
+2008,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4303372.2932
+2008,Transports,Autres transports,Pipelines,252801.14844
+2008,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,671596.263873387
+2008,Transports,Autres transports,Véhicules hors route - Autres,1111704.72686905
+2008,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,799599.713447442
+2008,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2183371.12943743
+2008,Transports,Autres transports,Véhicules hors route - Résidentiel,240784.754472438
+2008,Transports,Transport aérien,Transport aérien intérieur,715647.168408233
+2008,Transports,Transport aérien,Transport aérien militaire,19574.6580538581
+2008,Transports,Transport ferroviaire,Transport ferroviaire,566594.366884872
+2008,Transports,Transport maritime,Transport maritime intérieur,843208.778432832
+2008,Transports,Transport maritime,Transport maritime militaire,3057.20607672206
+2008,Transports,Transport maritime,Transport maritime pêcheries,33796.4280392725
+2008,Transports,Transport routier,Automobiles,10877500.1383251
+2008,Transports,Transport routier,Autres transports routiers,173360.187259094
+2008,Transports,Transport routier,Camions légers,7609984.28839105
+2008,Transports,Transport routier,Véhicules lourds,8637701.44032379
+2008,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,96243.51882
+2008,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,488012.91162
+2008,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,49558.78777
+2009,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",166259.866666667
+2009,Agriculture,Fermentation entérique,Fermentation entérique,3536276.01319417
+2009,Agriculture,Gestion des fumiers,Gestion des fumiers,2126075.61528963
+2009,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1971942.09483809
+2009,Industries,Combustion industrielle,Agriculture et foresterie,453517.0085
+2009,Industries,Combustion industrielle,Autres manufacturiers,2811753.48212228
+2009,Industries,Combustion industrielle,Construction,387912.0433
+2009,Industries,Combustion industrielle,Exploitation minière,2206014.2263884
+2009,Industries,Combustion industrielle,Industries chimiques,1090087.6703
+2009,Industries,Combustion industrielle,Industries de raffinage du pétrole,3642638.65345
+2009,Industries,Combustion industrielle,Production de minéraux non métalliques,1071934.98646
+2009,Industries,Combustion industrielle,Production de métaux ferreux,1070695.62505
+2009,Industries,Combustion industrielle,Production de métaux non ferreux,564569.16312
+2009,Industries,Combustion industrielle,Usines de pâtes et papiers,1459033.6482
+2009,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",1540280.51572127
+2009,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,538228.95445
+2009,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,98294.9113200574
+2009,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5987164.96078
+2009,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1781952.72124
+2009,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,690851.58723
+2009,Industries,Émissions fugitives,Pétrole et gaz naturel,304129.123435569
+2009,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,233862.38232
+2009,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4544730.43272893
+2009,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,135592.053401242
+2009,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,37277.1441259856
+2009,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10527.152552349
+2009,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,331972.464119887
+2009,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,339819.3092569
+2009,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4829916.79427424
+2009,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,430477.875091975
+2009,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,4077884.1774
+2009,Transports,Autres transports,Pipelines,224786.2196
+2009,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,799332.983972621
+2009,Transports,Autres transports,Véhicules hors route - Autres,1097708.43894994
+2009,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,964599.927243233
+2009,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2496350.41945773
+2009,Transports,Autres transports,Véhicules hors route - Résidentiel,237556.293819773
+2009,Transports,Transport aérien,Transport aérien intérieur,626827.804608623
+2009,Transports,Transport aérien,Transport aérien militaire,15225.4171961921
+2009,Transports,Transport ferroviaire,Transport ferroviaire,468551.468841828
+2009,Transports,Transport maritime,Transport maritime intérieur,829972.787354049
+2009,Transports,Transport maritime,Transport maritime militaire,3053.25467020963
+2009,Transports,Transport maritime,Transport maritime pêcheries,33794.9844377254
+2009,Transports,Transport routier,Automobiles,10753417.540169
+2009,Transports,Transport routier,Autres transports routiers,171765.028106916
+2009,Transports,Transport routier,Camions légers,7791500.47021114
+2009,Transports,Transport routier,Véhicules lourds,7808499.84679554
+2009,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,47718.22443
+2009,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,635155.80762
+2009,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,51695.70914
+2010,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",158240.133333333
+2010,Agriculture,Fermentation entérique,Fermentation entérique,3529160.4849818
+2010,Agriculture,Gestion des fumiers,Gestion des fumiers,2117591.64465741
+2010,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,1994250.99678996
+2010,Industries,Combustion industrielle,Agriculture et foresterie,519296.611825708
+2010,Industries,Combustion industrielle,Autres manufacturiers,2529286.29672132
+2010,Industries,Combustion industrielle,Construction,421185.5438
+2010,Industries,Combustion industrielle,Exploitation minière,1875986.7768713
+2010,Industries,Combustion industrielle,Industries chimiques,1150078.33821
+2010,Industries,Combustion industrielle,Industries de raffinage du pétrole,3143206.3907
+2010,Industries,Combustion industrielle,Production de minéraux non métalliques,1078510.09056
+2010,Industries,Combustion industrielle,Production de métaux ferreux,1354103.41976
+2010,Industries,Combustion industrielle,Production de métaux non ferreux,547038.06492
+2010,Industries,Combustion industrielle,Usines de pâtes et papiers,1367370.12431
+2010,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",1912748.81238268
+2010,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,570119.961245
+2010,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,88595.0594188218
+2010,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5727362.88436
+2010,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1840428.08552
+2010,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,679915.79994
+2010,Industries,Émissions fugitives,Pétrole et gaz naturel,309143.357162236
+2010,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,215159.88938
+2010,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4285878.95596292
+2010,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,133323.552314481
+2010,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,35820.578983435
+2010,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10254.140872349
+2010,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,352047.526650768
+2010,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,399885.4367345
+2010,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4518350.57030083
+2010,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,389288.616150034
+2010,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,3425273.7174
+2010,Transports,Autres transports,Pipelines,153826.46808
+2010,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,794308.470671997
+2010,Transports,Autres transports,Véhicules hors route - Autres,1015071.41561789
+2010,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,985571.144813774
+2010,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2446865.82845844
+2010,Transports,Autres transports,Véhicules hors route - Résidentiel,231115.767741662
+2010,Transports,Transport aérien,Transport aérien intérieur,625290.071545969
+2010,Transports,Transport aérien,Transport aérien militaire,15648.0191964852
+2010,Transports,Transport ferroviaire,Transport ferroviaire,484169.479974344
+2010,Transports,Transport maritime,Transport maritime intérieur,815529.299148709
+2010,Transports,Transport maritime,Transport maritime militaire,3049.3032636972
+2010,Transports,Transport maritime,Transport maritime pêcheries,33793.0823279439
+2010,Transports,Transport routier,Automobiles,10521574.8255476
+2010,Transports,Transport routier,Autres transports routiers,166845.578073758
+2010,Transports,Transport routier,Camions légers,7881755.57548123
+2010,Transports,Transport routier,Véhicules lourds,7845639.94596209
+2010,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,39193.7975
+2010,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,458250.09229
+2010,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,44076.46797
+2011,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",177124.933333333
+2011,Agriculture,Fermentation entérique,Fermentation entérique,3354422.59736787
+2011,Agriculture,Gestion des fumiers,Gestion des fumiers,2211351.60351894
+2011,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2051620.10635097
+2011,Industries,Combustion industrielle,Agriculture et foresterie,479503.236918332
+2011,Industries,Combustion industrielle,Autres manufacturiers,3715088.70313849
+2011,Industries,Combustion industrielle,Construction,344857.7295
+2011,Industries,Combustion industrielle,Exploitation minière,1175643.355084
+2011,Industries,Combustion industrielle,Industries chimiques,1230704.96063
+2011,Industries,Combustion industrielle,Industries de raffinage du pétrole,2347226.10886
+2011,Industries,Combustion industrielle,Production de minéraux non métalliques,1062047.25595
+2011,Industries,Combustion industrielle,Production de métaux ferreux,371614.48466
+2011,Industries,Combustion industrielle,Production de métaux non ferreux,531187.57687
+2011,Industries,Combustion industrielle,Usines de pâtes et papiers,1268971.85909
+2011,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2107331.46447853
+2011,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,664658.12601
+2011,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,80066.7019884977
+2011,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5742505.615402
+2011,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1872653.1716
+2011,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1841120.98558
+2011,Industries,Émissions fugitives,Pétrole et gaz naturel,249640.983588674
+2011,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,210840.86807
+2011,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4080514.47247393
+2011,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,134499.040772243
+2011,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,36230.1881833758
+2011,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10297.841891349
+2011,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,358748.729469937
+2011,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,333838.727218381
+2011,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4587375.60793739
+2011,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,404597.974748108
+2011,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,3074542.5936
+2011,Transports,Autres transports,Pipelines,151095.83188
+2011,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,954544.325986653
+2011,Transports,Autres transports,Véhicules hors route - Autres,1036684.65143479
+2011,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1184182.48546922
+2011,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2972408.12955129
+2011,Transports,Autres transports,Véhicules hors route - Résidentiel,226921.621449606
+2011,Transports,Transport aérien,Transport aérien intérieur,634833.887289261
+2011,Transports,Transport aérien,Transport aérien militaire,12036.4572842819
+2011,Transports,Transport ferroviaire,Transport ferroviaire,531431.796519867
+2011,Transports,Transport maritime,Transport maritime intérieur,801219.940176421
+2011,Transports,Transport maritime,Transport maritime militaire,4158.07241416935
+2011,Transports,Transport maritime,Transport maritime pêcheries,26647.175967334
+2011,Transports,Transport routier,Automobiles,10558397.8247933
+2011,Transports,Transport routier,Autres transports routiers,211137.759236676
+2011,Transports,Transport routier,Camions légers,7981880.58883377
+2011,Transports,Transport routier,Véhicules lourds,8024729.16430877
+2011,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,28283.45798
+2011,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,469176.85664
+2011,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,54298.55112
+2012,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",159071.733333333
+2012,Agriculture,Fermentation entérique,Fermentation entérique,3375610.7206606
+2012,Agriculture,Gestion des fumiers,Gestion des fumiers,2232229.3942816
+2012,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2154278.85671968
+2012,Industries,Combustion industrielle,Agriculture et foresterie,498347.236498013
+2012,Industries,Combustion industrielle,Autres manufacturiers,3405525.32500115
+2012,Industries,Combustion industrielle,Construction,363182.192372865
+2012,Industries,Combustion industrielle,Exploitation minière,1262929.5640848
+2012,Industries,Combustion industrielle,Industries chimiques,1177941.000993
+2012,Industries,Combustion industrielle,Industries de raffinage du pétrole,2412181.555
+2012,Industries,Combustion industrielle,Production de minéraux non métalliques,1242203.966351
+2012,Industries,Combustion industrielle,Production de métaux ferreux,388059.85556
+2012,Industries,Combustion industrielle,Production de métaux non ferreux,511579.422755
+2012,Industries,Combustion industrielle,Usines de pâtes et papiers,1232542.980105
+2012,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2135300.92994422
+2012,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,649832.108574
+2012,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,111710.590195026
+2012,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5475088.3213
+2012,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2031768.536298
+2012,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1956819.97488
+2012,Industries,Émissions fugitives,Pétrole et gaz naturel,220396.830452
+2012,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,251311.14354
+2012,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3851914.81807366
+2012,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,134515.150889201
+2012,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,39933.2706899093
+2012,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10590.656217349
+2012,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,361653.380135812
+2012,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,274691.716995617
+2012,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,3781501.27277925
+2012,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,374833.398764617
+2012,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2803130.4542
+2012,Transports,Autres transports,Pipelines,200417.8300184
+2012,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,909696.161842809
+2012,Transports,Autres transports,Véhicules hors route - Autres,1055166.72061582
+2012,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1158237.3636882
+2012,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2843710.11054998
+2012,Transports,Autres transports,Véhicules hors route - Résidentiel,231774.94566875
+2012,Transports,Transport aérien,Transport aérien intérieur,751930.818784383
+2012,Transports,Transport aérien,Transport aérien militaire,15055.886403338
+2012,Transports,Transport ferroviaire,Transport ferroviaire,435391.170201163
+2012,Transports,Transport maritime,Transport maritime intérieur,791728.944266059
+2012,Transports,Transport maritime,Transport maritime militaire,5324.1536447638
+2012,Transports,Transport maritime,Transport maritime pêcheries,20108.5413061025
+2012,Transports,Transport routier,Automobiles,10067381.290969
+2012,Transports,Transport routier,Autres transports routiers,227537.827562456
+2012,Transports,Transport routier,Camions légers,7957996.8873192
+2012,Transports,Transport routier,Véhicules lourds,7939726.67934009
+2012,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,51795.095082
+2012,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,441191.844972311
+2012,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,51750.627
+2013,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",204001.123333333
+2013,Agriculture,Fermentation entérique,Fermentation entérique,3332270.06366926
+2013,Agriculture,Gestion des fumiers,Gestion des fumiers,2210588.60496241
+2013,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2248647.33529815
+2013,Industries,Combustion industrielle,Agriculture et foresterie,481441.068170742
+2013,Industries,Combustion industrielle,Autres manufacturiers,3839724.93271254
+2013,Industries,Combustion industrielle,Construction,360873.601653259
+2013,Industries,Combustion industrielle,Exploitation minière,1180695.29893662
+2013,Industries,Combustion industrielle,Industries chimiques,1144742.114573
+2013,Industries,Combustion industrielle,Industries de raffinage du pétrole,2314330.673
+2013,Industries,Combustion industrielle,Production de minéraux non métalliques,1004575.918041
+2013,Industries,Combustion industrielle,Production de métaux ferreux,330895.89318
+2013,Industries,Combustion industrielle,Production de métaux non ferreux,533494.4238
+2013,Industries,Combustion industrielle,Usines de pâtes et papiers,1318949.210292
+2013,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2091791.33889851
+2013,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,561045.600077
+2013,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,131755.078742121
+2013,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5680286.574666
+2013,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1723635.77491
+2013,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1979749.340313
+2013,Industries,Émissions fugitives,Pétrole et gaz naturel,260256.123933
+2013,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,197129.25851
+2013,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3824783.34844886
+2013,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,133339.095134871
+2013,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,39689.9384059456
+2013,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10782.213312349
+2013,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,362394.906556414
+2013,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,281807.458019907
+2013,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,3969693.50376926
+2013,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,410328.887315768
+2013,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2675180.0926
+2013,Transports,Autres transports,Pipelines,267494.567084926
+2013,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,956690.261175523
+2013,Transports,Autres transports,Véhicules hors route - Autres,1121267.01732896
+2013,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1297745.58279888
+2013,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2945330.1738979
+2013,Transports,Autres transports,Véhicules hors route - Résidentiel,215145.936808134
+2013,Transports,Transport aérien,Transport aérien intérieur,751761.307850484
+2013,Transports,Transport aérien,Transport aérien militaire,13586.7524526801
+2013,Transports,Transport ferroviaire,Transport ferroviaire,423003.050535169
+2013,Transports,Transport maritime,Transport maritime intérieur,782197.24861367
+2013,Transports,Transport maritime,Transport maritime militaire,6490.23487535825
+2013,Transports,Transport maritime,Transport maritime pêcheries,13569.8912843376
+2013,Transports,Transport routier,Automobiles,9850732.18698101
+2013,Transports,Transport routier,Autres transports routiers,219760.623747673
+2013,Transports,Transport routier,Camions légers,7964607.8699376
+2013,Transports,Transport routier,Véhicules lourds,7302621.58472584
+2013,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,61825.079227
+2013,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,336524.380897112
+2013,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,56200.716
+2014,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",199163.756
+2014,Agriculture,Fermentation entérique,Fermentation entérique,3290647.18688064
+2014,Agriculture,Gestion des fumiers,Gestion des fumiers,2164443.66888219
+2014,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2153993.71069292
+2014,Industries,Combustion industrielle,Agriculture et foresterie,466268.628993418
+2014,Industries,Combustion industrielle,Autres manufacturiers,3736712.00262958
+2014,Industries,Combustion industrielle,Construction,366206.171755998
+2014,Industries,Combustion industrielle,Exploitation minière,1300595.07069678
+2014,Industries,Combustion industrielle,Industries chimiques,1167118.66823
+2014,Industries,Combustion industrielle,Industries de raffinage du pétrole,2378586.799
+2014,Industries,Combustion industrielle,Production de minéraux non métalliques,1100273.654296
+2014,Industries,Combustion industrielle,Production de métaux ferreux,429497.12229
+2014,Industries,Combustion industrielle,Production de métaux non ferreux,557725.75587
+2014,Industries,Combustion industrielle,Usines de pâtes et papiers,1264427.38101
+2014,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2255106.33997218
+2014,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,634869.254779
+2014,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,85438.5376567827
+2014,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5215320.009575
+2014,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1844112.780386
+2014,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1987379.25832
+2014,Industries,Émissions fugitives,Pétrole et gaz naturel,266584.379262
+2014,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,163659.68446
+2014,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3810059.09858264
+2014,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,130442.707263602
+2014,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,41965.4222053894
+2014,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10963.896752349
+2014,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,362017.793486426
+2014,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,298865.792661742
+2014,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4207891.49264804
+2014,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,418608.118203026
+2014,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2662222.8338
+2014,Transports,Autres transports,Pipelines,358646.79973136
+2014,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,871266.546605446
+2014,Transports,Autres transports,Véhicules hors route - Autres,1010647.4509044
+2014,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1141192.68237685
+2014,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2639258.362845
+2014,Transports,Autres transports,Véhicules hors route - Résidentiel,199356.07656137
+2014,Transports,Transport aérien,Transport aérien intérieur,705544.538191942
+2014,Transports,Transport aérien,Transport aérien militaire,11528.8189722714
+2014,Transports,Transport ferroviaire,Transport ferroviaire,441802.938919357
+2014,Transports,Transport maritime,Transport maritime intérieur,772570.172395832
+2014,Transports,Transport maritime,Transport maritime militaire,7656.3161059527
+2014,Transports,Transport maritime,Transport maritime pêcheries,7031.20526489109
+2014,Transports,Transport routier,Automobiles,9418226.20799201
+2014,Transports,Transport routier,Autres transports routiers,220598.351517285
+2014,Transports,Transport routier,Camions légers,7780758.01152694
+2014,Transports,Transport routier,Véhicules lourds,7059884.72317766
+2014,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,54178.513375
+2014,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,314219.34871893
+2014,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,59511.6835
+2015,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",199911.880666667
+2015,Agriculture,Fermentation entérique,Fermentation entérique,3268101.3036959
+2015,Agriculture,Gestion des fumiers,Gestion des fumiers,2157550.37220022
+2015,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2235808.87000969
+2015,Industries,Combustion industrielle,Agriculture et foresterie,478493.885451282
+2015,Industries,Combustion industrielle,Autres manufacturiers,3025754.48028094
+2015,Industries,Combustion industrielle,Construction,346184.0090292
+2015,Industries,Combustion industrielle,Exploitation minière,1168695.41590786
+2015,Industries,Combustion industrielle,Industries chimiques,1119946.988329
+2015,Industries,Combustion industrielle,Industries de raffinage du pétrole,2488186.98
+2015,Industries,Combustion industrielle,Production de minéraux non métalliques,1120552.47863
+2015,Industries,Combustion industrielle,Production de métaux ferreux,360151.087164
+2015,Industries,Combustion industrielle,Production de métaux non ferreux,544158.88705
+2015,Industries,Combustion industrielle,Usines de pâtes et papiers,1283121.276816
+2015,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2400756.80967756
+2015,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,658946.617278
+2015,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,151574.612870838
+2015,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5177678.6718
+2015,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1861438.526325
+2015,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1805288.032592
+2015,Industries,Émissions fugitives,Pétrole et gaz naturel,238646.283622
+2015,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,170190.29082
+2015,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4063780.02470102
+2015,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,128552.620591679
+2015,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,45738.1574805859
+2015,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10955.726512349
+2015,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,360963.778730865
+2015,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,288023.964065382
+2015,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4430277.82218196
+2015,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,409478.780831401
+2015,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2595455.7194
+2015,Transports,Autres transports,Pipelines,328918.70872148
+2015,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,900304.817636263
+2015,Transports,Autres transports,Véhicules hors route - Autres,1002767.96133421
+2015,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1083946.63780538
+2015,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2682554.4110885
+2015,Transports,Autres transports,Véhicules hors route - Résidentiel,203030.499918351
+2015,Transports,Transport aérien,Transport aérien intérieur,705547.885675575
+2015,Transports,Transport aérien,Transport aérien militaire,12264.0640722662
+2015,Transports,Transport ferroviaire,Transport ferroviaire,433278.463969534
+2015,Transports,Transport maritime,Transport maritime intérieur,762995.549873984
+2015,Transports,Transport maritime,Transport maritime militaire,8822.39733654714
+2015,Transports,Transport maritime,Transport maritime pêcheries,492.539042050285
+2015,Transports,Transport routier,Automobiles,9530538.34964561
+2015,Transports,Transport routier,Autres transports routiers,235964.521385432
+2015,Transports,Transport routier,Camions légers,8111865.47663583
+2015,Transports,Transport routier,Véhicules lourds,7262497.76414946
+2015,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,41165.250422
+2015,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,267654.153889035
+2015,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,54175.7088
+2016,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",225152.774
+2016,Agriculture,Fermentation entérique,Fermentation entérique,3246123.48208588
+2016,Agriculture,Gestion des fumiers,Gestion des fumiers,2163226.64317962
+2016,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2273232.72838286
+2016,Industries,Combustion industrielle,Agriculture et foresterie,490450.869408161
+2016,Industries,Combustion industrielle,Autres manufacturiers,2265715.02213572
+2016,Industries,Combustion industrielle,Construction,337430.250483053
+2016,Industries,Combustion industrielle,Exploitation minière,1254946.12418908
+2016,Industries,Combustion industrielle,Industries chimiques,1132848.652441
+2016,Industries,Combustion industrielle,Industries de raffinage du pétrole,2391211.319
+2016,Industries,Combustion industrielle,Production de minéraux non métalliques,1064975.564287
+2016,Industries,Combustion industrielle,Production de métaux ferreux,379517.7706
+2016,Industries,Combustion industrielle,Production de métaux non ferreux,521624.156876
+2016,Industries,Combustion industrielle,Usines de pâtes et papiers,1246625.95387
+2016,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2419627.68264617
+2016,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,691574.179312
+2016,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,164035.399726577
+2016,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5077391.14383
+2016,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,1807170.125562
+2016,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1731902.02118
+2016,Industries,Émissions fugitives,Pétrole et gaz naturel,242428.980742
+2016,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,183580.7549
+2016,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4412725.2859658
+2016,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,124682.106167515
+2016,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,42549.5828770707
+2016,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,11346.403512349
+2016,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,370473.846000454
+2016,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,278182.532881171
+2016,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4490208.85036031
+2016,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,371850.432780993
+2016,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2780568.2021
+2016,Transports,Autres transports,Pipelines,79015.5870383192
+2016,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,842404.810578004
+2016,Transports,Autres transports,Véhicules hors route - Autres,1005975.47395179
+2016,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1038665.1848993
+2016,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2461691.19501094
+2016,Transports,Autres transports,Véhicules hors route - Résidentiel,199645.950483013
+2016,Transports,Transport aérien,Transport aérien intérieur,726215.450768886
+2016,Transports,Transport aérien,Transport aérien militaire,15361.3509603556
+2016,Transports,Transport ferroviaire,Transport ferroviaire,416065.624897949
+2016,Transports,Transport maritime,Transport maritime intérieur,771880.597911804
+2016,Transports,Transport maritime,Transport maritime militaire,6678.22498907914
+2016,Transports,Transport maritime,Transport maritime pêcheries,988.148699347485
+2016,Transports,Transport routier,Automobiles,9464946.67005235
+2016,Transports,Transport routier,Autres transports routiers,251692.581972785
+2016,Transports,Transport routier,Camions légers,8563362.57180911
+2016,Transports,Transport routier,Véhicules lourds,7668941.88049243
+2016,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,49035.423689
+2016,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,297890.41643641
+2016,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,47876.1028
+2017,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",214820.103666667
+2017,Agriculture,Fermentation entérique,Fermentation entérique,3206066.26592321
+2017,Agriculture,Gestion des fumiers,Gestion des fumiers,2172686.02343358
+2017,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2225991.96908076
+2017,Industries,Combustion industrielle,Agriculture et foresterie,451552.3417
+2017,Industries,Combustion industrielle,Autres manufacturiers,2265670.67630259
+2017,Industries,Combustion industrielle,Construction,359344.742299561
+2017,Industries,Combustion industrielle,Exploitation minière,1423359.98680715
+2017,Industries,Combustion industrielle,Industries chimiques,1138254.184931
+2017,Industries,Combustion industrielle,Industries de raffinage du pétrole,2474183.8363
+2017,Industries,Combustion industrielle,Production de minéraux non métalliques,1211919.758283
+2017,Industries,Combustion industrielle,Production de métaux ferreux,440957.53728
+2017,Industries,Combustion industrielle,Production de métaux non ferreux,529267.317092
+2017,Industries,Combustion industrielle,Usines de pâtes et papiers,1325598.07038
+2017,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2541142.42893306
+2017,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,725513.355936
+2017,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,119631.119942939
+2017,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5148091.97534
+2017,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2095575.6
+2017,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1939762.70596
+2017,Industries,Émissions fugitives,Pétrole et gaz naturel,253149.05364717
+2017,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,179722.24085
+2017,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4141813.67929215
+2017,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,120841.51541876
+2017,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,32705.8575849651
+2017,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,11549.014892349
+2017,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,368236.45261044
+2017,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,263959.514874455
+2017,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4772192.56597711
+2017,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,372487.602022425
+2017,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2478918.6666
+2017,Transports,Autres transports,Pipelines,80649.5270350263
+2017,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,983184.325817376
+2017,Transports,Autres transports,Véhicules hors route - Autres,1144683.78210529
+2017,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1281114.46421016
+2017,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2811427.19399913
+2017,Transports,Autres transports,Véhicules hors route - Résidentiel,200857.454391457
+2017,Transports,Transport aérien,Transport aérien intérieur,789724.779610929
+2017,Transports,Transport aérien,Transport aérien militaire,15418.4647680766
+2017,Transports,Transport ferroviaire,Transport ferroviaire,446380.493453983
+2017,Transports,Transport maritime,Transport maritime intérieur,798973.651809488
+2017,Transports,Transport maritime,Transport maritime militaire,13873.1684817359
+2017,Transports,Transport maritime,Transport maritime pêcheries,427.157614126631
+2017,Transports,Transport routier,Automobiles,9174312.45142668
+2017,Transports,Transport routier,Autres transports routiers,267745.110039066
+2017,Transports,Transport routier,Camions légers,9396419.8313794
+2017,Transports,Transport routier,Véhicules lourds,8005509.31944787
+2017,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,43620.114092
+2017,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,296471.22478176
+2017,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,45145.8316
+2018,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",183257.191333333
+2018,Agriculture,Fermentation entérique,Fermentation entérique,3234944.56726266
+2018,Agriculture,Gestion des fumiers,Gestion des fumiers,2209632.7808185
+2018,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2299653.06788677
+2018,Industries,Combustion industrielle,Agriculture et foresterie,462052.2757
+2018,Industries,Combustion industrielle,Autres manufacturiers,2512355.77964044
+2018,Industries,Combustion industrielle,Construction,401485.7212
+2018,Industries,Combustion industrielle,Exploitation minière,1340825.28348948
+2018,Industries,Combustion industrielle,Industries chimiques,1059939.022704
+2018,Industries,Combustion industrielle,Industries de raffinage du pétrole,2263700.018
+2018,Industries,Combustion industrielle,Production de minéraux non métalliques,1366769.848478
+2018,Industries,Combustion industrielle,Production de métaux ferreux,429343.63277
+2018,Industries,Combustion industrielle,Production de métaux non ferreux,497318.933839
+2018,Industries,Combustion industrielle,Usines de pâtes et papiers,1432582.69927
+2018,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2753437.40487196
+2018,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,736106.163183
+2018,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,168752.692875021
+2018,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,4619875.536829
+2018,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2353382.146
+2018,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1813579.59157
+2018,Industries,Émissions fugitives,Pétrole et gaz naturel,265801.655993278
+2018,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,178309.442212
+2018,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,4001331.02873653
+2018,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,117590.663782652
+2018,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,53417.507338781
+2018,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10802.737412349
+2018,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,381606.861133769
+2018,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,245610.057673689
+2018,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4489735.02171677
+2018,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,394947.909311487
+2018,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2534293.769
+2018,Transports,Autres transports,Pipelines,96597.4247527533
+2018,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,1025562.15513749
+2018,Transports,Autres transports,Véhicules hors route - Autres,1142228.2780111
+2018,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1329641.13941081
+2018,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2894512.55910174
+2018,Transports,Autres transports,Véhicules hors route - Résidentiel,196192.794509364
+2018,Transports,Transport aérien,Transport aérien intérieur,883522.266831338
+2018,Transports,Transport aérien,Transport aérien militaire,19907.5390615553
+2018,Transports,Transport ferroviaire,Transport ferroviaire,530732.788645493
+2018,Transports,Transport maritime,Transport maritime intérieur,841439.891804671
+2018,Transports,Transport maritime,Transport maritime militaire,13317.8257716087
+2018,Transports,Transport maritime,Transport maritime pêcheries,138.026915684491
+2018,Transports,Transport routier,Automobiles,8797885.06208673
+2018,Transports,Transport routier,Autres transports routiers,278845.449806325
+2018,Transports,Transport routier,Camions légers,9660577.66753648
+2018,Transports,Transport routier,Véhicules lourds,7706118.35842704
+2018,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,49563.683408
+2018,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,303285.280680485
+2018,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,44872.7281
+2019,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",167105.502666667
+2019,Agriculture,Fermentation entérique,Fermentation entérique,3253039.47108075
+2019,Agriculture,Gestion des fumiers,Gestion des fumiers,2233352.17401001
+2019,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2313222.74028072
+2019,Industries,Combustion industrielle,Agriculture et foresterie,475331.6062
+2019,Industries,Combustion industrielle,Autres manufacturiers,3026579.75608411
+2019,Industries,Combustion industrielle,Construction,412009.8492
+2019,Industries,Combustion industrielle,Exploitation minière,1427508.05452472
+2019,Industries,Combustion industrielle,Industries chimiques,985578.374032
+2019,Industries,Combustion industrielle,Industries de raffinage du pétrole,2400934.463
+2019,Industries,Combustion industrielle,Production de minéraux non métalliques,1431256.544741
+2019,Industries,Combustion industrielle,Production de métaux ferreux,401142.46674
+2019,Industries,Combustion industrielle,Production de métaux non ferreux,511838.789652
+2019,Industries,Combustion industrielle,Usines de pâtes et papiers,1430751.524164
+2019,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2482400.20622055
+2019,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,670021.50517
+2019,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,142667.372752432
+2019,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,4493858.6101
+2019,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2482368.5672
+2019,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1896001.69368
+2019,Industries,Émissions fugitives,Pétrole et gaz naturel,259787.517648889
+2019,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,192759.92896
+2019,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3978602.70727374
+2019,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,114778.320696211
+2019,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,50529.6939853547
+2019,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,11444.21138
+2019,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,384619.159402692
+2019,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,243690.076026549
+2019,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4570285.17312325
+2019,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,381618.376610882
+2019,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2604548.6379
+2019,Transports,Autres transports,Pipelines,101628.227379187
+2019,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,1126672.84249285
+2019,Transports,Autres transports,Véhicules hors route - Autres,1161143.43771069
+2019,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1446728.68833498
+2019,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",3149957.59112049
+2019,Transports,Autres transports,Véhicules hors route - Résidentiel,196798.031328881
+2019,Transports,Transport aérien,Transport aérien intérieur,885268.460740037
+2019,Transports,Transport aérien,Transport aérien militaire,14704.0532547384
+2019,Transports,Transport ferroviaire,Transport ferroviaire,544981.197312547
+2019,Transports,Transport maritime,Transport maritime intérieur,827933.792369467
+2019,Transports,Transport maritime,Transport maritime militaire,8179.43923702872
+2019,Transports,Transport maritime,Transport maritime pêcheries,246.47352286249
+2019,Transports,Transport routier,Automobiles,8633995.22224893
+2019,Transports,Transport routier,Autres transports routiers,293381.012604246
+2019,Transports,Transport routier,Camions légers,10174975.5164637
+2019,Transports,Transport routier,Véhicules lourds,7407970.6228299
+2019,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,53810.024195
+2019,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,291034.14863649
+2019,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,45055.6129
+2020,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",184748.270666667
+2020,Agriculture,Fermentation entérique,Fermentation entérique,3219812.80360197
+2020,Agriculture,Gestion des fumiers,Gestion des fumiers,2216555.82577423
+2020,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2311417.84881091
+2020,Industries,Combustion industrielle,Agriculture et foresterie,383816.134265508
+2020,Industries,Combustion industrielle,Autres manufacturiers,2837921.23160005
+2020,Industries,Combustion industrielle,Construction,377508.139051139
+2020,Industries,Combustion industrielle,Exploitation minière,1178734.13265598
+2020,Industries,Combustion industrielle,Industries chimiques,955954.763509
+2020,Industries,Combustion industrielle,Industries de raffinage du pétrole,2223696.803
+2020,Industries,Combustion industrielle,Production de minéraux non métalliques,1300994.250318
+2020,Industries,Combustion industrielle,Production de métaux ferreux,345564.9586
+2020,Industries,Combustion industrielle,Production de métaux non ferreux,522308.77427
+2020,Industries,Combustion industrielle,Usines de pâtes et papiers,1413779.53418
+2020,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2429199.21455811
+2020,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,618919.956933
+2020,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,180900.737278196
+2020,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5125568.1993
+2020,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2249072.452
+2020,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1655055.83002
+2020,Industries,Émissions fugitives,Pétrole et gaz naturel,247196.23329586
+2020,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,205223.23112
+2020,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3715523.93634356
+2020,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,112012.866928359
+2020,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,51723.9100938833
+2020,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10265.32154
+2020,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,393451.439057645
+2020,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,186655.045489593
+2020,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,3873618.87249427
+2020,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,328663.783089773
+2020,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2201999.63678678
+2020,Transports,Autres transports,Pipelines,98452.569895616
+2020,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,997033.228349022
+2020,Transports,Autres transports,Véhicules hors route - Autres,1123956.12017836
+2020,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1308833.16633794
+2020,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2757826.86678111
+2020,Transports,Autres transports,Véhicules hors route - Résidentiel,202418.054593803
+2020,Transports,Transport aérien,Transport aérien intérieur,541406.846523609
+2020,Transports,Transport aérien,Transport aérien militaire,9576.18113389569
+2020,Transports,Transport ferroviaire,Transport ferroviaire,484091.666248903
+2020,Transports,Transport maritime,Transport maritime intérieur,661133.583010982
+2020,Transports,Transport maritime,Transport maritime militaire,325.207200405126
+2020,Transports,Transport maritime,Transport maritime pêcheries,338.195129832196
+2020,Transports,Transport routier,Automobiles,6820921.34005987
+2020,Transports,Transport routier,Autres transports routiers,248343.277126043
+2020,Transports,Transport routier,Camions légers,8884289.95684084
+2020,Transports,Transport routier,Véhicules lourds,6362023.662059
+2020,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,36459.610554
+2020,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,292414.929347575
+2020,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,37247.955
+2021,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",235160.148666667
+2021,Agriculture,Fermentation entérique,Fermentation entérique,3220818.35260265
+2021,Agriculture,Gestion des fumiers,Gestion des fumiers,2229522.47738735
+2021,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2357909.65577702
+2021,Industries,Combustion industrielle,Agriculture et foresterie,338752.651848859
+2021,Industries,Combustion industrielle,Autres manufacturiers,2937281.53952927
+2021,Industries,Combustion industrielle,Construction,368706.423799719
+2021,Industries,Combustion industrielle,Exploitation minière,1024623.81590464
+2021,Industries,Combustion industrielle,Industries chimiques,1022373.548484
+2021,Industries,Combustion industrielle,Industries de raffinage du pétrole,2290445.3835
+2021,Industries,Combustion industrielle,Production de minéraux non métalliques,1446722.042247
+2021,Industries,Combustion industrielle,Production de métaux ferreux,374778.89981
+2021,Industries,Combustion industrielle,Production de métaux non ferreux,516429.314806
+2021,Industries,Combustion industrielle,Usines de pâtes et papiers,1457628.50994
+2021,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2442012.21044668
+2021,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,707489.6260868
+2021,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,192813.958793766
+2021,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5283098.980962
+2021,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2428124.089412
+2021,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1892078.75891
+2021,Industries,Émissions fugitives,Pétrole et gaz naturel,257915.475221279
+2021,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,215513.00952
+2021,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3641559.72272019
+2021,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,109406.769142669
+2021,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,56667.371905358
+2021,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10787.90204
+2021,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,389596.139803706
+2021,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,194350.503735642
+2021,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4117766.5544743
+2021,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,307040.894129297
+2021,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2171861.83258343
+2021,Transports,Autres transports,Pipelines,103702.760416484
+2021,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,1108945.78884905
+2021,Transports,Autres transports,Véhicules hors route - Autres,1081427.56810155
+2021,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1449028.91850423
+2021,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",3036480.95404996
+2021,Transports,Autres transports,Véhicules hors route - Résidentiel,173511.36066376
+2021,Transports,Transport aérien,Transport aérien intérieur,651082.004393855
+2021,Transports,Transport aérien,Transport aérien militaire,13117.5112793
+2021,Transports,Transport ferroviaire,Transport ferroviaire,471569.188776395
+2021,Transports,Transport maritime,Transport maritime intérieur,666650.842244861
+2021,Transports,Transport maritime,Transport maritime militaire,1422.77383291681
+2021,Transports,Transport maritime,Transport maritime pêcheries,937.07879209192
+2021,Transports,Transport routier,Automobiles,7591261.99211812
+2021,Transports,Transport routier,Autres transports routiers,246689.915204726
+2021,Transports,Transport routier,Camions légers,9715420.89831312
+2021,Transports,Transport routier,Véhicules lourds,6712663.44069658
+2021,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,71600.326962
+2021,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,276013.250497865
+2021,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,35688.1847
+2022,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",203751.166666667
+2022,Agriculture,Fermentation entérique,Fermentation entérique,3180559.48278809
+2022,Agriculture,Gestion des fumiers,Gestion des fumiers,2216091.66686561
+2022,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2168542.97513561
+2022,Industries,Combustion industrielle,Agriculture et foresterie,344471.690845103
+2022,Industries,Combustion industrielle,Autres manufacturiers,3218423.27016309
+2022,Industries,Combustion industrielle,Construction,394754.494746134
+2022,Industries,Combustion industrielle,Exploitation minière,963770.33235
+2022,Industries,Combustion industrielle,Industries chimiques,999264.515927
+2022,Industries,Combustion industrielle,Industries de raffinage du pétrole,2342690.18572
+2022,Industries,Combustion industrielle,Production de minéraux non métalliques,1239897.291734
+2022,Industries,Combustion industrielle,Production de métaux ferreux,372090.82062
+2022,Industries,Combustion industrielle,Production de métaux non ferreux,538175.235078
+2022,Industries,Combustion industrielle,Usines de pâtes et papiers,1435725.67094
+2022,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2474497.09974283
+2022,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,804148.39729795
+2022,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,147483.646272531
+2022,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5314468.8468
+2022,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2245199.7311
+2022,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1883907.12978
+2022,Industries,Émissions fugitives,Pétrole et gaz naturel,267480.171586548
+2022,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,214778.9971
+2022,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3698872.28395696
+2022,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,107078.880627574
+2022,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,55823.9082567398
+2022,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,12395.97564
+2022,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,399449.854095692
+2022,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,209121.500346294
+2022,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,4228520.56906538
+2022,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,310669.727653093
+2022,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,2225697.96421546
+2022,Transports,Autres transports,Pipelines,86857.6393806348
+2022,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,1054310.99813601
+2022,Transports,Autres transports,Véhicules hors route - Autres,1091601.55313152
+2022,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1391770.47028782
+2022,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2859453.98556138
+2022,Transports,Autres transports,Véhicules hors route - Résidentiel,180658.025580737
+2022,Transports,Transport aérien,Transport aérien intérieur,816273.746467884
+2022,Transports,Transport aérien,Transport aérien militaire,12117.9092809524
+2022,Transports,Transport ferroviaire,Transport ferroviaire,507579.354616413
+2022,Transports,Transport maritime,Transport maritime intérieur,759568.123412532
+2022,Transports,Transport maritime,Transport maritime militaire,18514.9070953177
+2022,Transports,Transport maritime,Transport maritime pêcheries,697.069157943937
+2022,Transports,Transport routier,Automobiles,7569655.45210512
+2022,Transports,Transport routier,Autres transports routiers,280223.140963708
+2022,Transports,Transport routier,Camions légers,10255876.2406648
+2022,Transports,Transport routier,Véhicules lourds,7549306.98240988
+2022,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,96243.781935
+2022,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,311152.2503044
+2022,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,37217.3609
+2023,Agriculture,"Chaulage, urée et autres engrais carbonés","Chaulage, urée et autres engrais carbonés",169794.804666667
+2023,Agriculture,Fermentation entérique,Fermentation entérique,3166670.63047149
+2023,Agriculture,Gestion des fumiers,Gestion des fumiers,2214966.34848581
+2023,Agriculture,Gestion des sols agricoles,Gestion des sols agricoles,2185652.36925411
+2023,Industries,Combustion industrielle,Agriculture et foresterie,324474.306259667
+2023,Industries,Combustion industrielle,Autres manufacturiers,3102951.68961299
+2023,Industries,Combustion industrielle,Construction,377723.443090112
+2023,Industries,Combustion industrielle,Exploitation minière,921076.92317072
+2023,Industries,Combustion industrielle,Industries chimiques,932228.15541
+2023,Industries,Combustion industrielle,Industries de raffinage du pétrole,2401094.3796
+2023,Industries,Combustion industrielle,Production de minéraux non métalliques,1370743.345509
+2023,Industries,Combustion industrielle,Production de métaux ferreux,372349.27937
+2023,Industries,Combustion industrielle,Production de métaux non ferreux,533780.407444
+2023,Industries,Combustion industrielle,Usines de pâtes et papiers,1370281.79909
+2023,Industries,Procédés industriels et utilisation des produits,"Autres production et consommation d'halocarbures, de SF6 et de NF3",2155167.01681163
+2023,Industries,Procédés industriels et utilisation des produits,Autres utilisations non énergétiques,693419.793566635
+2023,Industries,Procédés industriels et utilisation des produits,Fabrication et utilisation d'autres produits,164647.928334057
+2023,Industries,Procédés industriels et utilisation des produits,Production d'aluminium et de magnésium,5378787.55654
+2023,Industries,Procédés industriels et utilisation des produits,Production de minéraux non métalliques,2543420.7109
+2023,Industries,Procédés industriels et utilisation des produits,Production de métaux ferreux,1772530.48475
+2023,Industries,Émissions fugitives,Pétrole et gaz naturel,274911.213493948
+2023,Matières résiduelles,Incinération des matières résiduelles,Incinération des matières résiduelles,188109.5597
+2023,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement municipaux,3320146.48491122
+2023,Matières résiduelles,Lieux d'enfouissement,Lieux d'enfouissement réservés aux usines de pâtes et papiers,104879.716659616
+2023,Matières résiduelles,Traitement biologique des matières résiduelles,Traitement biologique des matières résiduelles,63055.0864887733
+2023,Matières résiduelles,Traitement et rejet des eaux usées,Traitement des eaux usées industrielles,10669.44409
+2023,Matières résiduelles,Traitement et rejet des eaux usées,Traitement et rejet des eaux usées municipales,407361.942929349
+2023,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Administration publique,171312.225701373
+2023,"Résidentiel, commercial et institutionnel",Commercial et institutionnel,Commerces et Institutions,3765402.92292103
+2023,"Résidentiel, commercial et institutionnel",Résidentiel,Combustion biomasse,279213.053674593
+2023,"Résidentiel, commercial et institutionnel",Résidentiel,Énergie fossile,1941888.56192062
+2023,Transports,Autres transports,Pipelines,96288.9601833452
+2023,Transports,Autres transports,Véhicules hors route - Agriculture et foresterie,1024604.54455123
+2023,Transports,Autres transports,Véhicules hors route - Autres,1091627.18565274
+2023,Transports,Autres transports,Véhicules hors route - Commercial et institutionnel,1403849.92980873
+2023,Transports,Autres transports,"Véhicules hors route - Fabrication, mines et construction",2791440.46802978
+2023,Transports,Autres transports,Véhicules hors route - Résidentiel,180341.238650156
+2023,Transports,Transport aérien,Transport aérien intérieur,895451.894664164
+2023,Transports,Transport aérien,Transport aérien militaire,11798.7915926481
+2023,Transports,Transport ferroviaire,Transport ferroviaire,561194.207698576
+2023,Transports,Transport maritime,Transport maritime intérieur,786457.107625049
+2023,Transports,Transport maritime,Transport maritime militaire,9223.73753782877
+2023,Transports,Transport maritime,Transport maritime pêcheries,584.529596226526
+2023,Transports,Transport routier,Automobiles,7624800.73505571
+2023,Transports,Transport routier,Autres transports routiers,297323.792448675
+2023,Transports,Transport routier,Camions légers,11004964.7244663
+2023,Transports,Transport routier,Véhicules lourds,7116988.20002954
+2023,Électricité et chaleur,Électricité et chaleur,Centrales aux biocombustibles,79723.3753
+2023,Électricité et chaleur,Électricité et chaleur,Centrales aux combustibles fossiles,279520.82241334
+2023,Électricité et chaleur,Électricité et chaleur,Centrales de production de chaleur,32745.0304
