@@ -1,0 +1,45 @@
+﻿ligne_source,type_mun,code_mrc,nom_mrc,code_type_poste,type_poste,sortant,nb_electeurs,nb_votes,nb_votes_rejetes,statut,statut_documentation
+2,MRC,020,Le Rocher-Percé,PR,Préfet,Sortant (même poste),0,0,,Élu sans opposition,élu sans opposition
+3,MRC,040,La Haute-Gaspésie,PR,Préfet,Nouveau candidat,9625,565,123,Non élu,non élu
+4,MRC,040,La Haute-Gaspésie,PR,Préfet,Nouveau candidat,9625,1035,123,Non élu,non élu
+5,MRC,040,La Haute-Gaspésie,PR,Préfet,Nouveau candidat,9625,2343,123,Élu,élu
+6,MRC,070,La Matapédia,PR,Préfet,Sortant (même poste),0,0,,Élu sans opposition,élu sans opposition
+7,MRC,110,Les Basques,PR,Préfet,Nouveau candidat,7600,2498,195,Élu,élu
+8,MRC,110,Les Basques,PR,Préfet,Nouveau candidat,7600,579,195,Non élu,non élu
+9,MRC,110,Les Basques,PR,Préfet,Nouveau candidat,7600,577,195,Non élu,non élu
+10,MRC,110,Les Basques,PR,Préfet,Nouveau candidat,7600,450,195,Non élu,non élu
+11,MRC,130,Témiscouata,PR,Préfet,Sortant (même poste),17037,5325,370,Élu,élu
+12,MRC,130,Témiscouata,PR,Préfet,Nouveau candidat,17037,2384,370,Non élu,non élu
+13,MRC,140,Kamouraska,PR,Préfet,Nouveau candidat,17266,3416,159,Élu,élu
+14,MRC,140,Kamouraska,PR,Préfet,Sortant (même poste),17266,1223,159,Non élu,non élu
+15,MRC,300,Le Granit,PR,Préfet,Sortant (même poste),0,0,,Élu sans opposition,élu sans opposition
+16,MRC,410,Le Haut-Saint-François,PR,Préfet,Nouveau candidat,19452,1541,243,Non élu,non élu
+17,MRC,410,Le Haut-Saint-François,PR,Préfet,Sortant (même poste),19452,4184,243,Élu,élu
+18,MRC,620,Matawinie,PR,Préfet,Sortant (même poste),52668,0,,Élu sans opposition,élu sans opposition
+19,MRC,630,Montcalm,PR,Préfet,Nouveau candidat,49423,5235,1032,Non élu,non élu
+20,MRC,630,Montcalm,PR,Préfet,Sortant (même poste),49423,8837,1032,Élu,élu
+21,MRC,770,Les Pays-d'en-Haut,PR,Préfet,Nouveau candidat,45359,1394,532,Non élu,non élu
+22,MRC,770,Les Pays-d'en-Haut,PR,Préfet,Nouveau candidat,45359,3107,532,Non élu,non élu
+23,MRC,770,Les Pays-d'en-Haut,PR,Préfet,Nouveau candidat,45359,9217,532,Élu,élu
+24,MRC,770,Les Pays-d'en-Haut,PR,Préfet,Nouveau candidat,45359,2589,532,Non élu,non élu
+25,MRC,770,Les Pays-d'en-Haut,PR,Préfet,Nouveau candidat,45359,1720,532,Non élu,non élu
+26,MRC,800,Papineau,PR,Préfet,Nouveau candidat,24840,4076,715,Non élu,non élu
+27,MRC,800,Papineau,PR,Préfet,Nouveau candidat,24840,6461,715,Élu,élu
+28,MRC,820,Les Collines-de-l'Outaouais,PR,Préfet,Sortant (même poste),42697,0,,Élu sans opposition,élu sans opposition
+29,MRC,830,La Vallée-de-la-Gatineau,PR,Préfet,Nouveau candidat,19552,2297,174,Non élu,non élu
+30,MRC,830,La Vallée-de-la-Gatineau,PR,Préfet,Sortant (même poste),19552,5528,174,Élu,élu
+31,MRC,840,Pontiac,PR,Préfet,Nouveau candidat,13361,1659,183,Non élu,non élu
+32,MRC,840,Pontiac,PR,Préfet,Nouveau candidat,13361,1748,183,Non élu,non élu
+33,MRC,840,Pontiac,PR,Préfet,Nouveau candidat,13361,467,183,Non élu,non élu
+34,MRC,840,Pontiac,PR,Préfet,Sortant (même poste),13361,2380,183,Élu,élu
+35,MRC,850,Témiscamingue,PR,Préfet,Nouveau candidat,12891,313,62,Non élu,non élu
+36,MRC,850,Témiscamingue,PR,Préfet,Nouveau candidat,12891,3547,62,Élu,élu
+37,MRC,910,Le Domaine-du-Roy,PR,Préfet,Sortant (même poste),25059,8086,359,Élu,élu
+38,MRC,910,Le Domaine-du-Roy,PR,Préfet,Nouveau candidat,25059,3251,359,Non élu,non élu
+39,MRC,920,Maria-Chapdelaine,PR,Préfet,Nouveau candidat,19864,5433,125,Élu,élu
+40,MRC,920,Maria-Chapdelaine,PR,Préfet,Sortant (même poste),19864,2834,125,Non élu,non élu
+41,MRC,960,Manicouagan,PR,Préfet,Nouveau candidat,23678,1411,392,Non élu,non élu
+42,MRC,960,Manicouagan,PR,Préfet,Nouveau candidat,23678,7485,392,Élu,élu
+43,MRC,981,Minganie,PR,Préfet,Sortant (même poste),5191,0,,Élu sans opposition,élu sans opposition
+44,MRC,982,Le Golfe-du-Saint-Laurent,PR,Préfet,Nouveau candidat,3731,287,6,Non élu,non élu
+45,MRC,982,Le Golfe-du-Saint-Laurent,PR,Préfet,Nouveau candidat,3731,523,6,Élu,élu
