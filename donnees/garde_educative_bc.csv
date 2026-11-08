@@ -1,0 +1,161 @@
+﻿ligne_source,nom,adresse,code_postal,municipalite,region_code,region,territoire,places_total,rsg_reconnues,type_financement_publie,subv_publie
+2,LES SERVICES DE GARDE LA FARANDOLE,"400, 3e Rue Fraser",G0R 1Z0,La Pocatière,1,Bas-Saint-Laurent,MRC Kamouraska,241,45,BC-MF,CR
+3,LE CENTRE DE LA PETITE ENFANCE DE MATANE,"210, avenue d'Amours",G4W 2X7,Matane,1,Bas-Saint-Laurent,MRC La Matanie,230,36,BC-MF,CR
+4,CENTRE DE LA PETITE ENFANCE L'AURORE BORÉALE,"418, rue Rouer",G5L 6J9,Rimouski,1,Bas-Saint-Laurent,MRC Rimouski-Neigette,896,97,BC-MF,CR
+5,CENTRE DE LA PETITE ENFANCE DE RIVIÈRE-DU-LOUP INC.,"57, rue Beaubien",G5R 1H6,Rivière-du-Loup,1,Bas-Saint-Laurent,MRC Rivière-du-Loup,360,67,BC-MF,CR
+6,SERVICES DE GARDE L'ENFANT JOUE,"55, rue Principale",G0J 2Z0,Saint-Moïse,1,Bas-Saint-Laurent,MRC La Matapédia,290,35,BC-MF,CR
+7,CENTRE DE LA PETITE ENFANCE LES PINSONS INC.,"20, rue des Coquillages",G0K 1P0,Sainte-Luce,1,Bas-Saint-Laurent,MRC La Mitis,357,53,BC-MF,CR
+8,CENTRE DE LA PETITE ENFANCE LA BALEINE BRICOLEUSE,"566, rue Jean Rioux",G0L 4K0,Trois-Pistoles,1,Bas-Saint-Laurent,MRC Les Basques,193,25,BC-MF,CR
+9,"CENTRE DE LA PETITE ENFANCE ""LES CALINOURS""","684, rue Bélanger",G0L 1X0,Témiscouata-sur-le-Lac,1,Bas-Saint-Laurent,MRC Témiscouata,344,49,BC-MF,CR
+10,CENTRE DE LA PETITE ENFANCE LA BAMBINERIE,"200, avenue McNaughton",G8B 5S5,Alma,2,Saguenay-Lac-Saint-Jean,MRC Lac-Saint-Jean-Est,748,120,BC-MF,CR
+11,LE CENTRE DE LA PETITE ENFANCE AUETISSATSH,"50, rue Auetissatsh",G0W 2H0,Mashteuiatsh,2,Saguenay-Lac-Saint-Jean,Municipalités de Mashteuiatsh et Lac-Ashuapmushuan,39,2,BC-MF,CR
+12,CENTRE DE LA PETITE ENFANCE CROQUE LA VIE,"1153, des Écoles",G8M 3Z5,Normandin,2,Saguenay-Lac-Saint-Jean,MRC Maria-Chapdelaine,302,58,BC-MF,CR
+13,CENTRE DE LA PETITE ENFANCE LES AMIS DE LA CULBUTE,"100, rue Jules-Constantin",G8H 3N8,Roberval,2,Saguenay-Lac-Saint-Jean,MRC Le Domaine-du-Roi,444,60,BC-MF,CR
+14,BUREAU COORDONNATEUR DE LA PETITE ENFANCE,"72, rue Jacques Cartier Ouest, 2e étage",G7J 1G2,Saguenay,2,Saguenay-Lac-Saint-Jean,VILLE DE SAGUENAY - CSSS DE JONQUIÈRE (CARREFOUR DE SANTÉ JONQUIÈRE) - CSSS DE CHICOUTIMI,1923,289,BC-MF,CR
+15,CENTRE DE LA PETITE ENFANCE-BUREAU COORDONNATEUR MINI-MONDE,"701, 5e Rue",G7B 1Y7,Saguenay,2,Saguenay-Lac-Saint-Jean,Ville de Saguenay - CSSS Cléophas-Claveau (La Baie),381,61,BC-MF,CR
+16,CENTRE DE LA PETITE ENFANCE DU SOLEIL À LA LUNE,"40, rue Saint-Paul",G3Z 2S5,Baie-Saint-Paul,3,Capitale-Nationale,MRC Charlevoix,204,27,BC-MF,CR
+17,CENTRE DE LA PETITE ENFANCE L'ENCHANTÉ,"11, rue Montmorency",G0A 1H0,Boischatel,3,Capitale-Nationale,MRC La Côte-de-Beaupré et MRC L'Île d'Orléans,444,62,BC-MF,CR
+18,CENTRE DE LA PETITE ENFANCE PIGNONS SUR RUE,"5, rue Jean-Talon",G4A 1A4,Clermont,3,Capitale-Nationale,MRC Charlevoix-Est,293,40,BC-MF,CR
+19,PITCHOUNETTE GARDE EN MILIEU FAMILIAL INC.,"6180, boulevard Wilfrid-Hamel",G2E 2H7,L'Ancienne-Lorette,3,Capitale-Nationale,Ville de Québec - Arrondissement Laurentien secteur Sud,877,107,BC-MF,CR
+20,CENTRE DE LA PETITE ENFANCE LE KANGOUROU,"73, rue Pleau",G3H 2G6,Pont-Rouge,3,Capitale-Nationale,MRC Portneuf,643,135,BC-MF,CR
+21,ALLIANCE BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL DE BEAUPORT,"299, rue Seigneuriale, bureau 300",G1C 3P7,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement Beauport,970,123,BC-MF,CR
+22,BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL DES HAUTES MARÉES,"2750, chemin Sainte-Foy, bureau 290",G1V 1V6,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement Sainte-Foy-Sillery,733,126,BC-MF,CR
+23,BUREAU COORDONNATEUR DE LA HAUTE-ST-CHARLES,"359, rue Racine",G2B 1E9,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement La Haute-Saint-Charles,938,105,BC-MF,CR
+24,BUREAU COORDONNATEUR LA CITÉ,"325, rue de l'Espinay, porte 200",G1L 2J2,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement La Cité,225,18,BC-MF,CR
+25,BUREAU COORDONNATEUR LIMOILOU,"325, rue de l'Espinay, porte 200",G1L 2J2,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement Limoilou,342,44,BC-MF,CR
+26,CENTRE DE LA PETITE ENFANCE L'ESSENTIEL,"161, avenue Champagnat, bureau 100",G1M 3W4,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement Les Rivières,731,125,BC-MF,CR
+27,CENTRE DE LA PETITE ENFANCE LE PETIT BALUCHON (1981) INC.,"1384, avenue de l'Amiral",G3K 1G2,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement Laurentien secteur Nord (ancienne ville de Val-Bélair),510,69,BC-MF,CR
+28,CENTRE DE LA PETITE ENFANCE LES PETITS MULOTS,"7843, des Santolines, bureau 1",G1G 0G3,Québec,3,Capitale-Nationale,Ville de Québec - Arrondissement Charlesbourg,749,139,BC-MF,CR
+29,CENTRE DE LA PETITE ENFANCE JOLI-COEUR INC.,"18, rue Louis-Jolliet",G3N 2N6,Sainte-Catherine-de-la-Jacques-Cart,3,Capitale-Nationale,MRC La Jacques-Cartier,421,58,BC-MF,CR
+30,CENTRE DE LA PETITE ENFANCE LA CLÉ DES CHAMPS INC.,"385, rue Saint-Zéphirin",G9X 1X7,La Tuque,4,Mauricie,Ville de La Tuque,249,23,BC-MF,CR
+31,LES SERVICES DE GARDE GRIBOUILLIS,"700, rue Notre-Dame Sud",J5V 1Y9,Louiseville,4,Mauricie,MRC Maskinongé,377,50,BC-MF,CR
+32,CENTRE DE LA PETITE ENFANCE FLOCONS DE RÊVE INC.,"1875, rue Notre-Dame",G0X 2X0,Saint-Maurice,4,Mauricie,MRC Les Chenaux,246,37,BC-MF,CR
+33,C.P.E. LES SOLEILS DE MÉKINAC,"2, rue Saint-Gabriel",G0X 3H0,Saint-Tite,4,Mauricie,MRC Mékinac,192,22,BC-MF,CR
+34,CENTRE DE LA PETITE ENFANCE LE MANÈGE DES TOUT-PETITS INC.,"821, 5e Av",G9T 2M9,Shawinigan,4,Mauricie,Ville de Shawinigan,673,109,BC-MF,CR
+35,CENTRE DE LA PETITE ENFANCE LE CERF-VOLANT INC.,"165, boulevard Sainte-Madeleine, porte 26",G8T 3L7,Trois-Rivières,4,Mauricie,Ville de Trois-Rivières - CLSC Cap de la Madeleine,583,105,BC-MF,CR
+36,LES PETITS COLLÉGIENS,"500, rue des Forges",G9A 2H5,Trois-Rivières,4,Mauricie,Ville de Trois-Rivières - CLSC Trois-Rivières (sauf municipalité de Saint-Étienne-des-Grès),1159,202,BC-MF,CR
+37,CENTRE DE LA PETITE ENFANCE LES POMMETTES ROUGES,"52, rue Dupont C.P. 170",J0J 1A0,Bedford,5,Estrie,MRC Brome-Missisquoi (sauf la municipalité de Bromont),740,144,BC-MF,CR
+38,CENTRE DE LA PETITE ENFANCE L'ENFANTILLAGE INC.,"420, rue Merrill",J1A 1X5,Coaticook,5,Estrie,MRC Coaticook,347,47,BC-MF,CR
+39,BUREAU COORDONNATEUR DU HAUT SAINT-FRANÇOIS,"3-161, rue Angus Sud",J0B 1R0,East Angus,5,Estrie,MRC Le Haut-Saint-François,342,71,BC-MF,CR
+40,CENTRE DE LA PETITE ENFANCE FAMILIGARDE,"840, rue Maisonneuve",J2J 2T9,Granby,5,Estrie,MRC La Haute-Yamaska (et la municipalité de Bromont),1300,264,BC-MF,CR
+41,CENTRE DE LA PETITE ENFANCE SOUS LES ÉTOILES,"4290, rue Cartier",G6B 2X1,Lac-Mégantic,5,Estrie,MRC Le Granit,381,48,BC-MF,CR
+42,CENTRE DE LA PETITE ENFANCE L'ENFANT-DO DE MEMPHRÉMAGOG,"79, rue Pie-XII Sud",J1X 6A5,Magog,5,Estrie,MRC Memphrémagog,503,69,BC-MF,CR
+43,CENTRE DE LA PETITE ENFANCE MAGIMO,"1024, rue Wilfrid",J0B 2P0,Saint-Denis-de-Brompton,5,Estrie,MRC Le Val Saint-François,401,59,BC-MF,CR
+44,CENTRE DE LA PETITE ENFANCE CARROSSE-CITROUILLE INC.,"1680, rue Garant",J1J 1J2,Sherbrooke,5,Estrie,"Ville de Sherbrooke - Arrondissements de Brompton, de Jacques-Cartier et du Mont-Bellevue",825,117,BC-MF,CR
+45,CENTRE DE LA PETITE ENFANCE FAMILI-GARD'ESTRIE,"1020, Germaine-Guèvremont",J1N 4C7,Sherbrooke,5,Estrie,Ville de Sherbrooke - Arrondissement de Rock Forest-Saint-Élie-Deauville,688,112,BC-MF,CR
+46,LE CENTRE DE LA PETITE ENFANCE FLEURIMONT INC.,"55, rue Bruno-Dandenault",J1G 2J2,Sherbrooke,5,Estrie,Ville de Sherbrooke - Arrondissements de Fleurimont et de Lennoxville,773,101,BC-MF,CR
+47,CENTRE DE LA PETITE ENFANCE LA SOURCIÈRE,"394, Monseigneur L'Heureux",J0A 1N0,Wotton,5,Estrie,MRC Les Sources,195,32,BC-MF,CR
+48,CENTRE DE LA PETITE ENFANCE FAMILIGARDE DE LASALLE,"8564, boulevard Newman, bureau 206",H8N 1Y5,LaSalle,6,Montréal,Île de Montréal - CSSS de Dorval-Lachine-Lasalle (CLSC Lachine et CLSC Lasalle),1068,143,BC-MF,CR
+49,B.C. CAVENDISH,"5851, ch. Upper-Lachine",H4A 2B7,Montréal,6,Montréal,Île de Montréal - CSSS Cavendish (CLSC René-Cassin - Territoire Côte Saint-Luc et Notre-Dame-de-Grâce/Montréal-Ouest ),709,60,BC-MF,CR
+50,B.C. ST-MICHEL,"9081, boulevard Saint-Michel",H1Z 3G6,Montréal,6,Montréal,Île de Montréal - CSSS de Saint-Léonard et Saint-Michel (B) (CLSC Saint-Michel),474,63,BC-MF,CR
+51,BC - CENTRE DE LA PETITE ENFANCE DU PARC,"1005, avenue Ogilvy",H3N 1P6,Montréal,6,Montréal,"Île de Montréal - CSSS de la Montagne (B) (CLSC Côte-des-Neiges - Territoires Côte-des-Neiges et Mont-Royal, CLSC Parc-Extension)",1210,149,BC-MF,CR
+52,BC - CENTRE DE PETITE ENFANCE LA TROTTINETTE CAROTTEE,"7535, rue Saint-Hubert",H2R 2N7,Montréal,6,Montréal,Île de Montréal - CSSS du Coeur-de-L'île (CLSC Villeray et Petite Patrie),959,80,BC-MF,CR
+53,BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL AHUNTSIC,"222, boulevard Henri-Bourassa Est, bureau 10",H3L 1B9,Montréal,6,Montréal,Île de Montréal - CSSS d'Ahuntsic et Montréal-Nord (A) (CLSC Ahuntsic),741,71,BC-MF,CR
+54,BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL DE BORDEAUX-CARTIERVILLE,"11222, rue Hamon, bureau 230",H3M 3A3,Montréal,6,Montréal,Île de Montréal - CSSS de Bordeaux-Cartierville-Saint-Laurent (A) (CLSC - Bordeaux-Cartieville),563,68,BC-MF,CR
+55,BUREAU COORDONNATEUR GROS BEC,"1890, rue Du Quesne",H1N 2W4,Montréal,6,Montréal,"Île de Montréal - CSSS Lucille-Teasdale (A) (CLSC Hochelaga-Maisonneuve, CLSC Olivier-Guimond - Territoire Mercier-Ouest)",573,53,BC-MF,CR
+56,"CENTRE DE LA PETITE ENFANCE ""LA GRENOUILLE ROSE""","10950, boulevard Perras",H1C 1B3,Montréal,6,Montréal,Île de Montréal - CSSS de la Pointe-de-l'Île (A) (CLSC Rivière-des-Prairies et CLSC Mercier-Est / Anjou - secteur Anjou),1000,147,BC-MF,CR
+57,CENTRE DE LA PETITE ENFANCE DU CARREFOUR INC.,"2025, rue Fullum, bureau 101",H2K 3N5,Montréal,6,Montréal,"Île de Montréal - CSSS Jeanne-Mance (CLSC des Faubourgs - Territoire Montréal Centre-Sud /Centre-Ville, CLSC du Plateau Mont-Royal, CLSC Saint-Louis du Parc)",585,87,BC-MF,CR
+58,CENTRE DE LA PETITE ENFANCE DU MONTRÉAL MÉTROPOLITAIN,"3914, rue Masson",H1X 1T1,Montréal,6,Montréal,Île de Montréal - CSSS Lucille-Teasdale (B) (CLSC Rosemont),679,73,BC-MF,CR
+59,CENTRE DE LA PETITE ENFANCE ENFANTS SOLEIL INC.,"5694, rue Laurendeau",H4E 3W4,Montréal,6,Montréal,"Île de Montréal - CSSS du Sud-Ouest-Verdun (CLSC Saint-Henri, CLSC Verdun/Côte-Saint-Paul, Pointe-Saint-Charles)",675,77,BC-MF,CR
+60,CENTRE DE LA PETITE ENFANCE JARDIN DE FRUITS INC.,"5192, rue Paré",H4P 1P3,Montréal,6,Montréal,"Île de Montréal - CSSS de la Montagne (A) (CLSC Métro, CLSC Côte-des-Neiges - Territoire Snowdon )",754,81,BC-MF,CR
+61,CENTRE DE LA PETITE ENFANCE LES MAISONS ENJOUÉES,"3405, rue Saint-Donat",H1K 3N5,Montréal,6,Montréal,Île de Montréal - CSSS de la Pointe-de-l'Île (B) (CLSC Mercier-Est / Anjou - secteur Mercier-Est et CLSC Pointe-aux-Trembles/Montréal-Est),908,110,BC-MF,CR
+62,CENTRE DE LA PETITE ENFANCE DE MONTRÉAL-NORD,"4875, boulevard Léger",H1G 6P8,Montréal-Nord,6,Montréal,Île de Montréal - CSSS d'Ahuntsic et Montréal-Nord (B) (CLSC Montréal-Nord),704,105,BC-MF,CR
+63,LES SERVICES DE GARDE DE LA POINTE INC.,"85, avenue de la Baie-de-Valois",H9R 4B7,Pointe-Claire,6,Montréal,Île de Montréal - CSSS de l'Ouest de l'Île (A) (CLSC Lac Saint-Louis et CLSC Pierrefonds - Territoire Dollard-des-Ormeaux),559,51,BC-MF,CR
+64,CENTRE DE LA PETITE ENFANCE LE JARDIN DES RÊVES INC.,"1900, boulevard Thimens, bureau 220",H4R 2K2,Saint-Laurent,6,Montréal,Île de Montréal - CSSS de Bordeaux-Cartierville-Saint-Laurent (B) (CLSC Saint-Laurent),629,83,BC-MF,CR
+65,BUREAU COORDONNATEUR DES SERVICES DE GARDE EN MILIEU FAMILIAL DE SAINT-LÉONARD,"4869, rue Jarry Est, bureau 216",H1R 1Y1,Saint-Léonard,6,Montréal,Île de Montréal - CSSS de Saint-Léonard et Saint-Michel (A) (CLSC Saint-Léonard),561,100,BC-MF,CR
+66,BUREAU COORDONATEUR LA MAISON DU PANDA,"4999, boulevard Saint-Charles, bureau 201",H9H 3M8,Sainte-Geneviève,6,Montréal,Île de Montréal - CSSS de l'ouest de l'Île (B) (CLSC Pierrefonds - Territoire Pierrefonds),646,64,BC-MF,CR
+67,BC DU SECTEUR AYLMER,"400, chemin McConnell",J9J 3M2,Gatineau,7,Outaouais,Ville de Gatineau (ancienne ville de Aylmer),997,161,BC-MF,CR
+68,BC DU SECTEUR HULL,"165, rue de l'Atmosphère",J9A 3K2,Gatineau,7,Outaouais,Ville de Gatineau (ancienne ville de Hull),851,103,BC-MF,CR
+69,CENTRE DE LA PETITE ENFANCE LA GATINERIE,"32, rue de l'Acadie",J8T 6G8,Gatineau,7,Outaouais,Ville de Gatineau (ancienne ville de Gatineau secteur Sud - J8T et J8P),895,117,BC-MF,CR
+70,CENTRE DE LA PETITE ENFANCE LES FEUX FOLLETS,"175-A, chemin de la Savane",J8T 1R2,Gatineau,7,Outaouais,Ville de Gatineau (ancienne ville de Gatineau secteur Nord - J8V et J8R),924,89,BC-MF,CR
+71,CENTRE DE LA PETITE ENFANCE TROIS PETITS POINTS...,"1105, rue de Neuville",J8M 2C6,Gatineau,7,Outaouais,Ville de Gatineau (anciennes villes de Buckingham et de Masson-Angers),514,45,BC-MF,CR
+72,CENTRE DE LA PETITE ENFANCE L'ÉVEIL DE LA NATURE,"11, chemin Raphaël",J0X 2W0,La Pêche,7,Outaouais,MRC Les Collines-de-l'Outaouais,717,74,BC-MF,CR
+73,RÉSEAU PETITS PAS,"150, rue Principale Nord",J9E 2B8,Maniwaki,7,Outaouais,MRC La Vallée de la Gatineau,308,35,BC-MF,CR
+74,CENTRE DE LA PETITE ENFANCE 1-2-3 PICABOU,"242, rue Lévesque",J0X 1R0,Mansfield-et-Pontefract,7,Outaouais,MRC Pontiac,200,21,BC-MF,CR
+75,CENTRE DE LA PETITE ENFANCE DE LA PETITE NATION,"381, rue Papineau",J0V 1R0,Papineauville,7,Outaouais,MRC Papineau,237,33,BC-MF,CR
+76,CENTRE DE LA PETITE ENFANCE DES PETITS ÉLANS,"412, rue Taschereau",J9T 2A4,Amos,8,Abitibi-Témiscamingue,MRC Abitibi,443,51,BC-MF,CR
+77,CPE LES PETITS CHATONS INC.,"81, 5e Avenue",J9Z 1L1,La Sarre,8,Abitibi-Témiscamingue,MRC Abitibi-Ouest,382,55,BC-MF,CR
+78,CENTRE DE LA PETITE ENFANCE BONNAVENTURE,"259, avenue Principale",J9X 7G9,Rouyn-Noranda,8,Abitibi-Témiscamingue,Ville de Rouyn-Noranda,648,82,BC-MF,CR
+79,LES DOUCES MAISONNETTES,"2872, chemin Sullivan, bureau 5",J9P 0B9,Val-d'Or,8,Abitibi-Témiscamingue,MRC La Vallée-de-l'Or,492,91,BC-MF,CR
+80,CENTRE DE LA PETITE ENFANCE CHEZ CALIMÉRO,"5, rue Richard",J9V 1Y5,Ville-Marie,8,Abitibi-Témiscamingue,MRC Témiscamingue,315,27,BC-MF,CR
+81,CENTRE DE LA PETITE ENFANCE MAGIMUSE,"1000, rue de Mingan",G5C 3C3,Baie-Comeau,9,Côte-Nord,MRC Manicouagan,454,49,BC-MF,CR
+82,CENTRE DE LA PETITE ENFANCE MER ET MOUSSE,"2, rue Pointe-Lazy",G0G 1W0,Blanc-Sablon,9,Côte-Nord,MRC Le Golfe-du-Saint-Laurent,54,5,BC-MF,CR
+83,"CENTRE DE LA PETITE ENFANCE ""LE MUR-MÛR"" INC.","299, rue le Carrefour, porte 46",G0G 1J0,Fermont,9,Côte-Nord,MRC Caniapiscau,50,2,BC-MF,CR
+84,CENTRE DE LA PETITE ENFANCE LA GIROFLÉE INC.,"11, 10e Rue",G0T 1E0,Forestville,9,Côte-Nord,MRC La Haute-Côte-Nord,247,16,BC-MF,CR
+85,CENTRE DE LA PETITE ENFANCE PICASSOU INC.,"1310, rue de la Digue",G0G 1P0,Havre-Saint-Pierre,9,Côte-Nord,MRC Minganie,79,8,BC-MF,CR
+86,CENTRE DE LA PETITE ENFANCE SOUS LE BON TOIT,"123, rue de la Vérendrye",G4R 5V3,Sept-Îles,9,Côte-Nord,MRC Sept-Rivières,500,44,BC-MF,CR
+87,BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL CHIBOUGAMAU-CHAPAIS 10-01,"2-899, rue O'Connell",G8P 2N3,Chibougamau,10,Nord-du-Québec,Ville de Chibougamau et Ville de Chapais,179,8,BC-MF,CR
+88,PAIRITSIVIK OF NUNAVIK HOME DAY CARE AGENCY,C.P. 849,J0M 1C0,Kuujjuaq,10,Nord-du-Québec,Village nordique de Kuujjuaq,50,0,BC-MF,CR
+89,CENTRE DE LA PETITE ENFANCE SUCRE D'ORGE,"53, rue des Trembles C.P. 172",J0Y 1X0,Lebel-sur-Quévillon,10,Nord-du-Québec,Ville de Lebel-sur-Quevillon,60,1,BC-MF,CR
+90,LE CENTRE DE LA PETITE ENFANCE DES P'TITS MARINGOUINS,"99, rue Rupert",J0Y 2A0,Matagami,10,Nord-du-Québec,Ville de Matagami,15,1,BC-MF,CR
+91,CENTRE DE LA PETITE ENFANCE DE LA BAIE,"101, avenue Grand Pré",G0C 1E0,Bonaventure,11,Gaspésie-Îles-de-la-Madeleine,MRC Bonaventure,222,38,BC-MF,CR
+92,"CENTRE DE LA PETITE ENFANCE ""LA BELLE JOURNEE"" INC.","692, rue Hôtel-de-Ville",G0C 1K0,Chandler,11,Gaspésie-Îles-de-la-Madeleine,MRC Le Roché Percé,248,29,BC-MF,CR
+93,"CENTRE DE LA PETITE ENFANCE ""CHEZ MA TANTE""","568, chemin des Caps",G4T 2S8,Fatima,11,Gaspésie-Îles-de-la-Madeleine,Municipalité Les Îles-de-la-Madeleine,189,26,BC-MF,CR
+94,CENTRE DE LA PETITE ENFANCE LE VOYAGE DE MON ENFANCE,"484, Montée Wakeham",G4X 1Y6,Gaspé,11,Gaspésie-Îles-de-la-Madeleine,MRC La Côte-de-Gaspé,237,30,BC-MF,CR
+95,AUX JOYEUX MARMOTS,"30, rue Chouinard",G0C 1L0,Pointe-à-la-Croix,11,Gaspésie-Îles-de-la-Madeleine,MRC Avignon,283,30,BC-MF,CR
+96,CENTRE DE LA PETITE ENFANCE LA MARÉE MONTANTE,"230, route du Parc, bureau EA-101",G4V 2C4,Sainte-Anne-des-Monts,11,Gaspésie-Îles-de-la-Madeleine,MRC La Haute-Gaspésie,164,18,BC-MF,CR
+97,CENTRE DE LA PETITE ENFANCE AU JARDIN DE DOMINIQUE INC.,"105A, 97e Rue",G5X 2N5,Beauceville,12,Chaudière-Appalaches,MRC Robert-Cliche,281,51,BC-MF,CR
+98,CENTRE DE LA PETITE ENFANCE À LA BONNE GARDE,"227B, 1re Avenue",G0R 1S0,Lac-Etchemin,12,Chaudière-Appalaches,MRC Les Etchemins,304,61,BC-MF,CR
+99,CENTRE DE LA PETITE ENFANCE LE PETIT TRAIN INC.,"108, côte du Passage",G6V 5S9,Lévis,12,Chaudière-Appalaches,Ville de Lévis - arrondissement Desjardins (anciennes municipalités de Lévis et Pintendre),528,101,BC-MF,CR
+100,CENTRE DE LA PETITE ENFANCE PETIT TAMBOUR,"1840, 1re rue, bureau 105",G6W 5M6,Lévis,12,Chaudière-Appalaches,"Ville de Lévis - arrondissement Chaudières-Est (anciennes municipalités de Saint-Romuald, Sainte-Hélène-de-Breakeyville, Charny et St-Jean-Chrysostome)",851,113,BC-MF,CR
+101,CENTRE DE LA PETITE ENFANCE VIRE-CRÊPE,"581, rue de Bernières",G7A 1E5,Lévis,12,Chaudière-Appalaches,"Ville de Lévis - arrondissement Chaudière-Ouest (anciennes municipalités de Saint-Étienne-de-Lauzon, Saint-Rédempteur et Saint-Nicolas)",610,86,BC-MF,CR
+102,BUREAU COORDONNATEUR MRC MONTMAGNY,"5, avenue de la Fabrique",G5V 2J2,Montmagny,12,Chaudière-Appalaches,MRC Montmagny,298,61,BC-MF,CR
+103,BUREAU COORDONNATEUR DE LA GARDE EM MILIEU FAMILIAL RAYONS DE SOLEIL,"39, rue Industrielle, porte 101",G0S 2E0,Saint-Apollinaire,12,Chaudière-Appalaches,MRC Lotbinière,600,127,BC-MF,CR
+104,CENTRE DE LA PETITE ENFANCE AU PALAIS DES MERVEILLES,"575, 90e Rue",G5Y 3L1,Saint-Georges,12,Chaudière-Appalaches,MRC Beauce-Sartigan,873,138,BC-MF,CR
+105,CENTRE DE LA PETITE ENFANCE LES COQUINS,"20, rue Henri Gamache",G0R 3G0,Saint-Jean-Port-Joli,12,Chaudière-Appalaches,MRC L'Islet,309,50,BC-MF,CR
+106,CENTRE DE LA PETITE ENFANCE L'ESCALE INC.,"94, rue de la Fabrique",G0R 2V0,Sainte-Claire,12,Chaudière-Appalaches,MRC Bellechasse,428,82,BC-MF,CR
+107,CENTRE DE LA PETITE ENFANCE DES PETITS POMMIERS,"1442, route du Président-Kennedy, bureau 120",G0S 3G0,Scott,12,Chaudière-Appalaches,MRC La Nouvelle-Beauce,560,99,BC-MF,CR
+108,LE BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL DES APPALACHES,"1151, rue Saint-Louis",G6H 1J9,Thetford Mines,12,Chaudière-Appalaches,MRC Les Appalaches,573,106,BC-MF,CR
+109,"""FORCE VIVE"" CENTRE DE LA PETITE ENFANCE","3532, boulevard de la Concorde Est",H7E 2C5,Laval,13,Laval,"Ville de Laval - Secteur d'aménagement municipal 1 (Duvernay, Saint-Vincent-de-Paul, Saint-François)",788,104,BC-MF,CR
+110,CENTRE DE LA PETITE ENFANCE GAMINVILLE INC.,"2267, boulevard des Laurentides, bureau 201",H7K 2J3,Laval,13,Laval,"Ville de Laval - Secteur d'aménagement municipal 6 (Vimont, Auteuil)",755,88,BC-MF,CR
+111,CENTRE DE LA PETITE ENFANCE LE CHEZ-MOI DES PETITS,"3405, 1re Rue",H7V 1A6,Laval,13,Laval,Ville de Laval - Secteur d'aménagement municipal 3 (Chomedey),640,96,BC-MF,CR
+112,CENTRE DE LA PETITE ENFANCE LE HÊTRE INC.,"24, Boulevard de la Concorde Est, bureau 203",H7G 4X2,Laval,13,Laval,"Ville de Laval - Secteur d'aménagement municipal 2 (Laval-des-Rapides, Pont-Viau, Renaud)",738,96,BC-MF,CR
+113,CENTRE DE LA PETITE ENFANCE LES P'TITS SOLEILS DE STE-DOROTHÉE,"1260, boulevard Jolibourg",H7Y 1Z6,Laval,13,Laval,"Ville de Laval - Secteur d'aménagement municipal 4 (Laval-Ouest, Sainte-Dorothée, Laval-sur-le-Lac, Îles Laval, Fabreville-Ouest)",809,98,BC-MF,CR
+114,CENTRE DE LA PETITE ENFANCE PIROUETTE DE FABREVILLE INC.,"655, avenue Marc-Aurèle Fortin",H7L 5M6,Laval,13,Laval,"Ville de Laval - Secteur d'aménagement municipal 5 (Sainte-Rose, Fabreville-Est)",1078,124,BC-MF,CR
+115,CENTRE DE LA PETITE ENFANCE LA CHENILLE INC.,"750, chemin de l'Église",J0K 3K0,Chertsey,14,Lanaudière,MRC Matawinie,428,79,BC-MF,CR
+116,CENTRE DE LA PETITE ENFANCE LES JOYEUX LUTINS,"810, rue Ladouceur",J6E 3W7,Joliette,14,Lanaudière,MRC Joliette,724,139,BC-MF,CR
+117,CENTRE DE LA PETITE ENFANCE BALIBALLON,"9, 1re Avenue",J5X 3P7,L'Épiphanie,14,Lanaudière,"MRC L'Assomption (B) - Villes de l'Épiphanie, Saint-Sulpice et L'Assomption",462,71,BC-MF,CR
+118,CENTRE DE LA PETITE ENFANCE AUX PORTES DU MATIN INC.,"190, St-Antoine Nord",J5T 2G1,Lavaltrie,14,Lanaudière,MRC D'Autray,480,97,BC-MF,CR
+119,C.P.E. GAMIN GAMINE,"587, montée Masson",J7K 2L6,Mascouche,14,Lanaudière,Ville de Mascouche,605,96,BC-MF,CR
+120,"CENTRE À LA PETITE ENFANCE ""LE CHAT PERCHÉ""","380, boulevard Larochelle, bureau 6",J6A 5W2,Repentigny,14,Lanaudière,MRC L'Assomption (A) - Villes de Repentigny et Charlemagne,1550,226,BC-MF,CR
+121,CENTRE DE LA PETITE ENFANCE BOUTE-EN-TRAIN,"70, rue Principale",J0K 2L0,Saint-Esprit,14,Lanaudière,MRC Montcalm,1000,166,BC-MF,CR
+122,C.P.E. LES JOLIS MINOIS,"480, avenue de la Pommeraie",J6Y 1V6,Terrebonne,14,Lanaudière,Ville de Terrebonne (anciennes villes de Terrebonne secteur Ouest et Laplaine - J7M et J6Y),561,111,BC-MF,CR
+123,STATION ENFANCE DES MOULINS,"444, avenue Ludovic-Laurier",J6W 5Z1,Terrebonne,14,Lanaudière,"Ville de Terrebonne (anciennes villes de Terrebonne secteur Est et Lachenaie - J6X, J6W, J6V)",866,129,BC-MF,CR
+124,CENTRE DE LA PETITE ENFANCE LA ROSE DES VENTS,"945, rue de la Mairie, 2e étage",J7C 5W2,Blainville,15,Laurentides,MRC Thérèse-de-Blainville (A) - Villes de Blainville et de Sainte-Thérèse,1164,159,BC-MF,CR
+125,LE RÊVE DE CAILLETTE,"66, rue Aubin",J8G 2G3,Brownsburg-Chatham,15,Laurentides,MRC Argenteuil,435,88,BC-MF,CR
+126,"CENTRE DE LA PETITE ENFANCE ""LES PETITS BALUCHONS""","13961, chemin St-Simon, bureau 202",J7N 1P4,Mirabel,15,Laurentides,Ville de Mirabel,707,136,BC-MF,CR
+127,CENTRE DE LA PETITE ENFANCE LA FOURMILIÈRE,"566, rue Panet",J9L 3A1,Mont-Laurier,15,Laurentides,MRC Antoine-Labelle,440,83,BC-MF,CR
+128,CENTRE DE LA PETITE ENFANCE LA JOYEUSE ÉQUIPÉE,"2899, boulevard du Curé-Labelle, local 104",J0R 1T0,Prévost,15,Laurentides,"MRC La Rivière-du-Nord (B) - Villes de Prévost, Saint-Colomban, Sainte-Sophie et Saint-Hippolyte",576,110,BC-MF,CR
+129,CENTRE DE LA PETITE ENFANCE DES DEUX-MONTAGNES,"134, rue Saint-Laurent",J7P 5G1,Saint-Eustache,15,Laurentides,MRC Deux-Montagnes,1191,162,BC-MF,CR
+130,"CENTRE DE LA PETITE ENFANCE ""LES MILLE PATTES""","2239, rue Schulz",J7Y 5C3,Saint-Jérôme,15,Laurentides,MRC La Rivière-du-Nord (A) - Ville de Saint-Jérome,816,139,BC-MF,CR
+131,CENTRE DE LA PETITE ENFANCE MAIN DANS LA MAIN INC.,"41-A, rue de l'Église",J0R 1R0,Saint-Sauveur,15,Laurentides,MRC Les Pays-d'en-Haut,426,62,BC-MF,CR
+132,CENTRE DE LA PETITE ENFANCE L'ANTRE-TEMPS,"90, rue Demontigny",J8C 2S6,Sainte-Agathe-des-Monts,15,Laurentides,MRC Les Laurentides,515,77,BC-MF,CR
+133,CENTRE DE LA PETITE ENFANCE SOLEIL LEVANT,"247, 5 ième Avenue",J5N 0H4,Sainte-Anne-des-Plaines,15,Laurentides,"MRC Thérèse-de-Blainville (B) - Villes de Sainte-Anne-des-Plaines, Boisbriand, Lorraine, Rosemère, Bois-des-Filions",1052,113,BC-MF,CR
+134,"CENTRE DE LA PETITE ENFANCE ""LA DOUCE COUVÉE""","545, rue Bonin",J0H 1A0,Acton Vale,16,Montérégie,MRC Acton,289,58,BC-MF,CR
+135,CENTRE DE LA PETITE ENFANCE LA RUCHE MAGIQUE INC.,"528, boulevard du Fort-Saint-Louis",J4B 1S6,Boucherville,16,Montérégie,Ville de Saint-Bruno et Ville de Boucherville,563,52,BC-MF,CR
+136,AU PIED DE L'ÉCHELLE,"4955, boulevard Grande-Allée",J4Z 3G1,Brossard,16,Montérégie,"Ville de Brossard, Ville de Saint-Lambert et Ville de Longueuil - Arrondissements Greenfield Park et Lemoyne",791,79,BC-MF,CR
+137,CENTRE DE LA PETITE ENFANCE MAMIE SOLEIL,"325, boulevard Kennedy",J6K 4S5,Châteauguay,16,Montérégie,"MRC Roussillon (A) - Villes de Châteauguay, Léry, Mercier et Saint-Isidore",1053,159,BC-MF,CR
+138,CENTRE DE LA PETITE ENFANCE KALÉIDOSCOPE CHILD CARE CENTER,"24, rue Prince",J0S 1H0,Huntingdon,16,Montérégie,MRC Le Haut-Saint-Laurent,325,44,BC-MF,CR
+139,CENTRE DE LA PETITE ENFANCE PLUS GRAND QUE NATURE,"375, Route 137",J0H 1B0,La Présentation,16,Montérégie,MRC Les Maskoutains (B) (sauf ville de Saint-Hyacinthe),576,81,BC-MF,CR
+140,CENTRE DE LA PETITE ENFANCE SOULANGES,"180, Route 338",J7X 1A2,Les Coteaux,16,Montérégie,MRC Vaudreuil-Soulanges (B) - Secteur Soulanges,733,93,BC-MF,CR
+141,CENTRE DE LA PETITE ENFANCE L'ATTRAIT MIGNON,"232, boulevard Des Ormeaux, app. 2",J4L 1J4,Longueuil,16,Montérégie,Ville de Longueuil - CLSC Longueuil-Est,901,120,BC-MF,CR
+142,CPE VOS TOUT-PETITS,"2503, rue Cartier",J4K 4G5,Longueuil,16,Montérégie,Ville de Longueuil - CLSC Longueuil-Ouest,586,88,BC-MF,CR
+143,CENTRE DE LA PETITE ENFANCE LES FRIMOUSSES DE LA VALLÉE,"300, rue des Camélias",J3G 5B1,McMasterville,16,Montérégie,"MRC La Vallée du Richelieu (B) (sauf villes de Chambly, Carignan et Saint-Basile-le-Grand)",896,109,BC-MF,CR
+144,LES JEUNES POUSSES DES JARDINS-DU-QUÉBEC,"386, rue de l'Église",J0J 1L0,Napierville,16,Montérégie,MRC Les Jardins-de-Napierville,320,62,BC-MF,CR
+145,CENTRE DE LA PETITE ENFANCE LES PETITS MOUSSES,"270, boulevard de l'Île",J7W 3R9,Pincourt,16,Montérégie,MRC Vaudreuil-Soulanges (A) - Secteur Vaudreuil,918,115,BC-MF,CR
+146,CENTRE DE LA PETITE ENFANCE LES COPAINS D'ABORD,"95, Bella-Vista",J3N 1L1,Saint-Basile-le-Grand,16,Montérégie,"MRC La Vallée du Richelieu (A) - Villes de Chambly, Carignan et Saint-Basile-le-Grand",1020,111,BC-MF,CR
+147,CENTRE DE LA PETITE ENFANCE LA MÈRE SCHTROUMPH,"235, boulevard Monchamp",J5A 2R6,Saint-Constant,16,Montérégie,"MRC Roussillon (B) - Villes de Saint-Constant, Candiac, Delson, La Prairie, Saint-Philippe, Saint-Mathieu, Sainte-Catherine",1182,161,BC-MF,CR
+148,CENTRE DE LA PETITE ENFANCE MAMIE-POM,"1298, rue Saint-Paul",J0L 1T0,Saint-Césaire,16,Montérégie,MRC Rouville,558,81,BC-MF,CR
+149,CENTRE DE LA PETITE ENFANCE LES JOYEUX CALINOURS,"3480, rue Mackay",J4T 2P1,Saint-Hubert,16,Montérégie,Ville de Longueuil - Arrondissement Saint-Hubert,1205,207,BC-MF,CR
+150,CENTRE DE LA PETITE ENFANCE MAFAMIGARDE,"13570, avenue de l'Église",J2R 2J2,Saint-Hyacinthe,16,Montérégie,MRC Les Maskoutains (A) - Ville de Saint-Hyacinthe,668,112,BC-MF,CR
+151,C.P.E. LE PETIT MONDE DE CALIMÉRO INC.,"133, boulevard Saint-Luc, bureau 203",J2W 2G7,Saint-Jean-sur-Richelieu,16,Montérégie,MRC Le Haut-Richelieu (A) (anciennes villes de Saint-Luc et de L'Acadie),636,80,BC-MF,CR
+152,CENTRE DE LA PETITE ENFANCE JOIE DE VIVRE,"409, rue Jacques-Cartier Sud",J3B 4K5,Saint-Jean-sur-Richelieu,16,Montérégie,MRC Le Haut-Richelieu (B) (sauf anciennes villes de Saint-Luc et de L'Acadie),876,143,BC-MF,CR
+153,CENTRE DE LA PETITE ENFANCE LA GRANDE OURSE,"2122, chemin du Fer-à-Cheval",J3E 2V2,Sainte-Julie,16,Montérégie,MRC Lajemmerais (A) - Villes de Sainte-Julie et Saint-Amable,731,86,BC-MF,CR
+154,CENTRE DE LA PETITE ENFANCE CADET-ROUSSELLE,"175, rue Salaberry Ouest",J6T 2J1,Salaberry-de-Valleyfield,16,Montérégie,MRC Beauharnois-Salaberry,722,126,BC-MF,CR
+155,BUREAU COORDONNATEUR CPE LA PETITE MARINE,"493, boulevard Fiset",J3P 6J9,Sorel-Tracy,16,Montérégie,MRC Pierre-De Saurel,606,121,BC-MF,CR
+156,CENTRE DE LA PETITE ENFANCE MATIN SOLEIL INC.,"1463, boulevard Lionel-Boulet, bureau 204",J3X 1P7,Varennes,16,Montérégie,"MRC Lajemmerais (B) - Villes de Varennes, Verchères, Calixa-Lavallée et Contrecoeur",570,78,BC-MF,CR
+157,CENTRE DE LA PETITE ENFANCE CHEZ-MOI CHEZ-TOI ET BUREAU COORDONNATEUR DE LA GARDE EN MILIEU FAMILIAL,"2100, avenue Pierre-Robineau",G9H 4W8,Bécancour,17,Centre-du-Québec,MRC Bécancour,300,45,BC-MF,CR
+158,CENTRE DE LA PETITE ENFANCE LES PETITS LUTINS DE DRUMMONDVILLE INC.,"234, rue Moisan",J2C 1W8,Drummondville,17,Centre-du-Québec,MRC Drummond,1422,304,BC-MF,CR
+159,CENTRE DE LA PETITE ENFANCE MON AUTRE MAISON,"19, rue du Lieut.-Gouv.-Paul-Comtois",J0G 1J0,Pierreville,17,Centre-du-Québec,MRC Nicolet-Yamaska,331,52,BC-MF,CR
+160,CENTRE DE LA PETITE ENFANCE LA GIROUETTE INC.,"1534, Avenue Saint-Louis",G6L 2M8,Plessisville,17,Centre-du-Québec,MRC L'Érable,424,76,BC-MF,CR
+161,CENTRE DE LA PETITE ENFANCE LA MARELLE DES BOIS-FRANCS,"37, rue Lactantia",G6P 1J2,Victoriaville,17,Centre-du-Québec,MRC Arthabaska,1047,182,BC-MF,CR
