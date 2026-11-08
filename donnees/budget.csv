@@ -1,0 +1,905 @@
+﻿portefeuille,programme_code,programme,element_code,element,supercategorie_code,supercategorie,type_de_credits,budget_de_depenses,depenses_sans_credits,budget_investissement,credits_totaux
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,1,Rémunération,Votés,20301000,0,0,20301000
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,2,Fonctionnement,Permanents,19200,0,0,19200
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,2,Fonctionnement,Votés,14572400,0,0,14572400
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,500000,500000
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,5,Transfert,Votés,724800,0,0,724800
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,A,moins Amortissement,Votés,0,-1484100,0,-1484100
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,2248900,2248900
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.02,Politiques et programmes,1,Rémunération,Votés,43590800,0,0,43590800
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.02,Politiques et programmes,2,Fonctionnement,Votés,4365200,0,0,4365200
+Affaires municipales et Habitation,0050.01,Soutien aux activités ministérielles,0050.01.02,Politiques et programmes,A,moins Amortissement,Votés,0,-5600,0,-5600
+Affaires municipales et Habitation,0050.02,Modernisation des infrastructures municipales,0050.02.01,Programmes en lien avec le Plan québécois des infrastructures,5,Transfert,Votés,101601400,0,0,101601400
+Affaires municipales et Habitation,0050.02,Modernisation des infrastructures municipales,0050.02.02,Autres programmes d'infrastructures municipales,5,Transfert,Votés,43847300,0,0,43847300
+Affaires municipales et Habitation,0050.03,Transferts fiscaux et soutien aux municipalités,0050.03.01,Compensations tenant lieu de taxes,5,Transfert,Votés,695425900,0,0,695425900
+Affaires municipales et Habitation,0050.03,Transferts fiscaux et soutien aux municipalités,0050.03.02,Partage de la croissance d’un point de la taxe de vente du Québec,5,Transfert,Votés,821000000,0,0,821000000
+Affaires municipales et Habitation,0050.03,Transferts fiscaux et soutien aux municipalités,0050.03.03,Autres mesures de soutien financier aux municipalités,5,Transfert,Votés,158084700,0,0,158084700
+Affaires municipales et Habitation,0050.04,Développement des régions et des territoires,0050.04.01,Soutien au développement des régions et à la ruralité,F,Affectation à un fonds spécial,Votés,257031400,0,0,257031400
+Affaires municipales et Habitation,0050.05,Promotion et développement de la région métropolitaine,0050.05.01,Soutien à la région métropolitaine,5,Transfert,Votés,17000000,0,0,17000000
+Affaires municipales et Habitation,0050.06,Promotion et développement de la Capitale-Nationale,0050.06.01,Soutien à la Capitale-Nationale,5,Transfert,Votés,25500000,0,0,25500000
+Affaires municipales et Habitation,0050.06,Promotion et développement de la Capitale-Nationale,0050.06.01,Soutien à la Capitale-Nationale,F,Affectation à un fonds spécial,Votés,25000000,0,0,25000000
+Affaires municipales et Habitation,0050.06,Promotion et développement de la Capitale-Nationale,0050.06.02,Commission de la capitale nationale du Québec,5,Transfert,Votés,16747200,0,0,16747200
+Affaires municipales et Habitation,0050.07,Commission municipale du Québec,0050.07.01,Commission municipale du Québec,1,Rémunération,Votés,12231000,0,0,12231000
+Affaires municipales et Habitation,0050.07,Commission municipale du Québec,0050.07.01,Commission municipale du Québec,2,Fonctionnement,Votés,1015900,0,0,1015900
+Affaires municipales et Habitation,0050.07,Commission municipale du Québec,0050.07.01,Commission municipale du Québec,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,15000,15000
+Affaires municipales et Habitation,0050.07,Commission municipale du Québec,0050.07.01,Commission municipale du Québec,A,moins Amortissement,Votés,0,-1300,0,-1300
+Affaires municipales et Habitation,0050.07,Commission municipale du Québec,0050.07.01,Commission municipale du Québec,M,Immobilisations en ressources informationnelles,Votés,0,0,10000,10000
+Affaires municipales et Habitation,0050.08,Habitation,0050.08.01,Société d'habitation du Québec,5,Transfert,Votés,1298642800,0,0,1298642800
+Affaires municipales et Habitation,0050.08,Habitation,0050.08.02,Tribunal administratif du logement,1,Rémunération,Votés,28367700,0,0,28367700
+Affaires municipales et Habitation,0050.08,Habitation,0050.08.02,Tribunal administratif du logement,2,Fonctionnement,Votés,3460400,0,0,3460400
+Affaires municipales et Habitation,0050.08,Habitation,0050.08.02,Tribunal administratif du logement,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,100000,100000
+Affaires municipales et Habitation,0050.08,Habitation,0050.08.02,Tribunal administratif du logement,A,moins Amortissement,Votés,0,-420000,0,-420000
+Affaires municipales et Habitation,0050.08,Habitation,0050.08.02,Tribunal administratif du logement,M,Immobilisations en ressources informationnelles,Votés,0,0,1170100,1170100
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,1,Rémunération,Votés,42540500,0,0,42540500
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,2,Fonctionnement,Votés,43866300,0,0,43866300
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,16975000,16975000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,500000,500000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,A,moins Amortissement,Votés,0,-8573900,0,-8573900
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,5721300,5721300
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.02,"Développement durable, territorial et sectoriel",1,Rémunération,Votés,38505700,0,0,38505700
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.02,"Développement durable, territorial et sectoriel",2,Fonctionnement,Votés,4747500,0,0,4747500
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.02,"Développement durable, territorial et sectoriel",5,Transfert,Votés,122943500,0,0,122943500
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.03,"Transformation, marchés, main d’œuvre et politiques intergouvernementales",1,Rémunération,Votés,6082600,0,0,6082600
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.03,"Transformation, marchés, main d’œuvre et politiques intergouvernementales",2,Fonctionnement,Votés,1104000,0,0,1104000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.03,"Transformation, marchés, main d’œuvre et politiques intergouvernementales",5,Transfert,Votés,24360700,0,0,24360700
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.04,Pêches et aquaculture commerciales,1,Rémunération,Votés,4172600,0,0,4172600
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.04,Pêches et aquaculture commerciales,2,Fonctionnement,Votés,391000,0,0,391000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.04,Pêches et aquaculture commerciales,5,Transfert,Votés,16900000,0,0,16900000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.05,Remboursement des taxes foncières et de compensations aux exploitations agricoles,1,Rémunération,Votés,2554600,0,0,2554600
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.05,Remboursement des taxes foncières et de compensations aux exploitations agricoles,2,Fonctionnement,Votés,500000,0,0,500000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.05,Remboursement des taxes foncières et de compensations aux exploitations agricoles,5,Transfert,Votés,290904600,0,0,290904600
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.06,"Salubrité alimentaire, inspection et santé animale",1,Rémunération,Votés,29667700,0,0,29667700
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.06,"Salubrité alimentaire, inspection et santé animale",2,Fonctionnement,Votés,21300000,0,0,21300000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.06,"Salubrité alimentaire, inspection et santé animale",5,Transfert,Votés,22370000,0,0,22370000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.07,"Recherche, programmes et partenariats",1,Rémunération,Votés,5942600,0,0,5942600
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.07,"Recherche, programmes et partenariats",2,Fonctionnement,Votés,90000,0,0,90000
+"Agriculture, Pêcheries et Alimentation",0080.01,Développement des entreprises bioalimentaires et qualité des aliments ,0080.01.07,"Recherche, programmes et partenariats",5,Transfert,Votés,74568800,0,0,74568800
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.01,La Financière agricole du Québec,5,Transfert,Votés,446709100,0,0,446709100
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.02,Commission de protection du territoire agricole du Québec,1,Rémunération,Votés,8692400,0,0,8692400
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.02,Commission de protection du territoire agricole du Québec,2,Fonctionnement,Votés,1552400,0,0,1552400
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.02,Commission de protection du territoire agricole du Québec,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,20000,20000
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.02,Commission de protection du territoire agricole du Québec,A,moins Amortissement,Votés,0,-327800,0,-327800
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.02,Commission de protection du territoire agricole du Québec,M,Immobilisations en ressources informationnelles,Votés,0,0,135000,135000
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.03,Régie des marchés agricoles et alimentaires du Québec,1,Rémunération,Votés,3531000,0,0,3531000
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.03,Régie des marchés agricoles et alimentaires du Québec,2,Fonctionnement,Votés,314500,0,0,314500
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.03,Régie des marchés agricoles et alimentaires du Québec,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,109400,109400
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.03,Régie des marchés agricoles et alimentaires du Québec,A,moins Amortissement,Votés,0,-55000,0,-55000
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.03,Régie des marchés agricoles et alimentaires du Québec,M,Immobilisations en ressources informationnelles,Votés,0,0,20000,20000
+"Agriculture, Pêcheries et Alimentation",0080.02,Organismes d'État,0080.02.04,Institut de technologie agroalimentaire du Québec,5,Transfert,Votés,36882500,0,0,36882500
+Assemblée nationale,0370.01,Secrétariat général et affaires juridiques et parlementaires,0370.01.01,Secrétariat général et affaires juridiques,1,Rémunération,Permanents,4103100,0,0,4103100
+Assemblée nationale,0370.01,Secrétariat général et affaires juridiques et parlementaires,0370.01.01,Secrétariat général et affaires juridiques,2,Fonctionnement,Permanents,505300,0,0,505300
+Assemblée nationale,0370.01,Secrétariat général et affaires juridiques et parlementaires,0370.01.02,Affaires parlementaires,1,Rémunération,Permanents,10158300,0,0,10158300
+Assemblée nationale,0370.01,Secrétariat général et affaires juridiques et parlementaires,0370.01.02,Affaires parlementaires,2,Fonctionnement,Permanents,1458500,0,0,1458500
+Assemblée nationale,0370.01,Secrétariat général et affaires juridiques et parlementaires,0370.01.02,Affaires parlementaires,6,"Prêts, placements, avances et autres coûts",Permanents,0,0,10000,10000
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.01,Affaires institutionnelles et de la Bibliothèque de l'Assemblée nationale,1,Rémunération,Permanents,22118200,0,0,22118200
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.01,Affaires institutionnelles et de la Bibliothèque de l'Assemblée nationale,2,Fonctionnement,Permanents,3823000,0,0,3823000
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.01,Affaires institutionnelles et de la Bibliothèque de l'Assemblée nationale,3,Immobilisations autres qu'en ressources informationnelles,Permanents,0,0,535000,535000
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.02,Affaires administratives,1,Rémunération,Permanents,39473100,0,0,39473100
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.02,Affaires administratives,2,Fonctionnement,Permanents,24884700,0,0,24884700
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.02,Affaires administratives,3,Immobilisations autres qu'en ressources informationnelles,Permanents,0,0,16697000,16697000
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.02,Affaires administratives,A,moins Amortissement,Permanents,0,-10741900,0,-10741900
+Assemblée nationale,0370.02,"Secrétariat général adjoint à l’administration, affaires institutionnelles et Bibliothèque de l’Assemblée nationale",0370.02.02,Affaires administratives,M,Immobilisations en ressources informationnelles,Permanents,0,0,8165000,8165000
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.01,Indemnités et allocations aux parlementaires,1,Rémunération,Permanents,27025500,0,0,27025500
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.01,Indemnités et allocations aux parlementaires,2,Fonctionnement,Permanents,15289400,0,0,15289400
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.01,Indemnités et allocations aux parlementaires,6,"Prêts, placements, avances et autres coûts",Permanents,0,0,100000,100000
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.02,Dépenses du personnel des cabinets et des députés,1,Rémunération,Permanents,38371700,0,0,38371700
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.02,Dépenses du personnel des cabinets et des députés,2,Fonctionnement,Permanents,3190600,0,0,3190600
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.02,Dépenses du personnel des cabinets et des députés,5,Transfert,Permanents,50000,0,0,50000
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.03,Services de recherche des partis politiques,1,Rémunération,Permanents,3381200,0,0,3381200
+Assemblée nationale,0370.03,Services statutaires aux parlementaires,0370.03.04,Régime de retraite des membres de l'Assemblée nationale,1,Rémunération,Permanents,11245000,0,0,11245000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,1,Rémunération,Votés,20999900,0,0,20999900
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,2,Fonctionnement,Votés,10397900,0,0,10397900
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,1010000,1010000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,5,Transfert,Votés,133300,0,0,133300
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,125000,125000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,A,moins Amortissement,Votés,0,-2565000,0,-2565000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,2025000,2025000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.02,Gouvernance en gestion des ressources humaines,1,Rémunération,Votés,38972500,0,0,38972500
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.02,Gouvernance en gestion des ressources humaines,2,Fonctionnement,Votés,2046900,0,0,2046900
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.03,Gouvernance en gestion des ressources budgétaires et de la performance,1,Rémunération,Votés,15137400,0,0,15137400
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.03,Gouvernance en gestion des ressources budgétaires et de la performance,2,Fonctionnement,Votés,705000,0,0,705000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.03,Gouvernance en gestion des ressources budgétaires et de la performance,5,Transfert,Votés,200000,0,0,200000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.04,Gouvernance en gestion des marchés publics,1,Rémunération,Votés,8193800,0,0,8193800
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.01,Soutien au Conseil du trésor,0160.01.04,Gouvernance en gestion des marchés publics,2,Fonctionnement,Votés,340600,0,0,340600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.01,Financement de fonctions gouvernementales,2,Fonctionnement,Votés,524952900,0,0,524952900
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.01,Financement de fonctions gouvernementales,5,Transfert,Votés,486000,0,0,486000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.02,Financement des conditions de travail,1,Rémunération,Votés,120428600,0,0,120428600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.03,Financement d'activités rendues par le Fonds de la cybersécurité et du numérique,2,Fonctionnement,Votés,117061700,0,0,117061700
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.04,Financement du Centre d'acquisitions gouvernementales,2,Fonctionnement,Votés,2747000,0,0,2747000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.04,Financement du Centre d'acquisitions gouvernementales,5,Transfert,Votés,34630600,0,0,34630600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.02,Soutien aux fonctions gouvernementales,0160.02.05,Financement de l'Autorité des marchés publics,5,Transfert,Votés,33437400,0,0,33437400
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.03,Commission de la fonction publique,0160.03.01,Commission de la fonction publique,1,Rémunération,Votés,3992500,0,0,3992500
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.03,Commission de la fonction publique,0160.03.01,Commission de la fonction publique,2,Fonctionnement,Votés,870000,0,0,870000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.03,Commission de la fonction publique,0160.03.01,Commission de la fonction publique,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,300000,300000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.03,Commission de la fonction publique,0160.03.01,Commission de la fonction publique,A,moins Amortissement,Votés,0,-159700,0,-159700
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.03,Commission de la fonction publique,0160.03.01,Commission de la fonction publique,M,Immobilisations en ressources informationnelles,Votés,0,0,70000,70000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.01,Régime de retraite des fonctionnaires,1,Rémunération,Permanents,22703800,0,0,22703800
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.02,Régime de retraite de certains enseignants,5,Transfert,Permanents,17753700,0,0,17753700
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.03,Régime de retraite des employés du gouvernement et des organismes publics,1,Rémunération,Permanents,252622600,0,0,252622600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.04,Assurance collective sur la vie des employés publics,1,Rémunération,Votés,781800,0,0,781800
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.04,Assurance collective sur la vie des employés publics,5,Transfert,Votés,2466000,0,0,2466000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.05,Régime de retraite des agents de la paix en services correctionnels,1,Rémunération,Permanents,30383600,0,0,30383600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.06,Régime de retraite des juges,1,Rémunération,Permanents,41933900,0,0,41933900
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.07,Régime de retraite des membres de la Sûreté du Québec,1,Rémunération,Permanents,84744400,0,0,84744400
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.04,Régimes de retraite et d'assurances,0160.04.08,Régime de retraite du personnel d'encadrement,1,Rémunération,Permanents,123660600,0,0,123660600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.01,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit aux programmes des ministères et organismes*",2,Fonctionnement,Votés,4357500000,0,0,4357500000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.01,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit aux programmes des ministères et organismes*",6,"Prêts, placements, avances et autres coûts",Votés,0,0,600000000,600000000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.02,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour des infrastructures subventionnées*",5,Transfert,Votés,11179000000,0,0,11179000000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.02,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour des infrastructures subventionnées*",6,"Prêts, placements, avances et autres coûts",Votés,0,0,600000000,600000000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.03,Provision en application de la norme comptable sur les obligations liées à la mise hors service d’immobilisations*,2,Fonctionnement,Permanents,373400000,0,0,373400000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.04,"Provision pour pourvoir, avec l'approbation du Conseil du trésor, à des besoins de liquidités temporaires des ministères et organismes à condition que le montant ainsi ajouté soit remboursé à même leur enveloppe de crédits avant la fin de l'exercice financier",6,"Prêts, placements, avances et autres coûts",Votés,0,0,300000000,300000000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.05,Fonds de suppléance,0160.05.05,"Provision pour pourvoir, avec l'approbation du Conseil du trésor, au financement des besoins en investissements*",6,"Prêts, placements, avances et autres coûts",Votés,0,0,300000000,300000000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.06,Soutien aux infrastructures gouvernementales,0160.06.01,Gouvernance en gestion des infrastructures,1,Rémunération,Votés,9731800,0,0,9731800
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.06,Soutien aux infrastructures gouvernementales,0160.06.01,Gouvernance en gestion des infrastructures,2,Fonctionnement,Permanents,9600,0,0,9600
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.06,Soutien aux infrastructures gouvernementales,0160.06.01,Gouvernance en gestion des infrastructures,2,Fonctionnement,Votés,271000,0,0,271000
+"Conseil du trésor, Administration gouvernementale et Efficacité de l'État",0160.06,Soutien aux infrastructures gouvernementales,0160.06.01,Gouvernance en gestion des infrastructures,5,Transfert,Votés,9223000,0,0,9223000
+Conseil exécutif,0140.01,Cabinet du lieutenant-gouverneur,0140.01.01,Cabinet du lieutenant-gouverneur,1,Rémunération,Votés,1195000,0,0,1195000
+Conseil exécutif,0140.01,Cabinet du lieutenant-gouverneur,0140.01.01,Cabinet du lieutenant-gouverneur,2,Fonctionnement,Votés,114600,0,0,114600
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.01,Cabinet du premier ministre,1,Rémunération,Votés,5045900,0,0,5045900
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.01,Cabinet du premier ministre,2,Fonctionnement,Permanents,9600,0,0,9600
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.01,Cabinet du premier ministre,2,Fonctionnement,Votés,633600,0,0,633600
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.01,Cabinet du premier ministre,5,Transfert,Votés,333300,0,0,333300
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.02,Secrétariat général et greffe du Conseil exécutif,1,Rémunération,Votés,13585100,0,0,13585100
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.02,Secrétariat général et greffe du Conseil exécutif,2,Fonctionnement,Votés,1298400,0,0,1298400
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.02,Secrétariat général et greffe du Conseil exécutif,5,Transfert,Votés,165000,0,0,165000
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.03,Direction générale de la gouvernance et de l'administration,1,Rémunération,Votés,28521900,0,0,28521900
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.03,Direction générale de la gouvernance et de l'administration,2,Fonctionnement,Votés,6426100,0,0,6426100
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.03,Direction générale de la gouvernance et de l'administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,863800,863800
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.03,Direction générale de la gouvernance et de l'administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,6500,6500
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.03,Direction générale de la gouvernance et de l'administration,A,moins Amortissement,Votés,0,-617900,0,-617900
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.03,Direction générale de la gouvernance et de l'administration,M,Immobilisations en ressources informationnelles,Votés,0,0,2686800,2686800
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.04,Indemnités de l'exécutif,1,Rémunération,Permanents,3043900,0,0,3043900
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.05,Secrétariat à la communication gouvernementale,1,Rémunération,Votés,76699300,0,0,76699300
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.05,Secrétariat à la communication gouvernementale,2,Fonctionnement,Votés,1723800,0,0,1723800
+Conseil exécutif,0140.02,Services de soutien auprès du premier ministre et du Conseil exécutif,0140.02.06,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour la réalisation de projets de communications gouvernementales*",2,Fonctionnement,Votés,2500000,0,0,2500000
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.01,Cabinet du ministre responsable des Relations canadiennes,2,Fonctionnement,Votés,49900,0,0,49900
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.01,Cabinet du ministre responsable des Relations canadiennes,5,Transfert,Votés,54600,0,0,54600
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.02,Secrétariat du Québec aux relations canadiennes,1,Rémunération,Votés,4793900,0,0,4793900
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.02,Secrétariat du Québec aux relations canadiennes,2,Fonctionnement,Votés,654900,0,0,654900
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.02,Secrétariat du Québec aux relations canadiennes,5,Transfert,Votés,1000000,0,0,1000000
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.02,Secrétariat du Québec aux relations canadiennes,6,"Prêts, placements, avances et autres coûts",Votés,0,0,60000,60000
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.02,Secrétariat du Québec aux relations canadiennes,A,moins Amortissement,Votés,0,-600,0,-600
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.03,Représentation du Québec au Canada,1,Rémunération,Votés,1790500,0,0,1790500
+Conseil exécutif,0140.03,Relations canadiennes,0140.03.03,Représentation du Québec au Canada,2,Fonctionnement,Votés,745500,0,0,745500
+Conseil exécutif,0140.04,Relations avec les Premières Nations et les Inuit,0140.04.01,Cabinet du ministre responsable des Relations avec les Premières Nations et les Inuit,5,Transfert,Votés,54500,0,0,54500
+Conseil exécutif,0140.04,Relations avec les Premières Nations et les Inuit,0140.04.02,Secrétariat aux relations avec les Premières Nations et les Inuit,1,Rémunération,Votés,6654100,0,0,6654100
+Conseil exécutif,0140.04,Relations avec les Premières Nations et les Inuit,0140.04.02,Secrétariat aux relations avec les Premières Nations et les Inuit,2,Fonctionnement,Votés,1793000,0,0,1793000
+Conseil exécutif,0140.04,Relations avec les Premières Nations et les Inuit,0140.04.02,Secrétariat aux relations avec les Premières Nations et les Inuit,5,Transfert,Votés,432426200,0,0,432426200
+Conseil exécutif,0140.04,Relations avec les Premières Nations et les Inuit,0140.04.02,Secrétariat aux relations avec les Premières Nations et les Inuit,P,"Créances douteuses, autres provisions et pertes",Votés,50000,0,0,50000
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.01,"Cabinet du ministre responsable des Institutions démocratiques, cabinet du ministre responsable de l’Accès à l’information et de la Protection des renseignements personnels et cabinet du ministre responsable de la Laïcité",1,Rémunération,Votés,1186100,0,0,1186100
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.01,"Cabinet du ministre responsable des Institutions démocratiques, cabinet du ministre responsable de l’Accès à l’information et de la Protection des renseignements personnels et cabinet du ministre responsable de la Laïcité",2,Fonctionnement,Permanents,9600,0,0,9600
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.01,"Cabinet du ministre responsable des Institutions démocratiques, cabinet du ministre responsable de l’Accès à l’information et de la Protection des renseignements personnels et cabinet du ministre responsable de la Laïcité",2,Fonctionnement,Votés,96600,0,0,96600
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.01,"Cabinet du ministre responsable des Institutions démocratiques, cabinet du ministre responsable de l’Accès à l’information et de la Protection des renseignements personnels et cabinet du ministre responsable de la Laïcité",5,Transfert,Votés,54600,0,0,54600
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.02,Commission d'accès à l'information,1,Rémunération,Votés,11229400,0,0,11229400
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.02,Commission d'accès à l'information,2,Fonctionnement,Votés,1012200,0,0,1012200
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.02,Commission d'accès à l'information,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,62000,62000
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.02,Commission d'accès à l'information,A,moins Amortissement,Votés,0,-155000,0,-155000
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.02,Commission d'accès à l'information,M,Immobilisations en ressources informationnelles,Votés,0,0,47700,47700
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.03,Institutions démocratiques,1,Rémunération,Votés,1400000,0,0,1400000
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.03,Institutions démocratiques,2,Fonctionnement,Votés,76500,0,0,76500
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.04,Accès à l'information et protection des renseignements personnels,1,Rémunération,Votés,865700,0,0,865700
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.04,Accès à l'information et protection des renseignements personnels,2,Fonctionnement,Votés,62300,0,0,62300
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.05,Laïcité de l'État,1,Rémunération,Votés,868100,0,0,868100
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.05,Laïcité de l'État,2,Fonctionnement,Votés,75100,0,0,75100
+Conseil exécutif,0140.05,"Institutions démocratiques, accès à l'information et laïcité",0140.05.05,Laïcité de l'État,5,Transfert,Votés,105000,0,0,105000
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,1,Rémunération,Votés,14480200,0,0,14480200
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,2,Fonctionnement,Votés,20949700,0,0,20949700
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,3101500,3101500
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,4,Service de la dette,Votés,3193000,0,0,3193000
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,A,moins Amortissement,Votés,0,-6119100,0,-6119100
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,3479700,3479700
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.02,Soutien à la mission,1,Rémunération,Votés,29907100,0,0,29907100
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.02,Soutien à la mission,2,Fonctionnement,Votés,8175700,0,0,8175700
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.02,Soutien à la mission,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,35800,35800
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.02,Soutien à la mission,A,moins Amortissement,Votés,0,-46000,0,-46000
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.03,Conseil du patrimoine culturel du Québec,1,Rémunération,Votés,554200,0,0,554200
+Culture et Communications,0010.01,"Direction, administration et soutien à la mission",0010.01.03,Conseil du patrimoine culturel du Québec,2,Fonctionnement,Votés,106200,0,0,106200
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.01,"Actions en matière de développement culturel, de communications et de patrimoine",5,Transfert,Votés,181769800,0,0,181769800
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.02,Musées nationaux,5,Transfert,Votés,81972000,0,0,81972000
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.03,Société de la Place des Arts de Montréal et Société du Grand Théâtre de Québec,5,Transfert,Votés,12058000,0,0,12058000
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.04,Société de développement des entreprises culturelles,5,Transfert,Votés,104249600,0,0,104249600
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.04,Société de développement des entreprises culturelles,P,"Créances douteuses, autres provisions et pertes",Votés,173900,0,0,173900
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.05,Société de télédiffusion du Québec,5,Transfert,Votés,93205400,0,0,93205400
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.06,Conseil des arts et des lettres du Québec,5,Transfert,Votés,206935500,0,0,206935500
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.07,Bibliothèque et Archives nationales du Québec,5,Transfert,Votés,62740800,0,0,62740800
+Culture et Communications,0010.02,"Soutien et développement de la culture, des communications et du patrimoine",0010.02.08,Conservatoire de musique et d'art dramatique du Québec,5,Transfert,Votés,38139300,0,0,38139300
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.01,Direction et administration,1,Rémunération,Votés,34660100,0,0,34660100
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.01,Direction et administration,2,Fonctionnement,Votés,19641800,0,0,19641800
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,1191300,1191300
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.01,Direction et administration,5,Transfert,Votés,120000,0,0,120000
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.01,Direction et administration,A,moins Amortissement,Votés,0,-450000,0,-450000
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.02,Cybersécurité,1,Rémunération,Votés,8789400,0,0,8789400
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.02,Cybersécurité,2,Fonctionnement,Votés,6331600,0,0,6331600
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.02,Cybersécurité,F,Affectation à un fonds spécial,Votés,1334200,0,0,1334200
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.03,Transformation numérique,1,Rémunération,Votés,6823000,0,0,6823000
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.03,Transformation numérique,2,Fonctionnement,Votés,2163700,0,0,2163700
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.04,Services à la clientèle des solutions communes,1,Rémunération,Votés,2175800,0,0,2175800
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.04,Services à la clientèle des solutions communes,2,Fonctionnement,Votés,166300,0,0,166300
+Cybersécurité et Numérique,0096.01,Direction et administration,0096.01.04,Services à la clientèle des solutions communes,F,Affectation à un fonds spécial,Votés,223900,0,0,223900
+Cybersécurité et Numérique,0096.02,Gestion des ressources informationnelles spécifiques,0096.02.01,Services et projets en transformation numérique et cybersécurité du Fonds de la cybersécurité et du numérique,F,Affectation à un fonds spécial,Votés,81767000,0,0,81767000
+Cybersécurité et Numérique,0096.03,Internet haute vitesse et projets spéciaux de connectivité,0096.03.01,Internet haute vitesse et projets spéciaux de connectivité,1,Rémunération,Votés,3000000,0,0,3000000
+Cybersécurité et Numérique,0096.03,Internet haute vitesse et projets spéciaux de connectivité,0096.03.01,Internet haute vitesse et projets spéciaux de connectivité,2,Fonctionnement,Votés,3236300,0,0,3236300
+Cybersécurité et Numérique,0096.03,Internet haute vitesse et projets spéciaux de connectivité,0096.03.01,Internet haute vitesse et projets spéciaux de connectivité,5,Transfert,Votés,5258600,0,0,5258600
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,1,Rémunération,Votés,24700700,0,0,24700700
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,2,Fonctionnement,Permanents,19200,0,0,19200
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,2,Fonctionnement,Votés,10855000,0,0,10855000
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,1052700,1052700
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,5,Transfert,Votés,566700,0,0,566700
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,5000,5000
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,A,moins Amortissement,Votés,0,-1494800,0,-1494800
+"Économie, Innovation et Énergie",0280.01,Direction et administration,0280.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,1446300,1446300
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.01,Politiques économiques et affaires extérieures,1,Rémunération,Votés,6325200,0,0,6325200
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.01,Politiques économiques et affaires extérieures,2,Fonctionnement,Votés,8234300,0,0,8234300
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.01,Politiques économiques et affaires extérieures,5,Transfert,Votés,23004600,0,0,23004600
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.01,Politiques économiques et affaires extérieures,6,"Prêts, placements, avances et autres coûts",Votés,0,0,5000,5000
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.02,Industries stratégiques et projets économiques majeurs,1,Rémunération,Votés,10020400,0,0,10020400
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.02,Industries stratégiques et projets économiques majeurs,2,Fonctionnement,Votés,6229200,0,0,6229200
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.02,Industries stratégiques et projets économiques majeurs,5,Transfert,Votés,35207900,0,0,35207900
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.03,Développement économique régional et entrepreneuriat,1,Rémunération,Votés,11254800,0,0,11254800
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.03,Développement économique régional et entrepreneuriat,2,Fonctionnement,Votés,10784500,0,0,10784500
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.03,Développement économique régional et entrepreneuriat,5,Transfert,Votés,170536000,0,0,170536000
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.03,Développement économique régional et entrepreneuriat,6,"Prêts, placements, avances et autres coûts",Votés,0,0,6000000,6000000
+"Économie, Innovation et Énergie",0280.02,Développement de l'économie,0280.02.03,Développement économique régional et entrepreneuriat,P,"Créances douteuses, autres provisions et pertes",Permanents,1800000,0,0,1800000
+"Économie, Innovation et Énergie",0280.03,"Développement de la science, de la recherche et de l'innovation",0280.03.01,Soutien administratif,1,Rémunération,Votés,9131800,0,0,9131800
+"Économie, Innovation et Énergie",0280.03,"Développement de la science, de la recherche et de l'innovation",0280.03.01,Soutien administratif,2,Fonctionnement,Votés,632900,0,0,632900
+"Économie, Innovation et Énergie",0280.03,"Développement de la science, de la recherche et de l'innovation",0280.03.01,Soutien administratif,6,"Prêts, placements, avances et autres coûts",Votés,0,0,5000,5000
+"Économie, Innovation et Énergie",0280.03,"Développement de la science, de la recherche et de l'innovation",0280.03.02,Soutien aux organismes et aux projets,5,Transfert,Votés,159470900,0,0,159470900
+"Économie, Innovation et Énergie",0280.03,"Développement de la science, de la recherche et de l'innovation",0280.03.03,Soutien aux infrastructures de recherche,5,Transfert,Votés,25588000,0,0,25588000
+"Économie, Innovation et Énergie",0280.03,"Développement de la science, de la recherche et de l'innovation",0280.03.04,Soutien à la relève et à la culture scientifique,5,Transfert,Votés,22698000,0,0,22698000
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.01,Mandats gouvernementaux,F,Affectation à un fonds spécial,Votés,193074300,0,0,193074300
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.01,Mandats gouvernementaux,P,"Créances douteuses, autres provisions et pertes",Votés,331623900,0,0,331623900
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.02,Programme ESSOR,F,Affectation à un fonds spécial,Votés,14496600,0,0,14496600
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.02,Programme ESSOR,P,"Créances douteuses, autres provisions et pertes",Votés,167600000,0,0,167600000
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.03,Rétention d’entreprises stratégiques,F,Affectation à un fonds spécial,Votés,6945600,0,0,6945600
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.03,Rétention d’entreprises stratégiques,P,"Créances douteuses, autres provisions et pertes",Votés,103700000,0,0,103700000
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.04,Soutien aux projets de commercialisation,F,Affectation à un fonds spécial,Votés,78523100,0,0,78523100
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.04,Soutien aux projets de commercialisation,P,"Créances douteuses, autres provisions et pertes",Votés,4000000,0,0,4000000
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.05,Autres mesures de soutien aux entreprises,F,Affectation à un fonds spécial,Votés,17412000,0,0,17412000
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.05,Autres mesures de soutien aux entreprises,P,"Créances douteuses, autres provisions et pertes",Votés,14720000,0,0,14720000
+"Économie, Innovation et Énergie",0280.04,Interventions relatives au Fonds du développement économique,0280.04.06,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour financer la variation des besoins en lien avec les mandats gouvernementaux",P,"Créances douteuses, autres provisions et pertes",Votés,185176100,0,0,185176100
+"Économie, Innovation et Énergie",0280.05,Organismes dédiés à la recherche et à l'innovation,0280.05.01,Fonds de recherche du Québec ,5,Transfert,Votés,250325400,0,0,250325400
+"Économie, Innovation et Énergie",0280.05,Organismes dédiés à la recherche et à l'innovation,0280.05.02,Commission de l'éthique en science et en technologie,1,Rémunération,Votés,769500,0,0,769500
+"Économie, Innovation et Énergie",0280.05,Organismes dédiés à la recherche et à l'innovation,0280.05.02,Commission de l'éthique en science et en technologie,2,Fonctionnement,Votés,82400,0,0,82400
+"Économie, Innovation et Énergie",0280.06,Énergie,0280.06.01,Électricité et combustibles,1,Rémunération,Votés,6191100,0,0,6191100
+"Économie, Innovation et Énergie",0280.06,Énergie,0280.06.01,Électricité et combustibles,2,Fonctionnement,Votés,2861000,0,0,2861000
+"Économie, Innovation et Énergie",0280.06,Énergie,0280.06.01,Électricité et combustibles,5,Transfert,Votés,4611800,0,0,4611800
+"Économie, Innovation et Énergie",0280.06,Énergie,0280.06.01,Électricité et combustibles,F,Affectation à un fonds spécial,Votés,6408600,0,0,6408600
+"Économie, Innovation et Énergie",0280.07,Jeunesse,0280.07.01,Secrétariat à la jeunesse,1,Rémunération,Votés,2251000,0,0,2251000
+"Économie, Innovation et Énergie",0280.07,Jeunesse,0280.07.01,Secrétariat à la jeunesse,2,Fonctionnement,Votés,452500,0,0,452500
+"Économie, Innovation et Énergie",0280.07,Jeunesse,0280.07.01,Secrétariat à la jeunesse,5,Transfert,Votés,60547700,0,0,60547700
+Éducation,0350.01,Administration,0350.01.01,Direction,1,Rémunération,Votés,56466800,0,0,56466800
+Éducation,0350.01,Administration,0350.01.01,Direction,2,Fonctionnement,Permanents,19200,0,0,19200
+Éducation,0350.01,Administration,0350.01.01,Direction,2,Fonctionnement,Votés,155941100,0,0,155941100
+Éducation,0350.01,Administration,0350.01.01,Direction,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,15546600,15546600
+Éducation,0350.01,Administration,0350.01.01,Direction,5,Transfert,Votés,413300,0,0,413300
+Éducation,0350.01,Administration,0350.01.01,Direction,6,"Prêts, placements, avances et autres coûts",Votés,0,0,3000,3000
+Éducation,0350.01,Administration,0350.01.01,Direction,A,moins Amortissement,Votés,0,-5123600,0,-5123600
+Éducation,0350.01,Administration,0350.01.01,Direction,M,Immobilisations en ressources informationnelles,Votés,0,0,7454400,7454400
+Éducation,0350.01,Administration,0350.01.02,Soutien au réseau de l'Éducation et aux établissements d'enseignement privés,1,Rémunération,Votés,47430100,0,0,47430100
+Éducation,0350.01,Administration,0350.01.02,Soutien au réseau de l'Éducation et aux établissements d'enseignement privés,2,Fonctionnement,Votés,100478200,0,0,100478200
+Éducation,0350.01,Administration,0350.01.02,Soutien au réseau de l'Éducation et aux établissements d'enseignement privés,5,Transfert,Votés,4357600,0,0,4357600
+Éducation,0350.01,Administration,0350.01.02,Soutien au réseau de l'Éducation et aux établissements d'enseignement privés,A,moins Amortissement,Votés,0,-9600,0,-9600
+Éducation,0350.01,Administration,0350.01.03,"Sport, loisir, activité physique et plein air",1,Rémunération,Votés,4872300,0,0,4872300
+Éducation,0350.01,Administration,0350.01.03,"Sport, loisir, activité physique et plein air",2,Fonctionnement,Votés,10163500,0,0,10163500
+Éducation,0350.02,Soutien aux organismes,0350.02.01,Institut national des mines,5,Transfert,Votés,1557200,0,0,1557200
+Éducation,0350.02,Soutien aux organismes,0350.02.02,Soutien à des partenaires en éducation,5,Transfert,Votés,69139300,0,0,69139300
+Éducation,0350.02,Soutien aux organismes,0350.02.03,Action communautaire,5,Transfert,Votés,50623400,0,0,50623400
+Éducation,0350.02,Soutien aux organismes,0350.02.04,Instances régionales de concertation,5,Transfert,Votés,22654900,0,0,22654900
+Éducation,0350.02,Soutien aux organismes,0350.02.05,Conseil supérieur de l'éducation,1,Rémunération,Votés,1150800,0,0,1150800
+Éducation,0350.02,Soutien aux organismes,0350.02.05,Conseil supérieur de l'éducation,2,Fonctionnement,Votés,287600,0,0,287600
+Éducation,0350.02,Soutien aux organismes,0350.02.05,Conseil supérieur de l'éducation,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,3700,3700
+Éducation,0350.02,Soutien aux organismes,0350.02.05,Conseil supérieur de l'éducation,A,moins Amortissement,Votés,0,-5600,0,-5600
+Éducation,0350.02,Soutien aux organismes,0350.02.05,Conseil supérieur de l'éducation,M,Immobilisations en ressources informationnelles,Votés,0,0,3000,3000
+Éducation,0350.02,Soutien aux organismes,0350.02.06,Commission consultative de l'enseignement privé,1,Rémunération,Votés,204600,0,0,204600
+Éducation,0350.02,Soutien aux organismes,0350.02.06,Commission consultative de l'enseignement privé,2,Fonctionnement,Votés,17600,0,0,17600
+Éducation,0350.02,Soutien aux organismes,0350.02.07,Protecteur national de l'élève,1,Rémunération,Votés,9501200,0,0,9501200
+Éducation,0350.02,Soutien aux organismes,0350.02.07,Protecteur national de l'élève,2,Fonctionnement,Votés,690200,0,0,690200
+Éducation,0350.02,Soutien aux organismes,0350.02.08,Protecteur de l’intégrité en loisir et en sport,1,Rémunération,Votés,2821000,0,0,2821000
+Éducation,0350.02,Soutien aux organismes,0350.02.08,Protecteur de l’intégrité en loisir et en sport,2,Fonctionnement,Votés,203900,0,0,203900
+Éducation,0350.03,Taxe scolaire - Subvention d’équilibre fiscal,0350.03.01,Subvention d’équilibre fiscal,5,Transfert,Votés,1486469200,0,0,1486469200
+Éducation,0350.03,Taxe scolaire - Subvention d’équilibre fiscal,0350.03.02,Revenus accessoires,5,Transfert,Votés,27070200,0,0,27070200
+Éducation,0350.04,Éducation préscolaire et enseignement primaire et secondaire,0350.04.01,Centres de services scolaires et commissions scolaires,5,Transfert,Votés,13586482700,0,0,13586482700
+Éducation,0350.04,Éducation préscolaire et enseignement primaire et secondaire,0350.04.02,Centre de services scolaire et commissions scolaires à statut particulier,5,Transfert,Votés,518008700,0,0,518008700
+Éducation,0350.04,Éducation préscolaire et enseignement primaire et secondaire,0350.04.03,Financement des infrastructures des centres de services scolaires et des commissions scolaires,5,Transfert,Votés,287861600,0,0,287861600
+Éducation,0350.04,Éducation préscolaire et enseignement primaire et secondaire,0350.04.04,Établissements d'enseignement privés,5,Transfert,Votés,805272900,0,0,805272900
+Éducation,0350.04,Éducation préscolaire et enseignement primaire et secondaire,0350.04.05,Transport scolaire,5,Transfert,Votés,661624000,0,0,661624000
+Éducation,0350.04,Éducation préscolaire et enseignement primaire et secondaire,0350.04.06,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour les besoins en éducation préscolaire et en enseignement primaire et secondaire",5,Transfert,Votés,742341600,0,0,742341600
+Éducation,0350.05,"Développement du sport, du loisir, de l'activité physique et du plein air",0350.05.01,"Développement du sport, du loisir, de l'activité physique et du plein air",5,Transfert,Votés,145762900,0,0,145762900
+Éducation,0350.05,"Développement du sport, du loisir, de l'activité physique et du plein air",0350.05.02,Fonds pour le développement du sport et de l'activité physique,F,Affectation à un fonds spécial,Votés,375000,0,0,375000
+Éducation,0350.05,"Développement du sport, du loisir, de l'activité physique et du plein air",0350.05.03,Société des établissements de plein air du Québec,2,Fonctionnement,Votés,18800300,0,0,18800300
+Éducation,0350.05,"Développement du sport, du loisir, de l'activité physique et du plein air",0350.05.03,Société des établissements de plein air du Québec,5,Transfert,Votés,14571600,0,0,14571600
+Éducation,0350.06,Régimes de retraite,0350.06.01,Régime de retraite des enseignants,5,Transfert,Permanents,99094900,0,0,99094900
+Éducation,0350.06,Régimes de retraite,0350.06.02,Régime de retraite des employés du gouvernement et des organismes publics,5,Transfert,Permanents,1184213100,0,0,1184213100
+Éducation,0350.06,Régimes de retraite,0350.06.03,Régime de retraite du personnel d'encadrement,5,Transfert,Permanents,155057700,0,0,155057700
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,1,Rémunération,Votés,50910600,0,0,50910600
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,2,Fonctionnement,Permanents,19200,0,0,19200
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,2,Fonctionnement,Votés,59754600,0,0,59754600
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,5,Transfert,Votés,405100,0,0,405100
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,40000,40000
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,A,moins Amortissement,Votés,0,-815300,0,-815300
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.01,Direction et administration,F,Affectation à un fonds spécial,Votés,11172700,0,0,11172700
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.02,Solidarité sociale et analyse stratégique,1,Rémunération,Votés,143303500,0,0,143303500
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.02,Solidarité sociale et analyse stratégique,2,Fonctionnement,Votés,8234200,0,0,8234200
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.03,Services d’aide à l’emploi,1,Rémunération,Votés,1760300,0,0,1760300
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.03,Services d’aide à l’emploi,2,Fonctionnement,Votés,341100,0,0,341100
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.03,Services d’aide à l’emploi,5,Transfert,Votés,1365300,0,0,1365300
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.03,Services d’aide à l’emploi,F,Affectation à un fonds spécial,Votés,205391500,0,0,205391500
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.04,Services Québec,F,Affectation à un fonds spécial,Votés,85049100,0,0,85049100
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.05,Recouvrement,1,Rémunération,Votés,5862000,0,0,5862000
+Emploi et Solidarité sociale,0700.01,"Gouvernance, administration et services à la clientèle",0700.01.05,Recouvrement,2,Fonctionnement,Votés,210300,0,0,210300
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.01,Aide aux personnes et aux familles,5,Transfert,Votés,3591526900,0,0,3591526900
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.01,Aide aux personnes et aux familles,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1640000,1640000
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.01,Aide aux personnes et aux familles,F,Affectation à un fonds spécial,Votés,51015700,0,0,51015700
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.01,Aide aux personnes et aux familles,P,"Créances douteuses, autres provisions et pertes",Permanents,5500000,0,0,5500000
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.02,Action communautaire,5,Transfert,Votés,63882900,0,0,63882900
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.02,Action communautaire,F,Affectation à un fonds spécial,Votés,45762100,0,0,45762100
+Emploi et Solidarité sociale,0700.02,Solidarité sociale et Action communautaire,0700.02.03,Office de la sécurité économique des chasseurs cris,5,Transfert,Votés,28909600,0,0,28909600
+Emploi et Solidarité sociale,0700.03,Emploi,0700.03.01,Mesures d'aide à l'emploi,F,Affectation à un fonds spécial,Votés,817727300,0,0,817727300
+Enseignement supérieur,0067.01,Administration,0067.01.01,Direction,1,Rémunération,Votés,8064500,0,0,8064500
+Enseignement supérieur,0067.01,Administration,0067.01.01,Direction,2,Fonctionnement,Permanents,9600,0,0,9600
+Enseignement supérieur,0067.01,Administration,0067.01.01,Direction,2,Fonctionnement,Votés,4106700,0,0,4106700
+Enseignement supérieur,0067.01,Administration,0067.01.01,Direction,5,Transfert,Votés,247100,0,0,247100
+Enseignement supérieur,0067.01,Administration,0067.01.02,"Financement, budget et infrastructures",1,Rémunération,Votés,14025100,0,0,14025100
+Enseignement supérieur,0067.01,Administration,0067.01.02,"Financement, budget et infrastructures",2,Fonctionnement,Votés,4411700,0,0,4411700
+Enseignement supérieur,0067.01,Administration,0067.01.03,Affaires collégiales et interventions régionales,1,Rémunération,Votés,11782000,0,0,11782000
+Enseignement supérieur,0067.01,Administration,0067.01.03,Affaires collégiales et interventions régionales,2,Fonctionnement,Votés,7126100,0,0,7126100
+Enseignement supérieur,0067.01,Administration,0067.01.04,"Accessibilité, réussite et expérience étudiante",1,Rémunération,Votés,19972700,0,0,19972700
+Enseignement supérieur,0067.01,Administration,0067.01.04,"Accessibilité, réussite et expérience étudiante",2,Fonctionnement,Votés,8566700,0,0,8566700
+Enseignement supérieur,0067.01,Administration,0067.01.04,"Accessibilité, réussite et expérience étudiante",6,"Prêts, placements, avances et autres coûts",Votés,0,0,2000,2000
+Enseignement supérieur,0067.01,Administration,0067.01.05,"Affaires universitaires, recherche, relations internationales et numérique",1,Rémunération,Votés,8001400,0,0,8001400
+Enseignement supérieur,0067.01,Administration,0067.01.05,"Affaires universitaires, recherche, relations internationales et numérique",2,Fonctionnement,Votés,19002500,0,0,19002500
+Enseignement supérieur,0067.01,Administration,0067.01.05,"Affaires universitaires, recherche, relations internationales et numérique",5,Transfert,Votés,6378800,0,0,6378800
+Enseignement supérieur,0067.01,Administration,0067.01.05,"Affaires universitaires, recherche, relations internationales et numérique",A,moins Amortissement,Votés,0,-1130800,0,-1130800
+Enseignement supérieur,0067.01,Administration,0067.01.05,"Affaires universitaires, recherche, relations internationales et numérique",M,Immobilisations en ressources informationnelles,Votés,0,0,4128300,4128300
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.01,Institut de tourisme et d'hôtellerie du Québec,5,Transfert,Votés,36617100,0,0,36617100
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.02,Soutien à des partenaires en enseignement supérieur,5,Transfert,Votés,10790500,0,0,10790500
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.03,Comité consultatif sur l'accessibilité financière aux études,1,Rémunération,Votés,97300,0,0,97300
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.03,Comité consultatif sur l'accessibilité financière aux études,2,Fonctionnement,Votés,80800,0,0,80800
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.04,Commission d'évaluation de l'enseignement collégial,1,Rémunération,Votés,2109500,0,0,2109500
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.04,Commission d'évaluation de l'enseignement collégial,2,Fonctionnement,Votés,508500,0,0,508500
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.04,Commission d'évaluation de l'enseignement collégial,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,10000,10000
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.04,Commission d'évaluation de l'enseignement collégial,A,moins Amortissement,Votés,0,-16500,0,-16500
+Enseignement supérieur,0067.02,Soutien aux organismes,0067.02.04,Commission d'évaluation de l'enseignement collégial,M,Immobilisations en ressources informationnelles,Votés,0,0,9000,9000
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.01,Bourses consécutives aux prêts,5,Transfert,Votés,768702500,0,0,768702500
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.02,Intérêts et remboursements aux banques,5,Transfert,Votés,76642900,0,0,76642900
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.02,Intérêts et remboursements aux banques,6,"Prêts, placements, avances et autres coûts",Votés,0,0,138595000,138595000
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.02,Intérêts et remboursements aux banques,P,"Créances douteuses, autres provisions et pertes",Permanents,33222400,0,0,33222400
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.02,Intérêts et remboursements aux banques,P,"Créances douteuses, autres provisions et pertes",Votés,2777600,0,0,2777600
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.03,Autres bourses,5,Transfert,Votés,30520800,0,0,30520800
+Enseignement supérieur,0067.03,Aide financière aux études et bourses incitatives,0067.03.04,Bourses incitatives,5,Transfert,Votés,165800000,0,0,165800000
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.01,Cégeps,5,Transfert,Votés,2971561100,0,0,2971561100
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.02,Universités,5,Transfert,Votés,4322876000,0,0,4322876000
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.02,Universités,F,Affectation à un fonds spécial,Votés,25000000,0,0,25000000
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.03,Enseignement privé au collégial,5,Transfert,Votés,180379200,0,0,180379200
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.04,Financement des infrastructures des cégeps,5,Transfert,Votés,60366700,0,0,60366700
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.05,Financement des infrastructures des universités,5,Transfert,Votés,112870800,0,0,112870800
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.06,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour les besoins en enseignement supérieur",5,Transfert,Votés,156398000,0,0,156398000
+Enseignement supérieur,0067.04,Enseignement supérieur,0067.04.06,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour les besoins en enseignement supérieur",6,"Prêts, placements, avances et autres coûts",Votés,0,0,100000000,100000000
+Enseignement supérieur,0067.05,Régimes de retraite,0067.05.01,Régime de retraite des employés du gouvernement et des organismes publics,5,Transfert,Permanents,215566400,0,0,215566400
+Enseignement supérieur,0067.05,Régimes de retraite,0067.05.02,Régime de retraite du personnel d'encadrement,5,Transfert,Permanents,29247300,0,0,29247300
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.01,Direction du Ministère,1,Rémunération,Votés,10214200,0,0,10214200
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.01,Direction du Ministère,2,Fonctionnement,Permanents,9600,0,0,9600
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.01,Direction du Ministère,2,Fonctionnement,Votés,2814700,0,0,2814700
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.01,Direction du Ministère,5,Transfert,Votés,544900,0,0,544900
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,1,Rémunération,Votés,41958900,0,0,41958900
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,2,Fonctionnement,Votés,76116900,0,0,76116900
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,5464000,5464000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,5,Transfert,Votés,6000,0,0,6000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,6,"Prêts, placements, avances et autres coûts",Votés,0,0,20000,20000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,A,moins Amortissement,Votés,0,-28712900,0,-28712900
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,M,Immobilisations en ressources informationnelles,Votés,0,0,11384100,11384100
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.02,Soutien et transformation organisationnelle,P,"Créances douteuses, autres provisions et pertes",Permanents,100000,0,0,100000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.03,Autorisations environnementales et opérations régionales,1,Rémunération,Votés,50713600,0,0,50713600
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.03,Autorisations environnementales et opérations régionales,2,Fonctionnement,Votés,3158300,0,0,3158300
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.03,Autorisations environnementales et opérations régionales,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,2800000,2800000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.03,Autorisations environnementales et opérations régionales,5,Transfert,Votés,19162000,0,0,19162000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.04,"Contrôle environnemental, protection de la faune et sécurité des barrages",1,Rémunération,Votés,56614400,0,0,56614400
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.04,"Contrôle environnemental, protection de la faune et sécurité des barrages",2,Fonctionnement,Votés,7510100,0,0,7510100
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.04,"Contrôle environnemental, protection de la faune et sécurité des barrages",3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,800000,800000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.04,"Contrôle environnemental, protection de la faune et sécurité des barrages",5,Transfert,Votés,2048500,0,0,2048500
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.05,Expertise et politiques de l'eau et de l'air,1,Rémunération,Votés,17565800,0,0,17565800
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.05,Expertise et politiques de l'eau et de l'air,2,Fonctionnement,Votés,3021400,0,0,3021400
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.05,Expertise et politiques de l'eau et de l'air,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,4200000,4200000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.05,Expertise et politiques de l'eau et de l'air,5,Transfert,Votés,14875000,0,0,14875000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.05,Expertise et politiques de l'eau et de l'air,F,Affectation à un fonds spécial,Votés,75500000,0,0,75500000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.06,Gestion des barrages,1,Rémunération,Votés,10229200,0,0,10229200
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.06,Gestion des barrages,2,Fonctionnement,Votés,9198300,0,0,9198300
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.06,Gestion des barrages,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,33326000,33326000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.07,Expertise et politiques en milieu terrestre et développement durable ,1,Rémunération,Votés,2298400,0,0,2298400
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.07,Expertise et politiques en milieu terrestre et développement durable ,2,Fonctionnement,Votés,52300,0,0,52300
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.07,Expertise et politiques en milieu terrestre et développement durable ,5,Transfert,Votés,4720000,0,0,4720000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.08,"Biodiversité, faune et parcs",1,Rémunération,Votés,20906200,0,0,20906200
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.08,"Biodiversité, faune et parcs",2,Fonctionnement,Votés,20345000,0,0,20345000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.08,"Biodiversité, faune et parcs",3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,16450200,16450200
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.08,"Biodiversité, faune et parcs",5,Transfert,Votés,76633700,0,0,76633700
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.01,Protection de l'environnement et de la faune,0380.01.09,Bureau de la transition climatique et énergétique,2,Fonctionnement,Votés,50000,0,0,50000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.02,Bureau d'audiences publiques sur l'environnement,0380.02.01,Bureau d'audiences publiques sur l'environnement,1,Rémunération,Votés,7332000,0,0,7332000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.02,Bureau d'audiences publiques sur l'environnement,0380.02.01,Bureau d'audiences publiques sur l'environnement,2,Fonctionnement,Votés,1840000,0,0,1840000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.02,Bureau d'audiences publiques sur l'environnement,0380.02.01,Bureau d'audiences publiques sur l'environnement,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,20000,20000
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.02,Bureau d'audiences publiques sur l'environnement,0380.02.01,Bureau d'audiences publiques sur l'environnement,A,moins Amortissement,Votés,0,-28300,0,-28300
+"Environnement, Lutte contre les changements climatiques, Faune et Parcs",0380.02,Bureau d'audiences publiques sur l'environnement,0380.02.01,Bureau d'audiences publiques sur l'environnement,M,Immobilisations en ressources informationnelles,Votés,0,0,48600,48600
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,1,Rémunération,Votés,15577000,0,0,15577000
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,2,Fonctionnement,Votés,26431100,0,0,26431100
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,160000,160000
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,5,Transfert,Votés,150000,0,0,150000
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,A,moins Amortissement,Votés,0,-4106800,0,-4106800
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,7000000,7000000
+Famille,0065.01,"Planification, recherche et administration",0065.01.01,Direction et administration,P,"Créances douteuses, autres provisions et pertes",Permanents,100000,0,0,100000
+Famille,0065.01,"Planification, recherche et administration",0065.01.02,"Planification, politique et recherche",1,Rémunération,Votés,50017500,0,0,50017500
+Famille,0065.01,"Planification, recherche et administration",0065.01.02,"Planification, politique et recherche",2,Fonctionnement,Votés,3524700,0,0,3524700
+Famille,0065.01,"Planification, recherche et administration",0065.01.02,"Planification, politique et recherche",6,"Prêts, placements, avances et autres coûts",Votés,0,0,2000,2000
+Famille,0065.02,Mesures d'aide à la famille,0065.02.01,Soutien financier lié aux services à la famille,2,Fonctionnement,Votés,9718200,0,0,9718200
+Famille,0065.02,Mesures d'aide à la famille,0065.02.01,Soutien financier lié aux services à la famille,5,Transfert,Votés,55962500,0,0,55962500
+Famille,0065.02,Mesures d'aide à la famille,0065.02.02,Administration de l'Allocation famille,2,Fonctionnement,Votés,50464800,0,0,50464800
+Famille,0065.02,Mesures d'aide à la famille,0065.02.03,Soutien financier aux organismes communautaires,5,Transfert,Votés,56477800,0,0,56477800
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.01,Ententes spécifiques avec les Premières Nations et les Inuit,F,Affectation à un fonds spécial,Votés,26167100,0,0,26167100
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.02,Subvention pour le financement des infrastructures des centres de la petite enfance,F,Affectation à un fonds spécial,Votés,24513300,0,0,24513300
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.03,Régime de retraite à l'intention d'employés œuvrant dans le domaine des services de garde éducatifs à l'enfance,F,Affectation à un fonds spécial,Votés,143444900,0,0,143444900
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.04,Régime d'assurance collective,F,Affectation à un fonds spécial,Votés,67856900,0,0,67856900
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.05,Soutien financier aux centres de la petite enfance,F,Affectation à un fonds spécial,Votés,2001609100,0,0,2001609100
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.06,Soutien financier aux garderies,F,Affectation à un fonds spécial,Votés,1129472000,0,0,1129472000
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.07,Soutien financier aux bureaux coordonnateurs de la garde éducative en milieu familial et aux personnes responsables d'un service de garde éducatif en milieu familial,F,Affectation à un fonds spécial,Votés,804896900,0,0,804896900
+Famille,0065.03,Services de garde éducatifs à l'enfance,0065.03.08,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour le financement des services de garde éducatifs à l'enfance",F,Affectation à un fonds spécial,Votés,175676600,0,0,175676600
+Famille,0065.04,Curateur public,0065.04.01,Direction et administration du Curateur public*,1,Rémunération,Votés,12971300,0,0,12971300
+Famille,0065.04,Curateur public,0065.04.01,Direction et administration du Curateur public*,2,Fonctionnement,Votés,10102900,0,0,10102900
+Famille,0065.04,Curateur public,0065.04.01,Direction et administration du Curateur public*,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,1100000,1100000
+Famille,0065.04,Curateur public,0065.04.01,Direction et administration du Curateur public*,A,moins Amortissement,Votés,0,-5895900,0,-5895900
+Famille,0065.04,Curateur public,0065.04.01,Direction et administration du Curateur public*,M,Immobilisations en ressources informationnelles,Votés,0,0,7150600,7150600
+Famille,0065.04,Curateur public,0065.04.01,Direction et administration du Curateur public*,P,"Créances douteuses, autres provisions et pertes",Permanents,100000,0,0,100000
+Famille,0065.04,Curateur public,0065.04.02,Mesures de protection,1,Rémunération,Votés,46419200,0,0,46419200
+Famille,0065.04,Curateur public,0065.04.02,Mesures de protection,2,Fonctionnement,Votés,14913600,0,0,14913600
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,1,Rémunération,Votés,22084400,0,0,22084400
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,2,Fonctionnement,Votés,12417400,0,0,12417400
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,101200,101200
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,5,Transfert,Votés,354600,0,0,354600
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,574300,574300
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,A,moins Amortissement,Votés,0,-636000,0,-636000
+Finances,0210.01,Direction et administration,0210.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,1490300,1490300
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.01,"Politiques budgétaires, fiscales, économiques et encadrement du secteur financier",1,Rémunération,Votés,23549300,0,0,23549300
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.01,"Politiques budgétaires, fiscales, économiques et encadrement du secteur financier",2,Fonctionnement,Votés,1850000,0,0,1850000
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.02,"Financement, gestion de la dette et opérations financières",1,Rémunération,Votés,7458200,0,0,7458200
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.02,"Financement, gestion de la dette et opérations financières",2,Fonctionnement,Votés,186900,0,0,186900
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.02,"Financement, gestion de la dette et opérations financières",M,Immobilisations en ressources informationnelles,Votés,0,0,312900,312900
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.03,"Soutien aux affaires fiscales, financières et économiques et à la recherche",2,Fonctionnement,Votés,7285200,0,0,7285200
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.03,"Soutien aux affaires fiscales, financières et économiques et à la recherche",5,Transfert,Votés,6003300,0,0,6003300
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.04,Contrôleur des finances,1,Rémunération,Votés,13802800,0,0,13802800
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.04,Contrôleur des finances,2,Fonctionnement,Votés,616900,0,0,616900
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.04,Contrôleur des finances,6,"Prêts, placements, avances et autres coûts",Votés,0,0,350000,350000
+Finances,0210.02,"Activités en matière économique, fiscale, budgétaire et financière",0210.02.04,Contrôleur des finances,A,moins Amortissement,Votés,0,-32700,0,-32700
+Finances,0210.03,"Contributions, frais de services bancaires et provision pour transférer des crédits",0210.03.01,Contribution à l'Institut de la statistique du Québec,5,Transfert,Votés,25833900,0,0,25833900
+Finances,0210.03,"Contributions, frais de services bancaires et provision pour transférer des crédits",0210.03.02,Frais de services bancaires,2,Fonctionnement,Permanents,17892200,0,0,17892200
+Finances,0210.03,"Contributions, frais de services bancaires et provision pour transférer des crédits",0210.03.03,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour des initiatives concernant les revenus et les fraudes envers l'État*",1,Rémunération,Votés,28150200,0,0,28150200
+Finances,0210.03,"Contributions, frais de services bancaires et provision pour transférer des crédits",0210.03.03,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour des initiatives concernant les revenus et les fraudes envers l'État*",2,Fonctionnement,Votés,8126600,0,0,8126600
+Finances,0210.03,"Contributions, frais de services bancaires et provision pour transférer des crédits",0210.03.03,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour des initiatives concernant les revenus et les fraudes envers l'État*",5,Transfert,Votés,13637500,0,0,13637500
+Finances,0210.04,Service de la dette,0210.04.01,Service de la dette directe,4,Service de la dette,Permanents,7915000000,0,0,7915000000
+Finances,0210.04,Service de la dette,0210.04.02,Intérêts sur le compte des régimes de retraite,4,Service de la dette,Permanents,-674000000,0,0,-674000000
+Finances,0210.04,Service de la dette,0210.04.02,Intérêts sur le compte des régimes de retraite,A,moins Amortissement,Permanents,0,674000000,0,674000000
+Finances,0210.04,Service de la dette,0210.04.03,Intérêts sur le régime de rentes de survivants,4,Service de la dette,Votés,-4000000,0,0,-4000000
+Finances,0210.04,Service de la dette,0210.04.03,Intérêts sur le régime de rentes de survivants,A,moins Amortissement,Votés,0,4000000,0,4000000
+Finances,0210.04,Service de la dette,0210.04.04,Intérêts sur l'obligation relative aux congés de maladie accumulés,4,Service de la dette,Votés,-45000000,0,0,-45000000
+Finances,0210.04,Service de la dette,0210.04.04,Intérêts sur l'obligation relative aux congés de maladie accumulés,A,moins Amortissement,Votés,0,45000000,0,45000000
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,1,Rémunération,Votés,54069500,0,0,54069500
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,2,Fonctionnement,Votés,61890800,0,0,61890800
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,300000,300000
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,5,Transfert,Votés,247500,0,0,247500
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,86000,86000
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,A,moins Amortissement,Votés,0,-8740600,0,-8740600
+"Immigration, Francisation et Intégration",0055.01,Direction et soutien aux activités du Ministère,0055.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,9993300,9993300
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.01,Francisation Québec,1,Rémunération,Votés,99425000,0,0,99425000
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.01,Francisation Québec,2,Fonctionnement,Votés,58875600,0,0,58875600
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.01,Francisation Québec,5,Transfert,Votés,100000000,0,0,100000000
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.02,Intégration et réseau régional,1,Rémunération,Votés,26722700,0,0,26722700
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.02,Intégration et réseau régional,2,Fonctionnement,Votés,2733200,0,0,2733200
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.02,Intégration et réseau régional,5,Transfert,Votés,108729200,0,0,108729200
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.03,Immigration ,1,Rémunération,Votés,15378600,0,0,15378600
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.03,Immigration ,2,Fonctionnement,Votés,3186100,0,0,3186100
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.03,Immigration ,5,Transfert,Votés,28375000,0,0,28375000
+"Immigration, Francisation et Intégration",0055.02,"Immigration, francisation et intégration",0055.02.04,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour la réalisation d'activités soutenant l'intégration et la francisation des immigrants",2,Fonctionnement,Votés,238014900,0,0,238014900
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",1,Rémunération,Permanents,10409200,0,0,10409200
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",1,Rémunération,Votés,31676800,0,0,31676800
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",2,Fonctionnement,Permanents,9600,0,0,9600
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",2,Fonctionnement,Votés,53055500,0,0,53055500
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,1207800,1207800
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",5,Transfert,Votés,1194300,0,0,1194300
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",6,"Prêts, placements, avances et autres coûts",Votés,0,0,5100,5100
+Justice,0400.01,Administration de la justice,0400.01.01,"Direction, gouvernance et administration",A,moins Amortissement,Votés,0,-27566600,0,-27566600
+Justice,0400.01,Administration de la justice,0400.01.02,Soutien technologique et Transformation organisationnelle de la justice,1,Rémunération,Votés,26586600,0,0,26586600
+Justice,0400.01,Administration de la justice,0400.01.02,Soutien technologique et Transformation organisationnelle de la justice,2,Fonctionnement,Votés,60903900,0,0,60903900
+Justice,0400.01,Administration de la justice,0400.01.02,Soutien technologique et Transformation organisationnelle de la justice,M,Immobilisations en ressources informationnelles,Votés,0,0,43484100,43484100
+Justice,0400.01,Administration de la justice,0400.01.03,Soutien administratif à l'activité judiciaire,1,Rémunération,Votés,93509600,0,0,93509600
+Justice,0400.01,Administration de la justice,0400.01.03,Soutien administratif à l'activité judiciaire,2,Fonctionnement,Votés,21038500,0,0,21038500
+Justice,0400.01,Administration de la justice,0400.01.03,Soutien administratif à l'activité judiciaire,6,"Prêts, placements, avances et autres coûts",Votés,0,0,31400,31400
+Justice,0400.01,Administration de la justice,0400.01.04,"Affaires juridiques, législatives et accès à la justice",1,Rémunération,Votés,76950900,0,0,76950900
+Justice,0400.01,Administration de la justice,0400.01.04,"Affaires juridiques, législatives et accès à la justice",2,Fonctionnement,Votés,5919300,0,0,5919300
+Justice,0400.01,Administration de la justice,0400.01.04,"Affaires juridiques, législatives et accès à la justice",5,Transfert,Votés,10975400,0,0,10975400
+Justice,0400.01,Administration de la justice,0400.01.04,"Affaires juridiques, législatives et accès à la justice",6,"Prêts, placements, avances et autres coûts",Votés,0,0,2600,2600
+Justice,0400.01,Administration de la justice,0400.01.04,"Affaires juridiques, législatives et accès à la justice",F,Affectation à un fonds spécial,Votés,17178100,0,0,17178100
+Justice,0400.01,Administration de la justice,0400.01.05,Bureau des infractions et amendes,1,Rémunération,Votés,6876300,0,0,6876300
+Justice,0400.01,Administration de la justice,0400.01.05,Bureau des infractions et amendes,2,Fonctionnement,Votés,1811100,0,0,1811100
+Justice,0400.01,Administration de la justice,0400.01.05,Bureau des infractions et amendes,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,10000,10000
+Justice,0400.01,Administration de la justice,0400.01.05,Bureau des infractions et amendes,P,"Créances douteuses, autres provisions et pertes",Permanents,15009300,0,0,15009300
+Justice,0400.02,Activité judiciaire,0400.02.01,Magistrature,1,Rémunération,Permanents,135701100,0,0,135701100
+Justice,0400.02,Activité judiciaire,0400.02.01,Magistrature,1,Rémunération,Votés,5062200,0,0,5062200
+Justice,0400.02,Activité judiciaire,0400.02.01,Magistrature,2,Fonctionnement,Permanents,4181800,0,0,4181800
+Justice,0400.02,Activité judiciaire,0400.02.01,Magistrature,2,Fonctionnement,Votés,695900,0,0,695900
+Justice,0400.02,Activité judiciaire,0400.02.01,Magistrature,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,345000,345000
+Justice,0400.02,Activité judiciaire,0400.02.02,Conseil de la magistrature,1,Rémunération,Votés,849000,0,0,849000
+Justice,0400.02,Activité judiciaire,0400.02.02,Conseil de la magistrature,2,Fonctionnement,Permanents,174200,0,0,174200
+Justice,0400.02,Activité judiciaire,0400.02.02,Conseil de la magistrature,2,Fonctionnement,Votés,2231100,0,0,2231100
+Justice,0400.02,Activité judiciaire,0400.02.03,Soutien à la magistrature,1,Rémunération,Votés,43587600,0,0,43587600
+Justice,0400.02,Activité judiciaire,0400.02.03,Soutien à la magistrature,2,Fonctionnement,Votés,1627400,0,0,1627400
+Justice,0400.02,Activité judiciaire,0400.02.03,Soutien à la magistrature,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,150000,150000
+Justice,0400.02,Activité judiciaire,0400.02.04,Comité sur la rémunération des juges,1,Rémunération,Permanents,190000,0,0,190000
+Justice,0400.02,Activité judiciaire,0400.02.04,Comité sur la rémunération des juges,2,Fonctionnement,Permanents,210000,0,0,210000
+Justice,0400.03,Justice administrative,0400.03.01,Contribution du ministère de la Justice au Fonds du Tribunal administratif du Québec,2,Fonctionnement,Votés,12569000,0,0,12569000
+Justice,0400.03,Justice administrative,0400.03.01,Contribution du ministère de la Justice au Fonds du Tribunal administratif du Québec,F,Affectation à un fonds spécial,Votés,11710800,0,0,11710800
+Justice,0400.03,Justice administrative,0400.03.02,Conseil de la justice administrative,1,Rémunération,Votés,676800,0,0,676800
+Justice,0400.03,Justice administrative,0400.03.02,Conseil de la justice administrative,2,Fonctionnement,Votés,122200,0,0,122200
+Justice,0400.03,Justice administrative,0400.03.02,Conseil de la justice administrative,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,1500,1500
+Justice,0400.04,Indemnisation et reconnaissance,0400.04.01,Indemnisation des personnes victimes d'actes criminels,2,Fonctionnement,Permanents,34695800,0,0,34695800
+Justice,0400.04,Indemnisation et reconnaissance,0400.04.01,Indemnisation des personnes victimes d'actes criminels,5,Transfert,Permanents,487061100,0,0,487061100
+Justice,0400.04,Indemnisation et reconnaissance,0400.04.01,Indemnisation des personnes victimes d'actes criminels,F,Affectation à un fonds spécial,Permanents,1428900,0,0,1428900
+Justice,0400.04,Indemnisation et reconnaissance,0400.04.02,Indemnisation et reconnaissance des actes de civisme,2,Fonctionnement,Permanents,198500,0,0,198500
+Justice,0400.04,Indemnisation et reconnaissance,0400.04.02,Indemnisation et reconnaissance des actes de civisme,5,Transfert,Permanents,2500000,0,0,2500000
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.01,Commission des services juridiques,5,Transfert,Votés,187528800,0,0,187528800
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.02,Commission des droits de la personne et des droits de la jeunesse,1,Rémunération,Votés,17711200,0,0,17711200
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.02,Commission des droits de la personne et des droits de la jeunesse,2,Fonctionnement,Votés,1579400,0,0,1579400
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.02,Commission des droits de la personne et des droits de la jeunesse,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,10000,10000
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.02,Commission des droits de la personne et des droits de la jeunesse,6,"Prêts, placements, avances et autres coûts",Votés,0,0,3000,3000
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.02,Commission des droits de la personne et des droits de la jeunesse,A,moins Amortissement,Votés,0,-60200,0,-60200
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.02,Commission des droits de la personne et des droits de la jeunesse,M,Immobilisations en ressources informationnelles,Votés,0,0,384000,384000
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,1,Rémunération,Votés,7071700,0,0,7071700
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,2,Fonctionnement,Votés,874900,0,0,874900
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,10000,10000
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,5,Transfert,Votés,217700,0,0,217700
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1000,1000
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,A,moins Amortissement,Votés,0,-172700,0,-172700
+Justice,0400.05,Autres organismes relevant du ministre,0400.05.03,Office de la protection du consommateur,M,Immobilisations en ressources informationnelles,Votés,0,0,65600,65600
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.01,"Direction, gouvernance et administration",1,Rémunération,Votés,15696800,0,0,15696800
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.01,"Direction, gouvernance et administration",2,Fonctionnement,Votés,1868600,0,0,1868600
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.02,Directeur des poursuites criminelles et pénales,1,Rémunération,Votés,158934600,0,0,158934600
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.02,Directeur des poursuites criminelles et pénales,2,Fonctionnement,Votés,27461800,0,0,27461800
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.02,Directeur des poursuites criminelles et pénales,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,581200,581200
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.02,Directeur des poursuites criminelles et pénales,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1000,1000
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.02,Directeur des poursuites criminelles et pénales,A,moins Amortissement,Votés,0,-2179800,0,-2179800
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.02,Directeur des poursuites criminelles et pénales,M,Immobilisations en ressources informationnelles,Votés,0,0,1430000,1430000
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.03,Comité de la rémunération des procureurs aux poursuites criminelles et pénales,1,Rémunération,Permanents,111200,0,0,111200
+Justice,0400.06,Poursuites criminelles et pénales,0400.06.03,Comité de la rémunération des procureurs aux poursuites criminelles et pénales,2,Fonctionnement,Permanents,190000,0,0,190000
+Langue française,0491.01,Langue française,0491.01.01,Direction et administration,1,Rémunération,Votés,2671100,0,0,2671100
+Langue française,0491.01,Langue française,0491.01.01,Direction et administration,2,Fonctionnement,Votés,2226200,0,0,2226200
+Langue française,0491.01,Langue française,0491.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,300000,300000
+Langue française,0491.01,Langue française,0491.01.01,Direction et administration,5,Transfert,Votés,125000,0,0,125000
+Langue française,0491.01,Langue française,0491.01.01,Direction et administration,A,moins Amortissement,Votés,0,-14000,0,-14000
+Langue française,0491.01,Langue française,0491.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,200000,200000
+Langue française,0491.01,Langue française,0491.01.02,"Promotion, valorisation et protection de la langue française et de son statut",1,Rémunération,Votés,11980100,0,0,11980100
+Langue française,0491.01,Langue française,0491.01.02,"Promotion, valorisation et protection de la langue française et de son statut",2,Fonctionnement,Votés,5797900,0,0,5797900
+Langue française,0491.01,Langue française,0491.01.02,"Promotion, valorisation et protection de la langue française et de son statut",5,Transfert,Votés,14821800,0,0,14821800
+Langue française,0491.01,Langue française,0491.01.03,Office québécois de la langue française,1,Rémunération,Votés,37984300,0,0,37984300
+Langue française,0491.01,Langue française,0491.01.03,Office québécois de la langue française,2,Fonctionnement,Votés,4703900,0,0,4703900
+Langue française,0491.01,Langue française,0491.01.03,Office québécois de la langue française,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,5000,5000
+Langue française,0491.01,Langue française,0491.01.03,Office québécois de la langue française,5,Transfert,Votés,1750200,0,0,1750200
+Langue française,0491.01,Langue française,0491.01.03,Office québécois de la langue française,A,moins Amortissement,Votés,0,-215000,0,-215000
+Langue française,0491.01,Langue française,0491.01.03,Office québécois de la langue française,M,Immobilisations en ressources informationnelles,Votés,0,0,1736000,1736000
+Personnes désignées par l'Assemblée nationale,0900.01,Le Protecteur du citoyen,0900.01.01,Le Protecteur du citoyen,1,Rémunération,Permanents,600900,0,0,600900
+Personnes désignées par l'Assemblée nationale,0900.01,Le Protecteur du citoyen,0900.01.01,Le Protecteur du citoyen,1,Rémunération,Votés,25853100,0,0,25853100
+Personnes désignées par l'Assemblée nationale,0900.01,Le Protecteur du citoyen,0900.01.01,Le Protecteur du citoyen,2,Fonctionnement,Votés,6294500,0,0,6294500
+Personnes désignées par l'Assemblée nationale,0900.01,Le Protecteur du citoyen,0900.01.01,Le Protecteur du citoyen,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,50000,50000
+Personnes désignées par l'Assemblée nationale,0900.01,Le Protecteur du citoyen,0900.01.01,Le Protecteur du citoyen,A,moins Amortissement,Votés,0,-300000,0,-300000
+Personnes désignées par l'Assemblée nationale,0900.01,Le Protecteur du citoyen,0900.01.01,Le Protecteur du citoyen,M,Immobilisations en ressources informationnelles,Votés,0,0,525000,525000
+Personnes désignées par l'Assemblée nationale,0900.02,Le Vérificateur général,0900.02.01,Le Vérificateur général,1,Rémunération,Votés,43890000,0,0,43890000
+Personnes désignées par l'Assemblée nationale,0900.02,Le Vérificateur général,0900.02.01,Le Vérificateur général,2,Fonctionnement,Votés,10099500,0,0,10099500
+Personnes désignées par l'Assemblée nationale,0900.02,Le Vérificateur général,0900.02.01,Le Vérificateur général,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,160000,160000
+Personnes désignées par l'Assemblée nationale,0900.02,Le Vérificateur général,0900.02.01,Le Vérificateur général,6,"Prêts, placements, avances et autres coûts",Votés,0,0,61100,61100
+Personnes désignées par l'Assemblée nationale,0900.02,Le Vérificateur général,0900.02.01,Le Vérificateur général,A,moins Amortissement,Votés,0,-1245300,0,-1245300
+Personnes désignées par l'Assemblée nationale,0900.02,Le Vérificateur général,0900.02.01,Le Vérificateur général,M,Immobilisations en ressources informationnelles,Votés,0,0,1334200,1334200
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.01,Gestion interne et soutien,1,Rémunération,Permanents,39900000,0,0,39900000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.01,Gestion interne et soutien,2,Fonctionnement,Permanents,13124600,0,0,13124600
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.01,Gestion interne et soutien,3,Immobilisations autres qu'en ressources informationnelles,Permanents,0,0,305000,305000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.01,Gestion interne et soutien,A,moins Amortissement,Permanents,0,-1176000,0,-1176000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.01,Gestion interne et soutien,M,Immobilisations en ressources informationnelles,Permanents,0,0,155000,155000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.02,Commission de la représentation électorale,1,Rémunération,Permanents,2400,0,0,2400
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.02,Commission de la représentation électorale,2,Fonctionnement,Permanents,146000,0,0,146000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.03,Activités électorales,1,Rémunération,Permanents,65775800,0,0,65775800
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.03,Activités électorales,2,Fonctionnement,Permanents,35661000,0,0,35661000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.03,Activités électorales,5,Transfert,Permanents,33912200,0,0,33912200
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.03,Activités électorales,A,moins Amortissement,Permanents,0,-1388000,0,-1388000
+Personnes désignées par l'Assemblée nationale,0900.03,Administration du système électoral,0900.03.03,Activités électorales,M,Immobilisations en ressources informationnelles,Permanents,0,0,2800000,2800000
+Personnes désignées par l'Assemblée nationale,0900.04,Le Commissaire au lobbyisme,0900.04.01,Le Commissaire au lobbyisme,1,Rémunération,Votés,4960400,0,0,4960400
+Personnes désignées par l'Assemblée nationale,0900.04,Le Commissaire au lobbyisme,0900.04.01,Le Commissaire au lobbyisme,2,Fonctionnement,Votés,2518400,0,0,2518400
+Personnes désignées par l'Assemblée nationale,0900.04,Le Commissaire au lobbyisme,0900.04.01,Le Commissaire au lobbyisme,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,20000,20000
+Personnes désignées par l'Assemblée nationale,0900.04,Le Commissaire au lobbyisme,0900.04.01,Le Commissaire au lobbyisme,A,moins Amortissement,Votés,0,-436300,0,-436300
+Personnes désignées par l'Assemblée nationale,0900.04,Le Commissaire au lobbyisme,0900.04.01,Le Commissaire au lobbyisme,M,Immobilisations en ressources informationnelles,Votés,0,0,40000,40000
+Personnes désignées par l'Assemblée nationale,0900.05,Le Commissaire à l'éthique et à la déontologie,0900.05.01,Le Commissaire à l'éthique et à la déontologie,1,Rémunération,Permanents,2275400,0,0,2275400
+Personnes désignées par l'Assemblée nationale,0900.05,Le Commissaire à l'éthique et à la déontologie,0900.05.01,Le Commissaire à l'éthique et à la déontologie,2,Fonctionnement,Permanents,605400,0,0,605400
+Personnes désignées par l'Assemblée nationale,0900.05,Le Commissaire à l'éthique et à la déontologie,0900.05.01,Le Commissaire à l'éthique et à la déontologie,3,Immobilisations autres qu'en ressources informationnelles,Permanents,0,0,5000,5000
+Personnes désignées par l'Assemblée nationale,0900.05,Le Commissaire à l'éthique et à la déontologie,0900.05.01,Le Commissaire à l'éthique et à la déontologie,A,moins Amortissement,Permanents,0,-50000,0,-50000
+Personnes désignées par l'Assemblée nationale,0900.05,Le Commissaire à l'éthique et à la déontologie,0900.05.01,Le Commissaire à l'éthique et à la déontologie,M,Immobilisations en ressources informationnelles,Permanents,0,0,10000,10000
+Personnes désignées par l'Assemblée nationale,0900.06,Le Commissaire à la langue française,0900.06.01,Le Commissaire à la langue française,1,Rémunération,Votés,2422400,0,0,2422400
+Personnes désignées par l'Assemblée nationale,0900.06,Le Commissaire à la langue française,0900.06.01,Le Commissaire à la langue française,2,Fonctionnement,Votés,348400,0,0,348400
+Personnes désignées par l'Assemblée nationale,0900.07,Le Commissaire au bien-être et aux droits des enfants,0900.07.01,Le Commissaire au bien-être et aux droits des enfants,1,Rémunération,Votés,10393000,0,0,10393000
+Personnes désignées par l'Assemblée nationale,0900.07,Le Commissaire au bien-être et aux droits des enfants,0900.07.01,Le Commissaire au bien-être et aux droits des enfants,2,Fonctionnement,Votés,2556000,0,0,2556000
+Personnes désignées par l'Assemblée nationale,0900.07,Le Commissaire au bien-être et aux droits des enfants,0900.07.01,Le Commissaire au bien-être et aux droits des enfants,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,250000,250000
+Personnes désignées par l'Assemblée nationale,0900.07,Le Commissaire au bien-être et aux droits des enfants,0900.07.01,Le Commissaire au bien-être et aux droits des enfants,5,Transfert,Votés,150000,0,0,150000
+Personnes désignées par l'Assemblée nationale,0900.07,Le Commissaire au bien-être et aux droits des enfants,0900.07.01,Le Commissaire au bien-être et aux droits des enfants,M,Immobilisations en ressources informationnelles,Votés,0,0,500000,500000
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,1,Rémunération,Votés,14774300,0,0,14774300
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,2,Fonctionnement,Permanents,109600,0,0,109600
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,2,Fonctionnement,Votés,5014000,0,0,5014000
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,153000,153000
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,5,Transfert,Votés,112500,0,0,112500
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,A,moins Amortissement,Votés,0,-605000,0,-605000
+Relations internationales et Francophonie,0030.01,Direction et administration,0030.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,350000,350000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.01,"Relations Afrique, Moyen-Orient, Francophonie et affaires multilatérales",1,Rémunération,Votés,5225900,0,0,5225900
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.01,"Relations Afrique, Moyen-Orient, Francophonie et affaires multilatérales",2,Fonctionnement,Votés,353000,0,0,353000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.01,"Relations Afrique, Moyen-Orient, Francophonie et affaires multilatérales",5,Transfert,Votés,15636200,0,0,15636200
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.01,"Relations Afrique, Moyen-Orient, Francophonie et affaires multilatérales",F,Affectation à un fonds spécial,Votés,3248100,0,0,3248100
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.02,Représentation du Québec à l'étranger,1,Rémunération,Votés,53288000,0,0,53288000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.02,Représentation du Québec à l'étranger,2,Fonctionnement,Votés,14480100,0,0,14480100
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.02,Représentation du Québec à l'étranger,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,9555000,9555000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.02,Représentation du Québec à l'étranger,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1500000,1500000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.02,Représentation du Québec à l'étranger,A,moins Amortissement,Votés,0,-2390000,0,-2390000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.03,"Relations Europe, Indo-Pacifique et affaires institutionnelles",1,Rémunération,Votés,4132100,0,0,4132100
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.03,"Relations Europe, Indo-Pacifique et affaires institutionnelles",2,Fonctionnement,Votés,474500,0,0,474500
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.03,"Relations Europe, Indo-Pacifique et affaires institutionnelles",5,Transfert,Votés,1604700,0,0,1604700
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.04,Protocole,1,Rémunération,Votés,2581300,0,0,2581300
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.04,Protocole,2,Fonctionnement,Votés,520000,0,0,520000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.05,"Relations Amériques, affaires économiques et intelligence stratégique",1,Rémunération,Votés,3813000,0,0,3813000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.05,"Relations Amériques, affaires économiques et intelligence stratégique",2,Fonctionnement,Votés,600000,0,0,600000
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.05,"Relations Amériques, affaires économiques et intelligence stratégique",5,Transfert,Votés,207400,0,0,207400
+Relations internationales et Francophonie,0030.02,Affaires internationales,0030.02.06,Soutien aux Offices jeunesse internationaux du Québec,5,Transfert,Votés,2533400,0,0,2533400
+Relations internationales et Francophonie,0030.03,Relations avec les Québécois d'expression anglaise et Lutte contre le racisme,0030.03.01,Relations avec les Québécois d'expression anglaise,1,Rémunération,Votés,1392000,0,0,1392000
+Relations internationales et Francophonie,0030.03,Relations avec les Québécois d'expression anglaise et Lutte contre le racisme,0030.03.01,Relations avec les Québécois d'expression anglaise,2,Fonctionnement,Votés,162400,0,0,162400
+Relations internationales et Francophonie,0030.03,Relations avec les Québécois d'expression anglaise et Lutte contre le racisme,0030.03.01,Relations avec les Québécois d'expression anglaise,5,Transfert,Votés,12378600,0,0,12378600
+Relations internationales et Francophonie,0030.03,Relations avec les Québécois d'expression anglaise et Lutte contre le racisme,0030.03.02,Bureau de coordination de la lutte contre le racisme,1,Rémunération,Votés,335200,0,0,335200
+Relations internationales et Francophonie,0030.03,Relations avec les Québécois d'expression anglaise et Lutte contre le racisme,0030.03.02,Bureau de coordination de la lutte contre le racisme,2,Fonctionnement,Votés,20000,0,0,20000
+Relations internationales et Francophonie,0030.03,Relations avec les Québécois d'expression anglaise et Lutte contre le racisme,0030.03.02,Bureau de coordination de la lutte contre le racisme,5,Transfert,Votés,1000000,0,0,1000000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,1,Rémunération,Votés,7355100,0,0,7355100
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,2,Fonctionnement,Permanents,9600,0,0,9600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,2,Fonctionnement,Votés,1318000,0,0,1318000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,175000,175000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,5,Transfert,Votés,258000,0,0,258000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,6,"Prêts, placements, avances et autres coûts",Votés,0,0,100400,100400
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.01,Direction du Ministère,A,moins Amortissement,Votés,0,-50000,0,-50000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.02,Services à la gestion,1,Rémunération,Votés,27763300,0,0,27763300
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.02,Services à la gestion,2,Fonctionnement,Votés,11997500,0,0,11997500
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.02,Services à la gestion,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,2952000,2952000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.02,Services à la gestion,A,moins Amortissement,Votés,0,-3654600,0,-3654600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.02,Services à la gestion,M,Immobilisations en ressources informationnelles,Votés,0,0,2689600,2689600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.03,Territoire et affaires stratégiques,1,Rémunération,Votés,3187500,0,0,3187500
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.03,Territoire et affaires stratégiques,2,Fonctionnement,Votés,436300,0,0,436300
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.03,Territoire et affaires stratégiques,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,5000,5000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.03,Territoire et affaires stratégiques,5,Transfert,Votés,364200,0,0,364200
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.04,Aménagement durable du territoire forestier ,5,Transfert,Permanents,20000,0,0,20000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.04,Aménagement durable du territoire forestier ,F,Affectation à un fonds spécial,Votés,182907300,0,0,182907300
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.05,Forestier en chef,1,Rémunération,Votés,5298700,0,0,5298700
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.05,Forestier en chef,2,Fonctionnement,Votés,870600,0,0,870600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.05,Forestier en chef,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,111600,111600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.05,Forestier en chef,A,moins Amortissement,Votés,0,-5000,0,-5000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.06,Opérations régionales,1,Rémunération,Votés,56222700,0,0,56222700
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.06,Opérations régionales,2,Fonctionnement,Votés,18431500,0,0,18431500
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.06,Opérations régionales,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,11784600,11784600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.06,Opérations régionales,5,Transfert,Votés,375000,0,0,375000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.06,Opérations régionales,A,moins Amortissement,Votés,0,-4347600,0,-4347600
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.06,Opérations régionales,F,Affectation à un fonds spécial,Votés,162178100,0,0,162178100
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.07,Ressources minérales,1,Rémunération,Votés,3831800,0,0,3831800
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.07,Ressources minérales,2,Fonctionnement,Votés,515300,0,0,515300
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.07,Ressources minérales,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,200000,200000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.07,Ressources minérales,A,moins Amortissement,Votés,0,-50000,0,-50000
+Ressources naturelles et Forêts,0600.01,Gestion des ressources naturelles et forestières,0600.01.07,Ressources minérales,F,Affectation à un fonds spécial,Votés,20181800,0,0,20181800
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.01,Direction et gestion ministérielle,1,Rémunération,Votés,118040400,0,0,118040400
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.01,Direction et gestion ministérielle,2,Fonctionnement,Permanents,9600,0,0,9600
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.01,Direction et gestion ministérielle,2,Fonctionnement,Votés,136929900,0,0,136929900
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.01,Direction et gestion ministérielle,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,125000,125000
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.01,Direction et gestion ministérielle,A,moins Amortissement,Votés,0,-4862400,0,-4862400
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.01,Direction et gestion ministérielle,M,Immobilisations en ressources informationnelles,Votés,0,0,5000000,5000000
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.02,Organisme-conseil,1,Rémunération,Votés,3082500,0,0,3082500
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.02,Organisme-conseil,2,Fonctionnement,Votés,2088800,0,0,2088800
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.02,Organisme-conseil,5,Transfert,Votés,234700,0,0,234700
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.03,Activités nationales,2,Fonctionnement,Votés,5422700,0,0,5422700
+Santé et Services sociaux,0060.01,Fonctions de coordination,0060.01.03,Activités nationales,5,Transfert,Votés,31809900,0,0,31809900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.01,Santé publique,5,Transfert,Votés,1104808900,0,0,1104808900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.02,Services généraux - Activités cliniques et d'aide,5,Transfert,Votés,1529422100,0,0,1529422100
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.03,Soutien à l'autonomie des personnes âgées - Soutien à domicile,5,Transfert,Votés,2863785900,0,0,2863785900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.04,Soutien à l'autonomie des personnes âgées - Hébergement,5,Transfert,Votés,6315975600,0,0,6315975600
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.05,Déficience intellectuelle et trouble du spectre de l'autisme,5,Transfert,Votés,1535382900,0,0,1535382900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.06,Jeunes en difficulté,5,Transfert,Votés,2721379500,0,0,2721379500
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.07,Dépendances,5,Transfert,Votés,241682900,0,0,241682900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.08,Santé mentale,5,Transfert,Votés,2102513100,0,0,2102513100
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.09,Santé physique,5,Transfert,Permanents,5842391600,0,0,5842391600
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.09,Santé physique,5,Transfert,Votés,9316147200,0,0,9316147200
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.10,Administration,5,Transfert,Votés,2677838800,0,0,2677838800
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.11,Soutien aux services,5,Transfert,Votés,1573274700,0,0,1573274700
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.12,Gestion des bâtiments et des équipements,5,Transfert,Votés,1910106900,0,0,1910106900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.13,Organismes communautaires et autres organismes,5,Transfert,Votés,1212162500,0,0,1212162500
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.14,Activités connexes,2,Fonctionnement,Votés,56000000,0,0,56000000
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.14,Activités connexes,5,Transfert,Permanents,425200,0,0,425200
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.14,Activités connexes,5,Transfert,Votés,2414872500,0,0,2414872500
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.15,Financement des infrastructures de santé et de services sociaux,5,Transfert,Votés,531531900,0,0,531531900
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.16,Financement d'achats centralisés,5,Transfert,Votés,32380200,0,0,32380200
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.17,Programme d'aide financière pour les gicleurs dans les résidences privées pour aînés,5,Transfert,Votés,10000000,0,0,10000000
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.18,Déficience physique,5,Transfert,Votés,933395200,0,0,933395200
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.19,"Provision pour augmenter, avec l'approbation du Conseil du trésor, tout crédit pour l'accessibilité des services en médecine spécialisée",5,Transfert,Votés,694800000,0,0,694800000
+Santé et Services sociaux,0060.02,Services dispensés à la population,0060.02.20,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour des besoins relatifs à des services de santé et de services sociaux dispensés à la population",6,"Prêts, placements, avances et autres coûts",Votés,0,0,350000000,350000000
+Santé et Services sociaux,0060.03,Office des personnes handicapées du Québec,0060.03.01,Administration et soutien à l'intégration des personnes handicapées,1,Rémunération,Votés,12019700,0,0,12019700
+Santé et Services sociaux,0060.03,Office des personnes handicapées du Québec,0060.03.01,Administration et soutien à l'intégration des personnes handicapées,2,Fonctionnement,Votés,2520900,0,0,2520900
+Santé et Services sociaux,0060.03,Office des personnes handicapées du Québec,0060.03.01,Administration et soutien à l'intégration des personnes handicapées,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,20000,20000
+Santé et Services sociaux,0060.03,Office des personnes handicapées du Québec,0060.03.01,Administration et soutien à l'intégration des personnes handicapées,5,Transfert,Votés,1109500,0,0,1109500
+Santé et Services sociaux,0060.03,Office des personnes handicapées du Québec,0060.03.01,Administration et soutien à l'intégration des personnes handicapées,A,moins Amortissement,Votés,0,-87000,0,-87000
+Santé et Services sociaux,0060.03,Office des personnes handicapées du Québec,0060.03.01,Administration et soutien à l'intégration des personnes handicapées,M,Immobilisations en ressources informationnelles,Votés,0,0,78100,78100
+Santé et Services sociaux,0060.04,Régie de l'assurance maladie du Québec,0060.04.01,Services médicaux,5,Transfert,Permanents,8515293600,0,0,8515293600
+Santé et Services sociaux,0060.04,Régie de l'assurance maladie du Québec,0060.04.02,Services optométriques,5,Transfert,Permanents,163600000,0,0,163600000
+Santé et Services sociaux,0060.04,Régie de l'assurance maladie du Québec,0060.04.03,Services dentaires,5,Transfert,Permanents,235020700,0,0,235020700
+Santé et Services sociaux,0060.04,Régie de l'assurance maladie du Québec,0060.04.04,Services pharmaceutiques et médicaments,5,Transfert,Permanents,2913000100,0,0,2913000100
+Santé et Services sociaux,0060.04,Régie de l'assurance maladie du Québec,0060.04.05,Autres services,5,Transfert,Permanents,244855500,0,0,244855500
+Santé et Services sociaux,0060.04,Régie de l'assurance maladie du Québec,0060.04.06,Administration,5,Transfert,Permanents,183580000,0,0,183580000
+Santé et Services sociaux,0060.05,Condition des Aînés,0060.05.01,Vieillissement actif,2,Fonctionnement,Votés,1797200,0,0,1797200
+Santé et Services sociaux,0060.05,Condition des Aînés,0060.05.01,Vieillissement actif,5,Transfert,Votés,29384400,0,0,29384400
+Santé et Services sociaux,0060.05,Condition des Aînés,0060.05.02,Soutien aux personnes aînées en situation de vulnérabilité,2,Fonctionnement,Votés,5225100,0,0,5225100
+Santé et Services sociaux,0060.05,Condition des Aînés,0060.05.02,Soutien aux personnes aînées en situation de vulnérabilité,5,Transfert,Votés,24086300,0,0,24086300
+Santé et Services sociaux,0060.06,Régimes de retraite,0060.06.01,Régime de retraite des employés du gouvernement et des organismes publics ,5,Transfert,Permanents,1621462600,0,0,1621462600
+Santé et Services sociaux,0060.06,Régimes de retraite,0060.06.02,Régime de retraite du personnel d'encadrement,5,Transfert,Permanents,192382500,0,0,192382500
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.01,Conseil du statut de la femme,1,Rémunération,Votés,2588600,0,0,2588600
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.01,Conseil du statut de la femme,2,Fonctionnement,Votés,976200,0,0,976200
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.01,Conseil du statut de la femme,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,155000,155000
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.01,Conseil du statut de la femme,A,moins Amortissement,Votés,0,-15000,0,-15000
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.01,Conseil du statut de la femme,M,Immobilisations en ressources informationnelles,Votés,0,0,5000,5000
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.02,Secrétariat à la condition féminine,1,Rémunération,Votés,5351100,0,0,5351100
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.02,Secrétariat à la condition féminine,2,Fonctionnement,Votés,583900,0,0,583900
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.02,Secrétariat à la condition féminine,5,Transfert,Votés,26954300,0,0,26954300
+Santé et Services sociaux,0060.07,Condition féminine,0060.07.02,Secrétariat à la condition féminine,A,moins Amortissement,Votés,0,-5000,0,-5000
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,1,Rémunération,Votés,41142500,0,0,41142500
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,2,Fonctionnement,Votés,26738900,0,0,26738900
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,17097000,17097000
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,5,Transfert,Votés,169800,0,0,169800
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,10000,10000
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,A,moins Amortissement,Votés,0,-9685000,0,-9685000
+Sécurité publique,0095.01,Direction et administration,0095.01.01,Direction et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,14880900,14880900
+Sécurité publique,0095.01,Direction et administration,0095.01.02,"Provision pour augmenter, avec l’approbation du Conseil du trésor, tout crédit pour des besoins relatifs à la sécurité de la population",6,"Prêts, placements, avances et autres coûts",Votés,0,0,50000000,50000000
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.01,Surveillance du territoire,1,Rémunération,Votés,144596900,0,0,144596900
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.01,Surveillance du territoire,2,Fonctionnement,Votés,25222900,0,0,25222900
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.01,Surveillance du territoire,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,6872400,6872400
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.01,Surveillance du territoire,A,moins Amortissement,Votés,0,-4774100,0,-4774100
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.01,Surveillance du territoire,F,Affectation à un fonds spécial,Votés,360834800,0,0,360834800
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.01,Surveillance du territoire,M,Immobilisations en ressources informationnelles,Votés,0,0,4025100,4025100
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,1,Rémunération,Votés,223607900,0,0,223607900
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,2,Fonctionnement,Votés,35365600,0,0,35365600
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,13744800,13744800
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,6,"Prêts, placements, avances et autres coûts",Votés,0,0,20000,20000
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,A,moins Amortissement,Votés,0,-11825900,0,-11825900
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,F,Affectation à un fonds spécial,Votés,51592600,0,0,51592600
+Sécurité publique,0095.02,Services de la Sûreté du Québec,0095.02.02,Enquêtes criminelles,M,Immobilisations en ressources informationnelles,Votés,0,0,3522000,3522000
+Sécurité publique,0095.03,Gestion du système correctionnel,0095.03.01,Services correctionnels,1,Rémunération,Votés,431602900,0,0,431602900
+Sécurité publique,0095.03,Gestion du système correctionnel,0095.03.01,Services correctionnels,2,Fonctionnement,Votés,71994700,0,0,71994700
+Sécurité publique,0095.03,Gestion du système correctionnel,0095.03.01,Services correctionnels,5,Transfert,Votés,113500,0,0,113500
+Sécurité publique,0095.03,Gestion du système correctionnel,0095.03.01,Services correctionnels,6,"Prêts, placements, avances et autres coûts",Votés,0,0,10000,10000
+Sécurité publique,0095.03,Gestion du système correctionnel,0095.03.02,Prestation des organismes communautaires,2,Fonctionnement,Votés,21092700,0,0,21092700
+Sécurité publique,0095.03,Gestion du système correctionnel,0095.03.02,Prestation des organismes communautaires,5,Transfert,Votés,1183900,0,0,1183900
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.01,Organisation et pratiques policières,1,Rémunération,Votés,3543600,0,0,3543600
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.01,Organisation et pratiques policières,2,Fonctionnement,Votés,200500,0,0,200500
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.01,Organisation et pratiques policières,5,Transfert,Votés,18115000,0,0,18115000
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.02,Soutien aux services policiers en milieu autochtone,1,Rémunération,Votés,1378600,0,0,1378600
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.02,Soutien aux services policiers en milieu autochtone,2,Fonctionnement,Votés,62400,0,0,62400
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.02,Soutien aux services policiers en milieu autochtone,5,Transfert,Votés,134316600,0,0,134316600
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.03,Sécurité et protection des personnes et des institutions,1,Rémunération,Votés,47098300,0,0,47098300
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.03,Sécurité et protection des personnes et des institutions,2,Fonctionnement,Votés,5706400,0,0,5706400
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.03,Sécurité et protection des personnes et des institutions,6,"Prêts, placements, avances et autres coûts",Votés,0,0,10000,10000
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.04,Lutte contre la criminalité,1,Rémunération,Votés,2814800,0,0,2814800
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.04,Lutte contre la criminalité,2,Fonctionnement,Votés,4715100,0,0,4715100
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.04,Lutte contre la criminalité,5,Transfert,Votés,88217700,0,0,88217700
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.05,Services et expertises judiciaires,1,Rémunération,Votés,17327100,0,0,17327100
+Sécurité publique,0095.04,"Affaires policières, services de sécurité et sciences judiciaires",0095.04.05,Services et expertises judiciaires,2,Fonctionnement,Votés,3519400,0,0,3519400
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.01,Prévention des sinistres et atténuation des risques,1,Rémunération,Votés,4977100,0,0,4977100
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.01,Prévention des sinistres et atténuation des risques,2,Fonctionnement,Votés,7615400,0,0,7615400
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.01,Prévention des sinistres et atténuation des risques,5,Transfert,Votés,11100,0,0,11100
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.01,Prévention des sinistres et atténuation des risques,6,"Prêts, placements, avances et autres coûts",Votés,0,0,4500,4500
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.02,Interventions de sécurité civile,1,Rémunération,Votés,12056200,0,0,12056200
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.02,Interventions de sécurité civile,2,Fonctionnement,Votés,7180200,0,0,7180200
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.02,Interventions de sécurité civile,5,Transfert,Votés,735200,0,0,735200
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.03,Gestion du rétablissement et adaptation,1,Rémunération,Permanents,10200,0,0,10200
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.03,Gestion du rétablissement et adaptation,1,Rémunération,Votés,13439000,0,0,13439000
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.03,Gestion du rétablissement et adaptation,2,Fonctionnement,Permanents,2582700,0,0,2582700
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.03,Gestion du rétablissement et adaptation,2,Fonctionnement,Votés,238700,0,0,238700
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.03,Gestion du rétablissement et adaptation,5,Transfert,Permanents,19603900,0,0,19603900
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.03,Gestion du rétablissement et adaptation,5,Transfert,Votés,700000,0,0,700000
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.04,Sécurité incendie et télécommunications d’urgence,1,Rémunération,Votés,2974600,0,0,2974600
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.04,Sécurité incendie et télécommunications d’urgence,2,Fonctionnement,Votés,106100,0,0,106100
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.04,Sécurité incendie et télécommunications d’urgence,5,Transfert,Votés,6683100,0,0,6683100
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.05,Gestion des risques d'incendies de forêt,1,Rémunération,Votés,197900,0,0,197900
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.05,Gestion des risques d'incendies de forêt,2,Fonctionnement,Permanents,25000000,0,0,25000000
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.05,Gestion des risques d'incendies de forêt,2,Fonctionnement,Votés,13400000,0,0,13400000
+Sécurité publique,0095.05,Sécurité civile et sécurité incendie,0095.05.05,Gestion des risques d'incendies de forêt,5,Transfert,Votés,8000000,0,0,8000000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.01,Commissaire à la déontologie policière,1,Rémunération,Votés,5112500,0,0,5112500
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.01,Commissaire à la déontologie policière,2,Fonctionnement,Votés,408800,0,0,408800
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.01,Commissaire à la déontologie policière,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,12000,12000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.01,Commissaire à la déontologie policière,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1000,1000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.02,Tribunal administratif de déontologie policière,1,Rémunération,Votés,2176400,0,0,2176400
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.02,Tribunal administratif de déontologie policière,2,Fonctionnement,Votés,174000,0,0,174000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.02,Tribunal administratif de déontologie policière,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,6800,6800
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.02,Tribunal administratif de déontologie policière,6,"Prêts, placements, avances et autres coûts",Votés,0,0,3000,3000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",1,Rémunération,Votés,14912000,0,0,14912000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",2,Fonctionnement,Permanents,3400,0,0,3400
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",2,Fonctionnement,Votés,2390300,0,0,2390300
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,90600,90600
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",6,"Prêts, placements, avances et autres coûts",Votés,0,0,7700,7700
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",A,moins Amortissement,Votés,0,-996900,0,-996900
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",M,Immobilisations en ressources informationnelles,Votés,0,0,1161400,1161400
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.03,"Régie des alcools, des courses et des jeux",P,"Créances douteuses, autres provisions et pertes",Permanents,31000,0,0,31000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.04,Commissaire à la lutte contre la corruption,1,Rémunération,Votés,22087800,0,0,22087800
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.04,Commissaire à la lutte contre la corruption,2,Fonctionnement,Votés,4754600,0,0,4754600
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.04,Commissaire à la lutte contre la corruption,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,15000,15000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.04,Commissaire à la lutte contre la corruption,6,"Prêts, placements, avances et autres coûts",Votés,0,0,26000,26000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.05,Bureau des enquêtes indépendantes,1,Rémunération,Votés,7988100,0,0,7988100
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.05,Bureau des enquêtes indépendantes,2,Fonctionnement,Votés,1595000,0,0,1595000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.05,Bureau des enquêtes indépendantes,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,15000,15000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.05,Bureau des enquêtes indépendantes,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1000,1000
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.06,Commission québécoise des libérations conditionnelles,1,Rémunération,Votés,7186900,0,0,7186900
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.06,Commission québécoise des libérations conditionnelles,2,Fonctionnement,Votés,291800,0,0,291800
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.06,Commission québécoise des libérations conditionnelles,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,30900,30900
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.06,Commission québécoise des libérations conditionnelles,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1200,1200
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.07,Bureau du coroner,1,Rémunération,Votés,13777100,0,0,13777100
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.07,Bureau du coroner,2,Fonctionnement,Votés,3473800,0,0,3473800
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.07,Bureau du coroner,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,28400,28400
+Sécurité publique,0095.06,Organismes dédiés à la sécurité publique,0095.06.07,Bureau du coroner,6,"Prêts, placements, avances et autres coûts",Votés,0,0,3000,3000
+Tourisme,0071.01,"Direction, administration et gestion des programmes",0071.01.01,Direction et administration,F,Affectation à un fonds spécial,Permanents,9600,0,0,9600
+Tourisme,0071.01,"Direction, administration et gestion des programmes",0071.01.01,Direction et administration,F,Affectation à un fonds spécial,Votés,3117500,0,0,3117500
+Tourisme,0071.01,"Direction, administration et gestion des programmes",0071.01.02,Gestion des programmes        ,F,Affectation à un fonds spécial,Votés,7480800,0,0,7480800
+Tourisme,0071.02,Développement du tourisme,0071.02.01,Soutien aux projets de développement du tourisme,F,Affectation à un fonds spécial,Votés,15021400,0,0,15021400
+Tourisme,0071.02,Développement du tourisme,0071.02.02,Appui aux organisations de développement touristique régional,F,Affectation à un fonds spécial,Votés,15347800,0,0,15347800
+Tourisme,0071.02,Développement du tourisme,0071.02.03,Soutien aux événements touristiques,F,Affectation à un fonds spécial,Votés,39435000,0,0,39435000
+Tourisme,0071.03,Organismes relevant du ministre,0071.03.01,Société du Centre des congrès de Québec,5,Transfert,Votés,9568900,0,0,9568900
+Tourisme,0071.03,Organismes relevant du ministre,0071.03.02,Société du Palais des congrès de Montréal,5,Transfert,Votés,10114500,0,0,10114500
+Tourisme,0071.03,Organismes relevant du ministre,0071.03.03,Société de développement et de mise en valeur du Parc olympique,5,Transfert,Votés,15934700,0,0,15934700
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,1,Rémunération,Votés,68761300,0,0,68761300
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,2,Fonctionnement,Votés,526047600,0,0,526047600
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,283607400,283607400
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,5,Transfert,Votés,228350000,0,0,228350000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,6,"Prêts, placements, avances et autres coûts",Votés,0,0,50000,50000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,A,moins Amortissement,Votés,0,-17395300,0,-17395300
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.01,Transport terrestre,F,Affectation à un fonds spécial,Votés,1314441100,0,0,1314441100
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.02,Transport maritime,1,Rémunération,Votés,2562800,0,0,2562800
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.02,Transport maritime,2,Fonctionnement,Votés,269300,0,0,269300
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.02,Transport maritime,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,14018000,14018000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.02,Transport maritime,5,Transfert,Votés,295790200,0,0,295790200
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.02,Transport maritime,A,moins Amortissement,Votés,0,-105600,0,-105600
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.03,Transport aérien,1,Rémunération,Votés,1288000,0,0,1288000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.03,Transport aérien,2,Fonctionnement,Votés,28218700,0,0,28218700
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.03,Transport aérien,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,70133100,70133100
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.03,Transport aérien,5,Transfert,Votés,62866400,0,0,62866400
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.03,Transport aérien,A,moins Amortissement,Votés,0,-9618900,0,-9618900
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.04,Commission des transports du Québec,1,Rémunération,Votés,9430000,0,0,9430000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.04,Commission des transports du Québec,2,Fonctionnement,Votés,2840000,0,0,2840000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.04,Commission des transports du Québec,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,100000,100000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.04,Commission des transports du Québec,A,moins Amortissement,Votés,0,-240000,0,-240000
+Transports et Mobilité durable,0850.01,Infrastructures et systèmes de transport,0850.01.04,Commission des transports du Québec,M,Immobilisations en ressources informationnelles,Votés,0,0,150000,150000
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.01,Direction,1,Rémunération,Votés,8864800,0,0,8864800
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.01,Direction,2,Fonctionnement,Permanents,9600,0,0,9600
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.01,Direction,2,Fonctionnement,Votés,676700,0,0,676700
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.01,Direction,5,Transfert,Votés,200000,0,0,200000
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.02,Services corporatifs,1,Rémunération,Votés,30002900,0,0,30002900
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.02,Services corporatifs,2,Fonctionnement,Votés,24528100,0,0,24528100
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.02,Services corporatifs,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,2036900,2036900
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.02,Services corporatifs,A,moins Amortissement,Votés,0,-10865000,0,-10865000
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.02,Services corporatifs,M,Immobilisations en ressources informationnelles,Votés,0,0,4593300,4593300
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.02,Services corporatifs,P,"Créances douteuses, autres provisions et pertes",Permanents,12500,0,0,12500
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.03,"Planification, recherche et développement",1,Rémunération,Votés,7339600,0,0,7339600
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.03,"Planification, recherche et développement",2,Fonctionnement,Votés,749300,0,0,749300
+Transports et Mobilité durable,0850.02,Administration et services corporatifs,0850.02.03,"Planification, recherche et développement",5,Transfert,Votés,200000,0,0,200000
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,1,Rémunération,Votés,3822900,0,0,3822900
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,2,Fonctionnement,Permanents,9600,0,0,9600
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,2,Fonctionnement,Votés,998300,0,0,998300
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,3,Immobilisations autres qu'en ressources informationnelles,Votés,0,0,485000,485000
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,5,Transfert,Votés,190000,0,0,190000
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,6,"Prêts, placements, avances et autres coûts",Votés,0,0,1000,1000
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,A,moins Amortissement,Votés,0,-500000,0,-500000
+Travail,0075.01,Travail,0075.01.01,Gouvernance et administration,M,Immobilisations en ressources informationnelles,Votés,0,0,675000,675000
+Travail,0075.01,Travail,0075.01.02,Politiques et relations du travail,1,Rémunération,Votés,7958400,0,0,7958400
+Travail,0075.01,Travail,0075.01.02,Politiques et relations du travail,2,Fonctionnement,Votés,7088800,0,0,7088800
+Travail,0075.01,Travail,0075.01.02,Politiques et relations du travail,5,Transfert,Votés,3625100,0,0,3625100
+Travail,0075.01,Travail,0075.01.02,Politiques et relations du travail,P,"Créances douteuses, autres provisions et pertes",Permanents,700,0,0,700
+Travail,0075.01,Travail,0075.01.03,Tribunal administratif du travail,F,Affectation à un fonds spécial,Votés,5223100,0,0,5223100
