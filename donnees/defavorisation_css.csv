@@ -1,0 +1,277 @@
+﻿ordre,indice,code_css,nom_css,ecoles_au_fichier,ecoles_non_diffusees,ecoles_rang_1,ecoles_rang_2,ecoles_rang_3,ecoles_rang_4,ecoles_rang_5,ecoles_rang_6,ecoles_rang_7,ecoles_rang_8,ecoles_rang_9,ecoles_rang_10,effectif_rang_1,effectif_rang_2,effectif_rang_3,effectif_rang_4,effectif_rang_5,effectif_rang_6,effectif_rang_7,effectif_rang_8,effectif_rang_9,effectif_rang_10
+primaire,IMSE,711000,Centre de services scolaire des Monts-et-Marées,16,1,0,0,1,1,0,1,4,2,5,1,0,0,110,114,0,157,603,224,680,130
+primaire,SFR,711000,Centre de services scolaire des Monts-et-Marées,16,1,5,1,2,1,1,2,3,0,0,0,504,105,330,142,157,357,423,0,0,0
+secondaire,IMSE,711000,Centre de services scolaire des Monts-et-Marées,4,0,0,0,0,0,0,0,1,2,0,1,0,0,0,0,0,0,677,994,0,57
+secondaire,SFR,711000,Centre de services scolaire des Monts-et-Marées,4,0,0,1,2,1,0,0,0,0,0,0,0,677,994,57,0,0,0,0,0,0
+primaire,IMSE,712000,Centre de services scolaire des Phares,21,2,1,2,2,2,2,1,0,4,3,2,378,509,533,421,671,245,0,935,427,381
+primaire,SFR,712000,Centre de services scolaire des Phares,21,2,6,5,5,3,0,0,0,0,0,0,1467,945,1204,884,0,0,0,0,0,0
+secondaire,IMSE,712000,Centre de services scolaire des Phares,10,4,1,0,0,2,0,1,0,2,0,0,46,0,0,2695,0,69,0,967,0,0
+secondaire,SFR,712000,Centre de services scolaire des Phares,10,4,5,1,0,0,0,0,0,0,0,0,2843,934,0,0,0,0,0,0,0,0
+primaire,IMSE,713000,Centre de services scolaire du Fleuve-et-des-Lacs,12,0,0,1,1,0,1,2,4,1,2,0,0,62,156,0,130,284,482,65,297,0
+primaire,SFR,713000,Centre de services scolaire du Fleuve-et-des-Lacs,12,0,8,4,0,0,0,0,0,0,0,0,845,631,0,0,0,0,0,0,0,0
+secondaire,IMSE,713000,Centre de services scolaire du Fleuve-et-des-Lacs,6,0,0,0,0,1,0,3,0,0,1,1,0,0,0,375,0,706,0,0,82,201
+secondaire,SFR,713000,Centre de services scolaire du Fleuve-et-des-Lacs,6,0,6,0,0,0,0,0,0,0,0,0,1364,0,0,0,0,0,0,0,0,0
+primaire,IMSE,714000,Centre de services scolaire de Kamouraska-Rivière-du-Loup,15,0,3,0,1,1,4,2,2,2,0,0,627,0,334,138,873,459,516,302,0,0
+primaire,SFR,714000,Centre de services scolaire de Kamouraska-Rivière-du-Loup,15,0,7,2,4,0,1,0,1,0,0,0,1549,407,840,0,263,0,190,0,0,0
+secondaire,IMSE,714000,Centre de services scolaire de Kamouraska-Rivière-du-Loup,4,1,0,0,0,1,0,2,0,0,0,0,0,0,0,1649,0,787,0,0,0,0
+secondaire,SFR,714000,Centre de services scolaire de Kamouraska-Rivière-du-Loup,4,1,2,0,1,0,0,0,0,0,0,0,1977,0,459,0,0,0,0,0,0,0
+primaire,IMSE,721000,Centre de services scolaire du Pays-des-Bleuets,18,0,0,1,1,2,4,4,2,2,2,0,0,287,236,563,796,700,112,265,158,0
+primaire,SFR,721000,Centre de services scolaire du Pays-des-Bleuets,18,0,12,5,1,0,0,0,0,0,0,0,1621,1254,242,0,0,0,0,0,0,0
+secondaire,IMSE,721000,Centre de services scolaire du Pays-des-Bleuets,4,0,0,0,0,3,0,1,0,0,0,0,0,0,0,2297,0,546,0,0,0,0
+secondaire,SFR,721000,Centre de services scolaire du Pays-des-Bleuets,4,0,4,0,0,0,0,0,0,0,0,0,2843,0,0,0,0,0,0,0,0,0
+primaire,IMSE,722000,Centre de services scolaire du Lac-Saint-Jean,20,1,1,1,3,1,2,3,4,1,3,0,212,172,641,64,412,787,573,60,388,0
+primaire,SFR,722000,Centre de services scolaire du Lac-Saint-Jean,20,1,2,1,2,3,1,2,6,2,0,0,273,172,260,798,212,249,1043,302,0,0
+secondaire,IMSE,722000,Centre de services scolaire du Lac-Saint-Jean,4,0,1,0,0,1,1,0,1,0,0,0,439,0,0,1109,749,0,476,0,0,0
+secondaire,SFR,722000,Centre de services scolaire du Lac-Saint-Jean,4,0,0,0,0,1,1,2,0,0,0,0,0,0,0,439,476,1858,0,0,0,0
+primaire,IMSE,723000,Centre de services scolaire des Rives-du-Saguenay,29,3,3,5,4,3,5,3,1,0,0,2,816,894,1018,667,1418,636,220,0,0,107
+primaire,SFR,723000,Centre de services scolaire des Rives-du-Saguenay,29,3,3,3,6,4,6,1,2,0,1,0,584,647,1549,637,1465,269,405,0,220,0
+secondaire,IMSE,723000,Centre de services scolaire des Rives-du-Saguenay,4,0,0,1,1,1,0,0,0,0,0,1,0,2114,1662,873,0,0,0,0,0,86
+secondaire,SFR,723000,Centre de services scolaire des Rives-du-Saguenay,4,0,0,2,1,1,0,0,0,0,0,0,0,959,1662,2114,0,0,0,0,0,0
+primaire,IMSE,724000,Centre de services scolaire De La Jonquière,18,1,4,0,3,1,3,2,1,2,1,0,975,0,690,219,819,567,129,570,64,0
+primaire,SFR,724000,Centre de services scolaire De La Jonquière,18,1,1,1,3,3,3,1,3,2,0,0,77,272,483,732,723,276,900,570,0,0
+secondaire,IMSE,724000,Centre de services scolaire De La Jonquière,2,0,1,0,0,1,0,0,0,0,0,0,1519,0,0,1899,0,0,0,0,0,0
+secondaire,SFR,724000,Centre de services scolaire De La Jonquière,2,0,0,0,1,0,0,1,0,0,0,0,0,0,1519,0,0,1899,0,0,0,0
+primaire,IMSE,731000,Centre de services scolaire de Charlevoix,4,0,0,0,0,1,0,2,0,1,0,0,0,0,0,504,0,572,0,484,0,0
+primaire,SFR,731000,Centre de services scolaire de Charlevoix,4,0,0,2,1,1,0,0,0,0,0,0,0,720,484,356,0,0,0,0,0,0
+secondaire,IMSE,731000,Centre de services scolaire de Charlevoix,3,1,0,0,0,1,0,1,0,0,0,0,0,0,0,609,0,717,0,0,0,0
+secondaire,SFR,731000,Centre de services scolaire de Charlevoix,3,1,1,1,0,0,0,0,0,0,0,0,609,717,0,0,0,0,0,0,0,0
+primaire,IMSE,732000,Centre de services scolaire de la Capitale,47,1,9,12,5,3,1,3,2,1,5,5,4137,4441,1234,1338,332,975,526,169,1543,1499
+primaire,SFR,732000,Centre de services scolaire de la Capitale,47,1,5,5,4,3,5,2,3,5,5,9,2036,1677,1561,1551,1832,746,1004,1685,1534,2568
+secondaire,IMSE,732000,Centre de services scolaire de la Capitale,12,0,3,1,1,1,0,3,0,0,2,1,4925,47,1630,125,0,2290,0,0,1335,418
+secondaire,SFR,732000,Centre de services scolaire de la Capitale,12,0,1,2,0,1,1,1,0,2,1,3,125,2662,0,2263,47,1630,0,1421,869,1753
+primaire,IMSE,733000,Centre de services scolaire des Découvreurs,20,1,12,1,1,3,0,1,1,0,0,0,5044,300,468,1376,0,319,363,0,0,0
+primaire,SFR,733000,Centre de services scolaire des Découvreurs,20,1,2,3,3,2,2,1,2,3,1,0,731,969,1239,1212,829,364,884,1279,363,0
+secondaire,IMSE,733000,Centre de services scolaire des Découvreurs,6,1,3,2,0,0,0,0,0,0,0,0,3493,2261,0,0,0,0,0,0,0,0
+secondaire,SFR,733000,Centre de services scolaire des Découvreurs,6,1,0,2,0,0,0,1,1,1,0,0,0,1801,0,0,0,1692,36,2225,0,0
+primaire,IMSE,734000,Centre de services scolaire des Premières-Seigneuries,38,1,11,7,3,6,6,2,1,0,1,0,4970,3017,1089,2532,2995,703,508,0,348,0
+primaire,SFR,734000,Centre de services scolaire des Premières-Seigneuries,38,1,6,6,5,5,3,5,6,0,1,0,2916,2440,1924,2359,1354,1844,2977,0,348,0
+secondaire,IMSE,734000,Centre de services scolaire des Premières-Seigneuries,12,1,3,4,4,0,0,0,0,0,0,0,3976,3586,4316,0,0,0,0,0,0,0
+secondaire,SFR,734000,Centre de services scolaire des Premières-Seigneuries,12,1,1,1,2,0,4,3,0,0,0,0,1200,959,3017,0,5291,1411,0,0,0,0
+primaire,IMSE,735000,Centre de services scolaire de Portneuf,14,2,2,3,3,1,1,1,1,0,0,0,602,764,1164,855,163,89,127,0,0,0
+primaire,SFR,735000,Centre de services scolaire de Portneuf,14,2,10,1,1,0,0,0,0,0,0,0,3308,163,293,0,0,0,0,0,0,0
+secondaire,IMSE,735000,Centre de services scolaire de Portneuf,3,0,1,1,1,0,0,0,0,0,0,0,1326,593,798,0,0,0,0,0,0,0
+secondaire,SFR,735000,Centre de services scolaire de Portneuf,3,0,3,0,0,0,0,0,0,0,0,0,2717,0,0,0,0,0,0,0,0,0
+primaire,IMSE,741000,Centre de services scolaire du Chemin-du-Roy,38,0,2,1,3,2,3,5,3,5,8,6,946,443,1215,545,927,1282,797,929,1654,1281
+primaire,SFR,741000,Centre de services scolaire du Chemin-du-Roy,38,0,5,3,0,1,5,3,8,6,4,3,1422,850,0,251,1565,487,2585,1602,786,471
+secondaire,IMSE,741000,Centre de services scolaire du Chemin-du-Roy,7,0,0,0,0,0,1,2,0,1,2,1,0,0,0,0,2058,3379,0,68,1909,648
+secondaire,SFR,741000,Centre de services scolaire du Chemin-du-Roy,7,0,1,0,0,0,0,2,2,2,0,0,422,0,0,0,0,2706,3025,1909,0,0
+primaire,IMSE,742000,Centre de services scolaire de l'Énergie,28,1,0,2,1,0,4,4,3,2,4,7,0,652,190,0,850,705,627,323,784,1177
+primaire,SFR,742000,Centre de services scolaire de l'Énergie,28,1,4,2,5,1,5,5,2,1,1,1,636,841,660,207,815,1121,455,149,194,230
+secondaire,IMSE,742000,Centre de services scolaire de l'Énergie,8,2,0,0,0,0,1,0,2,1,1,1,0,0,0,0,1131,0,1295,64,910,456
+secondaire,SFR,742000,Centre de services scolaire de l'Énergie,8,2,0,1,0,1,1,1,1,1,0,0,0,607,0,1131,456,688,64,910,0,0
+primaire,IMSE,751000,Centre de services scolaire des Hauts-Cantons,27,1,1,0,2,3,1,4,5,5,4,1,144,0,306,158,217,631,655,672,310,85
+primaire,SFR,751000,Centre de services scolaire des Hauts-Cantons,27,1,4,7,5,8,1,1,0,0,0,0,415,518,724,1026,68,427,0,0,0,0
+secondaire,IMSE,751000,Centre de services scolaire des Hauts-Cantons,4,0,0,0,0,1,0,1,1,1,0,0,0,0,0,758,0,85,907,745,0,0
+secondaire,SFR,751000,Centre de services scolaire des Hauts-Cantons,4,0,0,3,1,0,0,0,0,0,0,0,0,1750,745,0,0,0,0,0,0,0
+primaire,IMSE,752000,Centre de services scolaire de la Région-de-Sherbrooke,40,1,4,7,4,7,1,3,5,1,2,5,1163,2610,1241,2197,272,652,1262,217,959,1181
+primaire,SFR,752000,Centre de services scolaire de la Région-de-Sherbrooke,40,1,3,4,4,4,3,6,6,4,3,2,1128,823,1479,961,949,2174,1753,1309,768,410
+secondaire,IMSE,752000,Centre de services scolaire de la Région-de-Sherbrooke,9,3,0,1,1,0,1,1,0,1,1,0,0,2543,1693,0,141,250,0,1911,1296,0
+secondaire,SFR,752000,Centre de services scolaire de la Région-de-Sherbrooke,9,3,0,0,1,0,0,0,4,1,0,0,0,0,2543,0,0,0,3995,1296,0,0
+primaire,IMSE,753000,Centre de services scolaire des Sommets,28,0,2,1,1,3,3,5,3,4,3,3,303,163,116,889,215,754,430,750,248,477
+primaire,SFR,753000,Centre de services scolaire des Sommets,28,0,6,14,3,4,0,0,0,1,0,0,754,2269,578,525,0,0,0,219,0,0
+secondaire,IMSE,753000,Centre de services scolaire des Sommets,4,0,0,0,0,0,1,0,2,0,1,0,0,0,0,0,1747,0,960,0,640,0
+secondaire,SFR,753000,Centre de services scolaire des Sommets,4,0,3,0,0,0,0,1,0,0,0,0,2707,0,0,0,0,640,0,0,0,0
+primaire,IMSE,761000,Centre de services scolaire de la Pointe-de-l'Île,43,0,0,0,0,1,1,3,2,13,8,15,0,0,0,366,399,1437,739,6029,3030,7764
+primaire,SFR,761000,Centre de services scolaire de la Pointe-de-l'Île,43,0,0,0,0,0,1,0,1,9,13,19,0,0,0,0,849,0,473,3205,6115,9122
+secondaire,IMSE,761000,Centre de services scolaire de la Pointe-de-l'Île,14,2,0,0,0,0,0,0,2,1,4,5,0,0,0,0,0,0,2725,1421,5011,5633
+secondaire,SFR,761000,Centre de services scolaire de la Pointe-de-l'Île,14,2,0,0,0,0,0,0,0,2,4,6,0,0,0,0,0,0,0,2725,2767,9298
+primaire,IMSE,762000,Centre de services scolaire de Montréal,131,3,2,4,9,7,12,8,15,21,25,25,535,1558,3010,2215,3442,2446,5259,6979,7475,8702
+primaire,SFR,762000,Centre de services scolaire de Montréal,131,3,0,0,0,0,0,0,8,20,43,57,0,0,0,0,0,0,2296,6284,13856,19185
+secondaire,IMSE,762000,Centre de services scolaire de Montréal,32,3,0,0,0,1,2,1,3,5,6,11,0,0,0,1383,591,1242,4283,3992,5185,11348
+secondaire,SFR,762000,Centre de services scolaire de Montréal,32,3,0,0,0,0,0,0,0,2,10,17,0,0,0,0,0,0,0,1493,9493,17038
+primaire,IMSE,763000,Centre de services scolaire Marguerite-Bourgeoys,76,1,2,7,9,7,2,6,10,14,10,8,542,3081,3038,3172,691,1894,2884,4777,3322,2707
+primaire,SFR,763000,Centre de services scolaire Marguerite-Bourgeoys,76,1,0,0,0,2,2,1,6,17,23,24,0,0,0,573,602,167,2116,6645,7968,8037
+secondaire,IMSE,763000,Centre de services scolaire Marguerite-Bourgeoys,18,1,0,1,1,2,2,2,1,3,3,2,0,988,1319,1640,2286,2975,119,3059,2398,3399
+secondaire,SFR,763000,Centre de services scolaire Marguerite-Bourgeoys,18,1,0,0,0,0,0,0,0,4,6,7,0,0,0,0,0,0,0,4671,5964,7548
+primaire,IMSE,771000,Centre de services scolaire des Draveurs,30,0,2,1,1,3,5,5,3,3,2,5,681,380,249,959,1465,1929,1257,735,699,1150
+primaire,SFR,771000,Centre de services scolaire des Draveurs,30,0,1,3,2,1,2,7,5,1,3,5,334,830,737,249,536,2378,1832,460,770,1378
+secondaire,IMSE,771000,Centre de services scolaire des Draveurs,5,1,0,0,0,1,1,1,0,0,1,0,0,0,0,1311,1071,3404,0,0,1981,0
+secondaire,SFR,771000,Centre de services scolaire des Draveurs,5,1,0,0,0,1,1,0,1,0,1,0,0,0,0,1311,1071,0,3404,0,1981,0
+primaire,IMSE,772000,Centre de services scolaire des Portages-de-l'Outaouais,29,1,2,2,7,3,5,2,3,0,0,4,985,828,2696,1060,1960,544,1068,0,0,1024
+primaire,SFR,772000,Centre de services scolaire des Portages-de-l'Outaouais,29,1,0,0,1,2,1,6,2,11,0,5,0,0,443,864,368,2086,751,4276,0,1377
+secondaire,IMSE,772000,Centre de services scolaire des Portages-de-l'Outaouais,8,2,0,2,1,0,0,2,0,1,0,0,0,1871,1740,0,0,1800,0,1263,0,0
+secondaire,SFR,772000,Centre de services scolaire des Portages-de-l'Outaouais,8,2,0,0,0,0,1,1,1,1,2,0,0,0,0,0,256,916,1740,955,2807,0
+primaire,IMSE,773000,Centre de services scolaire au Coeur-des-Vallées,17,0,0,0,0,1,0,2,5,1,3,5,0,0,0,323,0,715,1287,224,493,832
+primaire,SFR,773000,Centre de services scolaire au Coeur-des-Vallées,17,0,2,2,5,3,2,1,1,0,1,0,352,345,1539,501,644,148,225,0,120,0
+secondaire,IMSE,773000,Centre de services scolaire au Coeur-des-Vallées,5,1,0,0,0,0,0,0,1,0,1,2,0,0,0,0,0,0,1724,0,249,655
+secondaire,SFR,773000,Centre de services scolaire au Coeur-des-Vallées,5,1,0,0,2,1,0,1,0,0,0,0,0,0,2335,249,0,44,0,0,0,0
+primaire,IMSE,774000,Centre de services scolaire des Hauts-Bois-de-l'Outaouais,3,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,1396
+primaire,SFR,774000,Centre de services scolaire des Hauts-Bois-de-l'Outaouais,3,0,0,0,0,1,0,0,0,2,0,0,0,0,0,347,0,0,0,1049,0,0
+secondaire,IMSE,774000,Centre de services scolaire des Hauts-Bois-de-l'Outaouais,3,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,969
+secondaire,SFR,774000,Centre de services scolaire des Hauts-Bois-de-l'Outaouais,3,0,0,0,1,0,0,0,0,1,1,0,0,0,175,0,0,0,0,489,305,0
+primaire,IMSE,781000,Centre de services scolaire du Lac-Témiscamingue,8,0,0,1,1,0,0,0,1,2,2,1,0,248,91,0,0,0,104,125,198,52
+primaire,SFR,781000,Centre de services scolaire du Lac-Témiscamingue,8,0,0,1,0,0,0,1,3,1,1,1,0,104,0,0,0,93,216,248,52,105
+secondaire,IMSE,781000,Centre de services scolaire du Lac-Témiscamingue,4,0,0,0,0,1,0,0,0,1,0,2,0,0,0,341,0,0,0,284,0,111
+secondaire,SFR,781000,Centre de services scolaire du Lac-Témiscamingue,4,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,284,0,341,34,77
+primaire,IMSE,782000,Centre de services scolaire de Rouyn-Noranda,14,1,1,0,3,1,3,3,1,1,0,0,87,0,535,375,414,816,455,66,0,0
+primaire,SFR,782000,Centre de services scolaire de Rouyn-Noranda,14,1,4,0,0,4,2,2,1,0,0,0,521,0,0,908,676,188,455,0,0,0
+secondaire,IMSE,782000,Centre de services scolaire de Rouyn-Noranda,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,2383,0,0,0,0,0,0
+secondaire,SFR,782000,Centre de services scolaire de Rouyn-Noranda,2,0,0,0,2,0,0,0,0,0,0,0,0,0,2383,0,0,0,0,0,0,0
+primaire,IMSE,783000,Centre de services scolaire Harricana,13,1,0,0,1,0,0,1,5,1,1,3,0,0,79,0,0,87,977,101,111,240
+primaire,SFR,783000,Centre de services scolaire Harricana,13,1,1,1,0,5,2,1,2,0,0,0,101,87,0,748,341,125,193,0,0,0
+secondaire,IMSE,783000,Centre de services scolaire Harricana,2,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,85,1476,0,0
+secondaire,SFR,783000,Centre de services scolaire Harricana,2,0,0,0,1,1,0,0,0,0,0,0,0,0,85,1476,0,0,0,0,0,0
+primaire,IMSE,784000,Centre de services scolaire de l'Or-et-des-Bois,15,1,0,0,0,0,2,1,1,6,2,2,0,0,0,0,450,259,70,891,638,534
+primaire,SFR,784000,Centre de services scolaire de l'Or-et-des-Bois,15,1,1,1,0,5,3,1,1,1,1,0,148,326,0,762,555,215,302,300,234,0
+secondaire,IMSE,784000,Centre de services scolaire de l'Or-et-des-Bois,4,0,0,0,0,0,0,0,0,3,0,1,0,0,0,0,0,0,0,2076,0,192
+secondaire,SFR,784000,Centre de services scolaire de l'Or-et-des-Bois,4,0,1,0,0,0,0,2,0,0,1,0,396,0,0,0,0,1680,0,0,192,0
+primaire,IMSE,785000,Centre de services scolaire du Lac-Abitibi,6,0,0,0,0,0,0,1,0,2,2,1,0,0,0,0,0,165,0,372,628,210
+primaire,SFR,785000,Centre de services scolaire du Lac-Abitibi,6,0,0,1,0,0,1,4,0,0,0,0,0,163,0,0,209,1003,0,0,0,0
+secondaire,IMSE,785000,Centre de services scolaire du Lac-Abitibi,4,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,102,129,854,47
+secondaire,SFR,785000,Centre de services scolaire du Lac-Abitibi,4,0,0,1,0,0,1,2,0,0,0,0,0,129,0,0,854,149,0,0,0,0
+primaire,IMSE,791000,Centre de services scolaire de l'Estuaire,19,3,2,1,0,0,1,2,1,4,2,3,342,241,0,0,99,314,33,410,254,282
+primaire,SFR,791000,Centre de services scolaire de l'Estuaire,19,3,0,1,2,3,2,3,4,1,0,0,0,241,368,207,288,325,383,163,0,0
+secondaire,IMSE,791000,Centre de services scolaire de l'Estuaire,4,0,0,0,0,1,0,0,1,1,0,1,0,0,0,700,0,0,266,603,0,194
+secondaire,SFR,791000,Centre de services scolaire de l'Estuaire,4,0,0,0,1,0,1,1,0,1,0,0,0,0,700,0,266,603,0,194,0,0
+primaire,IMSE,792000,Centre de services scolaire du Fer,13,1,1,2,0,0,3,0,0,2,1,3,193,90,0,0,515,0,0,566,132,553
+primaire,SFR,792000,Centre de services scolaire du Fer,13,1,11,1,0,0,0,0,0,0,0,0,1859,190,0,0,0,0,0,0,0,0
+secondaire,IMSE,792000,Centre de services scolaire du Fer,4,1,1,0,0,0,0,0,0,1,1,0,142,0,0,0,0,0,0,1126,371,0
+secondaire,SFR,792000,Centre de services scolaire du Fer,4,1,3,0,0,0,0,0,0,0,0,0,1639,0,0,0,0,0,0,0,0,0
+primaire,IMSE,793000,Centre de services scolaire de la Moyenne-Côte-Nord,4,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,208,0,0,97
+primaire,SFR,793000,Centre de services scolaire de la Moyenne-Côte-Nord,4,0,0,4,0,0,0,0,0,0,0,0,0,305,0,0,0,0,0,0,0,0
+secondaire,IMSE,793000,Centre de services scolaire de la Moyenne-Côte-Nord,2,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,246
+secondaire,SFR,793000,Centre de services scolaire de la Moyenne-Côte-Nord,2,1,1,0,0,0,0,0,0,0,0,0,246,0,0,0,0,0,0,0,0,0
+primaire,IMSE,801000,Centre de services scolaire de la Baie-James,8,1,0,0,0,0,1,1,2,0,0,3,0,0,0,0,150,186,328,0,0,216
+primaire,SFR,801000,Centre de services scolaire de la Baie-James,8,1,7,0,0,0,0,0,0,0,0,0,880,0,0,0,0,0,0,0,0,0
+secondaire,IMSE,801000,Centre de services scolaire de la Baie-James,5,1,0,0,0,1,0,1,0,0,0,2,0,0,0,132,0,421,0,0,0,146
+secondaire,SFR,801000,Centre de services scolaire de la Baie-James,5,1,4,0,0,0,0,0,0,0,0,0,699,0,0,0,0,0,0,0,0,0
+primaire,IMSE,811000,Centre de services scolaire des Îles,5,0,0,1,1,0,1,0,0,0,0,2,0,116,221,0,137,0,0,0,0,106
+primaire,SFR,811000,Centre de services scolaire des Îles,5,0,4,1,0,0,0,0,0,0,0,0,509,71,0,0,0,0,0,0,0,0
+secondaire,IMSE,811000,Centre de services scolaire des Îles,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,421,0,0,0,0,0,0
+secondaire,SFR,811000,Centre de services scolaire des Îles,1,0,1,0,0,0,0,0,0,0,0,0,421,0,0,0,0,0,0,0,0,0
+primaire,IMSE,812000,Centre de services scolaire des Chic-Chocs,15,2,0,0,1,1,0,1,0,1,2,7,0,0,444,34,0,166,0,62,84,590
+primaire,SFR,812000,Centre de services scolaire des Chic-Chocs,15,2,8,3,2,0,0,0,0,0,0,0,905,309,166,0,0,0,0,0,0,0
+secondaire,IMSE,812000,Centre de services scolaire des Chic-Chocs,7,1,0,0,0,0,2,0,0,1,0,3,0,0,0,0,657,0,0,61,0,431
+secondaire,SFR,812000,Centre de services scolaire des Chic-Chocs,7,1,5,1,0,0,0,0,0,0,0,0,1089,60,0,0,0,0,0,0,0,0
+primaire,IMSE,813000,Centre de services scolaire René-Lévesque,21,1,0,0,0,2,1,3,1,1,5,7,0,0,0,153,189,308,85,249,548,598
+primaire,SFR,813000,Centre de services scolaire René-Lévesque,21,1,3,3,6,4,1,0,2,1,0,0,472,450,506,362,61,0,164,115,0,0
+secondaire,IMSE,813000,Centre de services scolaire René-Lévesque,7,0,0,0,0,0,1,0,1,1,1,3,0,0,0,0,323,0,559,133,81,763
+secondaire,SFR,813000,Centre de services scolaire René-Lévesque,7,0,3,1,0,1,0,1,1,0,0,0,849,323,0,318,0,236,133,0,0,0
+primaire,IMSE,821000,Centre de services scolaire de la Côte-du-Sud,32,3,6,5,1,3,2,3,1,3,2,3,830,888,58,815,163,474,216,227,522,272
+primaire,SFR,821000,Centre de services scolaire de la Côte-du-Sud,32,3,15,5,4,1,0,2,2,0,0,0,2233,830,581,75,0,422,324,0,0,0
+secondaire,IMSE,821000,Centre de services scolaire de la Côte-du-Sud,8,0,1,1,2,0,1,0,0,1,0,2,574,336,546,0,805,0,0,374,0,417
+secondaire,SFR,821000,Centre de services scolaire de la Côte-du-Sud,8,0,5,1,1,1,0,0,0,0,0,0,1610,263,805,374,0,0,0,0,0,0
+primaire,IMSE,822000,Centre de services scolaire des Appalaches,19,1,0,2,2,1,1,5,4,0,2,1,0,314,500,160,104,479,918,0,142,55
+primaire,SFR,822000,Centre de services scolaire des Appalaches,19,1,2,4,2,3,3,3,1,0,0,0,176,319,293,309,576,761,238,0,0,0
+secondaire,IMSE,822000,Centre de services scolaire des Appalaches,3,0,0,0,0,1,1,0,1,0,0,0,0,0,0,573,1115,0,561,0,0,0
+secondaire,SFR,822000,Centre de services scolaire des Appalaches,3,0,0,0,1,1,1,0,0,0,0,0,0,0,561,573,1115,0,0,0,0,0
+primaire,IMSE,823000,Centre de services scolaire de la Beauce-Etchemin,45,0,5,6,11,4,3,5,3,3,3,2,403,1505,2321,1159,705,694,565,688,606,131
+primaire,SFR,823000,Centre de services scolaire de la Beauce-Etchemin,45,0,18,6,9,3,4,1,3,1,0,0,3180,1536,1522,626,1123,232,326,232,0,0
+secondaire,IMSE,823000,Centre de services scolaire de la Beauce-Etchemin,8,0,0,1,3,3,0,0,1,0,0,0,0,1044,3083,2504,0,0,788,0,0,0
+secondaire,SFR,823000,Centre de services scolaire de la Beauce-Etchemin,8,0,4,2,2,0,0,0,0,0,0,0,4127,1123,2169,0,0,0,0,0,0,0
+primaire,IMSE,824000,Centre de services scolaire des Navigateurs,39,1,20,5,3,4,2,3,0,1,0,0,6157,2555,1520,1687,844,631,0,287,0,0
+primaire,SFR,824000,Centre de services scolaire des Navigateurs,39,1,5,4,7,6,6,5,2,3,0,0,2072,1215,1911,1487,2175,3011,386,1424,0,0
+secondaire,IMSE,824000,Centre de services scolaire des Navigateurs,11,1,7,2,0,0,1,0,0,0,0,0,6291,2277,0,0,723,0,0,0,0,0
+secondaire,SFR,824000,Centre de services scolaire des Navigateurs,11,1,0,3,3,0,1,2,0,1,0,0,0,1796,3234,0,708,2448,0,1105,0,0
+primaire,IMSE,831000,Centre de services scolaire de Laval,62,0,2,4,6,7,13,6,8,3,7,6,691,1108,2149,2211,4976,2323,2533,1240,2929,3265
+primaire,SFR,831000,Centre de services scolaire de Laval,62,0,1,1,4,7,8,15,9,6,7,4,388,338,1133,2686,2755,5012,3235,2285,3675,1918
+secondaire,IMSE,831000,Centre de services scolaire de Laval,15,1,0,1,0,0,5,2,0,2,2,2,0,1337,0,0,7030,2444,0,437,3073,3206
+secondaire,SFR,831000,Centre de services scolaire de Laval,15,1,0,0,0,0,3,1,4,3,3,0,0,0,0,0,3952,2626,4233,1629,5087,0
+primaire,IMSE,841000,Centre de services scolaire des Affluents,54,0,5,7,8,6,9,9,4,3,3,0,2193,3377,3354,2257,3027,2591,1203,1482,1218,0
+primaire,SFR,841000,Centre de services scolaire des Affluents,54,0,1,5,8,13,16,8,1,2,0,0,567,2171,3233,4252,5880,3534,377,688,0,0
+secondaire,IMSE,841000,Centre de services scolaire des Affluents,16,0,0,2,5,6,2,0,0,1,0,0,0,3392,6167,4391,2002,0,0,1230,0,0
+secondaire,SFR,841000,Centre de services scolaire des Affluents,16,0,1,1,4,4,5,1,0,0,0,0,523,2071,5263,3581,3821,1923,0,0,0,0
+primaire,IMSE,842000,Centre de services scolaire des Samares,55,2,0,1,2,2,3,2,5,6,13,19,0,323,713,634,504,579,1101,1803,5205,4356
+primaire,SFR,842000,Centre de services scolaire des Samares,55,2,7,12,8,9,1,8,4,2,2,0,2348,3212,1547,2774,708,1411,1577,999,642,0
+secondaire,IMSE,842000,Centre de services scolaire des Samares,12,0,0,0,0,0,0,0,0,3,2,7,0,0,0,0,0,0,0,4316,1221,4701
+secondaire,SFR,842000,Centre de services scolaire des Samares,12,0,1,2,0,4,0,3,2,0,0,0,699,2275,0,4421,0,425,2418,0,0,0
+primaire,IMSE,851000,Centre de services scolaire des Mille-Îles,64,2,4,10,11,14,7,7,2,5,1,1,969,3463,3872,5676,1956,2110,622,1635,302,341
+primaire,SFR,851000,Centre de services scolaire des Mille-Îles,64,2,3,2,8,16,13,9,6,4,1,0,657,816,2769,5276,4261,3332,2328,1166,341,0
+secondaire,IMSE,851000,Centre de services scolaire des Mille-Îles,15,1,1,3,5,1,1,2,1,0,0,0,1073,2556,7265,1831,1156,2281,75,0,0,0
+secondaire,SFR,851000,Centre de services scolaire des Mille-Îles,15,1,0,3,1,1,3,3,3,0,0,0,0,3145,1156,1071,2996,5842,2027,0,0,0
+primaire,IMSE,852000,Centre de services scolaire de la Rivière-du-Nord,45,1,0,4,1,0,5,5,10,6,7,6,0,1098,323,0,2017,1298,3703,1796,2215,1717
+primaire,SFR,852000,Centre de services scolaire de la Rivière-du-Nord,45,1,0,8,6,2,9,2,10,4,3,0,0,2700,1868,754,2931,1017,3093,1210,594,0
+secondaire,IMSE,852000,Centre de services scolaire de la Rivière-du-Nord,11,1,0,0,0,0,1,2,3,2,2,0,0,0,0,0,918,2057,4328,1783,1811,0
+secondaire,SFR,852000,Centre de services scolaire de la Rivière-du-Nord,11,1,0,0,1,2,1,3,3,0,0,0,0,0,61,2514,918,5326,2078,0,0,0
+primaire,IMSE,853000,Centre de services scolaire des Laurentides,19,1,0,0,1,1,2,3,5,0,5,1,0,0,419,426,291,1049,1453,0,556,167
+primaire,SFR,853000,Centre de services scolaire des Laurentides,19,1,0,1,4,5,3,1,2,1,1,0,0,426,1215,1279,650,376,177,167,71,0
+secondaire,IMSE,853000,Centre de services scolaire des Laurentides,5,1,0,0,0,0,1,0,1,2,0,0,0,0,0,0,1255,0,1062,1168,0,0
+secondaire,SFR,853000,Centre de services scolaire des Laurentides,5,1,0,0,1,2,0,0,1,0,0,0,0,0,1255,2103,0,0,127,0,0,0
+primaire,IMSE,854000,Centre de services scolaire des Hautes-Laurentides,9,0,0,0,0,1,0,0,0,2,3,3,0,0,0,158,0,0,0,379,577,696
+primaire,SFR,854000,Centre de services scolaire des Hautes-Laurentides,9,0,1,2,0,1,2,2,1,0,0,0,230,337,0,290,257,494,202,0,0,0
+secondaire,IMSE,854000,Centre de services scolaire des Hautes-Laurentides,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,1532
+secondaire,SFR,854000,Centre de services scolaire des Hautes-Laurentides,2,0,0,0,1,0,0,0,1,0,0,0,0,0,1381,0,0,0,151,0,0,0
+primaire,IMSE,861000,Centre de services scolaire de Sorel-Tracy,15,1,1,0,1,0,0,3,3,2,3,1,210,0,307,0,0,757,782,192,497,205
+primaire,SFR,861000,Centre de services scolaire de Sorel-Tracy,15,1,3,0,2,0,2,0,2,3,1,1,322,0,386,0,403,0,627,658,349,205
+secondaire,IMSE,861000,Centre de services scolaire de Sorel-Tracy,3,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,789,1293,0,0
+secondaire,SFR,861000,Centre de services scolaire de Sorel-Tracy,3,1,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,2082,0,0
+primaire,IMSE,862000,Centre de services scolaire de Saint-Hyacinthe,31,0,0,3,2,1,3,5,4,2,6,5,0,795,277,155,929,1085,1159,536,1319,998
+primaire,SFR,862000,Centre de services scolaire de Saint-Hyacinthe,31,0,7,5,3,4,3,2,4,0,1,2,1131,934,643,1295,951,532,1237,0,242,288
+secondaire,IMSE,862000,Centre de services scolaire de Saint-Hyacinthe,6,0,0,0,0,0,1,0,1,2,2,0,0,0,0,0,1114,0,1568,2187,951,0
+secondaire,SFR,862000,Centre de services scolaire de Saint-Hyacinthe,6,0,0,1,0,1,0,1,2,1,0,0,0,835,0,1114,0,1568,2187,116,0,0
+primaire,IMSE,863000,Centre de services scolaire des Hautes-Rivières,36,0,2,6,3,3,2,6,5,5,3,1,858,2913,911,683,787,1584,1025,1052,856,111
+primaire,SFR,863000,Centre de services scolaire des Hautes-Rivières,36,0,8,7,5,6,2,2,3,3,0,0,1542,2380,2074,1692,1039,411,717,925,0,0
+secondaire,IMSE,863000,Centre de services scolaire des Hautes-Rivières,8,0,0,0,2,2,2,1,1,0,0,0,0,0,2903,1691,2322,812,75,0,0,0
+secondaire,SFR,863000,Centre de services scolaire des Hautes-Rivières,8,0,0,3,0,3,1,1,0,0,0,0,0,3959,0,3225,75,544,0,0,0,0
+primaire,IMSE,864000,Centre de services scolaire Marie-Victorin,63,4,5,3,2,2,8,11,12,6,7,3,2015,1354,1085,728,3541,3545,3859,2394,2496,1243
+primaire,SFR,864000,Centre de services scolaire Marie-Victorin,63,4,0,0,1,5,2,4,6,14,17,10,0,0,556,1614,649,1499,3298,4427,6559,3658
+secondaire,IMSE,864000,Centre de services scolaire Marie-Victorin,12,2,0,0,0,0,2,3,4,0,1,0,0,0,0,0,3899,1470,7588,0,2062,0
+secondaire,SFR,864000,Centre de services scolaire Marie-Victorin,12,2,0,0,0,0,0,0,1,4,4,1,0,0,0,0,0,0,2733,3897,6327,2062
+primaire,IMSE,865000,Centre de services scolaire des Patriotes,57,1,27,9,5,6,7,2,0,0,0,0,9502,2949,1781,1994,2027,307,0,0,0,0
+primaire,SFR,865000,Centre de services scolaire des Patriotes,57,1,18,21,12,2,1,1,1,0,0,0,5163,7103,4351,732,642,303,266,0,0,0
+secondaire,IMSE,865000,Centre de services scolaire des Patriotes,11,1,6,3,0,1,0,0,0,0,0,0,9698,3045,0,317,0,0,0,0,0,0
+secondaire,SFR,865000,Centre de services scolaire des Patriotes,11,1,5,4,1,0,0,0,0,0,0,0,6148,5311,1601,0,0,0,0,0,0,0
+primaire,IMSE,866000,Centre de services scolaire du Val-des-Cerfs,38,0,2,4,0,2,4,2,8,4,6,6,363,1291,0,560,965,609,1685,875,1574,1621
+primaire,SFR,866000,Centre de services scolaire du Val-des-Cerfs,38,0,4,5,7,6,4,3,6,2,1,0,812,737,2248,1475,1185,513,1663,689,221,0
+secondaire,IMSE,866000,Centre de services scolaire du Val-des-Cerfs,7,0,0,0,0,0,1,1,0,3,2,0,0,0,0,0,1654,630,0,1981,2530,0
+secondaire,SFR,866000,Centre de services scolaire du Val-des-Cerfs,7,0,0,1,2,1,2,0,1,0,0,0,0,623,984,630,2916,0,1642,0,0,0
+primaire,IMSE,867000,Centre de services scolaire des Grandes-Seigneuries,41,0,7,4,5,5,6,3,2,6,3,0,2556,1927,1987,1516,2254,1246,963,1571,457,0
+primaire,SFR,867000,Centre de services scolaire des Grandes-Seigneuries,41,0,4,10,10,6,3,4,3,0,1,0,1059,4077,3658,1219,1335,1494,1411,0,224,0
+secondaire,IMSE,867000,Centre de services scolaire des Grandes-Seigneuries,12,0,1,4,0,2,1,3,1,0,0,0,446,4285,0,785,2837,1375,646,0,0,0
+secondaire,SFR,867000,Centre de services scolaire des Grandes-Seigneuries,12,0,2,3,1,4,0,1,1,0,0,0,1223,2116,608,5936,0,65,426,0,0,0
+primaire,IMSE,868000,Centre de services scolaire de la Vallée-des-Tisserands,29,1,2,0,0,1,1,4,3,6,2,9,332,0,0,246,201,925,682,1470,378,1706
+primaire,SFR,868000,Centre de services scolaire de la Vallée-des-Tisserands,29,1,3,1,2,1,3,7,5,2,4,0,498,122,276,222,586,2153,1014,251,818,0
+secondaire,IMSE,868000,Centre de services scolaire de la Vallée-des-Tisserands,5,1,0,0,0,0,0,1,0,0,2,1,0,0,0,0,0,1090,0,0,992,1812
+secondaire,SFR,868000,Centre de services scolaire de la Vallée-des-Tisserands,5,1,0,1,0,0,1,1,0,1,0,0,0,210,0,0,1090,782,0,1812,0,0
+primaire,IMSE,869000,Centre de services scolaire des Trois-Lacs,26,0,5,4,7,6,2,2,0,0,0,0,1232,1311,2585,1790,816,594,0,0,0,0
+primaire,SFR,869000,Centre de services scolaire des Trois-Lacs,26,0,5,2,4,3,5,5,1,1,0,0,1696,782,1035,1025,1215,1826,435,314,0,0
+secondaire,IMSE,869000,Centre de services scolaire des Trois-Lacs,5,0,1,2,2,0,0,0,0,0,0,0,1378,3424,1910,0,0,0,0,0,0,0
+secondaire,SFR,869000,Centre de services scolaire des Trois-Lacs,5,0,1,1,1,0,2,0,0,0,0,0,884,926,2540,0,2362,0,0,0,0,0
+primaire,IMSE,871000,Centre de services scolaire de la Riveraine,21,0,1,2,0,2,2,2,2,3,5,2,54,391,0,328,483,204,343,325,566,166
+primaire,SFR,871000,Centre de services scolaire de la Riveraine,21,0,1,0,0,1,2,4,6,7,0,0,301,0,0,92,229,574,549,1115,0,0
+secondaire,IMSE,871000,Centre de services scolaire de la Riveraine,4,1,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,755,893,0,364,0
+secondaire,SFR,871000,Centre de services scolaire de la Riveraine,4,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,755,893,364,0,0
+primaire,IMSE,872000,Centre de services scolaire des Bois-Francs,31,1,0,3,3,5,4,4,4,4,1,2,0,426,721,1384,903,1059,922,686,140,190
+primaire,SFR,872000,Centre de services scolaire des Bois-Francs,31,1,4,3,7,4,5,5,0,1,1,0,563,695,1298,682,1677,1204,0,193,119,0
+secondaire,IMSE,872000,Centre de services scolaire des Bois-Francs,11,2,0,0,0,2,3,2,1,1,0,0,0,0,0,2913,1750,544,88,143,0,0
+secondaire,SFR,872000,Centre de services scolaire des Bois-Francs,11,2,1,2,0,3,2,1,0,0,0,0,1140,656,0,2711,843,88,0,0,0,0
+primaire,IMSE,873000,Centre de services scolaire des Chênes,33,1,0,1,0,3,4,6,4,7,4,3,0,267,0,870,1163,1654,622,1821,866,513
+primaire,SFR,873000,Centre de services scolaire des Chênes,33,1,2,5,2,3,7,4,3,4,2,0,213,637,452,1195,1763,1563,814,697,442,0
+secondaire,IMSE,873000,Centre de services scolaire des Chênes,6,1,0,0,0,0,0,1,2,1,1,0,0,0,0,0,0,1103,2848,1182,889,0
+secondaire,SFR,873000,Centre de services scolaire des Chênes,6,1,0,1,0,0,1,0,3,0,0,0,0,1103,0,0,1630,0,3289,0,0,0
+primaire,IMSE,881000,Commission scolaire Central Québec,13,0,0,2,3,2,1,1,2,0,0,2,0,424,681,620,151,313,245,0,0,183
+primaire,SFR,881000,Commission scolaire Central Québec,13,0,4,0,0,1,3,3,2,0,0,0,579,0,0,263,800,406,569,0,0,0
+secondaire,IMSE,881000,Commission scolaire Central Québec,9,0,1,1,2,1,0,0,2,0,0,2,668,411,320,94,0,0,290,0,0,126
+secondaire,SFR,881000,Commission scolaire Central Québec,9,0,2,0,1,2,1,2,1,0,0,0,214,0,164,762,68,510,191,0,0,0
+primaire,IMSE,882000,Commission scolaire Eastern Shores,13,7,0,0,0,0,0,1,0,2,1,2,0,0,0,0,0,95,0,144,32,85
+primaire,SFR,882000,Commission scolaire Eastern Shores,13,7,3,1,1,0,1,0,0,0,0,0,246,37,41,0,32,0,0,0,0,0
+secondaire,IMSE,882000,Commission scolaire Eastern Shores,9,5,0,0,0,0,0,0,1,0,2,1,0,0,0,0,0,0,107,0,141,78
+secondaire,SFR,882000,Commission scolaire Eastern Shores,9,5,4,0,0,0,0,0,0,0,0,0,326,0,0,0,0,0,0,0,0,0
+primaire,IMSE,883000,Commission scolaire Eastern Townships,20,1,0,2,0,1,2,2,5,4,3,0,0,165,0,248,450,358,494,812,356,0
+primaire,SFR,883000,Commission scolaire Eastern Townships,20,1,0,2,3,7,1,5,1,0,0,0,0,432,371,569,51,1295,165,0,0,0
+secondaire,IMSE,883000,Commission scolaire Eastern Townships,4,1,0,0,0,1,0,0,0,2,0,0,0,0,0,849,0,0,0,1114,0,0
+secondaire,SFR,883000,Commission scolaire Eastern Townships,4,1,0,0,1,1,1,0,0,0,0,0,0,0,364,750,849,0,0,0,0,0
+primaire,IMSE,884000,Commission scolaire Riverside,19,0,1,2,6,1,1,5,3,0,0,0,226,424,1665,103,444,1072,685,0,0,0
+primaire,SFR,884000,Commission scolaire Riverside,19,0,0,3,3,1,2,1,3,5,1,0,0,583,692,292,849,103,368,1443,289,0
+secondaire,IMSE,884000,Commission scolaire Riverside,5,0,0,1,0,1,1,2,0,0,0,0,0,1747,0,341,332,1113,0,0,0,0
+secondaire,SFR,884000,Commission scolaire Riverside,5,0,0,0,0,0,2,0,0,2,1,0,0,0,0,0,2088,0,0,1388,57,0
+primaire,IMSE,885000,Commission scolaire Sir-Wilfrid-Laurier,27,0,0,0,2,8,2,4,2,6,2,1,0,0,657,2397,391,547,593,1047,360,202
+primaire,SFR,885000,Commission scolaire Sir-Wilfrid-Laurier,27,0,0,0,0,9,7,6,4,0,1,0,0,0,0,1635,2018,1597,742,0,202,0
+secondaire,IMSE,885000,Commission scolaire Sir-Wilfrid-Laurier,9,1,0,0,1,1,0,2,3,0,1,0,0,0,1144,427,0,871,1934,0,282,0
+secondaire,SFR,885000,Commission scolaire Sir-Wilfrid-Laurier,9,1,0,0,1,0,3,1,3,0,0,0,0,0,138,0,1853,566,2101,0,0,0
+primaire,IMSE,886000,Commission scolaire Western Québec,19,0,0,1,1,4,0,0,2,2,6,3,0,244,336,1059,0,0,594,589,451,312
+primaire,SFR,886000,Commission scolaire Western Québec,19,0,1,0,2,1,1,5,4,2,1,2,93,0,316,156,70,1089,742,466,438,215
+secondaire,IMSE,886000,Commission scolaire Western Québec,12,1,0,0,2,0,0,3,0,0,2,4,0,0,1081,0,0,1356,0,0,624,309
+secondaire,SFR,886000,Commission scolaire Western Québec,12,1,1,0,0,0,0,2,3,4,0,1,79,0,0,0,0,120,1263,1848,0,60
+primaire,IMSE,887000,Commission scolaire English-Montréal,37,5,0,1,3,1,1,7,4,4,8,3,0,218,751,348,289,2336,951,755,1677,446
+primaire,SFR,887000,Commission scolaire English-Montréal,37,5,0,0,0,0,0,1,1,4,14,12,0,0,0,0,0,289,377,1355,3195,2555
+secondaire,IMSE,887000,Commission scolaire English-Montréal,30,11,0,0,1,1,1,4,2,4,3,3,0,0,881,442,70,1761,491,1214,1948,378
+secondaire,SFR,887000,Commission scolaire English-Montréal,30,11,0,0,0,0,0,0,0,4,6,9,0,0,0,0,0,0,0,2623,2504,2058
+primaire,IMSE,888000,Commission scolaire Lester-B.-Pearson,38,3,1,6,12,3,3,1,3,5,1,0,224,1702,2748,1012,628,273,817,1212,166,0
+primaire,SFR,888000,Commission scolaire Lester-B.-Pearson,38,3,0,3,0,3,1,3,10,8,3,4,0,923,0,864,400,604,2295,1883,920,893
+secondaire,IMSE,888000,Commission scolaire Lester-B.-Pearson,14,3,3,2,1,0,1,1,1,2,0,0,2146,2003,1271,0,82,721,411,969,0,0
+secondaire,SFR,888000,Commission scolaire Lester-B.-Pearson,14,3,0,2,0,0,1,0,1,4,2,1,0,1170,0,0,905,0,976,3172,1158,222
+primaire,IMSE,889000,Commission scolaire New Frontiers,10,0,0,0,0,0,2,0,3,1,3,1,0,0,0,0,516,0,653,171,384,186
+primaire,SFR,889000,Commission scolaire New Frontiers,10,0,0,0,2,3,0,1,4,0,0,0,0,0,349,460,0,229,872,0,0,0
+secondaire,IMSE,889000,Commission scolaire New Frontiers,2,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,746,0,0,0,718
+secondaire,SFR,889000,Commission scolaire New Frontiers,2,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,746,0,718,0,0,0

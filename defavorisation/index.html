@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Les indices de défavorisation</title>
+<style>
+/* Page légère de la série 2026-11 (D-034), page sensible (D-037) : répartitions par centre de services, jamais de liste d'écoles. */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Accent de la page : rampe ordinale d'une seule teinte, rang 1 à rang 10. */
+  --r1: #86b6ef; --r2: #6da7ec; --r3: #5598e7; --r4: #3987e5; --r5: #2a78d6;
+  --r6: #256abf; --r7: #1c5cab; --r8: #184f95; --r9: #104281; --r10: #0d366b;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+    --r1: #184f95; --r2: #1c5cab; --r3: #256abf; --r4: #2a78d6; --r5: #3987e5;
+    --r6: #5598e7; --r7: #6da7ec; --r8: #86b6ef; --r9: #9ec5f4; --r10: #b7d3f6;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+  --r1: #184f95; --r2: #1c5cab; --r3: #256abf; --r4: #2a78d6; --r5: #3987e5;
+  --r6: #5598e7; --r7: #6da7ec; --r8: #86b6ef; --r9: #9ec5f4; --r10: #b7d3f6;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+a { color: inherit; }
+
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.champ label, .groupe-titre { font-size: 13px; color: var(--ink-2); }
+select, input[type="search"] { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 220px; }
+.bascule { display: inline-flex; border: 1px solid var(--axis); border-radius: 6px; overflow: hidden; }
+.bascule button { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface); border: 0; padding: 6px 12px; cursor: pointer; }
+.bascule button + button { border-left: 1px solid var(--axis); }
+.bascule button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.indices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.indices p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.lecture { font-size: 14px; line-height: 1.45; min-height: 4.4em; font-variant-numeric: tabular-nums; position: sticky; top: 0; z-index: 2;
+  background: var(--surface); border-bottom: 1px solid var(--ligne); padding-bottom: 10px; }
+.lecture strong { font-weight: 650; }
+.lecture .rangs { display: flex; flex-wrap: wrap; gap: 2px 12px; color: var(--ink-2); font-size: 13px; margin-top: 4px; }
+.legende { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 13px; color: var(--ink-2); align-items: center; }
+.legende span { display: inline-flex; align-items: center; gap: 5px; }
+.legende i { width: 14px; height: 11px; border-radius: 2px; display: inline-block; }
+.legende .bout { color: var(--muted); }
+
+.liste { display: flex; flex-direction: column; gap: 2px; }
+.rangee { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr) 150px; gap: 12px; align-items: center;
+  font: inherit; text-align: left; color: var(--ink); background: transparent; border: 0; border-radius: 6px; padding: 5px 6px; cursor: pointer; width: 100%; }
+.rangee:hover, .rangee.choisie { background: var(--survol); }
+.rangee .nom { font-size: 13px; line-height: 1.3; }
+.rangee .nom small { color: var(--muted); font-size: 12px; }
+.rangee .compte { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: right; }
+.rangee.reference { border-bottom: 1px solid var(--axis); border-radius: 6px 6px 0 0; margin-bottom: 6px; padding-bottom: 9px; }
+.rangee.reference .nom { font-weight: 650; }
+.barre { display: flex; gap: 2px; height: 16px; background: var(--surface); }
+.barre span { display: block; height: 100%; min-width: 0; }
+.barre span:first-child { border-radius: 4px 0 0 4px; }
+.barre span:last-child { border-radius: 0 4px 4px 0; }
+.barre span:only-child { border-radius: 4px; }
+.barre.vide { background: var(--grid); border-radius: 4px; }
+.vide-message { font-size: 14px; color: var(--ink-2); margin: 0; }
+
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 8px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 180px; }
+details.pli > summary { cursor: pointer; font-size: 14px; font-weight: 600; }
+details.pli[open] > summary { margin-bottom: 10px; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul, .fiche ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 860px) {
+  .indices { grid-template-columns: minmax(0, 1fr); }
+  .rangee { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
+  .rangee .barre { grid-column: 1 / -1; grid-row: 2; }
+  .rangee .compte { grid-row: 1; grid-column: 2; }
+  input[type="search"] { max-width: none; width: 100%; }
+}
+@media (forced-colors: active) {
+  .barre span { forced-color-adjust: none; }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education" aria-current="page">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Éducation</div>
+    <h1 id="titre">Les indices de défavorisation des écoles</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <section class="colonne" aria-labelledby="titre-indices">
+    <div class="section-titre">
+      <h2 id="titre-indices">Les deux indices, selon le ministère</h2>
+    </div>
+    <div class="indices">
+      <div class="carte">
+        <h3>Indice de milieu socio-économique (IMSE)</h3>
+        <p>Selon la fiche du jeu de données, il « est constitué de la proportion des familles avec enfants dont la mère n'a pas de diplôme, certificat ou grade (ce qui représente les deux tiers du poids de l'indice) et de la proportion de ménages dont les parents n'étaient pas à l'emploi durant la semaine de référence du recensement canadien (ce qui représente le tiers du poids de l'indice) ».</p>
+      </div>
+      <div class="carte">
+        <h3>Indice du seuil de faible revenu (SFR)</h3>
+        <p>Selon la fiche, il « correspond à la proportion des familles avec enfants dont le revenu est situé près ou sous le seuil de faible revenu ». Ce seuil « est défini comme le niveau de revenu selon lequel on estime que les familles consacrent 20% de plus que la moyenne générale à la nourriture, au logement et à l'habillement ».</p>
+      </div>
+    </div>
+    <p class="fraicheur" id="note-rangs"></p>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-css">
+    <div class="section-titre">
+      <h2 id="titre-css">Par centre de services scolaire</h2>
+      <p>Chaque barre répartit les écoles d'un centre de services scolaire ou d'une commission scolaire selon leur rang décile, du rang 1 à gauche au rang 10 à droite. Les territoires sont présentés dans l'ordre de leur code ou dans l'ordre alphabétique, jamais selon leurs valeurs.</p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages de la répartition">
+      <div class="champ">
+        <span class="groupe-titre" id="titre-ordre">Écoles</span>
+        <div class="bascule" role="group" aria-labelledby="titre-ordre">
+          <button type="button" data-ordre="primaire" aria-pressed="true">Primaires</button>
+          <button type="button" data-ordre="secondaire" aria-pressed="false">Secondaires</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span class="groupe-titre" id="titre-indice">Indice</span>
+        <div class="bascule" role="group" aria-labelledby="titre-indice">
+          <button type="button" data-indice="0" aria-pressed="true">IMSE</button>
+          <button type="button" data-indice="1" aria-pressed="false">SFR</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span class="groupe-titre" id="titre-mesure">Compter</span>
+        <div class="bascule" role="group" aria-labelledby="titre-mesure">
+          <button type="button" data-mesure="0" aria-pressed="true">Les écoles</button>
+          <button type="button" data-mesure="1" aria-pressed="false">Leur effectif</button>
+        </div>
+      </div>
+      <div class="champ">
+        <label for="tri">Ordre</label>
+        <select id="tri">
+          <option value="code">des codes</option>
+          <option value="nom">alphabétique</option>
+        </select>
+      </div>
+      <div class="champ">
+        <label for="chercher">Chercher</label>
+        <input type="search" id="chercher" placeholder="Nom du centre de services" autocomplete="off">
+      </div>
+    </div>
+    <div class="carte">
+      <div class="lecture" id="lecture" aria-live="polite"></div>
+      <div class="legende" id="legende"></div>
+      <div class="liste" id="liste"></div>
+      <p class="fraicheur" id="aide-liste"></p>
+    </div>
+    <details class="pli carte">
+      <summary>Les chiffres en tableau</summary>
+      <p class="fraicheur" id="titre-tableau"></p>
+      <div class="defile">
+        <table>
+          <thead id="tete-tableau"></thead>
+          <tbody id="corps-tableau"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> ministère de l'Éducation, jeu <a href="https://www.donneesquebec.ca/recherche/dataset/indices-de-defavorisation" target="_blank" rel="noopener">Indices de défavorisation</a>, ressources « Défavorisation - Écoles primaires » et « Défavorisation - Écoles secondaires » (Données Québec, licence CC-BY 4.0). <span id="bref-date"></span></p>
+    <p><strong>Ce qu'on compte :</strong> les écoles publiques du fichier, par rang décile de l'IMSE ou du SFR, ou leur effectif au 30 septembre, tels que publiés par le ministère. Aucune école n'est présentée individuellement sur cette page ; le détail par école, publié par le ministère, est dans le fichier téléchargeable.</p>
+    <p><strong>Principale limite :</strong> <span id="bref-limite"></span> Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère de l'Éducation, <a href="https://www.donneesquebec.ca/recherche/dataset/indices-de-defavorisation" target="_blank" rel="noopener">Indices de défavorisation</a>, ressources « Défavorisation - Écoles primaires » et « Défavorisation - Écoles secondaires » (CSV), licence CC-BY 4.0.</p>
+        <p>Documentation lue : la description de la fiche Données Québec ; le « Guide d'utilisation » publié avec le jeu (version 1.2) ; la page <a href="https://www.quebec.ca/education/indicateurs-statistiques/prescolaire-primaire-secondaire/indices-defavorisation" target="_blank" rel="noopener">Indices de défavorisation</a> du ministère sur Québec.ca, liée par la fiche ; et le document PDF « Indices de défavorisation des écoles publiques » de la même année scolaire, publié sur cette page. Ces documents servent aux définitions et à la vérification ; les chiffres de la page viennent des seuls CSV.</p>
+        <p id="fiche-archive"></p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul id="fiche-compte"></ul>
+      </section>
+      <section>
+        <h3>Ce que dit le ministère de l'usage des indices</h3>
+        <p>Sur sa page Québec.ca : « Le Ministère utilise deux indices de défavorisation pour répartir les ressources financières entre les centres de services scolaires et les commissions scolaires. Ces indices permettent, selon les besoins, de cibler des écoles ou des bâtiments, ou encore de tenir compte du pourcentage d'élèves provenant de milieux défavorisés dans chaque centre de services scolaire ou commission scolaire. » Cette page ne précise pas comment les indices entrent dans la répartition des ressources.</p>
+      </section>
+      <section>
+        <h3>Traitement, étape par étape</h3>
+        <ol id="fiche-etapes"></ol>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul id="fiche-limites"></ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul id="fiche-verifs"></ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p>Le détail par école, tel que publié par le ministère (une ligne par école et par ordre d'enseignement, valeurs non arrondies), et le fichier des répartitions par centre de services, ordre, indice et rang.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/defavorisation_ecoles.csv" download>Télécharger le détail par école (CSV)</a>
+          <a class="bouton" href="../donnees/defavorisation_css.csv" download>Télécharger les répartitions (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = [["711000","Centre de services scolaire des Monts-et-Marées",[[0,0,1,1,0,1,4,2,5,1],[0,0,110,114,0,157,603,224,680,130],[5,1,2,1,1,2,3,0,0,0],[504,105,330,142,157,357,423,0,0,0],1],[[0,0,0,0,0,0,1,2,0,1],[0,0,0,0,0,0,677,994,0,57],[0,1,2,1,0,0,0,0,0,0],[0,677,994,57,0,0,0,0,0,0],0]],["712000","Centre de services scolaire des Phares",[[1,2,2,2,2,1,0,4,3,2],[378,509,533,421,671,245,0,935,427,381],[6,5,5,3,0,0,0,0,0,0],[1467,945,1204,884,0,0,0,0,0,0],2],[[1,0,0,2,0,1,0,2,0,0],[46,0,0,2695,0,69,0,967,0,0],[5,1,0,0,0,0,0,0,0,0],[2843,934,0,0,0,0,0,0,0,0],4]],["713000","Centre de services scolaire du Fleuve-et-des-Lacs",[[0,1,1,0,1,2,4,1,2,0],[0,62,156,0,130,284,482,65,297,0],[8,4,0,0,0,0,0,0,0,0],[845,631,0,0,0,0,0,0,0,0],0],[[0,0,0,1,0,3,0,0,1,1],[0,0,0,375,0,706,0,0,82,201],[6,0,0,0,0,0,0,0,0,0],[1364,0,0,0,0,0,0,0,0,0],0]],["714000","Centre de services scolaire de Kamouraska-Rivière-du-Loup",[[3,0,1,1,4,2,2,2,0,0],[627,0,334,138,873,459,516,302,0,0],[7,2,4,0,1,0,1,0,0,0],[1549,407,840,0,263,0,190,0,0,0],0],[[0,0,0,1,0,2,0,0,0,0],[0,0,0,1649,0,787,0,0,0,0],[2,0,1,0,0,0,0,0,0,0],[1977,0,459,0,0,0,0,0,0,0],1]],["721000","Centre de services scolaire du Pays-des-Bleuets",[[0,1,1,2,4,4,2,2,2,0],[0,287,236,563,796,700,112,265,158,0],[12,5,1,0,0,0,0,0,0,0],[1621,1254,242,0,0,0,0,0,0,0],0],[[0,0,0,3,0,1,0,0,0,0],[0,0,0,2297,0,546,0,0,0,0],[4,0,0,0,0,0,0,0,0,0],[2843,0,0,0,0,0,0,0,0,0],0]],["722000","Centre de services scolaire du Lac-Saint-Jean",[[1,1,3,1,2,3,4,1,3,0],[212,172,641,64,412,787,573,60,388,0],[2,1,2,3,1,2,6,2,0,0],[273,172,260,798,212,249,1043,302,0,0],1],[[1,0,0,1,1,0,1,0,0,0],[439,0,0,1109,749,0,476,0,0,0],[0,0,0,1,1,2,0,0,0,0],[0,0,0,439,476,1858,0,0,0,0],0]],["723000","Centre de services scolaire des Rives-du-Saguenay",[[3,5,4,3,5,3,1,0,0,2],[816,894,1018,667,1418,636,220,0,0,107],[3,3,6,4,6,1,2,0,1,0],[584,647,1549,637,1465,269,405,0,220,0],3],[[0,1,1,1,0,0,0,0,0,1],[0,2114,1662,873,0,0,0,0,0,86],[0,2,1,1,0,0,0,0,0,0],[0,959,1662,2114,0,0,0,0,0,0],0]],["724000","Centre de services scolaire De La Jonquière",[[4,0,3,1,3,2,1,2,1,0],[975,0,690,219,819,567,129,570,64,0],[1,1,3,3,3,1,3,2,0,0],[77,272,483,732,723,276,900,570,0,0],1],[[1,0,0,1,0,0,0,0,0,0],[1519,0,0,1899,0,0,0,0,0,0],[0,0,1,0,0,1,0,0,0,0],[0,0,1519,0,0,1899,0,0,0,0],0]],["731000","Centre de services scolaire de Charlevoix",[[0,0,0,1,0,2,0,1,0,0],[0,0,0,504,0,572,0,484,0,0],[0,2,1,1,0,0,0,0,0,0],[0,720,484,356,0,0,0,0,0,0],0],[[0,0,0,1,0,1,0,0,0,0],[0,0,0,609,0,717,0,0,0,0],[1,1,0,0,0,0,0,0,0,0],[609,717,0,0,0,0,0,0,0,0],1]],["732000","Centre de services scolaire de la Capitale",[[9,12,5,3,1,3,2,1,5,5],[4137,4441,1234,1338,332,975,526,169,1543,1499],[5,5,4,3,5,2,3,5,5,9],[2036,1677,1561,1551,1832,746,1004,1685,1534,2568],1],[[3,1,1,1,0,3,0,0,2,1],[4925,47,1630,125,0,2290,0,0,1335,418],[1,2,0,1,1,1,0,2,1,3],[125,2662,0,2263,47,1630,0,1421,869,1753],0]],["733000","Centre de services scolaire des Découvreurs",[[12,1,1,3,0,1,1,0,0,0],[5044,300,468,1376,0,319,363,0,0,0],[2,3,3,2,2,1,2,3,1,0],[731,969,1239,1212,829,364,884,1279,363,0],1],[[3,2,0,0,0,0,0,0,0,0],[3493,2261,0,0,0,0,0,0,0,0],[0,2,0,0,0,1,1,1,0,0],[0,1801,0,0,0,1692,36,2225,0,0],1]],["734000","Centre de services scolaire des Premières-Seigneuries",[[11,7,3,6,6,2,1,0,1,0],[4970,3017,1089,2532,2995,703,508,0,348,0],[6,6,5,5,3,5,6,0,1,0],[2916,2440,1924,2359,1354,1844,2977,0,348,0],1],[[3,4,4,0,0,0,0,0,0,0],[3976,3586,4316,0,0,0,0,0,0,0],[1,1,2,0,4,3,0,0,0,0],[1200,959,3017,0,5291,1411,0,0,0,0],1]],["735000","Centre de services scolaire de Portneuf",[[2,3,3,1,1,1,1,0,0,0],[602,764,1164,855,163,89,127,0,0,0],[10,1,1,0,0,0,0,0,0,0],[3308,163,293,0,0,0,0,0,0,0],2],[[1,1,1,0,0,0,0,0,0,0],[1326,593,798,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0,0],[2717,0,0,0,0,0,0,0,0,0],0]],["741000","Centre de services scolaire du Chemin-du-Roy",[[2,1,3,2,3,5,3,5,8,6],[946,443,1215,545,927,1282,797,929,1654,1281],[5,3,0,1,5,3,8,6,4,3],[1422,850,0,251,1565,487,2585,1602,786,471],0],[[0,0,0,0,1,2,0,1,2,1],[0,0,0,0,2058,3379,0,68,1909,648],[1,0,0,0,0,2,2,2,0,0],[422,0,0,0,0,2706,3025,1909,0,0],0]],["742000","Centre de services scolaire de l'Énergie",[[0,2,1,0,4,4,3,2,4,7],[0,652,190,0,850,705,627,323,784,1177],[4,2,5,1,5,5,2,1,1,1],[636,841,660,207,815,1121,455,149,194,230],1],[[0,0,0,0,1,0,2,1,1,1],[0,0,0,0,1131,0,1295,64,910,456],[0,1,0,1,1,1,1,1,0,0],[0,607,0,1131,456,688,64,910,0,0],2]],["751000","Centre de services scolaire des Hauts-Cantons",[[1,0,2,3,1,4,5,5,4,1],[144,0,306,158,217,631,655,672,310,85],[4,7,5,8,1,1,0,0,0,0],[415,518,724,1026,68,427,0,0,0,0],1],[[0,0,0,1,0,1,1,1,0,0],[0,0,0,758,0,85,907,745,0,0],[0,3,1,0,0,0,0,0,0,0],[0,1750,745,0,0,0,0,0,0,0],0]],["752000","Centre de services scolaire de la Région-de-Sherbrooke",[[4,7,4,7,1,3,5,1,2,5],[1163,2610,1241,2197,272,652,1262,217,959,1181],[3,4,4,4,3,6,6,4,3,2],[1128,823,1479,961,949,2174,1753,1309,768,410],1],[[0,1,1,0,1,1,0,1,1,0],[0,2543,1693,0,141,250,0,1911,1296,0],[0,0,1,0,0,0,4,1,0,0],[0,0,2543,0,0,0,3995,1296,0,0],3]],["753000","Centre de services scolaire des Sommets",[[2,1,1,3,3,5,3,4,3,3],[303,163,116,889,215,754,430,750,248,477],[6,14,3,4,0,0,0,1,0,0],[754,2269,578,525,0,0,0,219,0,0],0],[[0,0,0,0,1,0,2,0,1,0],[0,0,0,0,1747,0,960,0,640,0],[3,0,0,0,0,1,0,0,0,0],[2707,0,0,0,0,640,0,0,0,0],0]],["761000","Centre de services scolaire de la Pointe-de-l'Île",[[0,0,0,1,1,3,2,13,8,15],[0,0,0,366,399,1437,739,6029,3030,7764],[0,0,0,0,1,0,1,9,13,19],[0,0,0,0,849,0,473,3205,6115,9122],0],[[0,0,0,0,0,0,2,1,4,5],[0,0,0,0,0,0,2725,1421,5011,5633],[0,0,0,0,0,0,0,2,4,6],[0,0,0,0,0,0,0,2725,2767,9298],2]],["762000","Centre de services scolaire de Montréal",[[2,4,9,7,12,8,15,21,25,25],[535,1558,3010,2215,3442,2446,5259,6979,7475,8702],[0,0,0,0,0,0,8,20,43,57],[0,0,0,0,0,0,2296,6284,13856,19185],3],[[0,0,0,1,2,1,3,5,6,11],[0,0,0,1383,591,1242,4283,3992,5185,11348],[0,0,0,0,0,0,0,2,10,17],[0,0,0,0,0,0,0,1493,9493,17038],3]],["763000","Centre de services scolaire Marguerite-Bourgeoys",[[2,7,9,7,2,6,10,14,10,8],[542,3081,3038,3172,691,1894,2884,4777,3322,2707],[0,0,0,2,2,1,6,17,23,24],[0,0,0,573,602,167,2116,6645,7968,8037],1],[[0,1,1,2,2,2,1,3,3,2],[0,988,1319,1640,2286,2975,119,3059,2398,3399],[0,0,0,0,0,0,0,4,6,7],[0,0,0,0,0,0,0,4671,5964,7548],1]],["771000","Centre de services scolaire des Draveurs",[[2,1,1,3,5,5,3,3,2,5],[681,380,249,959,1465,1929,1257,735,699,1150],[1,3,2,1,2,7,5,1,3,5],[334,830,737,249,536,2378,1832,460,770,1378],0],[[0,0,0,1,1,1,0,0,1,0],[0,0,0,1311,1071,3404,0,0,1981,0],[0,0,0,1,1,0,1,0,1,0],[0,0,0,1311,1071,0,3404,0,1981,0],1]],["772000","Centre de services scolaire des Portages-de-l'Outaouais",[[2,2,7,3,5,2,3,0,0,4],[985,828,2696,1060,1960,544,1068,0,0,1024],[0,0,1,2,1,6,2,11,0,5],[0,0,443,864,368,2086,751,4276,0,1377],1],[[0,2,1,0,0,2,0,1,0,0],[0,1871,1740,0,0,1800,0,1263,0,0],[0,0,0,0,1,1,1,1,2,0],[0,0,0,0,256,916,1740,955,2807,0],2]],["773000","Centre de services scolaire au Coeur-des-Vallées",[[0,0,0,1,0,2,5,1,3,5],[0,0,0,323,0,715,1287,224,493,832],[2,2,5,3,2,1,1,0,1,0],[352,345,1539,501,644,148,225,0,120,0],0],[[0,0,0,0,0,0,1,0,1,2],[0,0,0,0,0,0,1724,0,249,655],[0,0,2,1,0,1,0,0,0,0],[0,0,2335,249,0,44,0,0,0,0],1]],["774000","Centre de services scolaire des Hauts-Bois-de-l'Outaouais",[[0,0,0,0,0,0,0,0,0,3],[0,0,0,0,0,0,0,0,0,1396],[0,0,0,1,0,0,0,2,0,0],[0,0,0,347,0,0,0,1049,0,0],0],[[0,0,0,0,0,0,0,0,0,3],[0,0,0,0,0,0,0,0,0,969],[0,0,1,0,0,0,0,1,1,0],[0,0,175,0,0,0,0,489,305,0],0]],["781000","Centre de services scolaire du Lac-Témiscamingue",[[0,1,1,0,0,0,1,2,2,1],[0,248,91,0,0,0,104,125,198,52],[0,1,0,0,0,1,3,1,1,1],[0,104,0,0,0,93,216,248,52,105],0],[[0,0,0,1,0,0,0,1,0,2],[0,0,0,341,0,0,0,284,0,111],[0,0,0,0,0,1,0,1,1,1],[0,0,0,0,0,284,0,341,34,77],0]],["782000","Centre de services scolaire de Rouyn-Noranda",[[1,0,3,1,3,3,1,1,0,0],[87,0,535,375,414,816,455,66,0,0],[4,0,0,4,2,2,1,0,0,0],[521,0,0,908,676,188,455,0,0,0],1],[[0,0,0,2,0,0,0,0,0,0],[0,0,0,2383,0,0,0,0,0,0],[0,0,2,0,0,0,0,0,0,0],[0,0,2383,0,0,0,0,0,0,0],0]],["783000","Centre de services scolaire Harricana",[[0,0,1,0,0,1,5,1,1,3],[0,0,79,0,0,87,977,101,111,240],[1,1,0,5,2,1,2,0,0,0],[101,87,0,748,341,125,193,0,0,0],1],[[0,0,0,0,0,0,1,1,0,0],[0,0,0,0,0,0,85,1476,0,0],[0,0,1,1,0,0,0,0,0,0],[0,0,85,1476,0,0,0,0,0,0],0]],["784000","Centre de services scolaire de l'Or-et-des-Bois",[[0,0,0,0,2,1,1,6,2,2],[0,0,0,0,450,259,70,891,638,534],[1,1,0,5,3,1,1,1,1,0],[148,326,0,762,555,215,302,300,234,0],1],[[0,0,0,0,0,0,0,3,0,1],[0,0,0,0,0,0,0,2076,0,192],[1,0,0,0,0,2,0,0,1,0],[396,0,0,0,0,1680,0,0,192,0],0]],["785000","Centre de services scolaire du Lac-Abitibi",[[0,0,0,0,0,1,0,2,2,1],[0,0,0,0,0,165,0,372,628,210],[0,1,0,0,1,4,0,0,0,0],[0,163,0,0,209,1003,0,0,0,0],0],[[0,0,0,0,0,0,1,1,1,1],[0,0,0,0,0,0,102,129,854,47],[0,1,0,0,1,2,0,0,0,0],[0,129,0,0,854,149,0,0,0,0],0]],["791000","Centre de services scolaire de l'Estuaire",[[2,1,0,0,1,2,1,4,2,3],[342,241,0,0,99,314,33,410,254,282],[0,1,2,3,2,3,4,1,0,0],[0,241,368,207,288,325,383,163,0,0],3],[[0,0,0,1,0,0,1,1,0,1],[0,0,0,700,0,0,266,603,0,194],[0,0,1,0,1,1,0,1,0,0],[0,0,700,0,266,603,0,194,0,0],0]],["792000","Centre de services scolaire du Fer",[[1,2,0,0,3,0,0,2,1,3],[193,90,0,0,515,0,0,566,132,553],[11,1,0,0,0,0,0,0,0,0],[1859,190,0,0,0,0,0,0,0,0],1],[[1,0,0,0,0,0,0,1,1,0],[142,0,0,0,0,0,0,1126,371,0],[3,0,0,0,0,0,0,0,0,0],[1639,0,0,0,0,0,0,0,0,0],1]],["793000","Centre de services scolaire de la Moyenne-Côte-Nord",[[0,0,0,0,0,0,2,0,0,2],[0,0,0,0,0,0,208,0,0,97],[0,4,0,0,0,0,0,0,0,0],[0,305,0,0,0,0,0,0,0,0],0],[[0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,246],[1,0,0,0,0,0,0,0,0,0],[246,0,0,0,0,0,0,0,0,0],1]],["801000","Centre de services scolaire de la Baie-James",[[0,0,0,0,1,1,2,0,0,3],[0,0,0,0,150,186,328,0,0,216],[7,0,0,0,0,0,0,0,0,0],[880,0,0,0,0,0,0,0,0,0],1],[[0,0,0,1,0,1,0,0,0,2],[0,0,0,132,0,421,0,0,0,146],[4,0,0,0,0,0,0,0,0,0],[699,0,0,0,0,0,0,0,0,0],1]],["811000","Centre de services scolaire des Îles",[[0,1,1,0,1,0,0,0,0,2],[0,116,221,0,137,0,0,0,0,106],[4,1,0,0,0,0,0,0,0,0],[509,71,0,0,0,0,0,0,0,0],0],[[0,0,0,1,0,0,0,0,0,0],[0,0,0,421,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0],[421,0,0,0,0,0,0,0,0,0],0]],["812000","Centre de services scolaire des Chic-Chocs",[[0,0,1,1,0,1,0,1,2,7],[0,0,444,34,0,166,0,62,84,590],[8,3,2,0,0,0,0,0,0,0],[905,309,166,0,0,0,0,0,0,0],2],[[0,0,0,0,2,0,0,1,0,3],[0,0,0,0,657,0,0,61,0,431],[5,1,0,0,0,0,0,0,0,0],[1089,60,0,0,0,0,0,0,0,0],1]],["813000","Centre de services scolaire René-Lévesque",[[0,0,0,2,1,3,1,1,5,7],[0,0,0,153,189,308,85,249,548,598],[3,3,6,4,1,0,2,1,0,0],[472,450,506,362,61,0,164,115,0,0],1],[[0,0,0,0,1,0,1,1,1,3],[0,0,0,0,323,0,559,133,81,763],[3,1,0,1,0,1,1,0,0,0],[849,323,0,318,0,236,133,0,0,0],0]],["821000","Centre de services scolaire de la Côte-du-Sud",[[6,5,1,3,2,3,1,3,2,3],[830,888,58,815,163,474,216,227,522,272],[15,5,4,1,0,2,2,0,0,0],[2233,830,581,75,0,422,324,0,0,0],3],[[1,1,2,0,1,0,0,1,0,2],[574,336,546,0,805,0,0,374,0,417],[5,1,1,1,0,0,0,0,0,0],[1610,263,805,374,0,0,0,0,0,0],0]],["822000","Centre de services scolaire des Appalaches",[[0,2,2,1,1,5,4,0,2,1],[0,314,500,160,104,479,918,0,142,55],[2,4,2,3,3,3,1,0,0,0],[176,319,293,309,576,761,238,0,0,0],1],[[0,0,0,1,1,0,1,0,0,0],[0,0,0,573,1115,0,561,0,0,0],[0,0,1,1,1,0,0,0,0,0],[0,0,561,573,1115,0,0,0,0,0],0]],["823000","Centre de services scolaire de la Beauce-Etchemin",[[5,6,11,4,3,5,3,3,3,2],[403,1505,2321,1159,705,694,565,688,606,131],[18,6,9,3,4,1,3,1,0,0],[3180,1536,1522,626,1123,232,326,232,0,0],0],[[0,1,3,3,0,0,1,0,0,0],[0,1044,3083,2504,0,0,788,0,0,0],[4,2,2,0,0,0,0,0,0,0],[4127,1123,2169,0,0,0,0,0,0,0],0]],["824000","Centre de services scolaire des Navigateurs",[[20,5,3,4,2,3,0,1,0,0],[6157,2555,1520,1687,844,631,0,287,0,0],[5,4,7,6,6,5,2,3,0,0],[2072,1215,1911,1487,2175,3011,386,1424,0,0],1],[[7,2,0,0,1,0,0,0,0,0],[6291,2277,0,0,723,0,0,0,0,0],[0,3,3,0,1,2,0,1,0,0],[0,1796,3234,0,708,2448,0,1105,0,0],1]],["831000","Centre de services scolaire de Laval",[[2,4,6,7,13,6,8,3,7,6],[691,1108,2149,2211,4976,2323,2533,1240,2929,3265],[1,1,4,7,8,15,9,6,7,4],[388,338,1133,2686,2755,5012,3235,2285,3675,1918],0],[[0,1,0,0,5,2,0,2,2,2],[0,1337,0,0,7030,2444,0,437,3073,3206],[0,0,0,0,3,1,4,3,3,0],[0,0,0,0,3952,2626,4233,1629,5087,0],1]],["841000","Centre de services scolaire des Affluents",[[5,7,8,6,9,9,4,3,3,0],[2193,3377,3354,2257,3027,2591,1203,1482,1218,0],[1,5,8,13,16,8,1,2,0,0],[567,2171,3233,4252,5880,3534,377,688,0,0],0],[[0,2,5,6,2,0,0,1,0,0],[0,3392,6167,4391,2002,0,0,1230,0,0],[1,1,4,4,5,1,0,0,0,0],[523,2071,5263,3581,3821,1923,0,0,0,0],0]],["842000","Centre de services scolaire des Samares",[[0,1,2,2,3,2,5,6,13,19],[0,323,713,634,504,579,1101,1803,5205,4356],[7,12,8,9,1,8,4,2,2,0],[2348,3212,1547,2774,708,1411,1577,999,642,0],2],[[0,0,0,0,0,0,0,3,2,7],[0,0,0,0,0,0,0,4316,1221,4701],[1,2,0,4,0,3,2,0,0,0],[699,2275,0,4421,0,425,2418,0,0,0],0]],["851000","Centre de services scolaire des Mille-Îles",[[4,10,11,14,7,7,2,5,1,1],[969,3463,3872,5676,1956,2110,622,1635,302,341],[3,2,8,16,13,9,6,4,1,0],[657,816,2769,5276,4261,3332,2328,1166,341,0],2],[[1,3,5,1,1,2,1,0,0,0],[1073,2556,7265,1831,1156,2281,75,0,0,0],[0,3,1,1,3,3,3,0,0,0],[0,3145,1156,1071,2996,5842,2027,0,0,0],1]],["852000","Centre de services scolaire de la Rivière-du-Nord",[[0,4,1,0,5,5,10,6,7,6],[0,1098,323,0,2017,1298,3703,1796,2215,1717],[0,8,6,2,9,2,10,4,3,0],[0,2700,1868,754,2931,1017,3093,1210,594,0],1],[[0,0,0,0,1,2,3,2,2,0],[0,0,0,0,918,2057,4328,1783,1811,0],[0,0,1,2,1,3,3,0,0,0],[0,0,61,2514,918,5326,2078,0,0,0],1]],["853000","Centre de services scolaire des Laurentides",[[0,0,1,1,2,3,5,0,5,1],[0,0,419,426,291,1049,1453,0,556,167],[0,1,4,5,3,1,2,1,1,0],[0,426,1215,1279,650,376,177,167,71,0],1],[[0,0,0,0,1,0,1,2,0,0],[0,0,0,0,1255,0,1062,1168,0,0],[0,0,1,2,0,0,1,0,0,0],[0,0,1255,2103,0,0,127,0,0,0],1]],["854000","Centre de services scolaire des Hautes-Laurentides",[[0,0,0,1,0,0,0,2,3,3],[0,0,0,158,0,0,0,379,577,696],[1,2,0,1,2,2,1,0,0,0],[230,337,0,290,257,494,202,0,0,0],0],[[0,0,0,0,0,0,0,0,0,2],[0,0,0,0,0,0,0,0,0,1532],[0,0,1,0,0,0,1,0,0,0],[0,0,1381,0,0,0,151,0,0,0],0]],["861000","Centre de services scolaire de Sorel-Tracy",[[1,0,1,0,0,3,3,2,3,1],[210,0,307,0,0,757,782,192,497,205],[3,0,2,0,2,0,2,3,1,1],[322,0,386,0,403,0,627,658,349,205],1],[[0,0,0,0,0,0,1,1,0,0],[0,0,0,0,0,0,789,1293,0,0],[0,0,0,0,0,0,0,2,0,0],[0,0,0,0,0,0,0,2082,0,0],1]],["862000","Centre de services scolaire de Saint-Hyacinthe",[[0,3,2,1,3,5,4,2,6,5],[0,795,277,155,929,1085,1159,536,1319,998],[7,5,3,4,3,2,4,0,1,2],[1131,934,643,1295,951,532,1237,0,242,288],0],[[0,0,0,0,1,0,1,2,2,0],[0,0,0,0,1114,0,1568,2187,951,0],[0,1,0,1,0,1,2,1,0,0],[0,835,0,1114,0,1568,2187,116,0,0],0]],["863000","Centre de services scolaire des Hautes-Rivières",[[2,6,3,3,2,6,5,5,3,1],[858,2913,911,683,787,1584,1025,1052,856,111],[8,7,5,6,2,2,3,3,0,0],[1542,2380,2074,1692,1039,411,717,925,0,0],0],[[0,0,2,2,2,1,1,0,0,0],[0,0,2903,1691,2322,812,75,0,0,0],[0,3,0,3,1,1,0,0,0,0],[0,3959,0,3225,75,544,0,0,0,0],0]],["864000","Centre de services scolaire Marie-Victorin",[[5,3,2,2,8,11,12,6,7,3],[2015,1354,1085,728,3541,3545,3859,2394,2496,1243],[0,0,1,5,2,4,6,14,17,10],[0,0,556,1614,649,1499,3298,4427,6559,3658],4],[[0,0,0,0,2,3,4,0,1,0],[0,0,0,0,3899,1470,7588,0,2062,0],[0,0,0,0,0,0,1,4,4,1],[0,0,0,0,0,0,2733,3897,6327,2062],2]],["865000","Centre de services scolaire des Patriotes",[[27,9,5,6,7,2,0,0,0,0],[9502,2949,1781,1994,2027,307,0,0,0,0],[18,21,12,2,1,1,1,0,0,0],[5163,7103,4351,732,642,303,266,0,0,0],1],[[6,3,0,1,0,0,0,0,0,0],[9698,3045,0,317,0,0,0,0,0,0],[5,4,1,0,0,0,0,0,0,0],[6148,5311,1601,0,0,0,0,0,0,0],1]],["866000","Centre de services scolaire du Val-des-Cerfs",[[2,4,0,2,4,2,8,4,6,6],[363,1291,0,560,965,609,1685,875,1574,1621],[4,5,7,6,4,3,6,2,1,0],[812,737,2248,1475,1185,513,1663,689,221,0],0],[[0,0,0,0,1,1,0,3,2,0],[0,0,0,0,1654,630,0,1981,2530,0],[0,1,2,1,2,0,1,0,0,0],[0,623,984,630,2916,0,1642,0,0,0],0]],["867000","Centre de services scolaire des Grandes-Seigneuries",[[7,4,5,5,6,3,2,6,3,0],[2556,1927,1987,1516,2254,1246,963,1571,457,0],[4,10,10,6,3,4,3,0,1,0],[1059,4077,3658,1219,1335,1494,1411,0,224,0],0],[[1,4,0,2,1,3,1,0,0,0],[446,4285,0,785,2837,1375,646,0,0,0],[2,3,1,4,0,1,1,0,0,0],[1223,2116,608,5936,0,65,426,0,0,0],0]],["868000","Centre de services scolaire de la Vallée-des-Tisserands",[[2,0,0,1,1,4,3,6,2,9],[332,0,0,246,201,925,682,1470,378,1706],[3,1,2,1,3,7,5,2,4,0],[498,122,276,222,586,2153,1014,251,818,0],1],[[0,0,0,0,0,1,0,0,2,1],[0,0,0,0,0,1090,0,0,992,1812],[0,1,0,0,1,1,0,1,0,0],[0,210,0,0,1090,782,0,1812,0,0],1]],["869000","Centre de services scolaire des Trois-Lacs",[[5,4,7,6,2,2,0,0,0,0],[1232,1311,2585,1790,816,594,0,0,0,0],[5,2,4,3,5,5,1,1,0,0],[1696,782,1035,1025,1215,1826,435,314,0,0],0],[[1,2,2,0,0,0,0,0,0,0],[1378,3424,1910,0,0,0,0,0,0,0],[1,1,1,0,2,0,0,0,0,0],[884,926,2540,0,2362,0,0,0,0,0],0]],["871000","Centre de services scolaire de la Riveraine",[[1,2,0,2,2,2,2,3,5,2],[54,391,0,328,483,204,343,325,566,166],[1,0,0,1,2,4,6,7,0,0],[301,0,0,92,229,574,549,1115,0,0],0],[[0,0,0,0,0,1,1,0,1,0],[0,0,0,0,0,755,893,0,364,0],[0,0,0,0,0,1,1,1,0,0],[0,0,0,0,0,755,893,364,0,0],1]],["872000","Centre de services scolaire des Bois-Francs",[[0,3,3,5,4,4,4,4,1,2],[0,426,721,1384,903,1059,922,686,140,190],[4,3,7,4,5,5,0,1,1,0],[563,695,1298,682,1677,1204,0,193,119,0],1],[[0,0,0,2,3,2,1,1,0,0],[0,0,0,2913,1750,544,88,143,0,0],[1,2,0,3,2,1,0,0,0,0],[1140,656,0,2711,843,88,0,0,0,0],2]],["873000","Centre de services scolaire des Chênes",[[0,1,0,3,4,6,4,7,4,3],[0,267,0,870,1163,1654,622,1821,866,513],[2,5,2,3,7,4,3,4,2,0],[213,637,452,1195,1763,1563,814,697,442,0],1],[[0,0,0,0,0,1,2,1,1,0],[0,0,0,0,0,1103,2848,1182,889,0],[0,1,0,0,1,0,3,0,0,0],[0,1103,0,0,1630,0,3289,0,0,0],1]],["881000","Commission scolaire Central Québec",[[0,2,3,2,1,1,2,0,0,2],[0,424,681,620,151,313,245,0,0,183],[4,0,0,1,3,3,2,0,0,0],[579,0,0,263,800,406,569,0,0,0],0],[[1,1,2,1,0,0,2,0,0,2],[668,411,320,94,0,0,290,0,0,126],[2,0,1,2,1,2,1,0,0,0],[214,0,164,762,68,510,191,0,0,0],0]],["882000","Commission scolaire Eastern Shores",[[0,0,0,0,0,1,0,2,1,2],[0,0,0,0,0,95,0,144,32,85],[3,1,1,0,1,0,0,0,0,0],[246,37,41,0,32,0,0,0,0,0],7],[[0,0,0,0,0,0,1,0,2,1],[0,0,0,0,0,0,107,0,141,78],[4,0,0,0,0,0,0,0,0,0],[326,0,0,0,0,0,0,0,0,0],5]],["883000","Commission scolaire Eastern Townships",[[0,2,0,1,2,2,5,4,3,0],[0,165,0,248,450,358,494,812,356,0],[0,2,3,7,1,5,1,0,0,0],[0,432,371,569,51,1295,165,0,0,0],1],[[0,0,0,1,0,0,0,2,0,0],[0,0,0,849,0,0,0,1114,0,0],[0,0,1,1,1,0,0,0,0,0],[0,0,364,750,849,0,0,0,0,0],1]],["884000","Commission scolaire Riverside",[[1,2,6,1,1,5,3,0,0,0],[226,424,1665,103,444,1072,685,0,0,0],[0,3,3,1,2,1,3,5,1,0],[0,583,692,292,849,103,368,1443,289,0],0],[[0,1,0,1,1,2,0,0,0,0],[0,1747,0,341,332,1113,0,0,0,0],[0,0,0,0,2,0,0,2,1,0],[0,0,0,0,2088,0,0,1388,57,0],0]],["885000","Commission scolaire Sir-Wilfrid-Laurier",[[0,0,2,8,2,4,2,6,2,1],[0,0,657,2397,391,547,593,1047,360,202],[0,0,0,9,7,6,4,0,1,0],[0,0,0,1635,2018,1597,742,0,202,0],0],[[0,0,1,1,0,2,3,0,1,0],[0,0,1144,427,0,871,1934,0,282,0],[0,0,1,0,3,1,3,0,0,0],[0,0,138,0,1853,566,2101,0,0,0],1]],["886000","Commission scolaire Western Québec",[[0,1,1,4,0,0,2,2,6,3],[0,244,336,1059,0,0,594,589,451,312],[1,0,2,1,1,5,4,2,1,2],[93,0,316,156,70,1089,742,466,438,215],0],[[0,0,2,0,0,3,0,0,2,4],[0,0,1081,0,0,1356,0,0,624,309],[1,0,0,0,0,2,3,4,0,1],[79,0,0,0,0,120,1263,1848,0,60],1]],["887000","Commission scolaire English-Montréal",[[0,1,3,1,1,7,4,4,8,3],[0,218,751,348,289,2336,951,755,1677,446],[0,0,0,0,0,1,1,4,14,12],[0,0,0,0,0,289,377,1355,3195,2555],5],[[0,0,1,1,1,4,2,4,3,3],[0,0,881,442,70,1761,491,1214,1948,378],[0,0,0,0,0,0,0,4,6,9],[0,0,0,0,0,0,0,2623,2504,2058],11]],["888000","Commission scolaire Lester-B.-Pearson",[[1,6,12,3,3,1,3,5,1,0],[224,1702,2748,1012,628,273,817,1212,166,0],[0,3,0,3,1,3,10,8,3,4],[0,923,0,864,400,604,2295,1883,920,893],3],[[3,2,1,0,1,1,1,2,0,0],[2146,2003,1271,0,82,721,411,969,0,0],[0,2,0,0,1,0,1,4,2,1],[0,1170,0,0,905,0,976,3172,1158,222],3]],["889000","Commission scolaire New Frontiers",[[0,0,0,0,2,0,3,1,3,1],[0,0,0,0,516,0,653,171,384,186],[0,0,2,3,0,1,4,0,0,0],[0,0,349,460,0,229,872,0,0,0],0],[[0,0,0,0,0,1,0,0,0,1],[0,0,0,0,0,746,0,0,0,718],[0,0,0,0,1,0,1,0,0,0],[0,0,0,0,746,0,718,0,0,0],0]]];
+const META = {"archive":"2026-11-08","annee_scolaire":"2025-2026","csv_modifies":{"primaire":"2026-05-26T22:55:03.644737","secondaire":"2026-05-26T22:55:06.886376"},"controles":{"primaire":{"lignes":1963,"diffusees":1895},"secondaire":{"lignes":527,"diffusees":464},"codes_dans_les_deux_fichiers":128,"nb_css":69,"annee_scolaire":"2025-2026"},"totaux":{"primaire":{"effectif":524840,"IMSE":{"ecoles":[163,160,173,165,180,206,207,206,218,217],"effectif":[52497,52288,52825,52461,52526,52574,52072,52740,52319,52538],"part_effectif_min":9.9,"part_effectif_max":10.1},"SFR":{"ecoles":[251,209,198,205,175,178,188,167,163,161],"effectif":[52416,52466,52427,52452,52571,52328,52449,52447,52669,52615],"part_effectif_min":10.0,"part_effectif_max":10.0},"imse_8_10":{"ecoles":641,"effectif":157597,"part":30.0}},"secondaire":{"effectif":392155,"IMSE":{"ecoles":[35,36,36,46,39,54,46,55,49,68],"effectif":[38140,39860,39729,37858,39818,39800,38720,39763,39190,39277],"part_effectif_min":9.7,"part_effectif_max":10.2},"SFR":{"ecoles":[72,48,39,39,43,45,43,46,43,46],"effectif":[39119,39160,38901,39123,37652,40024,39850,38665,39545,40116],"part_effectif_min":9.6,"part_effectif_max":10.2},"imse_8_10":{"ecoles":172,"effectif":118230,"part":30.1}}},"publies":{"primaire":{"ecoles":675,"effectif":158089,"part":"30,1"},"secondaire":{"ecoles":204,"effectif":118906,"part":"30,2"}},"verif_pdf":{"pdf":"indices-defavorisation-ecoles-2025-2026.pdf","archive":"2026-11-08","primaire":{"ecoles_csv":1895,"ecoles_pdf":1895,"absentes_du_pdf":[],"absentes_du_csv":[],"ecarts":[]},"secondaire":{"ecoles_csv":464,"ecoles_pdf":464,"absentes_du_pdf":[],"absentes_du_csv":[],"ecarts":[]}}};
+
+const $ = id => document.getElementById(id);
+const fmtNb = new Intl.NumberFormat("fr-CA", { maximumFractionDigits: 0 });
+const fmtDec = new Intl.NumberFormat("fr-CA", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s.slice(0, 10) + "T00:00:00Z")).replace(/^1 /, "1er ");
+const pct = (n, d) => d ? `${fmtDec.format(100 * n / d)} %` : "—";
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const sansAccents = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const RANGS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const INDICES = ["IMSE", "SFR"];
+const C = META.controles, T = META.totaux, AN = META.annee_scolaire;
+const ecoles = n => `${fmtNb.format(n)} école${n > 1 ? "s" : ""}`;
+const eleves = n => `${fmtNb.format(n)} élève${n > 1 ? "s" : ""}`;
+
+// DONNEES : [code, nom, primaire, secondaire] ; chaque ordre : [écoles IMSE[10], effectif IMSE[10], écoles SFR[10], effectif SFR[10], non diffusées].
+const CSS = DONNEES.map(([code, nom, p, s]) => ({ code, nom, cle: sansAccents(nom), primaire: p, secondaire: s }));
+const COLLATION = new Intl.Collator("fr-CA", { sensitivity: "base" });
+
+// ---------------------------------------------------------------- textes
+const P = C.primaire, S = C.secondaire;
+$("chapeau").innerHTML = `Le ministère de l'Éducation situe les écoles publiques primaires et secondaires sur une échelle de rangs déciles allant de 1 à 10, selon deux indices de défavorisation calculés à partir du recensement canadien de 2021. Pour l'année scolaire ${AN}, ses fichiers comptent <strong>${fmtNb.format(P.lignes)} écoles primaires et ${fmtNb.format(S.lignes)} écoles secondaires</strong>, dont ${fmtNb.format(P.diffusees)} et ${fmtNb.format(S.diffusees)} avec des indices publiés, réparties entre ${C.nb_css} centres de services scolaires et commissions scolaires.`;
+$("fraicheur").textContent = `Année scolaire ${AN}, telle que publiée par le ministère ; fichiers extraits le ${dateFr(META.archive)}. Il s'agit d'une édition datée : elle ne décrit pas les années suivantes.`;
+$("note-rangs").textContent = `Selon le document PDF du ministère pour ${AN}, « les écoles sont classées sur une échelle allant de 1 à 10, le rang 1 étant considéré comme le moins défavorisé et le rang 10 comme le plus défavorisé ». Selon sa page Québec.ca, les indices sont « regroupés en rangs déciles (chaque rang comprenant 10 % des élèves) de manière à situer la place relative de l'école parmi l'ensemble des écoles publiques », distinctement pour le primaire et pour le secondaire.`;
+$("bref-date").textContent = `Année scolaire ${AN} ; effectif au 30 septembre 2025 ; données extraites le ${dateFr(META.archive)}.`;
+$("bref-limite").textContent = `${fmtNb.format(P.lignes - P.diffusees)} écoles primaires et ${fmtNb.format(S.lignes - S.diffusees)} écoles secondaires figurent au fichier sans indice : selon le ministère, les écoles de moins de 30 élèves et les écoles institutionnelles avec entente MEQ-MSSS ne sont pas diffusées. Le ministère signale aussi des « changements majeurs dans le classement » par rapport aux années précédentes, avec le passage aux données du recensement de 2021.`;
+$("fiche-archive").textContent = `Version archivée : extraction du ${dateFr(META.archive)}, fichiers « defav_ecole_prim_public.csv » et « defav_ecole_sec_public.csv » (ressources modifiées le ${dateFr(META.csv_modifies.primaire)} selon Données Québec), avec le guide, la page Québec.ca et le PDF du ministère tels que téléchargés le même jour.`;
+$("fiche-fraicheur").textContent = `Les fichiers portent sur l'année scolaire ${AN} (colonne « Annee_Scol »). La fiche annonce une mise à jour annuelle. Selon le guide, les indices des écoles « sont mis à jour annuellement », tandis que les indices par unité de peuplement « sont calculés tous les cinq ans, à la suite du recensement de Statistique Canada ». Cette page décrit l'édition extraite le ${dateFr(META.archive)}, qui porte sur l'année scolaire ${AN} : elle ne décrit pas la situation actuelle des écoles.`;
+const li = t => `<li>${t}</li>`;
+$("fiche-compte").innerHTML = [
+  "Les données socio-économiques : selon la fiche, pour l'année scolaire " + AN + ", elles « sont extraites du recensement canadien de 2021 et portent sur la situation des familles québécoises ayant au moins un enfant âgé de 0 à 18 ans ». Ces familles sont rassemblées, selon leur position géographique, dans l'une des 3 857 unités de peuplement établies par le ministère.",
+  "Le calcul par école, selon la fiche : « Les élèves résidant dans une unité de peuplement amènent avec eux, à l'école qu'ils fréquentent, la valeur de l'indice de leur unité. L'indice par école correspond donc à la moyenne (pondérée) des indices amenés par les élèves. On procède ensuite au classement des écoles (rang décile) selon la valeur de l'indice. »",
+  "Le rang décile : de 1 (« le moins défavorisé ») à 10 (« le plus défavorisé »), selon le PDF du ministère ; chaque rang comprend 10 % des élèves, selon sa page Québec.ca. Les rangs sont établis séparément pour les écoles primaires (« sans le préscolaire », selon la page Québec.ca) et pour les écoles secondaires.",
+  "Une école : une entité administrative du réseau public. Selon le guide, « un organisme peut avoir plus d'un immeuble pour offrir son enseignement et les indices calculés pour une école rassemblent l'ensemble des informations de tous les immeubles associés à cette école ».",
+  "L'effectif : la colonne « Nbre_Eleves », que le guide décrit comme l'effectif « au 30 septembre de l'année scolaire concernée » et que le PDF du ministère intitule « Nombre d'élèves (30/09/2025) ».",
+  `Les territoires : les ${C.nb_css} centres de services scolaires et commissions scolaires linguistiques du fichier, avec le code et le nom publiés. Selon la fiche, aucun indice n'est calculé pour les commissions scolaires à statut particulier (crie, Kativik et du Littoral) ; le PDF du ministère ajoute les établissements d'enseignement privés et les écoles gouvernementales. Aucun territoire du fichier ne porte le nom de ces trois commissions scolaires.`,
+].map(li).join("");
+$("fiche-etapes").innerHTML = [
+  `Lecture des deux CSV tels qu'archivés, sans modification des valeurs : ${fmtNb.format(P.lignes)} lignes pour le primaire et ${fmtNb.format(S.lignes)} pour le secondaire, toutes conservées.`,
+  "Contrôles : colonnes attendues, codes d'école uniques dans chaque fichier, rangs compris entre 1 et 10, valeurs présentes pour toutes les écoles diffusées (« Diffusion » = OUI) et absentes pour les autres. Toute autre situation arrête le traitement.",
+  "Nom des centres de services : le fichier ajoute le code entre parenthèses à la fin du nom ; on le retire à l'affichage et on garde le code dans une colonne à part.",
+  "Répartitions : pour chaque centre de services, chaque ordre d'enseignement et chaque indice, nombre d'écoles diffusées et somme de leur effectif dans chaque rang. Les écoles non diffusées sont comptées à part.",
+  "Les barres montrent la part de chaque rang dans les écoles diffusées du territoire (ou dans leur effectif). Les parts sont calculées à l'affichage à partir des nombres entiers du fichier.",
+].map(li).join("");
+const TP = T.primaire, TS = T.secondaire;
+$("fiche-limites").innerHTML = [
+  `Les écoles non diffusées (${fmtNb.format(P.lignes - P.diffusees)} au primaire, ${fmtNb.format(S.lignes - S.diffusees)} au secondaire) figurent au fichier sans indice ni effectif. Selon le guide, il s'agit d'écoles « de moins de 30 élèves ou avec entente MEES-MSSS » ; le fichier ne dit pas laquelle de ces deux raisons s'applique à chaque école. Elles ne sont pas comprises dans les barres.`,
+  `Chaque rang regroupe environ 10 % des élèves, pas 10 % des écoles. Dans le fichier, le nombre d'écoles primaires diffusées va de ${fmtNb.format(Math.min(...TP.IMSE.ecoles))} à ${fmtNb.format(Math.max(...TP.IMSE.ecoles))} selon le rang de l'IMSE. La barre « Ensemble des écoles du fichier » sert de repère pour lire celles des territoires.`,
+  "Un territoire qui compte peu d'écoles a des barres faites de quelques segments seulement ; une seule école peut y représenter une grande part.",
+  `Selon la page Québec.ca, en ${AN}, « le passage aux données du recensement 2021 s'accompagne de changements majeurs dans le classement des écoles défavorisées, comparativement aux années précédentes ». Cette page ne compare pas les années.`,
+  "Le guide décrit la colonne de l'effectif comme l'« effectif scolaire au primaire » dans la table des écoles secondaires aussi. Le PDF du ministère intitule la colonne « Nombre d'élèves (30/09/2025) » pour les deux ordres ; nous la lisons comme l'effectif de l'école dans l'ordre du fichier.",
+  `${fmtNb.format(C.codes_dans_les_deux_fichiers)} codes d'école figurent à la fois dans le fichier du primaire et dans celui du secondaire. Les deux ordres sont présentés séparément, sans addition.`,
+].map(li).join("");
+const pub = META.publies, V = META.verif_pdf;
+const verifs = [];
+if (V) verifs.push(`Chacune des ${fmtNb.format(V.primaire.ecoles_csv)} écoles primaires et des ${fmtNb.format(V.secondaire.ecoles_csv)} écoles secondaires diffusées du CSV a été comparée à sa ligne du document PDF du ministère pour ${AN} : ${V.primaire.ecarts.length + V.secondaire.ecarts.length + V.primaire.absentes_du_pdf.length + V.secondaire.absentes_du_pdf.length + V.primaire.absentes_du_csv.length + V.secondaire.absentes_du_csv.length === 0 ? "mêmes écoles, mêmes rangs, même effectif et mêmes valeurs d'indice une fois arrondies aux deux décimales du PDF" : "des écarts ont été trouvés"}.`);
+verifs.push(`Le fichier compte ${C.nb_css} centres de services scolaires et commissions scolaires, le nombre indiqué dans la description de la fiche.`);
+verifs.push(`Dans le fichier, chaque rang regroupe entre ${fmtDec.format(Math.min(TP.IMSE.part_effectif_min, TP.SFR.part_effectif_min, TS.IMSE.part_effectif_min, TS.SFR.part_effectif_min))} % et ${fmtDec.format(Math.max(TP.IMSE.part_effectif_max, TP.SFR.part_effectif_max, TS.IMSE.part_effectif_max, TS.SFR.part_effectif_max))} % de l'effectif des écoles diffusées, selon l'ordre et l'indice, ce qui concorde avec les « 10 % des élèves » par rang de la page Québec.ca.`);
+if (pub.primaire) verifs.push(`La fiche indique que ${fmtNb.format(pub.primaire.ecoles)} écoles primaires et ${fmtNb.format(pub.secondaire.ecoles)} écoles secondaires « se retrouvent dans les déciles 8, 9 ou 10 d'après l'indice IMSE », avec ${eleves(pub.primaire.effectif)} et ${eleves(pub.secondaire.effectif)} (${pub.primaire.part} % et ${pub.secondaire.part} % de l'effectif du réseau public). Les CSV comptent ${fmtNb.format(TP.imse_8_10.ecoles)} et ${fmtNb.format(TS.imse_8_10.ecoles)} écoles diffusées dans ces rangs, avec ${eleves(TP.imse_8_10.effectif)} et ${eleves(TS.imse_8_10.effectif)} (${fmtDec.format(TP.imse_8_10.part)} % et ${fmtDec.format(TS.imse_8_10.part)} % de l'effectif des écoles diffusées). Les documents lus n'expliquent pas cet écart ; la page Québec.ca donne les mêmes chiffres que la fiche, avec 30,1 % pour les deux ordres.`);
+$("fiche-verifs").innerHTML = verifs.map(li).join("");
+$("fiche-citer").textContent = `Le Relevé, « Les indices de défavorisation des écoles », d'après le ministère de l'Éducation, Indices de défavorisation, ${AN} (CC-BY 4.0), extrait le ${dateFr(META.archive)}. https://le-releve.github.io/defavorisation/`;
+
+// ---------------------------------------------------------------- répartition
+let ordre = "primaire", indice = 0, mesure = 0, choisi = null;
+$("legende").innerHTML = `<span class="bout">Rang 1, le moins défavorisé</span>` +
+  RANGS.map(r => `<span><i style="background:var(--r${r})"></i>${r}</span>`).join("") +
+  `<span class="bout">Rang 10, le plus défavorisé</span>`;
+
+function valeurs(bloc) {       // bloc d'un ordre -> { parts[10], total, non }
+  const parts = bloc[indice * 2 + mesure];
+  return { parts, total: parts.reduce((s, v) => s + v, 0), non: bloc[4], ecoles: bloc[indice * 2].reduce((s, v) => s + v, 0) };
+}
+function ensemble() {
+  const parts = Array(10).fill(0); let non = 0, ecolesN = 0;
+  for (const c of CSS) {
+    const v = valeurs(c[ordre]);
+    v.parts.forEach((n, i) => parts[i] += n); non += v.non; ecolesN += v.ecoles;
+  }
+  return { parts, total: parts.reduce((s, v) => s + v, 0), non, ecoles: ecolesN };
+}
+const unite = n => mesure ? eleves(n) : ecoles(n);
+
+function barre(v) {
+  if (!v.total) return `<span class="barre vide" aria-hidden="true"></span>`;
+  return `<span class="barre" aria-hidden="true">${v.parts.map((n, i) => n ? `<span style="flex:${n} 1 0;background:var(--r${i + 1})"></span>` : "").join("")}</span>`;
+}
+function compte(v) {
+  const base = mesure ? `${eleves(v.total)}` : `${ecoles(v.ecoles)}`;
+  return v.non ? `${base}<br>+ ${fmtNb.format(v.non)} sans indice` : base;
+}
+function libelleAria(nom, v) {
+  if (!v.total) return `${nom} : aucune école diffusée`;
+  return `${nom} : ` + RANGS.map((r, i) => `rang ${r}, ${unite(v.parts[i])}`).join(" ; ") + (v.non ? ` ; ${ecoles(v.non)} sans indice` : "");
+}
+
+function rangee(id, nom, code, v, reference) {
+  return `<button type="button" class="rangee${reference ? " reference" : ""}${choisi === id ? " choisie" : ""}" data-id="${id}" aria-label="${echapper(libelleAria(nom, v))}">
+    <span class="nom">${echapper(nom)}${code ? ` <small>${code}</small>` : ""}</span>${barre(v)}<span class="compte">${compte(v)}</span></button>`;
+}
+
+function liste() {
+  const q = sansAccents($("chercher").value.trim());
+  let l = CSS.filter(c => !q || c.cle.includes(q) || c.code.startsWith(q));
+  if ($("tri").value === "nom") l = l.slice().sort((a, b) => COLLATION.compare(a.nom, b.nom));
+  return l;
+}
+
+function dessiner() {
+  const tout = ensemble();
+  const l = liste();
+  $("liste").innerHTML = rangee("ensemble", "Ensemble des écoles du fichier", "", tout, true) +
+    (l.length ? l.map(c => rangee(c.code, c.nom, c.code, valeurs(c[ordre]))).join("") : `<p class="vide-message">Aucun centre de services ne correspond à cette recherche.</p>`);
+  $("aide-liste").textContent = `${mesure ? "Longueur des segments : part de l'effectif au 30 septembre des écoles diffusées du territoire." : "Longueur des segments : part des écoles diffusées du territoire."} Survolez, touchez ou parcourez les rangées au clavier (Tab) pour lire les nombres ; le tableau plus bas les donne tous.`;
+  lire(choisi);
+  tableau(l);
+}
+
+function lire(id) {
+  const c = CSS.find(x => x.code === id);
+  const nom = c ? c.nom : "Ensemble des écoles du fichier";
+  const v = c ? valeurs(c[ordre]) : ensemble();
+  const quoi = `écoles ${ordre}s, ${INDICES[indice]}`;
+  if (!v.total) {
+    $("lecture").innerHTML = `<strong>${echapper(nom)}</strong> (${quoi}) : aucune école diffusée${v.non ? ` ; ${ecoles(v.non)} sans indice` : ""}.`;
+    return;
+  }
+  $("lecture").innerHTML = `<strong>${echapper(nom)}</strong> (${quoi}) : ${mesure ? `${eleves(v.total)} dans ${ecoles(v.ecoles)} ${v.ecoles > 1 ? "diffusées" : "diffusée"}` : `${ecoles(v.ecoles)} ${v.ecoles > 1 ? "diffusées" : "diffusée"}`}${v.non ? `, plus ${fmtNb.format(v.non)} sans indice` : ""}.
+    <div class="rangs">${RANGS.map((r, i) => `<span>Rang ${r} : ${fmtNb.format(v.parts[i])} (${pct(v.parts[i], v.total)})</span>`).join("")}</div>`;
+}
+
+function tableau(l) {
+  $("titre-tableau").textContent = `Écoles ${ordre}s, indice ${INDICES[indice]} : ${mesure ? "effectif au 30 septembre des écoles diffusées" : "nombre d'écoles diffusées"} par rang. Même ordre et même recherche que la liste.`;
+  $("tete-tableau").innerHTML = `<tr><th scope="col">Centre de services</th><th scope="col">Code</th>${RANGS.map(r => `<th scope="col">Rang ${r}</th>`).join("")}<th scope="col">Total</th><th scope="col">Écoles sans indice</th></tr>`;
+  const ligne = (nom, code, v) => `<tr><td>${echapper(nom)}</td><td>${code}</td>${v.parts.map(n => `<td>${fmtNb.format(n)}</td>`).join("")}<td>${fmtNb.format(v.total)}</td><td>${fmtNb.format(v.non)}</td></tr>`;
+  $("corps-tableau").innerHTML = ligne("Ensemble des écoles du fichier", "", ensemble()) + l.map(c => ligne(c.nom, c.code, valeurs(c[ordre]))).join("");
+}
+
+$("liste").addEventListener("pointerover", e => {
+  const b = e.target.closest(".rangee");
+  if (b) lire(b.dataset.id === "ensemble" ? null : b.dataset.id);
+});
+$("liste").addEventListener("pointerleave", () => lire(choisi));
+$("liste").addEventListener("focusin", e => {
+  const b = e.target.closest(".rangee");
+  if (b) lire(b.dataset.id === "ensemble" ? null : b.dataset.id);
+});
+$("liste").addEventListener("click", e => {
+  const b = e.target.closest(".rangee");
+  if (!b) return;
+  choisi = b.dataset.id === "ensemble" ? null : b.dataset.id;
+  document.querySelectorAll(".rangee").forEach(x => x.classList.toggle("choisie", x === b && choisi !== null));
+  lire(choisi);
+});
+const bascule = (attr, fixer) => document.querySelectorAll(`[data-${attr}]`).forEach(b => b.addEventListener("click", () => {
+  fixer(b.dataset[attr]);
+  document.querySelectorAll(`[data-${attr}]`).forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  dessiner();
+}));
+bascule("ordre", v => ordre = v);
+bascule("indice", v => indice = +v);
+bascule("mesure", v => mesure = +v);
+["tri", "chercher"].forEach(id => $(id).addEventListener("input", dessiner));
+dessiner();
+</script>
