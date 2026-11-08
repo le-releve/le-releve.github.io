@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Les établissements du marché du carbone</title>
+<style>
+/* Outil de consultation du Relevé (série 2026-11) : établissements assujettis au RSPEDE, nommés tels que publiés,
+   liste en ordre alphabétique (aucun palmarès, D-009, D-037), série annuelle avec ruptures de périmètre signalées,
+   puis « En bref » et fiche de transparence (D-013). */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --point-fond: #cdd3d8;
+  --repere: #b45309;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; --point-fond: #353b41; --repere: #f0a04b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; --point-fond: #353b41; --repere: #f0a04b; color-scheme: dark;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; }
+a { color: inherit; }
+
+.avis { border-left: 3px solid var(--repere); background: var(--surface); padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.avis strong { color: var(--ink); }
+
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.commandes label, .champ label { font-size: 13px; color: var(--ink-2); }
+.champ { display: flex; align-items: center; gap: 6px; min-width: 0; }
+input[type="search"], select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; min-width: 0; }
+input[type="search"] { width: min(300px, 100%); }
+select { max-width: 280px; }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+.bouton[aria-pressed="true"] { background: var(--ink); color: var(--page); border-color: var(--ink); }
+.bouton:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+.compte { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.compte strong { color: var(--ink); }
+.compte > span { min-width: 0; max-width: 100%; }
+#tri { max-width: 100%; }
+.colonne { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+
+.disposition { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: 24px; align-items: start; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.carte .note { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+.serie svg { display: block; width: 100%; height: auto; overflow: visible; }
+.serie text { font-size: 11px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+.serie .grille { stroke: var(--grid); }
+.serie .axe { stroke: var(--axis); }
+.serie .barre { fill: var(--barre); }
+.serie .rupture { stroke: var(--repere); stroke-dasharray: 4 3; stroke-width: 1.5; }
+.serie text.rupture-t { fill: var(--repere); font-weight: 600; }
+.serie text.n { fill: var(--muted); }
+@media (max-width: 520px) { .serie text.n { font-size: 9px; } }
+.legende { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--ink-2); }
+.legende span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: var(--c); vertical-align: 0; }
+.legende .tiret::before { border-radius: 0; height: 0; width: 14px; border-top: 2px dashed var(--repere); background: none; vertical-align: 3px; }
+
+.liste { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; }
+.entete, .etab summary { display: grid; grid-template-columns: minmax(0, 1fr) 220px 150px; gap: 14px; align-items: center; padding: 10px 14px; }
+.entete { font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--axis); }
+.entete span:last-child, .valeur { text-align: right; }
+.etab { border-bottom: 1px solid var(--grid); }
+.etab:last-child { border-bottom: 0; }
+.etab summary { cursor: pointer; list-style: none; }
+.etab summary::-webkit-details-marker { display: none; }
+.etab summary:hover { background: var(--survol); }
+.nom { font-weight: 600; font-size: 14px; line-height: 1.3; overflow-wrap: anywhere; }
+.sous { font-size: 13px; color: var(--ink-2); line-height: 1.35; margin-top: 2px; overflow-wrap: anywhere; }
+.secteur { font-size: 13px; line-height: 1.35; overflow-wrap: anywhere; color: var(--ink-2); }
+.valeur { font-size: 13px; font-variant-numeric: tabular-nums; }
+.detail { padding: 2px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+.detail dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 13px; margin: 0; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; overflow-wrap: anywhere; }
+.annees { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 4px; font-size: 12px; font-variant-numeric: tabular-nums; }
+.annees div { border: 1px solid var(--grid); border-radius: 4px; padding: 4px 6px; display: flex; flex-direction: column; }
+.annees span { color: var(--muted); }
+.annees .absent { color: var(--muted); }
+.vide { padding: 32px 16px; text-align: center; color: var(--ink-2); }
+.plus { display: flex; justify-content: center; padding: 12px; border-top: 1px solid var(--grid); }
+.plus[hidden], .vide[hidden] { display: none; }
+
+.nuage svg { display: block; width: 100%; height: auto; max-height: 560px; }
+.nuage .fond { stroke: var(--point-fond); }
+.nuage .choix { stroke: var(--barre); }
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); white-space: normal; vertical-align: bottom; }
+tr:last-child td { border-bottom: 0; }
+th:first-child, td:first-child { text-align: left; }
+tr.apres-rupture td { border-top: 2px dashed var(--repere); }
+.copie-secours { width: 100%; min-height: 120px; font: 12px ui-monospace, monospace; }
+
+.ecart { display: flex; flex-direction: column; gap: 8px; max-width: 80ch; }
+.ecart ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.ecart li, .ecart p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 980px) {
+  .disposition { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .entete { display: none; }
+  .etab summary { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .valeur { text-align: left; }
+  .champ { width: 100%; }
+  .champ select, input[type="search"] { flex: 1 1 auto; width: auto; max-width: none; }
+  .champ label { flex: 0 0 auto; }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement" aria-current="page">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Environnement et territoire <span class="pastille">Prototype</span></div>
+    <h1>Les établissements du marché du carbone</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <p class="avis"><strong>Des émissions couvertes par le règlement (RSPEDE), pas des émissions totales.</strong> Selon le ministère, certaines émissions sont exclues de la couverture, et le fichier ne comprend que les établissements assujettis au règlement. Ces chiffres ne correspondent donc pas nécessairement aux émissions totales de chaque établissement, et ne représentent pas celles du Québec. <a href="#ecart">Ce qui les distingue</a>.</p>
+
+  <div class="commandes" role="group" aria-label="Filtres">
+    <div class="champ">
+      <label for="recherche">Rechercher</label>
+      <input type="search" id="recherche" placeholder="Établissement, entreprise, adresse…" autocomplete="off">
+    </div>
+    <div class="champ">
+      <label for="scian">Secteur (SCIAN)</label>
+      <select id="scian"><option value="">Tous</option></select>
+    </div>
+    <div class="champ">
+      <label for="annee">Présent dans le fichier en</label>
+      <select id="annee"><option value="">Toute année</option></select>
+    </div>
+    <div class="champ">
+      <label for="perimetre">Établissements</label>
+      <select id="perimetre">
+        <option value="">Tous ceux du fichier</option>
+        <option value="constant" id="opt-constant"></option>
+      </select>
+    </div>
+    <button class="bouton" id="effacer" type="button">Effacer les filtres</button>
+  </div>
+
+  <section class="carte serie" aria-labelledby="titre-serie">
+    <div class="section-titre">
+      <h2 id="titre-serie">Par année</h2>
+      <p id="texte-serie"></p>
+    </div>
+    <svg id="graphique" role="img" aria-labelledby="desc-graphique"><desc id="desc-graphique">Émissions couvertes par année.</desc></svg>
+    <div class="legende"><span style="--c:var(--barre)">Émissions couvertes, en millions de tonnes métriques d'équivalent CO<sub>2</sub> (somme des établissements sélectionnés)</span><span class="tiret">Changement du nombre d'établissements du fichier</span></div>
+    <p class="note" id="note-rupture"></p>
+    <details>
+      <summary class="note">Voir le tableau des années</summary>
+      <div class="defile"><table id="table-annees"></table></div>
+    </details>
+  </section>
+
+  <div class="disposition">
+    <section class="colonne" aria-labelledby="titre-liste">
+      <div class="section-titre">
+        <h2 id="titre-liste">La liste</h2>
+        <p>Une fiche par établissement, sous le nom publié par le ministère. La liste est en ordre alphabétique ; ce n'est pas un classement.</p>
+      </div>
+      <div class="compte">
+        <span id="compte" aria-live="polite"></span>
+        <span style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <span class="champ">
+            <label for="tri">Trier par</label>
+            <select id="tri">
+              <option value="nom">Établissement (A à Z)</option>
+              <option value="entreprise">Entreprise (A à Z)</option>
+              <option value="scian">Code SCIAN</option>
+              <option value="valeur" id="opt-valeur"></option>
+            </select>
+          </span>
+          <button class="bouton" id="copier" type="button">Copier la sélection pour un tableur</button>
+        </span>
+      </div>
+      <textarea class="copie-secours" id="secours" hidden readonly aria-label="Sélection à copier"></textarea>
+      <div class="liste">
+        <div class="entete" aria-hidden="true"><span>Établissement et entreprise</span><span>Secteur (SCIAN)</span><span id="entete-valeur"></span></div>
+        <div id="liste"></div>
+        <div class="vide" id="vide" hidden>Aucun établissement ne correspond à ces filtres.</div>
+        <div class="plus" id="plus" hidden><button class="bouton" type="button">Afficher 50 de plus</button></div>
+      </div>
+    </section>
+
+    <section class="carte nuage" aria-labelledby="titre-carte">
+      <h2 id="titre-carte">La carte</h2>
+      <div class="boutons" role="group" aria-label="Étendue de la carte">
+        <button class="bouton" type="button" data-vue="tout" aria-pressed="true">Tout le Québec</button>
+        <button class="bouton" type="button" data-vue="sud" aria-pressed="false">Sud du Québec</button>
+      </div>
+      <svg id="nuage" role="img" aria-labelledby="desc-carte"><desc id="desc-carte">Nuage de points des établissements selon leurs coordonnées publiées.</desc></svg>
+      <div class="legende"><span style="--c:var(--barre)">Sélection</span><span style="--c:var(--point-fond)">Autres établissements</span></div>
+      <p class="note">Chaque point est placé selon la longitude et la latitude publiées, sans fond de carte. La forme du territoire est approximative. Les points ont tous la même taille.</p>
+    </section>
+  </div>
+
+  <section class="ecart" id="ecart" aria-labelledby="titre-ecart">
+    <h2 id="titre-ecart">Émissions couvertes, émissions totales et inventaire</h2>
+    <ul>
+      <li><strong>Ce que veut dire « couvertes » :</strong> selon le ministère, en vertu du Règlement concernant le système de plafonnement et d'échange de droits d'émission de gaz à effet de serre (RSPEDE), les émetteurs doivent couvrir leurs émissions, « c'est-à-dire se procurer un droit d'émission pour chaque tonne de GES qu'ils ont émis dans l'atmosphère et les remettre au gouvernement ». La colonne reprise ici est la « quantité totale de GES couvertes en vertu du RSPEDE », en tonnes métriques d'équivalent CO<sub>2</sub>.</li>
+      <li><strong>Pas les émissions totales d'un établissement :</strong> selon le ministère, les émissions à couvrir sont celles déclarées et vérifiées en vertu du Règlement sur la déclaration obligatoire de certaines émissions de contaminants dans l'atmosphère (RDOCECA). Les émissions de CO<sub>2</sub> de source biogénique (par exemple le biométhane), le CO<sub>2</sub> capté, stocké, valorisé ou transféré hors site, et les émissions attribuables aux équipements mobiles en sont exclues. Le fichier ne publie pas les émissions exclues.</li>
+      <li><strong>Pas tous les émetteurs :</strong> selon le ministère, sont assujettis les établissements industriels qui émettent 25 000 tonnes métriques d'équivalent CO<sub>2</sub> ou plus par année, les producteurs et importateurs d'électricité dont les émissions associées à cette production atteignent ce seuil, les distributeurs de carburants et de combustibles, ainsi que les installations industrielles qui déclarent de 10 000 à 25 000 tonnes et qui souhaitent devenir des émetteurs assujettis. Les émissions attribuables aux carburants et combustibles des distributeurs sont publiées dans un fichier distinct du même jeu, qui n'est pas repris sur cette page.</li>
+      <li><strong>Pas l'inventaire québécois :</strong> l'inventaire du ministère, présenté sur la page <a href="../ges/">Les émissions de gaz à effet de serre</a>, est un autre jeu de données, organisé par secteur et non par établissement. Le Relevé n'additionne pas et ne compare pas les deux jeux.</li>
+    </ul>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs (Direction du marché du carbone), <a href="https://www.donneesquebec.ca/recherche/dataset/emissions-de-gaz-a-effet-de-serre-couvertes-par-le-rspede" target="_blank" rel="noopener">Émissions de gaz à effet de serre couvertes par le RSPEDE</a> (Données Québec, licence CC-BY 4.0). <span id="bref-dates"></span></p>
+    <p><strong>Ce qu'on compte :</strong> les établissements du fichier « Émissions de GES couvertes par les établissements assujettis au RSPEDE » et, pour chacun, la quantité de GES couverte en vertu du règlement, en tonnes métriques d'équivalent CO<sub>2</sub>, telle que publiée, par année de déclaration.</p>
+    <p><strong>Principale limite :</strong> <span id="bref-limite"></span> Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs (Direction du marché du carbone), <a href="https://www.donneesquebec.ca/recherche/dataset/emissions-de-gaz-a-effet-de-serre-couvertes-par-le-rspede" target="_blank" rel="noopener">Émissions de gaz à effet de serre couvertes par le RSPEDE</a>, licence CC-BY 4.0. Fichier utilisé : « emissions_ges_spede.csv », comparé au fichier XLSX du même jeu. Définitions : fiche du jeu et document « Métadonnées » (PDF) publié avec le jeu.</p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul id="fiche-compte"></ul>
+      </section>
+      <section>
+        <h3>Traitement</h3>
+        <ul id="fiche-traitement"></ul>
+      </section>
+      <section>
+        <h3>Changements de périmètre</h3>
+        <ul id="fiche-perimetre"></ul>
+      </section>
+      <section>
+        <h3>Valeurs manquantes et valeurs nulles</h3>
+        <ul id="fiche-manquantes"></ul>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul>
+          <li>Les chiffres sont des émissions couvertes en vertu du RSPEDE, et non des émissions totales : voir <a href="#ecart">ce qui les distingue</a>.</li>
+          <li>Le fichier ne contient aucune autre information sur les établissements que leur nom, leur entreprise, leur code SCIAN, leur adresse, leurs coordonnées et les émissions couvertes. La page ne dit rien d'autre à leur sujet.</li>
+          <li>Selon le ministère, le numéro d'établissement « demeure inchangé même s'il y a eu un changement d'exploitant ou de nom de l'établissement ». Le nom d'établissement est celui « au moment de la production des données », et l'entreprise est décrite comme celle qui exploite l'établissement « à la fin de l'année de déclaration ». Dans le fichier, chaque établissement porte un seul nom d'entreprise pour toutes les années.</li>
+          <li>Les noms, adresses et descriptions SCIAN sont repris tels que publiés, sans correction ; leur écriture varie d'une ligne à l'autre (par exemple « Saint-Hyacinthe » et « St-Hyacinthe »). Le fichier ne contient pas de colonne de municipalité ni de région : la page n'en attribue pas.</li>
+          <li>Selon le ministère, les coordonnées sont exprimées en NAD83. La carte les place sans conversion.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul id="fiche-verifs"></ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p>Une ligne par année et par établissement, avec les colonnes publiées, le code SCIAN séparé de sa description, et une colonne qui indique si l'établissement figure dans le fichier toutes les années.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/marche_carbone.csv" download>Télécharger les données (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = [["51624534","AbiBow Canada inc. (St-Thomas-Didyme)","PF Résolu Canada Inc.",20,"300, avenue du Moulin, Saint-Thomas-Didyme, Québec, G0W 1P0",-72.66362778,48.90924444,[null,null,null,null,null,null,1095,1006,1021,1165,957,919,910],0],["55379713","ADM Agri-Industries Company","ADM Agri-Industries Company",17,"155, avenue d'Iberia, Candiac, Québec, J5R 3H1",-73.51341667,45.40072222,[null,null,null,null,null,null,null,null,20847,30078,25513,23202,24592],0],["54690359","Agropur Coopérative - Usine de Beauceville","Agropur coopérative",13,"75, avenue Lambert, Beauceville, Québec, G5X 3N5",-70.81658333,46.24172222,[null,null,null,null,null,null,9957,10018,10592,9269,8861,9089,8693],0],["52485471","Agropur Coopérative - Usine de Granby","Agropur coopérative",13,"1100, rue Omer-Deslauriers, Granby, Québec, J2J 0S7",-72.77986111,45.3855,[null,null,null,null,null,null,22661,22464,21641,18625,19017,18905,19280],0],["52294303","Agropur Coopérative - Usine de Notre-Dame-du-Bon-Conseil","Agropur coopérative",13,"81, rue Saint-Félix, Notre-Dame-du-Bon-Conseil, Québec, J0C 1A0",-72.33798611,46.00135833,[null,null,null,null,null,null,15829,15775,15718,17310,16585,15295,16903],0],["52294329","Agropur Coopérative - Usine de Plessisville","Agropur coopérative",13,"2400, rue de la Coopérative, Plessisville, Québec, G6L 3G8",-71.75918372,46.22420044,[null,null,null,null,null,null,12856,12860,12616,12526,11606,11647,11291],0],["X2091162","Air Liquide Canada inc (plan 2)","Air Liquide Canada Inc.",30,"5425, boulevard Raoul-Duchesne, Bécancour, Québec, G9V 2V1",-72.375401,46.381865,[35413,47472,53962,51593,54836,55245,53583,50865,53615,51743,53999,54612,54748],1],["90404385","Alcoa Canada Cie - Aluminerie de Baie-Comeau","Alcoa Canada Cie",46,"100, route Maritime, Baie-Comeau, Québec, G4Z 2L6",-68.14733428,49.25562657,[735824,493355,491066,471448,507002,522658,508577,509733,521651,529505,534038,541412,546745],1],["26185066","Aluminerie Alouette inc.","Aluminerie Alouette inc.",46,"400, chemin de la Pointe-Noire, Sept-Îles, Québec, G4R 5M9",-66.44426976,50.1588997,[1090710,1131792,1112359,1113502,1118595,1085501,1085368,1120641,1143685,1145300,1109622,1101298,1099608],1],["X2097943","Aluminerie Arvida, Centre technologique AP-60","Rio Tinto Alcan Inc.",46,"1955, boulevard Mellon Saguenay (Québec), G7S 4L2",-71.15885809,48.43169333,[null,null,97985,93706,90910,83243,99148,98110,95827,96836,105954,100113,108099],0],["21651674","Aluminerie de Bécancour inc. Usine de Bécancour","Aluminerie de Bécancour inc",46,"5555, rue Pierre-Thibault, Bécancour, Québec, G9H 2T7",-72.38312222,46.38459444,[803153,794500,804080,805726,812953,255144,145726,734994,814776,821430,818711,830712,844223],1],["27305903","Arcelormittal Coteau-du-Lac société en commandite","Arcelormittal Coteau-du-Lac société en commandite",53,"25, rue de l’Acier, Coteau-du-Lac, Québec, J0P 1B0",-74.20408333,45.30122222,[null,null,null,null,null,null,null,10739,13354,10806,12589,12286,12012],0],["90512179","ArcelorMittal Produits longs Canada - Contrecoeur-Est","ArcelorMittal Produits longs Canada s.e.n.c.",44,"3900, route des Aciéries, Contrecœur, Québec, J0L 1C0",-73.24694444,45.83444444,[814924,994148,976904,900478,996972,1030085,898973,738978,997009,917956,949928,971298,943338],1],["28631430","ArcelorMittal Produits longs Canada - Contrecoeur-Ouest","ArcelorMittal Produits longs Canada s.e.n.c.",44,"2050, route des Aciéries, Contrecœur, Québec, J0L 1C0",-73.26583333,45.82055556,[102781,103242,98805,100118,99954,111045,89376,72491,97600,89603,93693,96159,98235],1],["X0000274","ArcelorMittal Produits longs Canada - Longueuil","ArcelorMittal Produits longs Canada s.e.n.c.",44,"2555, chemin du Lac, Longueuil, Québec, J4N 1C1",-73.45777778,45.56888889,[25664,27019,25286,23422,20376,28471,28672,22412,28421,23868,24754,23786,22111],1],["90471269","Ball advanced aluminum technologies holding Canada inc","Ball advanced aluminum technologies holding Canada inc",47,"2205, rue Roy, Sherbrooke, Québec, J1K 1B8",-71.9272,45.391,[null,null,null,null,null,null,null,null,null,null,null,13938,11917],0],["X2106576","Bombardier Aéronautique - Usine de Dorval","Bombardier inc.",56,"500, chemin de la Côte-Vertu Ouest, Dorval, Québec, H4S 1Y9",-73.72824538,45.47423359,[null,null,null,null,null,null,null,10187,10838,10821,11237,11649,12306],0],["53859047","BOMBARDIER INC.","Bombardier inc.",56,"1800, boulevard Marcel-Laurin, Montréal, Québec, H4R 1K2",-73.6993911,45.51403393,[null,null,null,null,null,null,null,21094,18913,19326,18586,16858,19142],0],["90271198","BP Canada - Usine de LaSalle","LA CIE MATÉRIAUX DE CONSTRUCTION BP CANADA",28,"9510, rue St-Patrick, LaSalle, Québec, H8R 1R9",-73.64725161,45.43697971,[null,null,null,null,null,null,15445,13584,13843,13368,11911,12716,12567],0],["11143492","Brasserie Molson de Montréal","Molson Canada 2005",18,"1555, rue Notre-Dame est, Montréal, Québec, H2L 2R5",-73.54831475,45.51871443,[null,null,null,null,null,null,15270,13896,10408,null,null,null,null],0],["55280283","Bridgestone Canada Inc","Bridgestone Canada Inc.",38,"1200, boulevard Firestone, Joliette, Québec, J6E 2W5",-73.42133333,46.0358,[null,null,null,null,22611,23986,23609,20103,22401,21599,21778,25894,24453],0],["X2097474","Bunge Canada Inc., Bécancour – usine de transformation de graines oléagineuses","Bunge Canada Inc.",10,"555, boulevard Alphonse Deshaies, Bécancour, Québec, G9H 2Y8",-72.3748049,46.3834715,[27979,39261,44557,52682,57067,57016,57767,49519,53091,49677,53665,34725,48545],1],["55245864","Béton Provincial Ltée - Cimenterie de Joliette","Béton Provincial Ltée",40,"966, chemin des Prairies, Joliette, Québec, J6E 6H7",-73.40241546,46.02992976,[772305,768835,682491,827828,796421,791946,782153,635816,304539,9528,563345,515777,523865],1],["29603578","Cascades Canada ULC - Usine de East Angus","Cascades Canada ULC",24,"248, rue Warner, East Angus, Québec, J0B 1R0",-71.66388889,45.48222222,[33879,31774,null,null,null,null,null,null,null,null,null,null,null],0],["13687348","Cascades Emballages Carton-Caisse - Cabano, Une Division de Cascades Canada ULC","Cascades Canada ULC",26,"520, rue Commerciale Nord, Temiscouata-sur- le-Lac, Québec, G0L 1E0",-68.862104,47.66851,[null,null,33590,36499,38677,27476,28146,24459,15512,16910,20074,17336,19801],0],["52784139","Cascades Groupe Tissu - Candiac","Cascades Canada ULC",24,"75, boulevard Marie-Victorin, Candiac, Québec, J5R 1C2",-73.52447222,45.39927778,[31349,31685,30957,31194,31329,32126,30874,31921,31531,30151,30305,28586,27447],1],["14749212","Cascades Groupe Tissu - Kingsey Falls une division de Cascades Canada ULC","Cascades Canada ULC",24,"467, boulevard Marie-Victorin, Kingsey Falls, Québec, J0A 1B0",-72.06637879,45.86466591,[null,null,null,null,null,null,15890,17308,17303,16937,16323,16711,15948],0],["90281247","Cascades Groupe Tissu - Lachute, Une division de Cascades Canada ULC","Cascades Canada ULC",24,"115, rue de la Princesse, Lachute, Québec, J8H 4M3",-74.34661968,45.65195437,[null,null,null,null,null,null,10919,8950,10705,11140,9996,10506,11199],0],["54079108","Cascades Papiers Kingsey Falls","Cascades Canada ULC",26,"468, boulevard Marie-Victorin, Kingsey Falls, Québec, J0A 1B0",-72.07373333,45.85971389,[null,null,57167,61678,60524,62290,61198,61579,62297,60639,60122,60608,59121],0],["54115985","Centrale de Cap-aux-Meules","Hydro-Québec",6,"1034, chemin de la Vernière, Les Îles-de-la- Madeleine, Québec, G4T 1R3",-61.885802,47.374462,[128512,132338,132801,129961,128193,134061,135848,133431,117049,127696,130461,127371,122377],1],["90499740","Centre de finition","Bombardier inc.",56,"200, chemin de la Côte-Vertu, Dorval, Québec, H4S 2A3",-73.72262353,45.47876143,[null,null,null,null,null,null,null,null,10345,10410,10432,10873,11766],0],["52091972","CertainTeed Canada inc.","CERTAINTEED CANADA, INC.",42,"700, 1ère avenue, Sainte-Catherine, Québec, J5C 1C5",-73.58888889,45.40430556,[26798,26872,26863,28973,30726,32059,33978,31195,32017,34552,33103,30173,13491],1],["90307828","Chimie ParaChem S.E.C.","Chimie ParaChem sec",29,"3500, avenue Broadway, Montréal-Est, Québec, H1B 5B4",-73.52135341,45.63408931,[227258,238517,211076,209441,233965,235943,230186,193287,230941,208807,170427,100650,15028],1],["55408272","Ciment Québec inc.","Ciment Québec inc",40,"145, boulevard du Centenaire, Saint-Basile, Québec, G0A 3G0",-71.81277778,46.74444444,[495705,520280,588327,647290,634981,683737,723096,610252,791288,766301,724076,748547,747813],1],["90368630","Cimenterie de Port-Daniel","St. Marys Cement INC. (Canada)",40,"50, route 132, Port-Daniel-Gascons, Québec, G0C 2N0",-64.91376429,48.18888582,[null,null,null,null,null,null,1036618,1210596,1429550,1393888,1446264,1309980,1294659],0],["53210936","Cimenterie de Saint-Constant","Amrize Canada Inc.",40,"1, chemin Lafarge, Saint-Constant, Québec, J5A 2G4",-73.52415556,45.34014444,[521529,644374,770853,532943,695795,632540,757087,548276,757819,720964,678140,714295,542148],1],["90560244","Commandité Papier Masson WB Ltée","Société en commandite Papier Masson WB",25,"2, chemin Montréal ouest, Gatineau, Québec, J8M 2E1",-75.42396944,45.54098889,[11767,null,null,null,null,null,null,null,null,null,13351,13941,18093],0],["55033559","Commandité Stadacona WB ltée (papetière)","Société en commandite Stadacona WB",25,"10, boulevard des Capuçins, Québec, Québec, G1J 0G9",-71.21505556,46.82418056,[null,null,null,null,null,null,null,9089,9426,23559,16571,17368,37325],0],["X2079933","Compagnie Alpek Polyester Canada","Compagnie Alpek Polyester Canada",34,"3498, rue Broadway, Montréal, Québec, H1B 5B4",-73.5247552,45.6314927,[null,null,null,null,null,null,17690,18216,17908,16396,11606,13162,11765],0],["55133573","Compagnie de Gestion Alcoa-Lauralco - Aluminerie de Deschambault","Compagnie de Gestion Alcoa-Lauralco",46,"1, boulevard des Sources, Deschambault- Grondines, Québec, G0A 1S0",-71.94694444,46.69388889,[463530,466190,472114,474107,481629,486486,494084,502962,512715,516948,516179,527471,520473],1],["90289331","Compagnie WestRock du Canada Corp. - Usine de La Tuque","Compagnie WestRock du Canada Corp.",26,"1000, chemin de l’Usine, La Tuque, Québec, G9X 3P8",-72.78887076,47.4443948,[215105,215824,222603,211707,208471,204842,203614,199660,200576,214746,217710,225245,223990],1],["X0000005","Complexe Témiscaming","Rayonier A.M. Canada société en nom collectif",23,"33, chemin Kipawa, Témiscaming, Québec, J0Z 3R0",-79.09591667,46.71107778,[89041,96785,171529,161225,153106,166469,167317,178168,178754,172691,163815,175582,185794],1],["55233241","DIAGEO CANADA INC.","DIAGEO CANADA INC.",19,"1, Salaberry, Salaberry-de- Valleyfield, Québec, J6T 6G3",-74.0845,45.2332,[25947,null,33065,25818,32263,33263,30946,35531,26022,193,129,116,51],0],["90222761","Domtar inc. Usine de Windsor","DOMTAR INC.",24,"609, 12e rang, Windsor, Québec, J1S 2L9",-71.978826,45.56441,[66342,73826,67054,66091,69074,91314,121306,120153,110660,116452,125416,117632,124773],1],["51782654","DuPont Varennes","3313045 Nova Scotia Company",37,"4445, route Marie-Victorin, Varennes, Québec, J3X 1T3",-73.40644166,45.73037681,[248250,244878,325411,285030,314233,332339,297863,246599,213894,215952,15749,15107,12383],1],["52978491","Elkem Métal Canada inc.","Elkem Metal Canada inc",54,"2020, chemin de la Réserve, Saguenay, Québec, G7J 0E1",-71.13116547,48.4123772,[107529,89331,120851,121574,121142,120363,119033,116906,126581,120648,115495,115240,114585],1],["X0600605","Entreprise Indorama PTA Montréal s.e.c.","ENTREPRISE INDORAMA PTA MONTRÉAL S.E.C.",33,"10200, rue Sherbrooke Est, Montréal-Est, Québec, H1B 1B4",-73.5171,45.62018056,[114310,117476,113930,115207,112196,111216,109121,101230,116684,103385,99683,80352,null],0],["52861945","Fabrique de pâtes et papier (Lebel-sur-Quévillon)","KRAFT NORDIC, S.E.C.",23,"30 chemin du Moulin, Lebel-sur-Quévillon, Québec, J0Y 1X0",-76.95123,49.024981,[null,null,null,null,null,null,null,null,127218,95050,65770,69897,70732],0],["X2003586","Felix Schoeller Inc., Drummondville","Felix Schoeller Inc.",24,"3075, rue Kunz, Drummondville, Québec, J2C Y4",-72.54305503,45.87524943,[null,null,null,null,null,null,16122,14179,15788,14836,12897,12409,15072],0],["90459082","Fibrek S.E.N.C.","Fibrek s.e.n.c.",23,"4000, chemin St-Eusèbe, Saint-Félicien, Québec, G8K 2R6",-72.51491667,48.74519444,[89977,104424,103687,113121,112234,113933,106421,102401,86592,89197,82126,83821,89777],1],["53341673","Fonderie Horne","Glencore Canada Corporation",50,"101, avenue Portelance, Rouyn-Noranda, Québec, J9X 5B6",-79.01528889,48.25280833,[115521,100433,99443,115838,113556,110043,105195,96461,105977,187111,116052,110242,128114],1],["53093738","Formica","Formica Canada Inc",36,"25, rue Mercier, Saint-Jean sur Richelieu, Québec, J3B E9",-73.25688056,45.29683611,[null,null,null,null,null,null,16208,13607,13907,14626,13204,12077,12240],0],["53539565","Fortress Speciality Cellulose","Fortress Specialty Cellulose Inc.",23,"451, rue Victoria, Thurso, Québec, J0X 3B0",-75.25627778,45.59722222,[90714,52720,57964,66760,63005,60625,48954,1399,1685,821,96,null,null],0],["90529991","Gazoduc TQM","GAZODUC TRANS QUEBEC & MARITIMES INC.",57,"1, Place Ville-Marie #2220, Montréal, Québec, H3B 3M4",-73.569731,45.5013364,[null,null,null,null,null,null,null,null,26519,44487,18215,14963,36074],0],["53995098","Glencore Canada Corporation - Affinerie CCR","Glencore Canada Corporation",48,"220, rue Durocher, Montréal-Est, Québec, H1B 5H6",-73.50762783,45.62733523,[56204,58368,55685,56554,53841,53195,53926,51011,51170,55539,58364,58647,56142],1],["29520772","Graphic Packaging International Canada ULC","Emballage Graphic International Canada ULC",26,"2, rue Angus Nord, East Angus, Québec, J0B 1R0",-71.66094783,45.48130673,[null,null,null,null,30710,30038,30874,31400,31745,32235,31034,30847,30307],0],["21620133","Graphic Packaging International Canada ULC - Jonquiere","Emballage Graphic International Canada ULC",26,"4010, chemin St-André, Saguenay, Québec, G7S 5K5",-71.66094783,45.48130673,[32642,20513,18982,null,null,null,null,null,null,null,null,null,null],0],["52625118","Graymont (Qc) inc. - Usine de Bedford","Graymont (QC) Inc.",41,"1015, chemin de la Carrière, Bedford, Québec, J0J 1A0",-73.00810497,45.10880176,[457715,483969,475909,485708,469467,445411,411160,381363,407729,404145,327218,343176,321039],1],["55076236","Graymont (Qc) inc. - Usine de Joliette","Graymont (QC) Inc.",41,"1300, rue Notre-Dame, Joliette, Québec, J6E 3Z9",-73.45728333,46.01153333,[19513,44766,65,118,9,9,null,null,null,null,null,null,null],0],["53221180","Graymont (Qc) inc. - Usine de Marbleton","Graymont (QC) Inc.",41,"303, rue Principale Ouest, Marbleton, Québec, J0B 2L0",-71.60526111,45.6211,[284135,300794,285968,198088,201753,184061,202769,163397,182837,189592,175023,178288,183061],1],["52192812","Greenfield Global Québec inc.","Greenfield Global Québec Inc",33,"3300, route Marie-Victorin, Varennes, Québec, J3X 1P7",-73.42450833,45.70768611,[60295,60233,60691,58652,62216,62444,58964,54098,54040,54859,35696,51821,51296],1],["90514621","Groupe Saputo Inc. Saint Leonard","Saputo Produits laitiers Canada s.e.n.c",13,"6869, boulevard Metropolitain est, Montréal, Québec, H1P 1X8",-73.57520799,45.59717299,[null,null,null,null,null,null,12495,12951,13712,14805,14865,14829,14943],0],["11141181","Hydro-Québec (ensemble du réseau)","Hydro-Québec",8,"75, boulevard René-Lévesque Ouest, Montréal, Québec, H2Z 1A4",-73.562418,45.5082182,[291919,322096,222411,111760,60778,106483,74520,113583,82906,171726,311913,357381,293363],1],["51932309","Ifastgroupe 2004 L.P. - Infasco","Ifastgroupe 2004 L.P.",52,"700, rue Ouellette, Marieville, Québec, J3M 1P6",-73.16710833,45.42992222,[null,null,null,null,null,null,18442,13535,16207,14908,14707,13279,12340],0],["53983623","Kronos Canada inc.","KRONOS Canada, Inc.",31,"3390, route Marie-Victorin, Varennes, Québec, J3X 1P7",-73.42733256,45.71282795,[111914,165968,150696,182323,191165,179338,176645,177310,182330,187254,157351,172300,126085],1],["51615177","Kruger Sherbrooke (secteur Brompton)","Produits Kruger Sherbrooke Inc.",24,"220, route de Windsor, Sherbrooke, Québec, J1C 0E6",-71.95555556,45.48194444,[null,null,null,null,null,null,null,null,45943,52276,50646,63413,83493],0],["55583157","Kruger Wayagamack s.e.c.","Kruger Wayagamack s.e.c.",24,"1, chemin de l'île-de-la-Potherie, Trois-Rivières, Québec, G9A 5E9",-72.52317051,46.35893318,[52388,50081,47232,54176,60220,64219,73080,71457,66424,61209,63054,71835,72713],1],["X2097090","Kruger Énergie Bromptonville S.E.C.","Kruger énergie Bromptonville S.E.C.",7,"220, route de Windsor, Sherbrooke, Québec, J1C 0E6",-71.9528389,45.4805214,[null,null,24764,34124,29370,32612,29812,16578,45035,69344,52648,33108,21740],0],["51615201","Kruger, Emballages Krupac - Usine de Place Turcot","EMBALLAGES KRUGER S.E.C.",26,"5845, Place Turcot, Montréal, Québec, H4C 1V9",-73.60466584,45.46311541,[40221,42140,40638,42402,42925,39145,38226,36118,35053,35076,34508,34736,35663],1],["55261028","LA CIE MATÉRIAUX DE CONSTRUCTION BP CANADA - Usine de Pont-Rouge","LA CIE MATÉRIAUX DE CONSTRUCTION BP CANADA",21,"420, rue Dupont, Pont-Rouge, Québec, G3H 1S2",-71.71260278,46.74849444,[20206,21457,null,null,null,null,18007,17004,20051,18452,12491,12955,11780],0],["90075953","La compagnie du gypse du Canada inc.","CGC Inc.",42,"7200, rue Notre-Dame Est, Montréal, Québec, H1N 3L6",-73.51219889,45.57971,[29119,28463,30467,32647,34549,38156,40318,37384,36606,34991,35384,34130,36862],1],["26442293","Lactalis Victoriaville","Lactalis Canada Inc.",12,"75, boulevard Pierre-Roux est, Victoriaville, Québec, G6T 1S8",-71.97148819,46.06666607,[null,null,null,null,null,null,null,20621,25393,24583,23765,25655,25884],0],["X0600173","Lantic inc.","Lantic Inc.",11,"4026, rue Notre-Dame Est, Montréal, Québec, H1W 2K3",-73.53329686,45.54610393,[74805,78594,73465,72553,73396,73870,82023,79571,77451,79930,79370,85056,81202],1],["51367431","Les Entreprises Rolland Inc.","Les Entreprises Rolland Inc.",24,"256 boulevard Jean-Baptiste-Rolland Ouest, Saint-Jérôme, Québec, J7Y 0L6",-74.00297719,45.76056943,[null,null,null,null,null,null,null,null,null,33593,25058,34463,52353],0],["54907720","Les Forges de Sorel cie","LES FORGES DE SOREL CIE",51,"100, rue McCarthy, Saint-Joseph-de-Sorel, Québec, J3R 3M8",-73.12650174,46.04566926,[42866,54457,41889,41005,51241,46922,39003,34069,42984,43027,37198,29570,34512],1],["90251703","Les Sables Olimag Inc","Les Sables Olimag Inc",43,"725, rue Caouette Ouest Thetford Mines (Québec), G6G 8C5",-71.31430443,46.08795691,[null,null,null,null,null,null,null,null,null,null,null,8984,9085],0],["52671898","Linde Canada inc \"Pointe-aux-Trembles\" (Anciennement Praxair Canada inc)","Linde Canada Inc.",30,"3500, 3e avenue, Pointes-Aux-Trembles, Québec, H1B 5K4",-73.51903226,45.63797162,[40692,40788,41177,34019,49272,45375,30686,19782,32795,41894,24326,27759,27399],1],["X1500623","Matériaux Lehigh Hanson Limitée","Matériaux Heidelberg Canada Limitée",40,"1235, chemin Kilmar, Grenville-sur-la- Rouge, Québec, J0V 1B0",-74.61406059,45.76767917,[175874,180659,176527,179222,179162,97906,13,6,9,11,null,null,null],0],["X2108923","Mine Canadian Malartic","Mines Agnico Eagle Limitée",1,"100, chemin du Lac Mourier, Malartic, Québec, J0Y 1Z0",-78.10538682,48.1157836,[null,null,null,null,null,null,null,19689,20710,22857,21841,19053,25307],0],["X2103303","Mine de fer du lac Bloom","Minerai de fer Québec inc.",0,"755, route 389, Fermont, Québec, G0G 1J0",-67.24153843,52.84653829,[null,null,null,1252,2930,13303,null,null,10733,11822,18482,17749,16024],0],["55592950","Mine Goldex","Mines Agnico Eagle Limitée",1,"1953, 3e avenue, Val-d'Or, Québec, J9P 4N9",-77.87320806,48.09259911,[null,null,null,null,null,null,null,null,null,5030,4525,4237,5307],0],["90156969","Mine Laronde","Mines Agnico Eagle Limitée",1,"10200, route du Preissac, Rouyn-Noranda, Québec, J0Y 1C0",-77.87320806,48.09259911,[null,null,null,null,null,null,null,13867,13036,16291,15618,15831,16175],0],["X0900848","Mine Mont Wright","ArcelorMittal Exploitation Minière Canada s.e.n.c.",0,"1, rue de la Mine, Fermont, Québec, G0G 1J0",-67.0842673,52.7953958,[44002,47029,38457,90295,33692,20337,26932,25736,22921,38626,29097,53754,42964],1],["90096116","Mine Raglan","Glencore Canada Corporation",2,"Kativik, QC J0M 1K0",-73.67936111,61.68716667,[136869,122632,113956,108449,111643,120148,119832,117029,125587,118310,142082,135216,124159],1],["X2012359","Mine Renard (Foxtrot)","Les Diamants Stornoway (Canada) inc",4,"Baie-James, Québec, J0Y 2A0",-72.18333333,52.81666667,[null,null,null,null,null,null,49840,28508,41917,43599,39321,19620,10211],0],["90380767","MOEVE Chimie Bécancour inc.","MOEVE CHIMIE BÉCANCOUR INC.",29,"5250, boulevard Bécancour, Bécancour, Québec, G9H 3X3",-72.361686,46.379501,[48564,48403,71474,76954,69569,68648,68698,81951,79693,72900,64767,57750,65596],1],["X0500101","Métallurgie Magnola inc. Glencore Canada Magnola Inc.","Alliance Magnésium Métallurgie Inc",48,"125, chemin Pinacle, Danville, Québec, J0A 1A0",-72.005156,45.760338,[null,null,null,null,null,null,null,null,null,899,841,32,47],0],["26328195","National Silicates","National Silicates Partnership",32,"132, rue Fabre, Salaberry de Valleyfield, Québec, J6S 4K9",-74.114,45.2681,[null,null,null,null,null,null,25873,22188,28115,29297,23060,27116,25233],0],["90251398","Nexans Canada inc.","Nexans Canada inc.",49,"460, avenue Durocher, Montréal-Est, Québec, H1B 5H6",-73.5134278,45.62829153,[null,null,null,null,null,null,20767,17367,20848,20550,21002,20934,16567],0],["54177746","Niobec inc.","Niobec inc",3,"3400 route du Columbium, Saint-Honoré, Québec, G0V 1L0",-71.159,48.53208333,[null,null,null,null,null,null,null,null,null,null,null,6537,7903],0],["X2085416","Nunavik Nickel","Canadian Royalties inc",2,"Kativik, QC J0M 1K0",-73.42954464,61.56159075,[null,null,56860,67963,75998,84216,88813,84133,88971,97329,97792,90378,99369],0],["55411771","O-I Canada Corp","O-I Canada Corp",39,"2376, rue Wellington, Montréal, Québec, H3K 1X6",-73.56002915,45.47332117,[65711,68037,68136,69548,70370,71073,67413,73879,64613,67489,60743,65062,67622],1],["55523641","Olymel S.E.C. (St-Esprit)","Olymel S.E.C.",14,"125, rue St-Isidore, Saint-Esprit, Québec, J0K 2L0",-73.661829,45.905744,[null,null,null,null,null,null,null,null,null,15730,17061,16216,18120],0],["90475187","Olymel S.E.C. (Ste-Rosalie)","Olymel S.E.C.",16,"3250, boulevard Laurier Est, St-Hyacinthe, Québec, J2R 2B6",-72.9146403,45.6373995,[null,null,null,null,null,null,null,null,null,9091,8623,9459,11820],0],["90352964","Olymel S.E.C. (Vallée-Jonction)","Olymel S.E.C.",14,"568, chemin De l'écore Sud, Vallée-Jonction, Québec, G0S 3J0",-70.92745,46.37055,[null,null,null,null,null,null,null,null,null,8008,5565,null,null],0],["X1601876","Owens Corning Celfortec LP","Owens Corning Celfortec LP",37,"542, rue Gaétan, Salaberry-de- Valleyfield, Québec, J6S 0A7",-74.1554,45.2645,[140773,132765,119508,112485,137184,144905,145201,147112,162830,147805,33830,32426,25571],1],["51615219","Papiers de publication Kruger inc. - Usine de Trois-Rivières","Kruger Trois-Rivières s.e.c.",26,"3735, boulevard Gene-H.-Kruger, Trois-Rivières, Québec, G9A 6B1",-72.55666667,46.32611111,[11071,19327,null,null,null,null,88828,106977,100838,81813,69748,70428,79495],0],["52645553","PF Résolu (Scierie de La Doré)","PF Résolu Canada Inc.",20,"5850, avenue des Jardins, La Doré, Québec, G8J 1B4",-72.61947222,48.72225,[null,null,null,null,null,null,646,605,721,633,665,860,596],0],["X0700081","PF Résolu Canada inc. (anc.: AbiBow Canada inc.)","PF Résolu Canada Inc.",20,"200, chemin de Montcerf, Maniwaki, Québec, J9E 1A1",-75.99869444,46.39011111,[null,null,null,null,null,null,1946,2973,2814,2737,2865,3268,389],0],["90491556","PF Résolu inc. - Division Alma","PF Résolu Canada Inc.",22,"1100, rue Melançon Ouest, Alma, Québec, G8B 5W2",-71.65283333,48.56344444,[66971,65902,72375,66061,67081,78461,71453,61783,56154,38903,35535,38256,42972],1],["29445244","PF Résolu inc. - Division Baie-Comeau","PF Résolu Canada Inc.",25,"20, rue Marquette, Baie-Comeau, Québec, G4Z 1K6",-68.15182089,49.22315927,[9064,null,null,null,null,null,10242,4847,0,0,0,0,null],0],["54584552","PF Résolu inc. - Division Clermont","PF Résolu Canada Inc.",25,"100, rue de la Donohue, Clermont, Québec, G4A 1A7",-70.22531482,47.69885312,[12806,11799,8182,null,null,null,3973,4024,1817,2743,1480,1320,2317],0],["53968913","PF Résolu inc. - Division Gatineau","PF Résolu Canada Inc.",25,"79, rue Main, Gatineau, Québec, J8P 4X6",-75.65260556,45.47924722,[21306,null,null,null,null,null,51878,51787,43530,42109,52030,52805,57333],0],["53986931","PF Résolu inc. - Division Kénogami","PF Résolu Canada Inc.",25,"3750, rue de Champlain, Jonquière, Québec, G7S 5J7",-71.2435,48.42946944,[19617,null,null,null,null,null,22545,24148,24035,20611,20198,19553,19730],0],["55583132","PF Résolu inc. - Division Laurentides","PF Résolu Canada Inc.",24,"100, 1ère rue, Shawinigan, Québec, G9T 7J1",-72.68302343,46.61647028,[49481,40256,null,null,null,null,null,null,null,null,null,null,null],0],["52235348","Produits Forestier Résolu - Amos","PF Résolu Canada Inc.",25,"801, rue des Papetiers, Amos, Québec, J9T 3X5",-78.15886667,48.56683056,[null,null,null,null,null,null,5838,2123,0,0,0,0,null],0],["90294307","Produits forestiers Résolu (Dolbeau)","PF Résolu Canada Inc.",25,"1, 4e avenue, Dolbeau-Mistassini, Québec, G8L 2R4",-72.21745584,48.88000748,[null,null,null,null,null,null,18212,10478,13155,14176,16357,12673,12714],0],["52686292","Produits Kruger Inc. - Usine de Crabtree","Produits Kruger inc.",24,"100, 1ère avenue, Crabtree, Québec, J0K 1B0",-73.4655,45.9639,[62934,59036,50624,51579,53472,60722,59448,54621,52734,54667,51415,47090,52946],1],["54162128","Produits Kruger Inc. - Usine de Gatineau","Produits Kruger inc.",24,"20, rue Laurier, Gatineau, Québec, J8X 4H3",-75.70951413,45.42738547,[57397,55536,53501,49141,48466,51596,50004,52444,49996,49009,49647,50293,50933],1],["51474831","Raffinerie Suncor Énergie, S.E.N.C.","Produits Suncor Énergie S.E.N.C.",27,"11701, rue Sherbrooke est, Montréal, Québec, H1B 1C3",-73.52634545,45.64356627,[1170750,1158235,1202196,1141750,1217379,1186563,1140058,1081570,1141302,1134414,1231970,1216412,1233415],1],["90531120","Rio Tinto Alcan inc. - Usine Alma","Rio Tinto Alcan Inc.",46,"3000, rue des Pins Ouest, Alma, Québec, G8B 5W2",-71.68796434,48.58466643,[907738,827661,833555,843670,858406,848351,852055,822547,845879,903241,932764,876026,868683],1],["53053278","Rio Tinto Alcan inc. - Usine Arvida","Rio Tinto Alcan Inc.",46,"1955, boulevard Mellon, Saguenay, Québec, G7S 4L2",-71.68796434,48.58466643,[743559,746338,785078,673169,625329,609170,582070,546216,653714,633728,680296,564519,541637],1],["52176989","Rio Tinto Alcan inc. - Usine Grande-Baie","Rio Tinto Alcan Inc.",46,"5000, route du Petit-Parc, Saguenay, Québec, G7B 4G9",-70.92576326,48.30551388,[552303,547794,484922,483619,490421,515019,523059,540072,534156,524459,546871,564542,524837],1],["53998084","Rio Tinto Alcan inc. - Usine Laterrière","Rio Tinto Alcan Inc.",46,"6301, boulevard Talbot, Saguenay, Québec, G7N 1A2",-71.12789254,48.30150053,[435820,426323,426409,439243,478305,494316,486051,555541,559268,540957,524963,506877,486388],1],["51773372","Rio Tinto Alcan inc. - Usine Shawinigan","Rio Tinto Alcan Inc.",46,"1100, boulevard Saint-Sacrement, Shawinigan, Québec, G9N 6W4",-72.73683874,46.55941026,[220267,null,null,null,null,null,null,null,null,null,null,null,null],0],["54477369","Rio Tinto Alcan inc. - Usine Vaudreuil","Rio Tinto Alcan Inc.",46,"1955, boulevard Mellon, Saguenay, Québec, G7S 4L2",-71.14124826,48.42397635,[585943,560152,529728,530481,514332,435241,368375,366464,383654,380684,406182,352313,375197],1],["54134762","Rio Tinto Fer et Titane - Complexe métallurgique","Rio Tinto Fer et Titane Inc.",44,"1625, route Marie-Victorin, Sorel-Tracy, Québec, J3R 1M6",-73.13921018,46.04359904,[1030541,913611,742157,784288,934732,767914,957097,889507,884280,960040,863524,758422,841024],1],["11313541","Rio Tinto Fer et Titane inc. - Les Poudres métalliques du Québec Ltée","Rio Tinto Fer et Titane Inc.",44,"1655, route Marie-Victorin, Sorel-Tracy, Québec, J3R 4R4",-73.14416667,46.03972222,[37507,34636,35733,34774,35729,31883,28742,24221,28775,29021,25474,28621,21901],1],["54604582","Rothsay, Div. de Darling International Canada Inc. (usine Ste-Catherine)","Darling International Canada Inc.",15,"605, 1ère avenue, Ste-Catherine, Québec, J5C 1C5",-73.58670833,45.40594444,[null,null,null,null,null,null,null,7181,2678,2451,2895,2374,2417],0],["11560620","Sanimax ACI Inc.","Sanimax ACI Inc.",15,"2001, avenue de la Rotonde, Lévis, Québec, G6X 2L9",-71.27384678,46.70407609,[null,null,null,null,null,null,19410,20196,22151,21201,17639,16683,17312],0],["16358459","Sanimax LOM Inc.","Sanimax LOM Inc.",15,"9900, boulevard Maurice-Duplessis, Montréal, Québec, H1C 1G1",-73.55685175,45.65186726,[null,null,null,null,null,31431,31755,31963,32970,33837,34100,32181,33412],0],["55342869","Saputo produits laitiers Canada inc. (Saint-Hyacinthe)","Saputo Produits laitiers Canada s.e.n.c",13,"1195, rue Daniel-Johnson Est, Saint-Hyacinthe, Québec, J2S 7Y6",-72.958151,45.64633,[null,null,null,null,null,null,null,null,null,null,11885,12667,13656],0],["X2153356","Shawinigan Aluminium Inc.","Shawinigan Aluminium Inc",50,"1250, boulevard St-Sacrement, Shawinigan, Québec, G9N 0E3",-72.73678056,46.5615,[null,null,null,null,null,null,9531,9308,11139,null,13972,14034,13118],0],["X2123406","Silicium Québec Société en commandite (usine principale)","Silicium Québec société en commandite",44,"6500, rue Yvon-Trudeau, Bécancour, Québec, G9H 2V8",-72.38998739,46.37088638,[87888,153703,160119,176568,175851,185663,146742,122599,173632,193815,183727,180424,172897],1],["51932317","Sivaco","Sivaco Wire Group 2004 L.P.",45,"800, rue Ouellette, Marieville, Québec, J3M 1P5",-73.1675,45.43694444,[null,null,null,null,null,null,15044,14633,14413,13573,10836,10994,11784],0],["52214574","Teledyne digital imaging","TELEDYNE DIGITAL IMAGING, INC.",55,"18, boulevard de l'Aéroport, Bromont, Québec, J2L 1S7",-72.71416667,45.3,[16851,19350,19340,null,null,null,null,29777,33669,30729,32222,24006,22522],0],["23406218","Terrapure BR Ltd","Terrapure BR LP",48,"1200, rue Garnier, Sainte-Catherine, Québec, J5C 1B4",-73.60035694,45.40232929,[50707,50909,48530,47542,50326,52424,56807,52657,48075,43098,45834,36574,45227],1],["X2054487","TransCanada Energy Ltd - Centrale de cogénération de Bécancour","TransCanada Energy Ltd.",6,"7005, boulevard Raoul-Duchesne, Bécancour, Québec, G9H 4X6",-72.4051,46.36755,[122610,92380,73778,72364,67619,68384,65930,63519,64231,62453,61090,60704,62655],1],["90510835","TransCanada Pipelines Limited","TransCanada PipeLines Limited",57,"1370, montée Chenier, Les Cèdres, Québec, J0P 1L0",-74.12635556,45.36972778,[43070,36071,44472,47336,49258,48916,52930,49479,49423,33100,40196,37437,37193],1],["90181348","Usine de bouletage Pointe Noire","Société ferroviaire et portuaire de Pointe-Noire, s.e.c.",0,"1505, chemin de la Pointe-Noire, Sept-Iles, Québec, G4R 4L4",-66.49331541,50.15816975,[162196,8039,896,1005,128,null,null,null,null,null,null,null,null],0],["54136049","Usine de bouletage Port-Cartier","ArcelorMittal Exploitation Minière Canada s.e.n.c.",0,"24, boulevard des Îles, Port-Cartier, Québec, G5B 2H3",-66.79871094,50.03258101,[863233,974900,976960,971743,956176,916892,987716,819803,801792,909704,804404,751531,866384],1],["12679825","Usine de soufre - Produits Suncor Énergie, S.E.N.C.","Produits Suncor Énergie S.E.N.C.",32,"11450, rue Cherrier, Montréal-Est, Québec, H1B 1A6",-73.52120289,45.63657772,[22475,21768,null,null,null,null,21811,22423,21803,20843,21745,22466,23006],0],["90523499","W.R. Grace Canada Corp.","W.R. Grace Canada Corp.",35,"42, rue Fabre, Salaberry-de- Valleyfield, Québec, J6S 4K7",-74.11130556,45.265,[27463,32413,28621,28745,29953,30501,30404,25478,31540,33742,30226,36274,35103],1],["X2095752","Windfall","Minière Osisko Inc.",5,"Baie-James, Québec , J0Y 2A0",-75.65,49.06666667,[null,null,null,null,null,null,null,null,25995,15828,null,null,null],0],["11307774","Zinc Électrolytique du Canada limitée","Zinc électrolytique du Canada limitée",48,"860, boulevard Gérard-Cadieux, Salaberry-de- Valleyfield, Québec, J6S 4W2",-74.10305556,45.22805556,[36784,45112,34880,23617,33507,32512,43335,42422,37774,47881,48709,49363,56441],1],["52670411","Énergie Valero inc. - Raffinerie Jean-Gaulin","Énergie Valero Inc.",27,"165, chemin des Îles, Lévis, Québec, G6W 7N1",-71.18914,46.760037,[1274842,1363024,1346149,1325527,1330609,1165231,1329555,1202802,1216788,1273464,1243731,1222191,1169276],1],["28651388","Énergir, s.e.c.","Énergir, s.e.c.",9,"1717, rue du Havre, Montréal, Québec, H2K 2X3",-73.5492015,45.5327763,[null,null,null,null,48757,40177,47716,49626,57243,53647,51616,47221,45056],0]];
+const META = {"archive":"2026-11-08","modifie":"2026-10-02T19:17:43.427654","modifie_pdf":"2026-02-09T18:11:31.778238","metadata_modified":"2026-10-02T19:20:18.274229","annees":[2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"scian":[["212210","Extraction de minerais de fer"],["212220","Extraction de minerais d'or et d'argent"],["212232","Extraction de minerais de nickel-cuivre"],["212299","Extraction de tous les autres minerais métalliques"],["212392","Extraction de diamant"],["213119","Autres activités de soutien à extraction minière"],["221112","Production d'électricité à partir de combustibles fossiles"],["221119","Autres activités de production d'électricité"],["221122","Distribution d'électricité"],["221210","Distribution de gaz naturel"],["311224","Transformation des graines oléagineuses"],["311310","Fabrication de sucre"],["311511","Fabrication du lait de consommation"],["311515","Fabrication de beurre, de fromage et de produits laitiers secs et concentrés"],["311611","Abattage d'animaux (sauf les volailles)"],["311614","Fonte de graisses animales et transformation de la viande provenant de carcasses"],["311615","Transformation de la volaille"],["311990","Fabrication de tous les autres aliments"],["312120","Brasseries"],["312140","Distilleries"],["321111","Scieries (sauf les usines de bardeaux et de bardeaux de fente)"],["321216","Usines de panneaux de particules et de fibres"],["322111","Usines de pâte mécanique"],["322112","Usines de pâte chimique"],["322121","Usines de papier (sauf papier journal)"],["322122","Usines de papier journal"],["322130","Usines de carton"],["324110","Raffineries de pétrole"],["324122","Fabrication de bardeaux et de matériaux de revêtement en asphalte"],["325110","Fabrication de produits pétrochimiques"],["325120","Fabrication de gaz industriels"],["325130","Fabrication de teintures et de pigments synthétiques"],["325189","Fabrication de tous les autres produits chimiques inorganiques de base"],["325190","Fabrication d'autres produits chimiques organiques de base"],["325210","Fabrication de résines et de caoutchouc synthétique"],["325999","Fabrication de tous les autres produits chimiques divers"],["326130","Fabrication de plaques, de feuilles (sauf d'emballage) et de formes stratifiées en plastique"],["326140","Fabrication de produits en mousse de polystyrène"],["326210","Fabrication de pneus"],["327214","Fabrication de verre"],["327310","Fabrication de ciment"],["327410","Fabrication de chaux"],["327420","Fabrication de produits en gypse"],["327910","Fabrication de produits abrasifs"],["331110","Sidérurgie"],["331222","Étirage de fils d'acier"],["331313","Production primaire d'alumine et d'aluminium"],["331317","Laminage, étirage, extrusion et alliage de l'aluminium"],["331410","Fonte et affinage de métaux non ferreux (sauf l'aluminium)"],["331420","Laminage, étirage, extrusion et alliage du cuivre"],["331529","Fonderies de métaux non ferreux (sauf moulage sous pression)"],["332113","Forgeage"],["332510","Fabrication d'articles de quincaillerie"],["332810","Revêtement, gravure, traitement thermique et par le froid, et activités analogues"],["332999","Fabrication de tous les autres produits métalliques divers"],["334410","Fabrication de semi-conducteurs et d'autres composants électroniques"],["336410","Fabrication de produits aérospatiaux et de leurs pièces"],["486210","Transport du gaz naturel par gazoduc"]],"stats":{"lignes":1277,"etablissements":137,"entreprises":93,"scian":58,"constants":59,"trous":12,"zeros":[[2021,"PF Résolu inc. - Division Baie-Comeau"],[2021,"Produits Forestier Résolu - Amos"],[2022,"PF Résolu inc. - Division Baie-Comeau"],[2022,"Produits Forestier Résolu - Amos"],[2023,"PF Résolu inc. - Division Baie-Comeau"],[2023,"Produits Forestier Résolu - Amos"],[2024,"PF Résolu inc. - Division Baie-Comeau"],[2024,"Produits Forestier Résolu - Amos"]],"zeros_etablissements":2,"par_annee":[[2013,78,0,18441437],[2014,72,0,18223838],[2015,73,0,18199942],[2016,71,0,17777479],[2017,74,0,18370092],[2018,74,0,17388646],[2019,104,0,18969317],[2020,113,0,18542611],[2021,120,2,19832201],[2022,124,2,19794225],[2023,125,2,19735816],[2024,126,2,19217555],[2025,123,0,18944845]],"mouvements":[{"de":2013,"a":2014,"entrees":0,"sorties":6,"premiere_annee":0},{"de":2014,"a":2015,"entrees":6,"sorties":5,"premiere_annee":5},{"de":2015,"a":2016,"entrees":1,"sorties":3,"premiere_annee":1},{"de":2016,"a":2017,"entrees":3,"sorties":0,"premiere_annee":3},{"de":2017,"a":2018,"entrees":1,"sorties":1,"premiere_annee":1},{"de":2018,"a":2019,"entrees":32,"sorties":2,"premiere_annee":25},{"de":2019,"a":2020,"entrees":9,"sorties":0,"premiere_annee":8},{"de":2020,"a":2021,"entrees":7,"sorties":0,"premiere_annee":6},{"de":2021,"a":2022,"entrees":6,"sorties":2,"premiere_annee":6},{"de":2022,"a":2023,"entrees":3,"sorties":2,"premiere_annee":1},{"de":2023,"a":2024,"entrees":3,"sorties":2,"premiere_annee":3},{"de":2024,"a":2025,"entrees":0,"sorties":3,"premiere_annee":0}],"total_constants":[17371451,17633934,17500625,17094127,17582842,16656855,16717324,16085716,16831917,16811578,16797291,16456517,16179969]},"lignes_xlsx":1277};
+
+const PAS = 50;
+const fmtNb = new Intl.NumberFormat("fr-CA");
+const fmtMt = new Intl.NumberFormat("fr-CA", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s.slice(0, 10) + "T00:00:00Z")).replace(/^1 /, "1er ");
+const nb = n => fmtNb.format(n);
+const mt = t => fmtMt.format(t / 1e6);
+const sansAccents = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const $ = id => document.getElementById(id);
+const S = META.stats;
+const ANNEES = META.annees;
+const PREMIERE = ANNEES[0], DERNIERE = ANNEES[ANNEES.length - 1];
+const PA = S.par_annee;   // [année, établissements, dont 0, total]
+
+const E = DONNEES.map(d => ({ num: d[0], nom: d[1], ent: d[2], scian: d[3], adresse: d[4], x: d[5], y: d[6], v: d[7], constant: d[8] === 1 }));
+for (const e of E) {
+  const [code, desc] = META.scian[e.scian];
+  e.cle = sansAccents([e.nom, e.ent, e.adresse, code, desc, e.num].join(" "));
+  e.n = e.v.filter(v => v !== null).length;
+}
+
+// Rupture principale : le passage d'une année à l'autre où le plus d'établissements s'ajoutent au fichier.
+const RUPT = S.mouvements.reduce((m, x) => x.entrees > m.entrees ? x : m);
+const nAnnee = a => PA[ANNEES.indexOf(a)][1];
+
+// En-tête
+const der = PA[PA.length - 1];
+$("chapeau").innerHTML = `Le ministère de l'Environnement publie, pour les établissements assujettis au règlement sur le marché du carbone (RSPEDE), la quantité de gaz à effet de serre couverte en vertu de ce règlement. Son fichier nomme <strong>${nb(S.etablissements)} établissements</strong> de ${PREMIERE} à ${DERNIERE}, dont ${nb(der[1])} pour ${DERNIERE}. Cherchez par nom d'établissement, entreprise, adresse ou secteur.`;
+$("fraicheur").textContent = `Fichier modifié sur Données Québec le ${dateFr(META.modifie)}, extrait le ${dateFr(META.archive)}. Les années sont des années de déclaration, telles que publiées.`;
+$("bref-dates").textContent = `Fichier modifié le ${dateFr(META.modifie)}, extrait le ${dateFr(META.archive)}.`;
+$("bref-limite").textContent = `le nombre d'établissements du fichier change d'une année à l'autre (${nb(nAnnee(RUPT.de))} en ${RUPT.de}, ${nb(nAnnee(RUPT.a))} en ${RUPT.a}). La documentation du ministère n'explique pas ce changement. Les totaux annuels additionnent donc des ensembles d'établissements différents.`;
+$("opt-constant").textContent = `Seulement les ${nb(S.constants)} présents chaque année de ${PREMIERE} à ${DERNIERE}`;
+$("annee").innerHTML += ANNEES.map(a => `<option value="${a}">${a}</option>`).join("");
+$("scian").innerHTML += META.scian.map(([c, d], i) => `<option value="${i}">${c} ${echapper(d)}</option>`).join("");
+
+// Fiche
+const liste = items => items.map(t => `<li>${t}</li>`).join("");
+const pluriel = (n, s, p) => `${nb(n)} ${n > 1 ? p : s}`;
+$("fiche-fraicheur").textContent = `Fichier des établissements modifié sur Données Québec le ${dateFr(META.modifie)}, extrait et archivé le ${dateFr(META.archive)}. La fiche du jeu indique une mise à jour annuelle. Le document de métadonnées, modifié le ${dateFr(META.modifie_pdf)}, mentionne une mise à jour des émissions de 2024 de 3 établissements le 4 février 2026 ; il ne mentionne pas l'ajout de l'année ${DERNIERE}.`;
+$("fiche-citer").textContent = `Le Relevé, « Les établissements du marché du carbone », d'après le ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs, Émissions de gaz à effet de serre couvertes par le RSPEDE (CC-BY 4.0), fichier modifié le ${dateFr(META.modifie)}, extrait le ${dateFr(META.archive)}. https://le-releve.github.io/marche-carbone/`;
+$("fiche-compte").innerHTML = liste([
+  `Une fiche par numéro d'établissement : ${nb(S.etablissements)} établissements, associés à ${nb(S.entreprises)} noms d'entreprise différents, dans ${nb(S.scian)} codes SCIAN, sur ${nb(S.lignes)} lignes (une par année et par établissement).`,
+  `Selon le ministère, l'année est l'« année de déclaration des émissions », et la valeur est la « quantité totale de GES couvertes en vertu du RSPEDE en tm éq. CO2 » (tonnes métriques d'équivalent CO<sub>2</sub>).`,
+  `Le nombre d'établissements d'une année est le nombre de lignes de cette année dans le fichier, y compris les lignes dont la valeur publiée est 0.`,
+  `Le fichier des distributeurs de carburants et de combustibles, publié dans le même jeu, est archivé mais n'est pas repris sur cette page : il ne nomme pas d'établissements.`,
+]);
+$("fiche-traitement").innerHTML = liste([
+  `Archivage des cinq fichiers du jeu (CSV et XLSX des établissements, CSV et XLSX des distributeurs, PDF de métadonnées) et de la fiche de Données Québec, tels que téléchargés le ${dateFr(META.archive)}.`,
+  `Lecture du CSV des établissements (${nb(S.lignes)} lignes) et comparaison, ligne par ligne, avec le XLSX du même jeu (${nb(META.lignes_xlsx)} lignes).`,
+  `Regroupement des lignes par numéro d'établissement. Le nom, l'entreprise, le code SCIAN, l'adresse et les coordonnées sont les mêmes pour toutes les années d'un établissement : ils sont repris tels quels.`,
+  `Le code SCIAN à six chiffres est séparé de sa description, sans autre changement. Les coordonnées sont reprises sans arrondi.`,
+  `Totaux annuels : somme des valeurs publiées des établissements sélectionnés, sans arrondi ; le graphique les affiche en millions de tonnes, à deux décimales, et le tableau des années en tonnes.`,
+  `Établissements « présents chaque année » : ceux qui ont une ligne dans le fichier pour chacune des années ${PREMIERE} à ${DERNIERE} (${nb(S.constants)}). Ce regroupement est le nôtre ; il permet de suivre un même ensemble d'établissements.`,
+]);
+const mvt = S.mouvements.map(m => `${m.de}-${m.a} : ${m.entrees ? `+${m.entrees}` : "0"} / ${m.sorties ? `−${m.sorties}` : "0"}`).join(" ; ");
+$("fiche-perimetre").innerHTML = liste([
+  `Le nombre d'établissements du fichier varie de ${nb(Math.min(...PA.map(p => p[1])))} à ${nb(Math.max(...PA.map(p => p[1])))} selon l'année. Le plus grand changement a lieu entre ${RUPT.de} et ${RUPT.a} : ${pluriel(RUPT.entrees, "établissement s'ajoute", "établissements s'ajoutent")} au fichier (dont ${nb(RUPT.premiere_annee)} qui n'y figuraient aucune année auparavant) et ${pluriel(RUPT.sorties, "n'y figure", "n'y figurent")} plus. Le fichier passe ainsi de ${nb(nAnnee(RUPT.de))} à ${nb(nAnnee(RUPT.a))} établissements.`,
+  `La fiche du jeu et le document de métadonnées décrivent les émetteurs assujettis et leurs seuils, mais n'expliquent pas ces changements et ne disent pas si le champ d'application a changé pendant la période. Le Relevé n'en avance pas de raison. Les totaux d'années différentes portent donc sur des ensembles d'établissements différents ; le filtre « Seulement les ${nb(S.constants)} présents chaque année » permet de comparer un même ensemble.`,
+  `Arrivées et départs du fichier d'une année à l'autre (établissements ajoutés / retirés) : ${mvt}.`,
+  `Le document de métadonnées indique, dans ses informations complémentaires, que « les potentiels de réchauffement planétaire utilisés afin de calculer les émissions de GES ont été révisés à compter de 2021 ». Il ne précise pas si cette phrase vise le fichier des établissements, celui des distributeurs ou les deux. Il ne précise pas non plus si les années antérieures à 2021 ont été recalculées avec les potentiels révisés.`,
+]);
+const anneesZeros = [...new Set(S.zeros.map(z => z[0]))];
+$("fiche-manquantes").innerHTML = liste([
+  `Aucune valeur vide dans le fichier. Un établissement absent d'une année n'a pas de ligne pour cette année ; la page affiche « absent du fichier » et ne compte pas de zéro. ${pluriel(S.trous, "établissement est absent", "établissements sont absents")} du fichier pendant au moins une année entre sa première et sa dernière année.`,
+  `${pluriel(S.zeros.length, "ligne porte", "lignes portent")} une valeur publiée de 0, pour ${pluriel(S.zeros_etablissements, "établissement", "établissements")} (années ${anneesZeros.join(", ")}). Le ministère n'explique pas le sens de ces zéros ; ils sont affichés tels que publiés et comptés dans le nombre d'établissements de l'année (colonne « dont valeur publiée de 0 » du tableau des années).`,
+]);
+$("fiche-verifs").innerHTML = liste([
+  `Les ${nb(META.lignes_xlsx)} lignes du XLSX redonnent exactement les ${nb(S.lignes)} lignes du CSV (mêmes valeurs, même ordre).`,
+  `Le fichier ne contient aucune ligne en double pour une même année et un même établissement ; toutes les valeurs sont des nombres entiers positifs ou nuls.`,
+  `Chaque numéro d'établissement a un seul nom, une seule entreprise, un seul code SCIAN, une seule adresse et une seule paire de coordonnées. Toutes les coordonnées se trouvent dans un rectangle qui englobe le Québec (longitude de −80 à −56, latitude de 44,9 à 63) ; ce contrôle approximatif ne vérifie pas le tracé des frontières.`,
+  `La somme des totaux annuels du tableau égale la somme de toutes les lignes du fichier (${nb(PA.reduce((s, p) => s + p[3], 0))} tonnes métriques d'équivalent CO<sub>2</sub> pour ${PREMIERE} à ${DERNIERE}, total qui additionne des périmètres différents et que la page n'utilise pas autrement).`,
+  `Nous n'avons trouvé, dans la fiche ni dans le document de métadonnées, aucun total publié par le ministère qui permette de recouper ces sommes. Les vérifications ci-dessus comparent les fichiers du jeu entre eux.`,
+]);
+
+let affichees = PAS, vue = [];
+
+function filtrer(sansAnnee) {
+  const q = sansAccents($("recherche").value.trim()), mots = q ? q.split(/\s+/) : [];
+  const sc = $("scian").value, an = $("annee").value, pe = $("perimetre").value;
+  const ia = an === "" ? -1 : ANNEES.indexOf(+an);
+  return E.filter(e => (sc === "" || e.scian === +sc) && (pe === "" || e.constant)
+    && (sansAnnee || ia < 0 || e.v[ia] !== null) && mots.every(m => e.cle.includes(m)));
+}
+const anneeValeur = () => $("annee").value === "" ? DERNIERE : +$("annee").value;
+
+function fiche(e) {
+  const ia = ANNEES.indexOf(anneeValeur()), v = e.v[ia];
+  const [code, desc] = META.scian[e.scian];
+  const champs = [
+    ["Entreprise", e.ent], ["Secteur (SCIAN)", `${code} ${desc}`], ["Adresse (telle que publiée)", e.adresse],
+    ["Latitude et longitude publiées", `${e.y}, ${e.x}`], ["Numéro d'établissement", e.num],
+    ["Années dans le fichier", `${nb(e.n)} sur ${ANNEES.length}`],
+  ];
+  const annees = ANNEES.map((a, i) => `<div><span>${a}</span>${e.v[i] === null ? `<em class="absent">absent du fichier</em>` : `${nb(e.v[i])} t`}</div>`).join("");
+  return `<details class="etab"><summary>
+    <div><div class="nom">${echapper(e.nom)}</div><div class="sous">${echapper(e.ent)}</div></div>
+    <div class="secteur">${code} ${echapper(desc)}</div>
+    <div class="valeur">${v === null ? `<span class="sous">absent du fichier en ${anneeValeur()}</span>` : `${nb(v)} t <span class="sous">en ${anneeValeur()}</span>`}</div>
+  </summary>
+  <div class="detail"><dl>${champs.map(([t, x]) => `<dt>${t}</dt><dd>${echapper(x)}</dd>`).join("")}</dl>
+  <div><h3>Émissions couvertes par le RSPEDE, en tonnes métriques d'équivalent CO<sub>2</sub>, telles que publiées</h3></div>
+  <div class="annees">${annees}</div></div></details>`;
+}
+
+const parNom = (a, b) => a.nom.localeCompare(b.nom, "fr") || a.num.localeCompare(b.num);
+const TRIS = {
+  nom: parNom,
+  entreprise: (a, b) => a.ent.localeCompare(b.ent, "fr") || parNom(a, b),
+  scian: (a, b) => META.scian[a.scian][0].localeCompare(META.scian[b.scian][0]) || parNom(a, b),
+  valeur: (a, b) => { const i = ANNEES.indexOf(anneeValeur()); return (b.v[i] ?? -1) - (a.v[i] ?? -1) || parNom(a, b); },
+};
+
+function remplir() {
+  $("liste").innerHTML = vue.slice(0, affichees).map(fiche).join("");
+  $("vide").hidden = vue.length > 0;
+  $("plus").hidden = vue.length <= affichees;
+}
+
+// Graphique annuel : barres des totaux de la sélection, nombre d'établissements sous chaque année, repère de rupture.
+function series(sel) {
+  return ANNEES.map((a, i) => {
+    let n = 0, z = 0, t = 0;
+    for (const e of sel) { const v = e.v[i]; if (v !== null) { n++; z += v === 0; t += v; } }
+    return [a, n, z, t];
+  });
+}
+function dessinerSerie(sel) {
+  const s = series(sel), svg = $("graphique");
+  const W = Math.max(300, svg.parentNode.clientWidth - 32), H = 260;
+  const g = 44, d = 8, h = 22, b = 44;   // marges : gauche, droite, haut, bas
+  const max = Math.max(...s.map(x => x[3]), 1);
+  const pasMt = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10].find(p => max / 1e6 / p <= 5) || 10;
+  const haut = Math.ceil(max / 1e6 / pasMt) * pasMt;
+  const y = v => h + (H - h - b) * (1 - v / 1e6 / haut);
+  const bande = (W - g - d) / s.length, larg = Math.max(6, bande * 0.66);
+  const x = i => g + bande * i + bande / 2;
+  const graduations = [];
+  for (let k = 0; k <= haut + 1e-9; k += pasMt) graduations.push(k);
+  const iR = ANNEES.indexOf(RUPT.a), xR = g + bande * iR;
+  const etiquettes = bande >= 38 ? 1 : 2;   // une année sur deux sur les petits écrans
+  // L'étiquette décrit toujours l'ensemble du fichier, quel que soit le filtre : on prend la plus longue qui tient à gauche du trait.
+  const fleche = `${nb(nAnnee(RUPT.de))} → ${nb(nAnnee(RUPT.a))}`;
+  const candidates = [`${fleche} établissements dans l'ensemble du fichier`, `${fleche} dans l'ensemble du fichier`, `${fleche} dans le fichier`];
+  const etiquetteR = candidates.find(t => xR - 4 - t.length * 6.2 > 0) || candidates[candidates.length - 1];
+  const aGauche = xR - etiquetteR.length * 6.2 > 0;   // texte à gauche du trait s'il y a la place, sinon à droite
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.innerHTML = `<desc id="desc-graphique">Émissions couvertes par le RSPEDE, somme des ${nb(sel.length)} établissements sélectionnés, de ${PREMIERE} à ${DERNIERE}, en millions de tonnes. ${s.map(x => `${x[0]} : ${mt(x[3])} Mt, ${x[1]} établissements`).join(" ; ")}.</desc>
+    ${graduations.map(k => `<line class="grille" x1="${g}" x2="${W - d}" y1="${y(k * 1e6)}" y2="${y(k * 1e6)}"/><text x="${g - 6}" y="${y(k * 1e6) + 4}" text-anchor="end">${fmtNb.format(+k.toFixed(2))}</text>`).join("")}
+    ${s.map((p, i) => p[3] > 0 ? `<rect class="barre" x="${x(i) - larg / 2}" y="${y(p[3])}" width="${larg}" height="${y(0) - y(p[3])}"><title>${p[0]} : ${nb(p[3])} t (${mt(p[3])} Mt), ${p[1]} établissement${p[1] > 1 ? "s" : ""}</title></rect>` : "").join("")}
+    <line class="axe" x1="${g}" x2="${W - d}" y1="${y(0)}" y2="${y(0)}"/>
+    ${s.map((p, i) => (i % etiquettes === 0 || i === s.length - 1) ? `<text x="${x(i)}" y="${H - b + 16}" text-anchor="middle">${p[0]}</text>` : "").join("")}
+    ${s.map((p, i) => `<text class="n" x="${x(i)}" y="${H - b + 32}" text-anchor="middle">${p[1]}</text>`).join("")}
+    <text class="n" x="${g - 6}" y="${H - b + 32}" text-anchor="end">n =</text>
+    <line class="rupture" x1="${xR}" x2="${xR}" y1="${h - 14}" y2="${H - b + 20}"/>
+    <text class="rupture-t" x="${aGauche ? xR - 4 : xR + 4}" y="${h - 4}" text-anchor="${aGauche ? "end" : "start"}">${etiquetteR}</text>`;
+  return s;
+}
+
+function tableAnnees(s) {
+  const iR = ANNEES.indexOf(RUPT.a);
+  $("table-annees").innerHTML = `<thead><tr><th scope="col">Année de déclaration</th><th scope="col">Établissements sélectionnés dans le fichier</th><th scope="col">dont valeur publiée de 0</th><th scope="col">Émissions couvertes (t éq. CO<sub>2</sub>)</th></tr></thead><tbody>${s.map((p, i) => `<tr${i === iR ? ` class="apres-rupture"` : ""}><td>${p[0]}</td><td>${nb(p[1])}</td><td>${p[2] ? nb(p[2]) : "–"}</td><td>${p[1] ? nb(p[3]) : "–"}</td></tr>`).join("")}</tbody>`;
+}
+
+function texteSerie(sel, s) {
+  const constant = $("perimetre").value === "constant";
+  const filtre = sel.length !== E.length;
+  $("texte-serie").textContent = `Chaque barre additionne les émissions couvertes publiées pour les établissements ${filtre ? `sélectionnés (${nb(sel.length)})` : "du fichier"}, année par année. Le nombre sous chaque année (n) est celui des établissements qui y figurent. Le filtre « Présent dans le fichier en » ne s'applique pas à ce graphique.`;
+  $("note-rupture").textContent = constant
+    ? `Ce graphique suit un même ensemble de ${nb(S.constants)} établissements, présents chaque année (n = ${nb(S.constants)}). Le trait pointillé et son étiquette décrivent l'ensemble du fichier, qui passe de ${nb(nAnnee(RUPT.de))} établissements en ${RUPT.de} à ${nb(nAnnee(RUPT.a))} en ${RUPT.a}. Selon le document de métadonnées, les potentiels de réchauffement planétaire utilisés pour calculer les émissions ont été révisés à compter de 2021 ; il ne précise pas si cela vise ce fichier.`
+    : `Le trait pointillé marque le passage de ${nb(nAnnee(RUPT.de))} établissements en ${RUPT.de} à ${nb(nAnnee(RUPT.a))} en ${RUPT.a} dans l'ensemble du fichier ; la documentation du ministère n'explique pas ce changement. Les années de part et d'autre ne portent pas sur les mêmes établissements et ne se comparent pas directement. Pour suivre un même ensemble, choisissez « Seulement les ${nb(S.constants)} présents chaque année ». Selon le document de métadonnées, les potentiels de réchauffement planétaire utilisés pour calculer les émissions ont aussi été révisés à compter de 2021 ; il ne précise pas si cela vise ce fichier.`;
+}
+
+// Nuage de points : longitude et latitude, avec une correction de la longitude à 52° de latitude.
+const COS = Math.cos(52 * Math.PI / 180);
+const VUES = { tout: [-80, -56.8, 44.8, 63], sud: [-80, -60.5, 44.8, 49.6] };
+let vueCarte = "tout";
+const px = x => ((x + 80) * COS * 100).toFixed(0), py = y => ((63 - y) * 100).toFixed(0);
+const chemin = l => l.map(e => `M${px(e.x)} ${py(e.y)}h0`).join("");
+const CHEMIN_TOUS = chemin(E);
+function dessinerCarte() {
+  const [x0, x1, y0, y1] = VUES[vueCarte];
+  const vx = (x0 + 80) * COS * 100, vw = (x1 - x0) * COS * 100, vy = (63 - y1) * 100, vh = (y1 - y0) * 100;
+  const svg = $("nuage");
+  svg.setAttribute("viewBox", `${vx.toFixed(0)} ${vy.toFixed(0)} ${vw.toFixed(0)} ${vh.toFixed(0)}`);
+  const r = vueCarte === "tout" ? 6 : 8;
+  svg.innerHTML = `<desc id="desc-carte">Nuage de points : ${nb(vue.length)} établissements sélectionnés sur ${nb(E.length)}, placés selon leurs coordonnées publiées.</desc>
+    <path class="fond" d="${CHEMIN_TOUS}" fill="none" stroke-width="${r}" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    <path class="choix" d="${chemin(vue)}" fill="none" stroke-width="${r}" stroke-linecap="round" vector-effect="non-scaling-stroke"/>`;
+}
+document.querySelectorAll("[data-vue]").forEach(bt => bt.addEventListener("click", () => {
+  vueCarte = bt.dataset.vue;
+  document.querySelectorAll("[data-vue]").forEach(z => z.setAttribute("aria-pressed", String(z === bt)));
+  dessinerCarte();
+}));
+
+let selSerie = E;
+function afficher() {
+  const a = anneeValeur();
+  $("opt-valeur").textContent = `Émissions couvertes en ${a} (décroissant)`;
+  $("entete-valeur").textContent = `Émissions couvertes en ${a}`;
+  vue = filtrer(false).sort(TRIS[$("tri").value]);
+  remplir();
+  $("compte").innerHTML = `<strong>${nb(vue.length)}</strong> établissement${vue.length > 1 ? "s" : ""} sur ${nb(E.length)}`;
+  selSerie = filtrer(true);
+  tableAnnees(dessinerSerie(selSerie));
+  texteSerie(selSerie);
+  dessinerCarte();
+}
+$("plus").addEventListener("click", () => { affichees += PAS; remplir(); });
+["recherche", "scian", "annee", "perimetre", "tri"].forEach(id => $(id).addEventListener("input", () => { affichees = PAS; afficher(); }));
+$("effacer").addEventListener("click", () => {
+  $("recherche").value = "";
+  ["scian", "annee", "perimetre"].forEach(id => { $(id).value = ""; });
+  $("tri").value = "nom";
+  affichees = PAS; afficher();
+});
+let attente;
+window.addEventListener("resize", () => { clearTimeout(attente); attente = setTimeout(() => dessinerSerie(selSerie), 150); });
+
+// Copie de la sélection : une ligne par établissement, une colonne par année.
+const ENTETE = ["Établissement", "Entreprise", "Code SCIAN", "Description SCIAN", "Adresse", "Longitude", "Latitude", "Numéro d'établissement",
+  ...ANNEES.map(a => `Émissions couvertes ${a} (t éq. CO2)`)];
+const rang = e => [e.nom, e.ent, ...META.scian[e.scian], e.adresse, e.x, e.y, e.num, ...e.v.map(v => v ?? "")];
+const tsv = l => [ENTETE, ...l.map(rang)].map(r => r.map(v => String(v ?? "").replace(/[\t\n]/g, " ")).join("\t")).join("\n");
+const boutonCopier = $("copier"), libelleCopier = boutonCopier.textContent;
+boutonCopier.addEventListener("click", async () => {
+  const texte = tsv(vue);
+  try {
+    await navigator.clipboard.writeText(texte);
+    boutonCopier.textContent = `Sélection copiée (${nb(vue.length)} établissement${vue.length > 1 ? "s" : ""})`;
+    setTimeout(() => { boutonCopier.textContent = libelleCopier; }, 2500);
+  } catch {
+    const zone = $("secours");
+    zone.value = texte; zone.hidden = false; zone.focus(); zone.select();
+    boutonCopier.textContent = "Copiez le texte sélectionné (Ctrl+C)";
+  }
+});
+
+afficher();
+</script>
