@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Les décès liés au travail</title>
+<style>
+/* Page légère de la série 2026-11 (D-034, D-037) : nombre annuel de décès acceptés par la CNESST, réparti selon une colonne
+   du fichier, puis un tableau par catégorie. Aucun tri par nombre (D-009) ; fiche « Comment on a fait » (D-013). */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+}
+
+[hidden] { display: none !important; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; }
+a { color: inherit; }
+
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.champ label { font-size: 13px; color: var(--ink-2); flex: 0 0 auto; }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 100%; min-width: 0; }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+.bouton:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible, .choisir:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p, .notes p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.notes { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.titre-graphique { font-size: 15px; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+.sous-titre { font-size: 13px; color: var(--ink-2); margin: 0; }
+.barres { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 10px; align-items: center; margin: 0; padding: 0; list-style: none; }
+.barres li { display: contents; }
+.an { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.piste { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.barre { height: 18px; background: var(--barre); border-radius: 2px; flex: none; min-width: 1px; }
+.valeur { font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.part { color: var(--muted); }
+
+.compte { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); }
+.defile { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 180px; max-width: 320px; position: sticky; left: 0; background: var(--surface); }
+td.codes { text-align: left; color: var(--ink-2); white-space: normal; min-width: 120px; }
+tr.choisie td { background: var(--survol); }
+tr.choisie td:first-child { box-shadow: inset 3px 0 0 var(--barre); }
+tr.ensemble td { font-weight: 600; border-top: 1px solid var(--axis); }
+.choisir { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--axis); text-underline-offset: 3px; }
+.publie { font-size: 12px; letter-spacing: 0.02em; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 640px) {
+  .champ { width: 100%; }
+  .champ select { flex: 1 1 auto; }
+  th:first-child, td:first-child { min-width: 140px; }
+}
+
+.encadre { border-left: 3px solid var(--axis); padding: 4px 0 4px 12px; display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.encadre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.encadre strong { color: var(--ink); font-weight: 600; }
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail" aria-current="page">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Travail <span class="pastille">Prototype</span></div>
+    <h1>Les décès liés au travail</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <div class="commandes" role="group" aria-label="Choix de la répartition">
+    <div class="champ">
+      <label for="dimension">Répartir selon</label>
+      <select id="dimension"><option value="">Aucune répartition</option></select>
+    </div>
+    <div class="champ" id="champ-categorie" hidden>
+      <label for="categorie">Catégorie</label>
+      <select id="categorie"></select>
+    </div>
+  </div>
+
+  <section class="carte" aria-labelledby="titre-graphique">
+    <p class="titre-graphique" id="titre-graphique"></p>
+    <p class="sous-titre" id="sous-titre"></p>
+    <ol class="barres" id="barres"></ol>
+  </section>
+
+  <div class="notes" id="notes" aria-live="polite"></div>
+
+  <section class="encadre" aria-labelledby="titre-encadre">
+    <h3 id="titre-encadre">Décès acceptés, et non décès survenus dans l'année</h3>
+    <p>Le jeu de la CNESST compte les réclamations pour décès dont l'acceptation a été inscrite entre le 1er janvier et le 31 décembre de l'année de référence. Selon la CNESST, le décès peut être survenu au cours d'une année antérieure.</p>
+    <p>Le fichier ne donne ni la date du décès, ni celle de l'accident ou de la maladie. Le fichier ne permet donc pas de savoir combien des décès acceptés une année sont survenus cette année-là.</p>
+    <p>Selon la CNESST, ces décès sont la conséquence d'un accident du travail ou d'une maladie professionnelle au sens de la <em>Loi sur les accidents du travail et les maladies professionnelles</em>, et visent des personnes couvertes par le régime de santé et de sécurité du travail dont elle est responsable. Le jeu ne présente que des réclamations acceptées par la CNESST.</p>
+  </section>
+
+  <section class="colonne" id="tableau" aria-labelledby="titre-tableau" hidden>
+    <div class="section-titre">
+      <h2 id="titre-tableau"></h2>
+      <p id="aide-tableau"></p>
+    </div>
+    <div class="compte">
+      <span id="compte-tableau"></span>
+      <span class="champ" id="champ-tri">
+        <label for="tri">Ordre</label>
+        <select id="tri">
+          <option value="cnesst">Ordre de la fiche de la CNESST</option>
+          <option value="alpha">Ordre alphabétique</option>
+        </select>
+      </span>
+    </div>
+    <div class="carte">
+      <div class="defile">
+        <table>
+          <thead id="tete"></thead>
+          <tbody id="corps"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> Commission des normes, de l'équité, de la santé et de la sécurité du travail (CNESST), <a href="https://www.donneesquebec.ca/recherche/dataset/deces-acceptes" target="_blank" rel="noopener">Décès acceptés</a> (Données Québec, licence CC-BY 4.0). Fichiers <span class="periode"></span>, extraits le <span class="extraction"></span>.</p>
+    <p><strong>Ce qu'on compte :</strong> les réclamations pour décès acceptées par la CNESST au cours de chaque année, telles que publiées. Chaque ligne du fichier porte un numéro de cas anonyme attribué par la CNESST ; on compte les lignes.</p>
+    <p><strong>Principale limite :</strong> l'année est celle de l'acceptation de la réclamation, pas celle du décès. Ce sont des nombres, pas des taux : le jeu ne donne pas le nombre de travailleurs. Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>CNESST, <a href="https://www.donneesquebec.ca/recherche/dataset/deces-acceptes" target="_blank" rel="noopener">Décès acceptés</a>, sur Données Québec, licence Creative Commons Attribution 4.0 (CC-BY 4.0). Un fichier CSV par année, et une <a id="lien-fiche-pdf" href="#" target="_blank" rel="noopener">fiche de métadonnées</a> (PDF) qui décrit les variables et leurs valeurs.</p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li>Selon la fiche de la CNESST, le jeu présente les réclamations des décès acceptés par la CNESST du 1er janvier au 31 décembre. La date d'inscription de l'acceptation de la réclamation se situe dans l'année de référence ; le décès peut être survenu au cours d'une année antérieure. La colonne ANNEE du fichier est décrite comme l'« année d'acceptation du décès ».</li>
+          <li>Les décès retenus sont la conséquence d'un accident du travail ou d'une maladie professionnelle au sens de la <em>Loi sur les accidents du travail et les maladies professionnelles</em> (LATMP), et visent des personnes couvertes par le régime d'assurance en santé et sécurité du travail dont la CNESST est responsable.</li>
+          <li>Chaque ligne porte un numéro séquentiel anonyme, créé par la CNESST pour le jeu de données.</li>
+          <li><strong>Catégorie</strong> : selon la fiche, un <strong>accident du travail</strong> est un événement imprévu et soudain, attribuable à toute cause, survenant à une personne par le fait ou à l'occasion de son travail et qui entraîne pour elle une lésion ou le décès ; une <strong>maladie professionnelle</strong> est une maladie contractée par le fait ou à l'occasion du travail, caractéristique de ce travail ou reliée directement à ses risques particuliers.</li>
+          <li><strong>Indicateur amiante</strong> : selon la fiche, il indique si le décès accepté est attribuable à l'amiante (l'exposition aux poussières d'amiante peut causer l'amiantose, le mésothéliome ou certains autres types de cancers). Il vaut « OUI » ou « NON ».</li>
+          <li><strong>Secteur</strong> : le secteur d'activité SCIAN (Système de classification des industries de l'Amérique du Nord) dans lequel évoluait le travailleur lors des circonstances reliées à son décès. La CNESST regroupe les codes SCIAN à 4 positions en 21 secteurs ; un cas dont le code est absent ou hors de ces regroupements est classé « Autres ou non codés ». Les codes de chaque regroupement sont repris de la fiche.</li>
+          <li><strong>Groupe d'âge</strong> : l'âge de la personne au moment du décès. <strong>Sexe</strong> : le fichier ne contient que les valeurs « femme » et « homme ».</li>
+          <li><strong>Nature</strong> : la ou les principales caractéristiques physiques de la blessure ou de la maladie. <strong>Siège</strong> : la partie du corps touchée. <strong>Genre d'accident ou d'exposition</strong> : la manière dont la blessure s'est produite ou la maladie a été contractée. Ces définitions résument celles de la fiche.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Traitement</h3>
+        <ul>
+          <li>Chaque fichier annuel est archivé tel que téléchargé, avec la réponse de l'API de Données Québec et l'empreinte de chaque fichier.</li>
+          <li>Pour chaque année, on compte les lignes du fichier, puis les lignes par valeur de chaque colonne. Aucune ligne n'est retirée.</li>
+          <li id="fiche-espaces"></li>
+          <li>Les libellés de catégorie, de secteur, de sexe et de groupe d'âge sont présentés en minuscules accentuées ; les valeurs « OUI » et « NON » de l'indicateur amiante sont présentées comme « attribuable à l'amiante » et « non attribuable à l'amiante ». Les libellés de nature, de siège et de genre sont laissés tels que publiés par la CNESST, en majuscules abrégées ; leurs définitions sont dans la fiche de métadonnées.</li>
+          <li id="fiche-lignes"></li>
+          <li id="fiche-vides"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul>
+          <li>L'année est celle de l'acceptation de la réclamation. Le fichier ne donne pas la date du décès, ni celle de l'accident ou de la maladie : le nombre d'une année n'est pas le nombre de décès survenus cette année-là.</li>
+          <li>Le jeu ne contient pas le nombre de travailleurs, ni au total ni par secteur, sexe ou âge. Les nombres ne sont donc pas des taux et ne permettent pas, à eux seuls, de comparer le risque d'un groupe à l'autre.</li>
+          <li>Beaucoup de nombres sont petits : la plupart des catégories comptent de 0 à quelques cas par année, et un écart d'une année à l'autre peut porter sur quelques cas seulement. Un 0 signifie qu'aucune ligne du fichier ne porte cette valeur cette année-là.</li>
+          <li>La fiche ne précise pas si les chiffres d'une année sont révisés après leur publication.</li>
+          <li>Sur Données Québec, la description de chaque fichier annuel parle des décès acceptés « du 1er au 31 décembre » de l'année, alors que la fiche de métadonnées et la description du jeu parlent du 1er janvier au 31 décembre. Nous suivons la fiche.</li>
+          <li>La période inscrite dans les métadonnées de Données Québec va de 2019 à 2021, alors que les fichiers vont jusqu'à <span class="dernier"></span>.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul>
+          <li>Pour chaque année, la somme des cas de chaque répartition redonne le nombre de lignes du fichier.</li>
+          <li>Chaque numéro de cas n'apparaît qu'une fois dans son fichier, et la colonne ANNEE correspond à l'année du fichier sur toutes les lignes.</li>
+          <li id="fiche-verif"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p>Les nombres de cas par année d'acceptation, pour l'ensemble et pour chaque valeur de chaque colonne, avec les libellés publiés. Les fichiers détaillés, une ligne par cas, sont sur Données Québec.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/deces_travail.csv" download>Télécharger les données (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = {"annees":[2019,2020,2021,2022,2023],"total":[190,173,207,216,210],"dims":[{"id":"categorie","colonne":"CATEGORIE","titre":"Accident du travail ou maladie professionnelle","valeurs":[{"v":"ACCIDENT DU TRAVAIL","l":"Accident du travail","n":[57,57,60,69,73]},{"v":"MALADIE PROFESSIONNELLE","l":"Maladie professionnelle","n":[133,116,147,147,137]}]},{"id":"amiante","colonne":"INDIC_AMIANTE","titre":"Indicateur amiante","valeurs":[{"v":"OUI","l":"Attribuable à l'amiante","n":[119,90,135,124,120]},{"v":"NON","l":"Non attribuable à l'amiante","n":[71,83,72,92,90]}]},{"id":"secteur","colonne":"SECTEUR_SCIAN","titre":"Secteur d'activité (SCIAN)","valeurs":[{"v":"AGRICULTURE","l":"Agriculture","c":"1111 à 1129, 1151 à 1152","n":[6,3,2,6,4]},{"v":"FORESTERIE, EXPLOITATION FORESTIERE ET ACTIVITES DE SOUTIEN A LA FORESTERIE","l":"Foresterie, exploitation forestière et activités de soutien à la foresterie","c":"1131 à 1133, 1153","n":[2,1,3,3,4]},{"v":"PECHE, CHASSE ET PIEGEAGE","l":"Pêche, chasse et piégeage","c":"1141 à 1142","n":[0,1,0,0,0]},{"v":"EXTRACTION MINIERE, EXPLOITATION EN CARRIERE ET EXTRACTION DE PETROLE ET DE GAZ","l":"Extraction minière, exploitation en carrière et extraction de pétrole et de gaz","c":"2111 à 2131","n":[11,16,20,14,16]},{"v":"SERVICES PUBLICS","l":"Services publics","c":"2211 à 2213","n":[1,0,2,0,1]},{"v":"CONSTRUCTION","l":"Construction","c":"2361 à 2389","n":[55,44,72,57,68]},{"v":"FABRICATION DE BIENS DURABLES","l":"Fabrication de biens durables","c":"3211 à 3219, 3271 à 3279, 3311 à 3379","n":[36,32,23,45,28]},{"v":"FABRICATION DE BIENS NON DURABLES","l":"Fabrication de biens non durables","c":"3111 à 3169, 3221 à 3262, 3391 à 3399","n":[16,15,13,18,14]},{"v":"COMMERCE DE GROS","l":"Commerce de gros","c":"4111 à 4191","n":[8,4,4,4,7]},{"v":"COMMERCE DE DETAIL","l":"Commerce de détail","c":"4411 à 4543","n":[5,3,6,4,6]},{"v":"TRANSPORT ET ENTREPOSAGE","l":"Transport et entreposage","c":"4811 à 4931","n":[16,9,15,15,16]},{"v":"FINANCE ET ASSURANCES","l":"Finance et assurances","c":"5211 à 5242, 5261 à 5269","n":[2,0,0,1,0]},{"v":"SERVICES IMMOBILIERS ET SERVICES DE LOCATION ET DE LOCATION A BAIL","l":"Services immobiliers et services de location et de location à bail","c":"5311 à 5331","n":[1,1,2,0,1]},{"v":"SERVICES PROFESSIONNELS, SCIENTIFIQUES ET TECHNIQUES","l":"Services professionnels, scientifiques et techniques","c":"5411 à 5419","n":[1,0,0,3,1]},{"v":"SERVICES AUX ENTREPRISES, SERVICES RELATIFS AUX BATIMENTS ET AUTRES SERVICES DE SOUTIEN","l":"Services aux entreprises, services relatifs aux bâtiments et autres services de soutien","c":"5511 à 5629","n":[7,4,5,10,5]},{"v":"SERVICES D'ENSEIGNEMENT","l":"Services d'enseignement","c":"6111 à 6117","n":[2,3,7,1,5]},{"v":"SOINS DE SANTE ET ASSISTANCE SOCIALE","l":"Soins de santé et assistance sociale","c":"6211 à 6244","n":[2,7,7,2,5]},{"v":"INFORMATION, CULTURE ET LOISIRS","l":"Information, culture et loisirs","c":"5111 à 5191, 7111 à 7139","n":[1,2,1,2,2]},{"v":"HEBERGEMENT ET SERVICES DE RESTAURATION","l":"Hébergement et services de restauration","c":"7211 à 7225","n":[1,0,2,0,0]},{"v":"AUTRES SERVICES","l":"Autres services","c":"8111 à 8141","n":[1,6,5,6,5]},{"v":"ADMINISTRATIONS PUBLIQUES","l":"Administrations publiques","c":"9111 à 9191","n":[16,22,18,25,22]},{"v":"AUTRES OU NON CODES","l":"Autres ou non codés","c":"code absent ou hors des regroupements","n":[0,0,0,0,0]}]},{"id":"sexe","colonne":"SEXE_PERS_PHYS","titre":"Sexe","valeurs":[{"v":"FEMME","l":"Femme","n":[8,11,9,5,8]},{"v":"HOMME","l":"Homme","n":[182,162,198,211,202]}]},{"id":"age","colonne":"GROUPE_AGE","titre":"Groupe d'âge au moment du décès","valeurs":[{"v":"MOINS DE 20","l":"Moins de 20 ans","n":[3,1,0,2,1]},{"v":"20 A 24","l":"20 à 24 ans","n":[3,2,2,3,2]},{"v":"25 A 34","l":"25 à 34 ans","n":[7,7,7,6,11]},{"v":"35 A 44","l":"35 à 44 ans","n":[8,11,9,13,12]},{"v":"45 A 54","l":"45 à 54 ans","n":[14,15,14,14,9]},{"v":"55 A 64","l":"55 à 64 ans","n":[31,24,24,31,24]},{"v":"65 OU PLUS","l":"65 ans ou plus","n":[124,113,151,147,151]}]},{"id":"nature","colonne":"NATURE_LESION","titre":"Nature de la lésion","valeurs":[{"v":"AUTRES BLES.,TROUBLES TRAUMA.","n":[14,10,3,13,12]},{"v":"BLES. TRAUMA. MUSCLES,TENDONS,ETC.","n":[0,3,2,2,3]},{"v":"BLES. TRAUMA. OS,NERFS,MOELLE EPINI.","n":[2,2,3,7,10]},{"v":"BLES.,TROUBLE TRAUMATIQUE,NP","n":[0,1,1,0,1]},{"v":"BLES.,TROUBLES TRAUMA. MULT.","n":[25,20,33,20,28]},{"v":"BLESSURE INTRACRANIENNE","n":[12,8,5,15,10]},{"v":"BRULURE","n":[1,1,3,0,1]},{"v":"EFFET DES CONDITIONS AMBIANTES","n":[1,0,2,1,0]},{"v":"MALAD. DE L'APPAREIL CIRCULATOIRE","n":[1,2,0,2,1]},{"v":"MALAD. DE L'APPAREIL RESPIRATOIRE","n":[24,35,37,41,38]},{"v":"MALAD. DU SANG,PATHOLOGIE HEMATO.,NP","n":[0,2,0,2,0]},{"v":"MALAD.,TROUBLE SYST. MUSC.-SQUEL.","n":[0,1,2,1,0]},{"v":"NEOPLASME,CANCER","n":[109,87,115,108,102]},{"v":"PLAIE OUVERTE","n":[1,1,1,2,2]},{"v":"TROUBLE,SYNDROME MENTAL","n":[0,0,0,2,2]}]},{"id":"siege","colonne":"SIEGE_LESION","titre":"Siège de la lésion","valeurs":[{"v":"ABDOMEN","n":[3,9,3,7,6]},{"v":"BRAS","n":[1,0,0,0,0]},{"v":"CHEVILLE(S)","n":[0,1,1,0,0]},{"v":"COU,SAUF SIEGE INTERNE","n":[0,0,0,0,1]},{"v":"DOS,COLONNE VERTEBRALE,MOELLE EPINI.","n":[1,0,1,3,7]},{"v":"EPAULES","n":[0,1,0,0,1]},{"v":"JAMBE(S)","n":[0,3,0,2,1]},{"v":"LARYNX","n":[0,1,0,0,0]},{"v":"REGION CRANIENNE,Y COMPRIS LE CRANE","n":[13,12,5,16,10]},{"v":"REGION PELVIENNE","n":[0,0,0,2,0]},{"v":"SIEGE INT. DU COU NP,REG. CERVICALE","n":[0,1,4,2,1]},{"v":"SIEGES INTERNES DU COU,NCA","n":[0,0,1,0,0]},{"v":"SIEGES MULTIPLES","n":[31,21,36,26,35]},{"v":"SIEGES MULTIPLES DE LA TETE","n":[0,1,1,0,1]},{"v":"SIEGES MULTIPLES MEMBRES INFERIEURS","n":[0,0,0,1,0]},{"v":"SYSTEMES CORPORELS","n":[12,20,10,18,12]},{"v":"TETE,NP","n":[0,1,1,0,1]},{"v":"THORAX","n":[129,100,143,139,132]},{"v":"TRONC,NP","n":[0,1,0,0,0]},{"v":"VISAGE","n":[0,1,1,0,2]}]},{"id":"genre","colonne":"GENRE","titre":"Genre d'accident ou d'exposition","valeurs":[{"v":"ACC. HORS ROUTE,SAUF FER.,AER.,NAUT.","n":[4,3,1,1,6]},{"v":"ACCIDENT D'AERONEF","n":[0,0,1,0,0]},{"v":"ACCIDENT DE LA ROUTE","n":[11,6,16,9,13]},{"v":"ACCIDENT DE VEHICULE NAUTIQUE","n":[0,0,0,1,2]},{"v":"ACCIDENT FERROVIAIRE","n":[0,0,1,0,0]},{"v":"BLESS. INFLIGEE INTENTION. PAR VICT.","n":[0,1,0,0,0]},{"v":"CHUTE A UN NIVEAU INFERIEUR","n":[12,6,6,13,10]},{"v":"CHUTE AU MEME NIVEAU","n":[0,2,1,1,0]},{"v":"CHUTE,NP","n":[0,0,0,1,0]},{"v":"COINCE,ECRASE PAR EQUIPEMENT,OBJET","n":[6,9,2,13,5]},{"v":"COINCE,ECRASE PAR MATER. S'EFFONDRE","n":[0,1,2,1,0]},{"v":"CONTACT AVEC LE COURANT ELECTRIQUE","n":[5,2,1,5,1]},{"v":"CONTACT AVEC TEMPERATURES EXTREMES","n":[2,0,2,1,0]},{"v":"EFFORT EXCESSIF","n":[0,2,1,3,5]},{"v":"EXPLOSION","n":[1,1,1,3,5]},{"v":"EXPOS. EVEN. TRAUMAT.,STRESS.,NCA","n":[0,0,0,0,2]},{"v":"EXPOS. SUBST. CAUST.,NOCIVE,ALLERG.","n":[136,123,153,152,140]},{"v":"EXPOSITION AU RAYONNEMENT","n":[0,1,0,0,0]},{"v":"FEU NON INTENTIONNEL OU NON CONTROLE","n":[0,0,4,2,0]},{"v":"FRAPPE PAR UN OBJET","n":[7,4,9,6,10]},{"v":"HEURTER UN OBJET","n":[0,0,0,1,0]},{"v":"INSUFFISANCE D'OXYGENE,NCA","n":[0,2,0,0,0]},{"v":"PIETON HEURTE PAR VEHIC.,EQUIP. MOB.","n":[5,8,5,1,8]},{"v":"REACTION DU CORPS","n":[0,2,1,0,0]},{"v":"VOIES FAIT,ACTE VIOLENT PAR PERSONNE","n":[1,0,0,2,3]}]}],"amiante_categorie":[{"categorie":"ACCIDENT DU TRAVAIL","amiante":"OUI","n":[0,0,0,0,0]},{"categorie":"ACCIDENT DU TRAVAIL","amiante":"NON","n":[57,57,60,69,73]},{"categorie":"MALADIE PROFESSIONNELLE","amiante":"OUI","n":[119,90,135,124,120]},{"categorie":"MALADIE PROFESSIONNELLE","amiante":"NON","n":[14,26,12,23,17]}]};
+const META = {"archive":"2026-11-07","metadata_modified":"2025-05-16","fichiers":[{"annee":2019,"fichier":"deces-acceptes-2019.csv","modifie":"2021-12-21","lignes":190,"vides":0,"espaces":0,"colonnes_espaces":[]},{"annee":2020,"fichier":"deces-acceptes-2020.csv","modifie":"2021-12-21","lignes":173,"vides":0,"espaces":0,"colonnes_espaces":[]},{"annee":2021,"fichier":"deces-acceptes-2021.csv","modifie":"2022-08-18","lignes":207,"vides":0,"espaces":621,"colonnes_espaces":["GENRE","NATURE_LESION","SIEGE_LESION"]},{"annee":2022,"fichier":"deces-acceptes-2022.csv","modifie":"2023-09-13","lignes":216,"vides":0,"espaces":0,"colonnes_espaces":[]},{"annee":2023,"fichier":"deces-acceptes-2023.csv","modifie":"2025-01-21","lignes":210,"vides":0,"espaces":0,"colonnes_espaces":[]}],"fiche_pdf":"https://www.donneesquebec.ca/recherche/dataset/d9842dc7-bd5c-4335-a595-d953f037bdf2/resource/fd19ad21-cea2-4941-92ba-725ba4c808c6/download/fiche-de-metadonnees-deces.pdf","lignes_propre":480,"licence":"Attribution (CC-BY 4.0)","verif":{"url":"https://www.cnesst.gouv.qc.ca/fr/salle-presse/communiques/commemorons-personnes-decedees","total_2023":210,"accidents_2023":73,"maladies_2023":137,"ecart_2022":6,"ecart_2019":20}};
+
+const fmtNb = new Intl.NumberFormat("fr-CA");
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const $ = id => document.getElementById(id);
+const nb = n => fmtNb.format(n);
+
+const ANS = DONNEES.annees, TOTAL = DONNEES.total;
+const premier = ANS[0], dernier = ANS[ANS.length - 1], iDernier = ANS.length - 1;
+const libelle = v => v.l ?? v.v;
+const publie = v => v.l ? echapper(v.l) : `<span class="publie">${echapper(v.v)}</span>`;
+const dims = Object.fromEntries(DONNEES.dims.map(d => [d.id, d]));
+const serieDe = (id, v) => dims[id].valeurs.find(x => x.v === v).n;
+const ACC = serieDe("categorie", "ACCIDENT DU TRAVAIL"), MAL = serieDe("categorie", "MALADIE PROFESSIONNELLE");
+const AMI = serieDe("amiante", "OUI");
+const enumerer = l => l.length > 1 ? `${l.slice(0, -1).join(", ")} et ${l[l.length - 1]}` : l[0];
+
+// En-tête, en bref et fiche : tous les chiffres viennent des données insérées.
+$("chapeau").innerHTML = `Selon les fichiers de la CNESST, <strong>${nb(TOTAL[iDernier])} réclamations pour décès</strong> ont été acceptées en ${dernier} : ${nb(ACC[iDernier])} pour un décès faisant suite à un accident du travail et ${nb(MAL[iDernier])} pour un décès faisant suite à une maladie professionnelle. Un décès est compté l'année où sa réclamation est acceptée ; il peut être survenu une année antérieure. Voici ces nombres pour chaque année depuis ${premier}, et leur répartition selon les caractéristiques que publie la CNESST.`;
+$("fraicheur").textContent = `Fichiers ${premier} à ${dernier} de la CNESST, extraits le ${dateFr(META.archive)}. Selon Données Québec, le fichier de ${dernier} a été modifié pour la dernière fois le ${dateFr(META.fichiers[iDernier].modifie)}.`;
+document.querySelectorAll(".periode").forEach(e => e.textContent = `${premier} à ${dernier}`);
+document.querySelectorAll(".extraction").forEach(e => e.textContent = dateFr(META.archive));
+document.querySelectorAll(".dernier").forEach(e => e.textContent = dernier);
+$("lien-fiche-pdf").href = META.fiche_pdf;
+const morceaux = META.fichiers.map(f => `celui de ${f.annee} le ${dateFr(f.modifie)}`);
+$("fiche-fraicheur").textContent = `Archive du ${dateFr(META.archive)}. Selon Données Québec, les fichiers ont été modifiés pour la dernière fois ainsi : ${enumerer(morceaux)}. Les métadonnées indiquent une mise à jour annuelle ; aucune date de prochaine mise à jour n'est publiée.`;
+const totalLignes = META.fichiers.reduce((s, f) => s + f.lignes, 0);
+$("fiche-lignes").textContent = `Lignes lues : ${nb(totalLignes)} au total, de ${nb(Math.min(...TOTAL))} à ${nb(Math.max(...TOTAL))} selon l'année. Le fichier de données offert ici compte ${nb(META.lignes_propre)} lignes de nombres agrégés.`;
+const vides = META.fichiers.reduce((s, f) => s + f.vides, 0);
+$("fiche-vides").textContent = vides === 0
+  ? "Aucune valeur vide dans les fichiers, et la fiche ne mentionne aucune valeur masquée. Chaque ligne porte un numéro de cas distinct."
+  : `${nb(vides)} valeurs vides dans les colonnes descriptives, comptées telles quelles.`;
+const avecEspaces = META.fichiers.filter(f => f.espaces > 0);
+const nomsCol = { NATURE_LESION: "nature", SIEGE_LESION: "siège", GENRE: "genre", CATEGORIE: "catégorie", SECTEUR_SCIAN: "secteur", SEXE_PERS_PHYS: "sexe", GROUPE_AGE: "groupe d'âge", INDIC_AMIANTE: "indicateur amiante" };
+$("fiche-espaces").textContent = avecEspaces.length
+  ? `Dans ${enumerer(avecEspaces.map(f => `le fichier de ${f.annee}`))}, les valeurs des colonnes de ${enumerer([...new Set(avecEspaces.flatMap(f => f.colonnes_espaces))].map(c => nomsCol[c] ?? c))} commencent par une espace. On retire cette espace pour que ces valeurs soient comptées avec celles des autres années ; aucune autre valeur n'est modifiée.`
+  : "Aucune valeur n'est modifiée.";
+// Recoupement avec le communiqué de la CNESST du 26 avril 2024 (nombres repris dans META.verif par le script).
+const vf = META.verif, i23 = ANS.indexOf(2023), i22 = ANS.indexOf(2022), i19 = ANS.indexOf(2019);
+const concorde = i23 >= 0 && i22 >= 0 && i19 >= 0 && TOTAL[i23] === vf.total_2023 && ACC[i23] === vf.accidents_2023 && MAL[i23] === vf.maladies_2023
+  && TOTAL[i22] === vf.total_2023 + vf.ecart_2022 && TOTAL[i19] === vf.total_2023 - vf.ecart_2019;
+$("fiche-verif").innerHTML = `Dans un <a href="${vf.url}" target="_blank" rel="noopener">communiqué du 26 avril 2024</a>, la CNESST fait état de ${vf.total_2023} décès en 2023, dont ${vf.accidents_2023} lors d'un accident du travail et ${vf.maladies_2023} des suites d'une maladie professionnelle, soit ${vf.ecart_2022} de moins qu'en 2022 et ${vf.ecart_2019} de plus qu'en 2019. `
+  + (concorde
+    ? `Ces nombres concordent avec les fichiers : ${nb(TOTAL[i23])} lignes en 2023 (${nb(ACC[i23])} accidents du travail et ${nb(MAL[i23])} maladies professionnelles), ${nb(TOTAL[i22])} en 2022 et ${nb(TOTAL[i19])} en 2019. Le communiqué ne précise pas s'il s'agit de décès acceptés ni à quelle année ils sont rattachés.`
+    : "Les fichiers archivés ne donnent pas exactement ces nombres ; l'écart n'est pas expliqué.");
+$("fiche-citer").textContent = `Le Relevé, « Les décès liés au travail », d'après la CNESST, Décès acceptés (Données Québec, CC-BY 4.0), fichiers ${premier} à ${dernier}, extraits le ${dateFr(META.archive)}. https://le-releve.github.io/deces-travail/`;
+
+// Commandes
+for (const d of DONNEES.dims) $("dimension").insertAdjacentHTML("beforeend", `<option value="${d.id}">${echapper(d.titre)}</option>`);
+let dim = null, choix = 0;
+
+// Ordre par défaut de chaque répartition ; les autres sont déjà en ordre alphabétique (aucun tri par nombre : D-009).
+const ORDRES = { categorie: "Ordre de la fiche de la CNESST", amiante: "Ordre de la fiche de la CNESST", secteur: "Ordre de la fiche de la CNESST", age: "Du plus jeune au plus âgé" };
+function ordonnees(d) {
+  const idx = d.valeurs.map((_, i) => i);
+  if (ORDRES[d.id] && $("tri").value === "alpha") idx.sort((a, b) => libelle(d.valeurs[a]).localeCompare(libelle(d.valeurs[b]), "fr"));
+  return idx;
+}
+
+const PETITS = "Certains nombres sont petits : un écart d'une année à l'autre peut alors porter sur quelques cas seulement.";
+function notes() {
+  const p = [];
+  if (!dim) {
+    p.push("Chaque barre compte les réclamations pour décès acceptées dans l'année, selon le fichier de la CNESST.");
+  } else if (dim.id === "categorie") {
+    p.push(`Selon les fichiers, de ${nb(Math.min(...MAL))} à ${nb(Math.max(...MAL))} décès acceptés par année font suite à une maladie professionnelle, et de ${nb(Math.min(...ACC))} à ${nb(Math.max(...ACC))} à un accident du travail. Les définitions de ces deux catégories sont dans la fiche plus bas.`);
+  } else if (dim.id === "amiante") {
+    const c = DONNEES.amiante_categorie, n = (cat, am) => c.find(x => x.categorie === cat && x.amiante === am).n[iDernier];
+    p.push(`Selon la fiche, l'indicateur signale un décès accepté attribuable à l'amiante. En ${dernier}, ${nb(AMI[iDernier])} des ${nb(TOTAL[iDernier])} décès acceptés portent cet indicateur` + (n("ACCIDENT DU TRAVAIL", "OUI") === 0
+      ? " ; tous sont classés « maladie professionnelle »."
+      : ` : ${nb(n("MALADIE PROFESSIONNELLE", "OUI"))} sont classés « maladie professionnelle » et ${nb(n("ACCIDENT DU TRAVAIL", "OUI"))} « accident du travail ».`));
+  } else if (dim.id === "secteur") {
+    p.push("Le fichier ne donne pas le nombre de travailleurs par secteur : ces nombres ne sont pas des taux et ne permettent pas, à eux seuls, de comparer le risque d'un secteur à l'autre.");
+    p.push(`Le secteur est celui dans lequel évoluait le travailleur lors des circonstances reliées à son décès, selon la fiche. ${PETITS}`);
+  } else if (dim.id === "sexe" || dim.id === "age") {
+    p.push(`Le fichier ne donne pas le nombre de travailleurs par ${dim.id === "sexe" ? "sexe" : "groupe d'âge"} : ces nombres ne sont pas des taux.${dim.id === "age" ? " L'âge est celui de la personne au moment du décès, selon la fiche." : ""} ${PETITS}`);
+  } else {
+    p.push(`Libellés tels que publiés par la CNESST, abrégés. Leurs définitions sont dans la fiche de métadonnées. ${PETITS}`);
+  }
+  $("notes").innerHTML = p.map(t => `<p>${echapper(t)}</p>`).join("");
+}
+
+function graphique() {
+  const v = dim ? dim.valeurs[choix] : null;
+  const serie = v ? v.n : TOTAL;
+  const max = Math.max(...TOTAL, 1);
+  $("titre-graphique").innerHTML = v ? `${echapper(dim.titre)} : ${publie(v)}` : "Ensemble des décès acceptés";
+  $("sous-titre").textContent = v
+    ? "Nombre de décès acceptés par année d'acceptation, sur l'ensemble des décès acceptés de l'année. L'échelle est la même que pour l'ensemble."
+    : "Nombre de décès acceptés par année d'acceptation de la réclamation.";
+  $("barres").innerHTML = ANS.map((a, i) => {
+    const largeur = serie[i] / max * 100;
+    const sur = v ? ` <span class="part">sur ${nb(TOTAL[i])}</span>` : "";
+    return `<li><span class="an">${a}</span><span class="piste"><span class="barre" style="width:calc((100% - 6em) * ${largeur.toFixed(3)} / 100)"></span><span class="valeur">${nb(serie[i])}${sur}</span></span></li>`;
+  }).join("");
+}
+
+function tableau() {
+  $("tableau").hidden = !dim;
+  if (!dim) return;
+  const codes = dim.id === "secteur";
+  $("titre-tableau").textContent = `${dim.titre}, par année`;
+  $("aide-tableau").textContent = "Nombre de décès acceptés par année d'acceptation. Choisissez une catégorie pour l'afficher dans le graphique." + (codes ? " Les codes SCIAN de chaque regroupement sont ceux de la fiche de la CNESST." : "");
+  const ordre = ORDRES[dim.id];
+  $("champ-tri").hidden = !ordre;
+  if (ordre) $("tri").options[0].textContent = ordre;
+  $("compte-tableau").textContent = `${dim.valeurs.length} catégories${ordre ? "" : ", en ordre alphabétique"}`;
+  $("tete").innerHTML = `<tr><th scope="col">Catégorie</th>${codes ? '<th scope="col" class="codes">Codes SCIAN</th>' : ""}${ANS.map(a => `<th scope="col">${a}</th>`).join("")}</tr>`;
+  const lignes = ordonnees(dim).map(i => {
+    const v = dim.valeurs[i];
+    return `<tr${i === choix ? ' class="choisie"' : ""}><td><button type="button" class="choisir" data-i="${i}" aria-pressed="${i === choix}">${publie(v)}</button></td>${codes ? `<td class="codes">${echapper(v.c)}</td>` : ""}${v.n.map(n => `<td>${nb(n)}</td>`).join("")}</tr>`;
+  });
+  lignes.push(`<tr class="ensemble"><td>Ensemble des décès acceptés</td>${codes ? "<td></td>" : ""}${TOTAL.map(n => `<td>${nb(n)}</td>`).join("")}</tr>`);
+  $("corps").innerHTML = lignes.join("");
+}
+
+function categories() {
+  $("champ-categorie").hidden = !dim;
+  if (!dim) return;
+  $("categorie").innerHTML = ordonnees(dim).map(i => `<option value="${i}"${i === choix ? " selected" : ""}>${echapper(libelle(dim.valeurs[i]))}</option>`).join("");
+}
+
+function tout() { categories(); graphique(); tableau(); notes(); }
+
+$("dimension").addEventListener("change", e => { dim = dims[e.target.value] ?? null; choix = 0; tout(); });
+$("categorie").addEventListener("change", e => { choix = +e.target.value; graphique(); tableau(); });
+$("tri").addEventListener("change", () => { categories(); tableau(); });
+$("corps").addEventListener("click", e => {
+  const b = e.target.closest(".choisir");
+  if (!b) return;
+  choix = +b.dataset.i;
+  $("categorie").value = String(choix);
+  graphique(); tableau();
+  $("titre-graphique").scrollIntoView({ behavior: "smooth", block: "center" });
+});
+tout();
+</script>
