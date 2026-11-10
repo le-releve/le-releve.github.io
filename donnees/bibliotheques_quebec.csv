@@ -1,0 +1,77 @@
+﻿annee,indicateur,lignes_du_fichier,lignes_avec_valeur,valeurs_zero,somme,perimetre_constant_bibliotheques,perimetre_constant_somme
+2007,Population desservie,137,136,0,7322905,133,7305290
+2008,Population desservie,142,141,0,7395894,133,7326941
+2009,Population desservie,142,141,0,7463950,133,7400868
+2010,Population desservie,143,142,0,7536668,133,7462341
+2011,Population desservie,144,143,0,7609137,133,7525394
+2012,Population desservie,150,149,0,7751207,133,7619559
+2013,Population desservie,182,181,0,7821320,133,7466242
+2014,Population desservie,184,183,0,7895990,133,7525257
+2015,Population desservie,184,183,0,7901705,133,7526473
+2016,Population desservie,183,182,0,7943903,133,7568846
+2017,Population desservie,184,183,0,8019215,133,7630648
+2018,Population desservie,185,184,0,8093334,133,7683372
+2019,Population desservie,185,184,0,8084136,133,7678005
+2020,Population desservie,185,184,0,8179214,133,7768758
+2021,Population desservie,187,186,0,8277577,133,7833212
+2022,Population desservie,187,186,0,8325315,133,7869110
+2023,Population desservie,188,187,0,8436167,133,7972717
+2024,Population desservie,188,187,0,8608933,133,8136519
+2025,Population desservie,191,190,0,8625659,133,8133883
+2007,Usagers inscrits (Total),137,137,0,2623408,133,2615097
+2008,Usagers inscrits (Total),142,142,0,2495023,133,2468573
+2009,Usagers inscrits (Total),142,142,0,2498321,133,2471757
+2010,Usagers inscrits (Total),143,143,0,2588933,133,2560302
+2011,Usagers inscrits (Total),144,144,0,2638962,133,2607454
+2012,Usagers inscrits (Total),150,150,0,2697764,133,2657367
+2013,Usagers inscrits (Total),182,182,0,2743425,133,2646177
+2014,Usagers inscrits (Total),184,184,0,2569794,133,2466272
+2015,Usagers inscrits (Total),184,184,0,2573609,133,2464814
+2016,Usagers inscrits (Total),183,183,0,2605648,133,2499276
+2017,Usagers inscrits (Total),184,184,1,2645645,133,2539395
+2018,Usagers inscrits (Total),185,185,0,2701955,133,2590853
+2019,Usagers inscrits (Total),185,185,0,2771686,133,2653110
+2020,Usagers inscrits (Total),185,185,0,2615011,133,2505051
+2021,Usagers inscrits (Total),187,187,0,2535857,133,2423778
+2022,Usagers inscrits (Total),187,187,0,2458437,133,2341889
+2023,Usagers inscrits (Total),188,188,0,2632729,133,2515882
+2024,Usagers inscrits (Total),188,188,0,2792172,133,2671481
+2025,Usagers inscrits (Total),191,191,0,2935307,133,2803246
+2007,Prêts / Tous les doc. (Total),137,137,0,45315688,133,45210985
+2008,Prêts / Tous les doc. (Total),142,142,0,46663009,133,46324038
+2009,Prêts / Tous les doc. (Total),142,142,0,48921559,133,48492778
+2010,Prêts / Tous les doc. (Total),143,143,0,49835815,133,49464895
+2011,Prêts / Tous les doc. (Total),144,144,0,51446334,133,51007938
+2012,Prêts / Tous les doc. (Total),150,150,0,53112470,133,52522142
+2013,Prêts / Tous les doc. (Total),182,182,0,52492246,133,51135682
+2014,Prêts / Tous les doc. (Total),184,184,0,53271217,133,51794484
+2015,Prêts / Tous les doc. (Total),184,184,0,53605902,133,52072578
+2016,Prêts / Tous les doc. (Total),183,183,0,54970402,133,53440427
+2017,Prêts / Tous les doc. (Total),184,184,1,55134088,133,53579562
+2018,Prêts / Tous les doc. (Total),185,185,0,54907915,133,53212740
+2019,Prêts / Tous les doc. (Total),185,185,0,54497059,133,52660831
+2020,Prêts / Tous les doc. (Total),185,185,0,29819247,133,28741633
+2021,Prêts / Tous les doc. (Total),187,187,0,40911304,133,39335472
+2022,Prêts / Tous les doc. (Total),187,187,0,48569011,133,46697016
+2023,Prêts / Tous les doc. (Total),188,188,0,52168237,133,50100620
+2024,Prêts / Tous les doc. (Total),188,188,0,52513445,133,50365529
+2025,Prêts / Tous les doc. (Total),191,191,0,52851308,133,50598930
+2007,Coll. / Tous les documents,137,137,0,22312383,134,22227651
+2008,Coll. / Tous les documents,142,142,0,23051867,134,22893258
+2009,Coll. / Tous les documents,142,142,0,23492357,134,23316668
+2010,Coll. / Tous les documents,143,143,0,24223688,134,24015715
+2011,Coll. / Tous les documents,144,144,0,24518690,134,24292194
+2012,Coll. / Tous les documents,150,150,0,24882784,134,24538824
+2013,Coll. / Tous les documents,182,182,0,25048480,134,24236349
+2014,Coll. / Tous les documents,184,184,0,25790049,134,24876745
+2015,Coll. / Tous les documents,184,184,0,26431015,134,25511494
+2016,Coll. / Tous les documents,183,183,0,25931903,134,24971429
+2017,Coll. / Tous les documents,184,184,0,25854831,134,24815347
+2018,Coll. / Tous les documents,185,185,0,25825225,134,24710795
+2019,Coll. / Tous les documents,185,185,0,25842374,134,24663124
+2020,Coll. / Tous les documents,185,185,0,25989239,134,24766047
+2021,Coll. / Tous les documents,187,187,0,26253396,134,24968554
+2022,Coll. / Tous les documents,187,187,0,26187538,134,24867989
+2023,Coll. / Tous les documents,188,188,0,26080553,134,24727430
+2024,Coll. / Tous les documents,188,188,0,25933487,134,24566716
+2025,Coll. / Tous les documents,191,191,0,25606842,134,24178322
