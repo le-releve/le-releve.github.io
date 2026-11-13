@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Le programme Pour une maternité sans danger</title>
+<style>
+/* Page légère de la deuxième série (D-039, D-040) : nombre annuel de réclamations du programme Pour une maternité sans danger,
+   réparties selon une seule colonne du fichier à la fois (jamais croisées), puis un tableau par catégorie. Aucun tri par
+   nombre (D-009) ; fiche « Comment on a fait » (D-013). */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+}
+
+[hidden] { display: none !important; }
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; }
+a { color: inherit; }
+
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.champ label { font-size: 13px; color: var(--ink-2); flex: 0 0 auto; }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 100%; min-width: 0; }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+.bouton:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible, .choisir:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p, .notes p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.notes { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.titre-graphique { font-size: 15px; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+.sous-titre { font-size: 13px; color: var(--ink-2); margin: 0; }
+.barres { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 10px; align-items: center; margin: 0; padding: 0; list-style: none; }
+.barres li { display: contents; }
+.an { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.piste { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.barre { height: 18px; background: var(--barre); border-radius: 2px; flex: none; min-width: 1px; }
+.valeur { font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.part { color: var(--muted); }
+
+.compte { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); }
+.defile { overflow-x: auto; max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 180px; max-width: 320px; position: sticky; left: 0; background: var(--surface); }
+td.codes { text-align: left; color: var(--ink-2); white-space: normal; min-width: 120px; }
+td.descr { text-align: left; color: var(--ink-2); white-space: normal; min-width: 260px; max-width: 420px; font-size: 12px; }
+tr.choisie td { background: var(--survol); }
+tr.choisie td:first-child { box-shadow: inset 3px 0 0 var(--barre); }
+tr.ensemble td { font-weight: 600; border-top: 1px solid var(--axis); }
+.choisir { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--axis); text-underline-offset: 3px; }
+.publie { font-size: 12px; letter-spacing: 0.02em; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 640px) {
+  .champ { width: 100%; }
+  .champ select { flex: 1 1 auto; }
+  th:first-child, td:first-child { min-width: 140px; }
+}
+
+.encadre { border-left: 3px solid var(--axis); padding: 4px 0 4px 12px; display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.encadre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.encadre strong { color: var(--ink); font-weight: 600; }
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail" aria-current="page">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Travail</div>
+    <h1>Le programme Pour une maternité sans danger</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <div class="commandes" role="group" aria-label="Choix de la répartition">
+    <div class="champ">
+      <label for="dimension">Répartir selon</label>
+      <select id="dimension"><option value="">Aucune répartition</option></select>
+    </div>
+    <div class="champ" id="champ-categorie" hidden>
+      <label for="categorie">Catégorie</label>
+      <select id="categorie"></select>
+    </div>
+  </div>
+
+  <section class="carte" aria-labelledby="titre-graphique">
+    <p class="titre-graphique" id="titre-graphique"></p>
+    <p class="sous-titre" id="sous-titre"></p>
+    <ol class="barres" id="barres"></ol>
+  </section>
+
+  <div class="notes" id="notes" aria-live="polite"></div>
+
+  <section class="encadre" aria-labelledby="titre-encadre">
+    <h3 id="titre-encadre">Des réclamations inscrites dans l'année et acceptées au 1er mars suivant</h3>
+    <p>Selon la fiche de la CNESST, le jeu présente les réclamations du programme inscrites dans une année civile et acceptées au 1er mars de l'année suivante. L'année est celle de l'inscription de la réclamation à la CNESST. La fiche ne précise pas si une réclamation acceptée après le 1er mars est ajoutée plus tard au fichier.</p>
+    <p>Selon la CNESST, les travailleuses enceintes ou qui allaitent peuvent bénéficier du programme si leur emploi comporte des dangers physiques pour leur santé ou pour celle de l'enfant à naître ou allaité. Ces travailleuses peuvent être affectées à un autre poste ou à d'autres tâches ou, si c'est impossible, avoir droit à un retrait préventif. Le fichier n'indique pas laquelle de ces mesures s'applique à chaque réclamation.</p>
+    <p>On compte des réclamations. Le fichier ne contient aucun identifiant de travailleuse : il ne permet pas de compter les travailleuses.</p>
+  </section>
+
+  <section class="colonne" id="tableau" aria-labelledby="titre-tableau" hidden>
+    <div class="section-titre">
+      <h2 id="titre-tableau"></h2>
+      <p id="aide-tableau"></p>
+    </div>
+    <div class="compte">
+      <span id="compte-tableau"></span>
+      <span class="champ" id="champ-tri">
+        <label for="tri">Ordre</label>
+        <select id="tri">
+          <option value="cnesst">Ordre de la fiche de la CNESST</option>
+          <option value="alpha">Ordre alphabétique</option>
+        </select>
+      </span>
+    </div>
+    <div class="carte">
+      <div class="defile">
+        <table>
+          <thead id="tete"></thead>
+          <tbody id="corps"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> Commission des normes, de l'équité, de la santé et de la sécurité du travail (CNESST), <a href="https://www.donneesquebec.ca/recherche/dataset/pour-une-maternite-sans-danger" target="_blank" rel="noopener">Pour une maternité sans danger</a> (Données Québec, licence CC-BY 4.0). Fichiers <span class="periode"></span>, extraits le <span class="extraction"></span>.</p>
+    <p><strong>Ce qu'on compte :</strong> les réclamations du programme inscrites au cours de chaque année et acceptées au 1er mars de l'année suivante, telles que publiées. Chaque ligne du fichier porte un identifiant numérique anonyme, créé pour le jeu de données selon la fiche de la CNESST ; on compte les lignes.</p>
+    <p><strong>Principale limite :</strong> ce sont des nombres de réclamations, pas des taux : le jeu ne donne pas le nombre de travailleuses, ni enceintes ni en emploi. Chaque répartition est montrée seule ; les caractéristiques ne sont pas croisées entre elles, sauf dans une note qui explique la valeur « Indéterminée » des semaines de grossesse. Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>CNESST, <a href="https://www.donneesquebec.ca/recherche/dataset/pour-une-maternite-sans-danger" target="_blank" rel="noopener">Pour une maternité sans danger</a>, sur Données Québec, licence Creative Commons Attribution 4.0 (CC-BY 4.0). Un fichier CSV et un fichier XLSX par année, et une <a id="lien-fiche-pdf" href="#" target="_blank" rel="noopener">fiche de métadonnées</a> (PDF) qui décrit les variables et leurs valeurs.</p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li>Selon la fiche de la CNESST, le jeu présente les réclamations du programme Pour une maternité sans danger inscrites dans une année civile et acceptées au 1er mars de l'année suivante. La colonne DATE_RECLA est décrite comme la « date d'inscription de la réclamation à la CNESST » ; c'est l'année de cette date qui est montrée ici.</li>
+          <li>Selon la fiche, les réclamations sont listées à partir d'un identifiant numérique anonyme, créé pour le jeu de données.</li>
+          <li><strong>Catégorie</strong> : selon la fiche, elle indique si la réclamation concerne une travailleuse enceinte ou une travailleuse qui allaite.</li>
+          <li><strong>Groupe d'âge</strong> : l'âge de la travailleuse au moment de la réclamation.</li>
+          <li><strong>Semaines de grossesse</strong> : le nombre de semaines de grossesse à la date du retrait préventif ou de l'affectation de la travailleuse.</li>
+          <li><strong>Facteur de risques</strong> : selon la fiche, la raison invoquée par le médecin ou par la travailleuse face aux dangers que comporte le poste de travail, eu égard à l'état de grossesse de la travailleuse ou de la mère qui allaite ; il est codé selon un système de classification propre à la CNESST. Le fichier donne un seul facteur par réclamation. La description de chaque facteur, reprise de la fiche, figure dans le tableau.</li>
+          <li><strong>Secteur</strong> : selon la fiche, la « description du groupe secteur de SCIAN (Système de classification des industries de l'Amérique du Nord) lié au retrait préventif à la réclamation ». La CNESST regroupe les codes SCIAN à 4 positions en 21 secteurs ; un code absent ou hors de ces regroupements est classé « Autres ou non codés ». Les codes de chaque regroupement sont repris de la fiche.</li>
+          <li><strong>Direction régionale</strong> : selon la fiche, le nom de la direction régionale associée à la réclamation. La fiche ne donne ni la liste des directions ni leur territoire ; les noms sont laissés tels que publiés.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Traitement</h3>
+        <ul>
+          <li>Chaque fichier annuel, CSV et XLSX, est archivé tel que téléchargé, avec la fiche de métadonnées, la réponse de l'API de Données Québec et l'empreinte de chaque fichier.</li>
+          <li>Pour chaque année, on compte les lignes du fichier CSV, puis les lignes par valeur de chaque colonne, une colonne à la fois. Aucune ligne n'est retirée et aucune valeur n'est modifiée.</li>
+          <li>Les libellés de groupe d'âge, de semaines de grossesse, de facteur de risques et de secteur sont présentés en minuscules accentuées, sans le numéro qui précède le facteur de risques. Les noms de direction régionale sont laissés tels que publiés, en majuscules.</li>
+          <li id="fiche-lignes"></li>
+          <li id="fiche-vides"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul>
+          <li>Le jeu ne contient pas le nombre de travailleuses, ni au total ni par secteur, âge ou région. Les nombres ne sont donc pas des taux et ne permettent pas, à eux seuls, de comparer un groupe à un autre.</li>
+          <li>Les caractéristiques ne sont montrées qu'une à la fois. Le fichier détaillé de Données Québec permet de les croiser ; cette page ne le fait pas, sauf dans la note sous la répartition par semaines de grossesse, qui donne la valeur « Indéterminée » selon la catégorie de la réclamation.</li>
+          <li>Selon la fiche, seules les réclamations acceptées au 1er mars de l'année suivante figurent au fichier. La fiche ne précise pas si les chiffres d'une année sont révisés après leur publication.</li>
+          <li>Certains nombres sont petits : un écart d'une année à l'autre peut alors porter sur quelques réclamations seulement. Un 0 signifie qu'aucune ligne du fichier ne porte cette valeur cette année-là.</li>
+          <li>La documentation ne commente pas les variations d'une année à l'autre.</li>
+          <li id="fiche-temporal"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul>
+          <li>Pour chaque année, la somme des réclamations de chaque répartition redonne le nombre de lignes du fichier.</li>
+          <li id="fiche-ids"></li>
+          <li id="fiche-xlsx"></li>
+          <li>Ni la fiche de métadonnées ni la description du jeu sur Données Québec ne donnent de total. Aucun chiffre publié par la CNESST n'a donc servi à recouper ces nombres.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p>Les nombres de réclamations par année d'inscription, pour l'ensemble et pour chaque valeur de chaque colonne prise seule, avec les libellés publiés. Les fichiers détaillés, une ligne par réclamation, sont sur Données Québec.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/maternite_sans_danger.csv" download>Télécharger les données (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = {"annees":[2015,2016,2017,2018,2019,2020,2021,2022],"total":[33058,33080,32389,32980,32237,36592,34164,23724],"dims":[{"id":"categorie","colonne":"CATEGORIE","titre":"Catégorie de la réclamation","valeurs":[{"v":"Travailleuse enceinte","n":[32799,32776,32127,32722,31973,36342,33971,23542]},{"v":"Travailleuse qui allaite","n":[259,304,262,258,264,250,193,182]}]},{"id":"age","colonne":"GROUPE_AGE","titre":"Groupe d'âge au moment de la réclamation","valeurs":[{"v":"MOINS DE 20 ANS","l":"Moins de 20 ans","n":[538,517,486,504,519,444,405,312]},{"v":"20 A 24 ANS","l":"20 à 24 ans","n":[5588,5482,5335,4992,4753,4794,4170,3151]},{"v":"25 A 29 ANS","l":"25 à 29 ans","n":[12434,12727,12525,12962,12567,14315,12918,8538]},{"v":"30 A 34 ANS","l":"30 à 34 ans","n":[9788,9622,9233,9394,9293,11387,11085,7565]},{"v":"35 A 39 ANS","l":"35 à 39 ans","n":[3981,3960,3974,4229,4144,4645,4439,3270]},{"v":"40 ANS OU PLUS","l":"40 ans ou plus","n":[729,772,836,899,961,1007,1147,888]}]},{"id":"semaines","colonne":"SEMAINE_GROSSESSE","titre":"Semaines de grossesse","valeurs":[{"v":"1 SEMAINE A 4 SEMAINES","l":"1 à 4 semaines","n":[2945,2838,2604,2420,2579,3139,3414,2341]},{"v":"5 A 9 SEMAINES","l":"5 à 9 semaines","n":[14892,15046,14775,13788,13651,15180,16266,11145]},{"v":"10 A 13 SEMAINES","l":"10 à 13 semaines","n":[7130,7367,7024,6676,6805,6699,6450,4670]},{"v":"14 A 17 SEMAINES","l":"14 à 17 semaines","n":[2818,2874,2777,2576,2715,2622,2398,1862]},{"v":"18 A 22 SEMAINES","l":"18 à 22 semaines","n":[1943,1963,1985,1843,1824,1898,1523,1327]},{"v":"23 A 26 SEMAINES","l":"23 à 26 semaines","n":[1018,997,911,917,912,986,799,789]},{"v":"27 A 30 SEMAINES","l":"27 à 30 semaines","n":[623,599,556,541,529,622,507,477]},{"v":"31 A 35 SEMAINES","l":"31 à 35 semaines","n":[190,227,220,182,192,277,202,219]},{"v":"36 SEMAINES OU PLUS","l":"36 semaines ou plus","n":[14,13,15,17,16,40,22,23]},{"v":"INDETERMINEE","l":"Indéterminée","n":[1485,1156,1522,4020,3014,5129,2583,871]}]},{"id":"facteur","colonne":"FACTEUR_RISQUES","titre":"Facteur de risques","valeurs":[{"v":"01-RISQUE CHIMIQUE","l":"Risque chimique","c":"Cette catégorie comprend les gaz anesthésiques, les métaux, les solvants et diluants, les produits utilisés dans l'industrie du plastique ou du caoutchouc, les gaz asphyxiants ou irritants, les pesticides, herbicides, insecticides, fongicides et rodenticides, les odeurs chimiques ou autres, les poussières ou vapeurs (organiques ou minérales) ainsi que les autres produits chimiques.","n":[4921,5089,5022,4651,4152,1794,722,1505]},{"v":"02-RISQUE PHYSIQUE","l":"Risque physique","c":"Cette catégorie comprend le bruit, les ultrasons, les vibrations, les radiations, les contraintes thermiques, l'hyperbare, les chocs électriques et les autres agresseurs physiques.","n":[279,413,484,205,291,177,170,9]},{"v":"03-HORAIRE DE TRAVAIL","l":"Horaire de travail","c":"Cette catégorie comprend les risques liés aux horaires de travail, incluant les rotations d'horaire, le travail de nuit et le décalage horaire.","n":[1963,2052,1966,1895,2484,1290,511,381]},{"v":"04-CHARGE DE TRAVAIL","l":"Charge de travail","c":"Cette catégorie comprend les risques liés au rythme ou à la charge de travail.","n":[530,571,894,763,252,151,68,72]},{"v":"05-POSTURE DE TRAVAIL","l":"Posture de travail","c":"Cette catégorie comprend les risques liés à la posture de travail, incluant la posture assise, la posture debout, les flexions, les extensions, les étirements, la rotation du corps ou du tronc, la marche.","n":[4865,4729,4323,3740,3008,1301,708,302]},{"v":"06-SOULEVER POUSSER TIRER","l":"Soulever, pousser, tirer","c":"Cette catégorie comprend les risques liés au fait de soulever, pousser ou tirer des charges lourdes.","n":[1823,1535,1419,1439,1653,757,239,183]},{"v":"07-AUTRES EFFORTS PHYSIQUES","l":"Autres efforts physiques","c":"Cette catégorie comprend les risques liés aux efforts physiques non classés ailleurs.","n":[361,287,325,292,350,69,14,1]},{"v":"08-AUTRES RISQUES ERGONOMIQUES","l":"Autres risques ergonomiques","c":"Cette catégorie comprend les risques ergonomiques non classés ailleurs.","n":[1784,2031,2358,2094,2492,1194,15,35]},{"v":"09-RISQUE BIOLOGIQUE","l":"Risque biologique","c":"Cette catégorie comprend les risques d'originale virale, bactérienne, mycologique ou parasitaire, les risques pathologiques associés à des produits biologiques et les risques associés à la manipulation ou au contact d'un animal.","n":[12187,11965,11099,10992,11507,23227,28278,19350]},{"v":"10-SECURITE DU TRAVAIL","l":"Sécurité du travail","c":"Cette catégorie comprend les planchers glissants, les escaliers et les risques d'être frappé par un objet ou une personne.","n":[2935,3394,3055,2950,2972,1516,875,1097]},{"v":"11-RISQUES DIVERS","l":"Risques divers","c":"Cette catégorie comprend tous les autres risques non classés ailleurs parmi toutes les divisions.","n":[78,61,65,45,258,66,2,20]},{"v":"12-INDETERMINE","l":"Indéterminé","c":"Cette catégorie comprend tous les cas où l'agresseur est absent.","n":[1332,953,1379,3914,2818,5050,2562,769]}]},{"id":"secteur","colonne":"SECTEUR_SCIAN","titre":"Secteur d'activité (SCIAN)","valeurs":[{"v":"AGRICULTURE","l":"Agriculture","c":"1111 à 1129, 1151 à 1152","n":[235,290,291,312,268,297,271,197]},{"v":"FORESTERIE, EXPLOITATION FORESTIERE ET ACTIVITES DE SOUTIEN A LA FORESTERIE","l":"Foresterie, exploitation forestière et activités de soutien à la foresterie","c":"1131 à 1133, 1153","n":[19,11,11,11,12,16,12,11]},{"v":"PECHE, CHASSE ET PIEGEAGE","l":"Pêche, chasse et piégeage","c":"1141 à 1142","n":[0,0,3,0,1,0,0,0]},{"v":"EXTRACTION MINIERE, EXPLOITATION EN CARRIERE ET EXTRACTION DE PETROLE ET DE GAZ","l":"Extraction minière, exploitation en carrière et extraction de pétrole et de gaz","c":"2111 à 2131","n":[47,54,56,61,77,73,70,55]},{"v":"SERVICES PUBLICS","l":"Services publics","c":"2211 à 2213","n":[26,19,25,29,19,21,27,17]},{"v":"CONSTRUCTION","l":"Construction","c":"2361 à 2389","n":[166,179,196,233,296,332,364,342]},{"v":"FABRICATION DE BIENS DURABLES","l":"Fabrication de biens durables","c":"3211 à 3219, 3271 à 3279, 3311 à 3379","n":[597,601,660,690,738,804,781,568]},{"v":"FABRICATION DE BIENS NON DURABLES","l":"Fabrication de biens non durables","c":"3111 à 3169, 3221 à 3262, 3391 à 3399","n":[1281,1226,1298,1387,1474,1369,1242,913]},{"v":"COMMERCE DE GROS","l":"Commerce de gros","c":"4111 à 4191","n":[480,453,453,418,379,480,387,238]},{"v":"COMMERCE DE DETAIL","l":"Commerce de détail","c":"4411 à 4543","n":[4217,4263,4104,3951,3904,3959,3297,2017]},{"v":"TRANSPORT ET ENTREPOSAGE","l":"Transport et entreposage","c":"4811 à 4931","n":[176,135,170,161,184,215,222,171]},{"v":"FINANCE ET ASSURANCES","l":"Finance et assurances","c":"5211 à 5242, 5261 à 5269","n":[105,123,105,114,87,159,110,29]},{"v":"SERVICES IMMOBILIERS ET SERVICES DE LOCATION ET DE LOCATION A BAIL","l":"Services immobiliers et services de location et de location à bail","c":"5311 à 5331","n":[80,89,85,79,55,94,55,32]},{"v":"SERVICES PROFESSIONNELS, SCIENTIFIQUES ET TECHNIQUES","l":"Services professionnels, scientifiques et techniques","c":"5411 à 5419","n":[695,675,652,654,649,690,620,420]},{"v":"SERVICES AUX ENTREPRISES, SERVICES RELATIFS AUX BATIMENTS ET AUTRES SERVICES DE SOUTIEN","l":"Services aux entreprises, services relatifs aux bâtiments et autres services de soutien","c":"5511 à 5629","n":[788,828,827,901,1103,1112,1247,1059]},{"v":"SERVICES D'ENSEIGNEMENT","l":"Services d'enseignement","c":"6111 à 6117","n":[3697,3553,3448,3678,3632,5496,5652,4148]},{"v":"SOINS DE SANTE ET ASSISTANCE SOCIALE","l":"Soins de santé et assistance sociale","c":"6211 à 6244","n":[15228,15448,15043,15408,14662,17331,16566,11060]},{"v":"INFORMATION, CULTURE ET LOISIRS","l":"Information, culture et loisirs","c":"5111 à 5191, 7111 à 7139","n":[365,352,361,320,281,270,200,141]},{"v":"HEBERGEMENT ET SERVICES DE RESTAURATION","l":"Hébergement et services de restauration","c":"7211 à 7225","n":[3172,3152,3048,2978,2830,2071,1461,1264]},{"v":"AUTRES SERVICES","l":"Autres services","c":"8111 à 8141","n":[1040,1049,958,986,989,1022,887,627]},{"v":"ADMINISTRATIONS PUBLIQUES","l":"Administrations publiques","c":"9111 à 9191","n":[612,537,571,575,546,716,637,387]},{"v":"AUTRES OU NON CODES","l":"Autres ou non codés","c":"code absent ou hors des regroupements","n":[32,43,24,34,51,65,56,28]}]},{"id":"region","colonne":"REGION","titre":"Direction régionale","valeurs":[{"v":"ABITIBI-TEMISCAMINGUE","n":[903,966,937,1031,1011,1092,891,661]},{"v":"AUTRES","n":[0,0,0,219,0,0,0,0]},{"v":"BAS ST-LAURENT","n":[997,933,941,931,899,980,920,648]},{"v":"CAPITALE NATIONALE","n":[4149,4018,3988,4023,3814,4116,3894,2839]},{"v":"CHAUDIERE-APPALACHES","n":[2121,2203,2052,2157,2031,2307,2109,1342]},{"v":"COTE-NORD","n":[433,419,408,385,393,355,419,237]},{"v":"ESTRIE","n":[1444,1479,1483,1518,1476,1687,1588,988]},{"v":"GASPESIE-ILES MADELEINE","n":[304,340,277,338,356,377,326,236]},{"v":"ILE DE MONTREAL","n":[7490,7219,7106,6892,7021,7687,7356,5187]},{"v":"LANAUDIERE","n":[1568,1684,1714,1755,1712,2062,1904,1439]},{"v":"LAURENTIDES","n":[2136,2149,2182,2199,2265,2535,2443,1787]},{"v":"LAVAL","n":[1494,1487,1477,1468,1451,1606,1514,1230]},{"v":"LONGUEUIL","n":[2134,2133,2073,2071,1971,2199,2093,1388]},{"v":"MAURICIE ET CENTRE-DU-QUEBEC","n":[2221,2273,2131,2220,2201,2637,2342,1658]},{"v":"NON CODE","n":[0,0,0,0,1,6,12,5]},{"v":"OUTAOUAIS","n":[1174,1220,1089,1142,1114,1234,1184,772]},{"v":"SAGUENAY-LAC ST-JEAN","n":[1332,1302,1372,1217,1258,1671,1549,985]},{"v":"ST-JEAN-SUR-RICHELIEU","n":[944,965,978,990,926,1117,1035,654]},{"v":"VALLEYFIELD","n":[882,871,861,937,882,1165,1001,661]},{"v":"YAMASKA","n":[1332,1419,1320,1487,1455,1759,1584,1007]}]}],"indet":{"allaite":[259,304,262,258,264,250,193,182],"enceinte":[1226,852,1260,3762,2750,4879,2390,689]}};
+const META = {"archive":"2026-11-09","metadata_modified":"2025-05-16","temporal":"2015-01-01/2019-12-31","fichiers":[{"annee":2015,"fichier":"pmsd-2015.csv","modifie":"2023-12-12","lignes":33058,"vides":0,"ids_seq":true,"date_min":"2015-01-05","date_max":"2015-12-30"},{"annee":2016,"fichier":"pmsd-2016.csv","modifie":"2023-12-12","lignes":33080,"vides":0,"ids_seq":true,"date_min":"2016-01-05","date_max":"2016-12-29"},{"annee":2017,"fichier":"pmsd-2017.csv","modifie":"2023-12-12","lignes":32389,"vides":0,"ids_seq":true,"date_min":"2017-01-04","date_max":"2017-12-28"},{"annee":2018,"fichier":"pmsd-2018.csv","modifie":"2023-12-12","lignes":32980,"vides":0,"ids_seq":true,"date_min":"2018-01-03","date_max":"2018-12-28"},{"annee":2019,"fichier":"pmsd-2019.csv","modifie":"2023-12-12","lignes":32237,"vides":0,"ids_seq":true,"date_min":"2019-01-03","date_max":"2019-12-30"},{"annee":2020,"fichier":"pmsd-2020.csv","modifie":"2023-12-12","lignes":36592,"vides":0,"ids_seq":true,"date_min":"2020-01-03","date_max":"2020-12-30"},{"annee":2021,"fichier":"pmsd-2021.csv","modifie":"2023-12-12","lignes":34164,"vides":0,"ids_seq":true,"date_min":"2021-01-05","date_max":"2021-12-30"},{"annee":2022,"fichier":"pmsd-2022.csv","modifie":"2025-01-21","lignes":23724,"vides":0,"ids_seq":true,"date_min":"2022-01-05","date_max":"2022-12-29"}],"xlsx":[2015,2016,2017,2018,2019,2020,2021,2022],"fiche_pdf":"https://www.donneesquebec.ca/recherche/dataset/a3cb4267-e900-4d61-9ee1-034071144224/resource/0902b220-2af6-406d-a6c0-cf8cadc288a1/download/documentation_pmsd.pdf","lignes_propre":584,"licence":"Attribution (CC-BY 4.0)"};
+
+const fmtNb = new Intl.NumberFormat("fr-CA");
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const $ = id => document.getElementById(id);
+const nb = n => fmtNb.format(n);
+const pl = (n, s, p) => `${nb(n)} ${n > 1 ? p : s}`;
+
+const ANS = DONNEES.annees, TOTAL = DONNEES.total;
+const premier = ANS[0], dernier = ANS[ANS.length - 1], iDernier = ANS.length - 1;
+const libelle = v => v.l ?? v.v;
+const publie = v => v.l ? echapper(v.l) : `<span class="publie">${echapper(v.v)}</span>`;
+const dims = Object.fromEntries(DONNEES.dims.map(d => [d.id, d]));
+const serieDe = (id, v) => dims[id].valeurs.find(x => x.v === v).n;
+const ENC = serieDe("categorie", "Travailleuse enceinte"), ALL = serieDe("categorie", "Travailleuse qui allaite");
+const enumerer = l => l.length > 1 ? `${l.slice(0, -1).join(", ")} et ${l[l.length - 1]}` : l[0];
+
+// En-tête, en bref et fiche : tous les chiffres viennent des données insérées.
+$("chapeau").innerHTML = `Selon les fichiers de la CNESST, <strong>${nb(TOTAL[iDernier])} réclamations</strong> du programme Pour une maternité sans danger ont été inscrites en ${dernier} et acceptées au 1er mars ${dernier + 1} : ${nb(ENC[iDernier])} pour une travailleuse enceinte et ${nb(ALL[iDernier])} pour une travailleuse qui allaite. Voici ces nombres pour chaque année depuis ${premier}, et leur répartition selon chacune des caractéristiques que publie la CNESST, prise seule.`;
+$("fraicheur").textContent = `Fichiers ${premier} à ${dernier} de la CNESST, extraits le ${dateFr(META.archive)}. Selon Données Québec, le fichier de ${dernier} a été modifié pour la dernière fois le ${dateFr(META.fichiers[iDernier].modifie)}.`;
+document.querySelectorAll(".periode").forEach(e => e.textContent = `${premier} à ${dernier}`);
+document.querySelectorAll(".extraction").forEach(e => e.textContent = dateFr(META.archive));
+$("lien-fiche-pdf").href = META.fiche_pdf;
+const morceaux = META.fichiers.map(f => `celui de ${f.annee} le ${dateFr(f.modifie)}`);
+$("fiche-fraicheur").textContent = `Archive du ${dateFr(META.archive)}. Selon Données Québec, les fichiers CSV ont été modifiés pour la dernière fois ainsi : ${enumerer(morceaux)}. Les métadonnées indiquent une mise à jour annuelle ; aucune date de prochaine mise à jour n'est publiée.`;
+const totalLignes = META.fichiers.reduce((s, f) => s + f.lignes, 0);
+$("fiche-lignes").textContent = `Lignes lues : ${nb(totalLignes)} au total, de ${nb(Math.min(...TOTAL))} à ${nb(Math.max(...TOTAL))} selon l'année. Le fichier de données offert ici compte ${nb(META.lignes_propre)} lignes de nombres agrégés.`;
+const vides = META.fichiers.reduce((s, f) => s + f.vides, 0);
+$("fiche-vides").textContent = vides === 0
+  ? "Aucune valeur vide dans les fichiers. Des valeurs comme « Indéterminée », « 12-INDETERMINE », « Autres ou non codés » ou « NON CODE » sont publiées telles quelles par la CNESST et comptées comme les autres."
+  : `${nb(vides)} valeurs vides, comptées telles quelles.`;
+const seq = META.fichiers.every(f => f.ids_seq);
+const datesOk = META.fichiers.map(f => `${f.annee} : du ${dateFr(f.date_min)} au ${dateFr(f.date_max)}`);
+$("fiche-ids").textContent = `Chaque identifiant n'apparaît qu'une fois dans son fichier${seq ? " ; dans chaque fichier, les identifiants vont de 1 au nombre de lignes, sans trou" : ""}. Dans chaque fichier, toutes les dates d'inscription tombent dans l'année du fichier (${datesOk.join(" ; ")}).`;
+$("fiche-xlsx").textContent = META.xlsx.length === ANS.length
+  ? `Pour chacune des ${ANS.length} années, chaque ligne du fichier CSV est identique à la ligne de même rang du fichier XLSX publié par la CNESST pour la même année.`
+  : `Le recoupement avec les fichiers XLSX n'a porté que sur ${enumerer(META.xlsx.map(String))}.`;
+const per = /^(\d{4})-\d\d-\d\d\/(\d{4})-\d\d-\d\d$/.exec(META.temporal || "");
+$("fiche-temporal").textContent = per
+  ? `La période inscrite dans les métadonnées de Données Québec va de ${per[1]} à ${per[2]}, alors que les fichiers vont de ${premier} à ${dernier}.`
+  : "";
+$("fiche-temporal").hidden = !per || (+per[1] === premier && +per[2] === dernier);
+$("fiche-citer").textContent = `Le Relevé, « Le programme Pour une maternité sans danger », d'après la CNESST, Pour une maternité sans danger (Données Québec, CC-BY 4.0), fichiers ${premier} à ${dernier}, extraits le ${dateFr(META.archive)}. https://le-releve.github.io/maternite-sans-danger/`;
+
+// Commandes
+for (const d of DONNEES.dims) $("dimension").insertAdjacentHTML("beforeend", `<option value="${d.id}">${echapper(d.titre)}</option>`);
+let dim = null, choix = 0;
+
+// Ordre par défaut de chaque répartition ; la région est en ordre alphabétique (aucun tri par nombre : D-009).
+const ORDRES = { categorie: "Ordre de la fiche de la CNESST", age: "Du plus jeune au plus âgé", semaines: "Ordre de la fiche de la CNESST", facteur: "Ordre de la fiche de la CNESST", secteur: "Ordre de la fiche de la CNESST" };
+function ordonnees(d) {
+  const idx = d.valeurs.map((_, i) => i);
+  if (ORDRES[d.id] && $("tri").value === "alpha") idx.sort((a, b) => libelle(d.valeurs[a]).localeCompare(libelle(d.valeurs[b]), "fr"));
+  return idx;
+}
+
+// Valeurs absentes certaines années (calculé depuis les données).
+function absences(d) {
+  const l = d.valeurs.filter(v => v.n.some(n => n === 0)).map(v => {
+    const ans = ANS.filter((_, i) => v.n[i] > 0);
+    return ans.length ? `« ${libelle(v)} » (${ans.length === 1 ? `${ans[0]} seulement` : `présente en ${enumerer(ans.map(String))}`})` : `« ${libelle(v)} » (jamais)`;
+  });
+  return l.length ? `Certaines valeurs n'apparaissent pas chaque année dans les fichiers : ${enumerer(l)}.` : "";
+}
+
+const PETITS = "Certains nombres sont petits : un écart d'une année à l'autre peut alors porter sur quelques réclamations seulement.";
+const PAS_TAUX = q => `Le fichier ne donne pas le nombre de travailleuses par ${q} : ces nombres ne sont pas des taux et ne permettent pas, à eux seuls, de comparer un groupe à un autre.`;
+function notes() {
+  const p = [];
+  if (!dim) {
+    p.push("Chaque barre compte les réclamations inscrites dans l'année et acceptées au 1er mars de l'année suivante, selon le fichier de la CNESST. La documentation de la CNESST ne commente pas les variations d'une année à l'autre.");
+  } else if (dim.id === "categorie") {
+    p.push(`Selon les fichiers, de ${nb(Math.min(...ALL))} à ${nb(Math.max(...ALL))} réclamations par année concernent une travailleuse qui allaite, et de ${nb(Math.min(...ENC))} à ${nb(Math.max(...ENC))} une travailleuse enceinte.`);
+  } else if (dim.id === "age") {
+    p.push(`${PAS_TAUX("groupe d'âge")} L'âge est celui de la travailleuse au moment de la réclamation, selon la fiche.`);
+  } else if (dim.id === "semaines") {
+    const ia = DONNEES.indet.allaite[iDernier], ie = DONNEES.indet.enceinte[iDernier];
+    p.push("Selon la fiche, il s'agit du nombre de semaines de grossesse à la date du retrait préventif ou de l'affectation de la travailleuse.");
+    if (DONNEES.indet.allaite.every((n, i) => n === ALL[i]))
+      p.push(`Dans les fichiers, toutes les réclamations de travailleuses qui allaitent portent la valeur « Indéterminée ». En ${dernier}, cette valeur compte ainsi ${pl(ia, "réclamation", "réclamations")} de travailleuses qui allaitent et ${pl(ie, "réclamation", "réclamations")} de travailleuses enceintes.`);
+  } else if (dim.id === "facteur") {
+    p.push("Selon la fiche, le facteur est la raison invoquée par le médecin ou par la travailleuse face aux dangers que comporte le poste de travail. Le fichier en donne un seul par réclamation. La description de chaque facteur, reprise de la fiche, est dans le tableau. La documentation de la CNESST ne commente pas les variations d'une année à l'autre.");
+  } else if (dim.id === "secteur") {
+    p.push(PAS_TAUX("secteur"));
+    p.push(`Selon la fiche, le secteur est le groupe secteur SCIAN « lié au retrait préventif à la réclamation ». ${PETITS}`);
+  } else if (dim.id === "region") {
+    p.push(`Selon la fiche, la direction régionale est celle qui est associée à la réclamation ; la fiche ne décrit pas le territoire de chaque direction. Noms tels que publiés par la CNESST. ${PAS_TAUX("direction régionale")}`);
+  }
+  if (dim) { const a = absences(dim); if (a) p.push(a); }
+  $("notes").innerHTML = p.map(t => `<p>${echapper(t)}</p>`).join("");
+}
+
+function graphique() {
+  const v = dim ? dim.valeurs[choix] : null;
+  const serie = v ? v.n : TOTAL;
+  const max = Math.max(...TOTAL, 1);
+  $("titre-graphique").innerHTML = v ? `${echapper(dim.titre)} : ${publie(v)}` : "Ensemble des réclamations";
+  $("sous-titre").textContent = v
+    ? "Nombre de réclamations par année d'inscription, sur l'ensemble des réclamations de l'année. L'échelle est la même que pour l'ensemble."
+    : "Nombre de réclamations par année d'inscription, acceptées au 1er mars de l'année suivante.";
+  $("barres").innerHTML = ANS.map((a, i) => {
+    const largeur = serie[i] / max * 100;
+    const sur = v ? ` <span class="part">sur ${nb(TOTAL[i])}</span>` : "";
+    return `<li><span class="an">${a}</span><span class="piste"><span class="barre" style="width:calc((100% - 7.5em) * ${largeur.toFixed(3)} / 100)"></span><span class="valeur">${nb(serie[i])}${sur}</span></span></li>`;
+  }).join("");
+}
+
+function tableau() {
+  $("tableau").hidden = !dim;
+  if (!dim) return;
+  const codes = dim.id === "secteur", descr = dim.id === "facteur";
+  $("titre-tableau").textContent = `${dim.titre}, par année`;
+  $("aide-tableau").textContent = "Nombre de réclamations par année d'inscription. Choisissez une catégorie pour l'afficher dans le graphique."
+    + (codes ? " Les codes SCIAN de chaque regroupement sont ceux de la fiche de la CNESST." : "")
+    + (descr ? " Les descriptions sont celles de la fiche de la CNESST, telles qu'écrites." : "");
+  const ordre = ORDRES[dim.id];
+  $("champ-tri").hidden = !ordre;
+  if (ordre) $("tri").options[0].textContent = ordre;
+  $("compte-tableau").textContent = `${dim.valeurs.length} catégories${ordre ? "" : ", en ordre alphabétique"}`;
+  const extraTete = codes ? '<th scope="col" class="codes">Codes SCIAN</th>' : descr ? '<th scope="col" class="descr">Description (fiche)</th>' : "";
+  $("tete").innerHTML = `<tr><th scope="col">Catégorie</th>${extraTete}${ANS.map(a => `<th scope="col">${a}</th>`).join("")}</tr>`;
+  const lignes = ordonnees(dim).map(i => {
+    const v = dim.valeurs[i];
+    const extra = codes ? `<td class="codes">${echapper(v.c)}</td>` : descr ? `<td class="descr">${echapper(v.c)}</td>` : "";
+    return `<tr${i === choix ? ' class="choisie"' : ""}><td><button type="button" class="choisir" data-i="${i}" aria-pressed="${i === choix}">${publie(v)}</button></td>${extra}${v.n.map(n => `<td>${nb(n)}</td>`).join("")}</tr>`;
+  });
+  lignes.push(`<tr class="ensemble"><td>Ensemble des réclamations</td>${codes || descr ? "<td></td>" : ""}${TOTAL.map(n => `<td>${nb(n)}</td>`).join("")}</tr>`);
+  $("corps").innerHTML = lignes.join("");
+}
+
+function categories() {
+  $("champ-categorie").hidden = !dim;
+  if (!dim) return;
+  $("categorie").innerHTML = ordonnees(dim).map(i => `<option value="${i}"${i === choix ? " selected" : ""}>${echapper(libelle(dim.valeurs[i]))}</option>`).join("");
+}
+
+function tout() { categories(); graphique(); tableau(); notes(); }
+
+$("dimension").addEventListener("change", e => { dim = dims[e.target.value] ?? null; choix = 0; tout(); });
+$("categorie").addEventListener("change", e => { choix = +e.target.value; graphique(); tableau(); });
+$("tri").addEventListener("change", () => { categories(); tableau(); });
+$("corps").addEventListener("click", e => {
+  const b = e.target.closest(".choisir");
+  if (!b) return;
+  choix = +b.dataset.i;
+  $("categorie").value = String(choix);
+  graphique(); tableau();
+  $("titre-graphique").scrollIntoView({ behavior: "smooth", block: "center" });
+});
+tout();
+</script>
