@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Les comptes publics</title>
+<style>
+/* Page légère de la deuxième série (D-039) : barres empilées par année, résultat annuel, situation financière, tableau. */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Accent de la page : séries des barres empilées (palette de la page ges). */
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+a { color: inherit; }
+
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.champ label, .groupe-titre { font-size: 13px; color: var(--ink-2); }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 100%; }
+.bascule { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--axis); border-radius: 6px; overflow: hidden; }
+.bascule button { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface); border: 0; padding: 6px 12px; cursor: pointer; }
+.bascule button + button { border-left: 1px solid var(--axis); }
+.bascule button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+button:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.disposition { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; align-items: start; }
+.graphique { width: 100%; min-width: 0; }
+.graphique svg { display: block; width: 100%; height: auto; overflow: visible; }
+.graphique text { font-family: var(--font-texte); font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.graphique text.val { fill: var(--ink-2); }
+.graphique text.choisi { fill: var(--ink); font-weight: 650; }
+.graphique .grille { stroke: var(--grid); }
+.graphique .zero { stroke: var(--axis); }
+.graphique .colonne-annee { cursor: pointer; }
+.graphique .colonne-annee:hover .fond { fill: var(--survol); }
+.legende { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); margin: 0; padding: 0; list-style: none; }
+.legende i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.lecture { font-size: 14px; line-height: 1.45; font-variant-numeric: tabular-nums; }
+.lecture dl { display: grid; grid-template-columns: 1fr auto auto; gap: 4px 12px; margin: 0; }
+.lecture dt { color: var(--ink-2); }
+.lecture dt i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.lecture dd { margin: 0; text-align: right; white-space: nowrap; }
+.lecture dd.part { color: var(--muted); font-size: 12px; }
+.lecture .fort { font-weight: 650; color: var(--ink); }
+.lecture .sep { grid-column: 1 / -1; border-top: 1px solid var(--grid); margin-block: 2px; }
+.lecture p { margin: 0; font-size: 13px; color: var(--ink-2); }
+
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; }
+td.texte-long { white-space: normal; min-width: 14em; }
+tr.total td { font-weight: 650; color: var(--ink); }
+tr.groupe td { font-weight: 650; padding-top: 14px; color: var(--ink); }
+td.retrait { padding-left: 22px; }
+details.pli > summary { cursor: pointer; font-size: 14px; font-weight: 600; }
+details.pli[open] > summary { margin-bottom: 10px; }
+.compte { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul, .fiche ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 860px) {
+  .disposition { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances" aria-current="page">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Finances publiques et État</div>
+    <h1 id="titre">Les comptes publics</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <section class="colonne" aria-labelledby="titre-flux">
+    <div class="section-titre">
+      <h2 id="titre-flux">Revenus et dépenses, année par année</h2>
+      <p>Les revenus consolidés par source et les dépenses consolidées par portefeuille, tels que regroupés dans le fichier du ministère des Finances. Choisissez une année (dans la liste ou en touchant sa barre) pour lire le détail.</p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages du graphique">
+      <div class="champ">
+        <span class="groupe-titre" id="titre-mesure">Montrer</span>
+        <div class="bascule" role="group" aria-labelledby="titre-mesure">
+          <button type="button" data-flux="Revenus" aria-pressed="true">Revenus par source</button>
+          <button type="button" data-flux="Dépenses" aria-pressed="false">Dépenses par portefeuille</button>
+        </div>
+      </div>
+      <div class="champ">
+        <label for="annee">Année financière</label>
+        <select id="annee"></select>
+      </div>
+    </div>
+    <div class="disposition">
+      <div class="carte">
+        <ul class="legende" id="legende-flux"></ul>
+        <div class="graphique" id="graphique-flux"></div>
+      </div>
+      <div class="carte lecture" id="lecture-flux" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-resultat">
+    <div class="section-titre">
+      <h2 id="titre-resultat">Le surplus ou le déficit annuel</h2>
+      <p id="texte-resultat"></p>
+    </div>
+    <div class="carte">
+      <div class="graphique" id="graphique-resultat"></div>
+    </div>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-situation">
+    <div class="section-titre">
+      <h2 id="titre-situation">La situation financière à la fin de chaque année</h2>
+      <p id="texte-situation"></p>
+    </div>
+    <div class="disposition">
+      <div class="carte">
+        <h3 id="titre-cumule">Déficit cumulé, tel que publié</h3>
+        <div class="graphique" id="graphique-cumule"></div>
+      </div>
+      <div class="carte lecture" id="lecture-situation" aria-live="polite"></div>
+    </div>
+    <p class="fraicheur" id="note-variation"></p>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-table">
+    <details class="pli carte">
+      <summary id="titre-table">Tous les postes en tableau (M$)</summary>
+      <p class="compte">Montants tels que publiés, en millions de dollars, avec leur signe. Les lignes « Somme » sont nos additions des postes du fichier.</p>
+      <div class="defile">
+        <table>
+          <thead id="table-tete"></thead>
+          <tbody id="table-corps"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> ministère des Finances, jeu <a href="https://www.donneesquebec.ca/recherche/dataset/depenses-consolidees-par-mission" target="_blank" rel="noopener">Comptes publics du gouvernement – Volume 1</a>, ressource « Statistiques financières – Volume 1 » (Données Québec, licence CC-BY 4.0). <span id="bref-date"></span></p>
+    <p><strong>Ce qu'on compte :</strong> les revenus consolidés par source, les dépenses consolidées par portefeuille, le surplus ou déficit annuel, les actifs financiers, les actifs non financiers, les passifs et le déficit cumulé, par année financière, tels que publiés.</p>
+    <p><strong>Principale limite :</strong> <span id="bref-limite"></span> Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère des Finances, <a href="https://www.donneesquebec.ca/recherche/dataset/depenses-consolidees-par-mission" target="_blank" rel="noopener">Comptes publics du gouvernement – Volume 1</a> (Données Québec), licence CC-BY 4.0 : ressource « Statistiques financières – Volume 1 » (CSV). Selon la fiche, le jeu « présente certaines données du volume 1 des comptes publics déposés annuellement par le ministère des Finances à l'Assemblée nationale ».</p>
+        <p>Pour les vérifications seulement : le volume 1 des <a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/finances/publications-adm/Comptes-publics/FR/CPTFR_vol1-2025-2026.pdf" target="_blank" rel="noopener">Comptes publics 2025-2026</a> (« États financiers consolidés du gouvernement du Québec »), proposé sur la page <a href="https://www.quebec.ca/gouvernement/finances-publiques/budget-comptes-publics/comptes-publics/volumes-comptes-publics" target="_blank" rel="noopener">Volumes des comptes publics</a> de Québec.ca. Le lien « source » de la fiche pointe vers une adresse de finances.gouv.qc.ca ; le jour de l'extraction, nous avons constaté qu'elle redirige vers la page « Comptes publics » de Québec.ca, qui renvoie à cette page des volumes. Ce parcours n'est pas archivé : seules la page des volumes et le volume le sont. Ce volume sert aux vérifications : les graphiques et le tableau ne montrent que les chiffres du fichier.</p>
+        <p id="fiche-archive"></p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li><strong>Année financière</strong> : colonne « Annee » du fichier. Le tableau 1.3 du volume 1 présente ses montants par « année financière terminée le 31 mars ».</li>
+          <li><strong>Regroupement</strong> (colonne « REGRP_Sommaire ») : selon la fiche, il précise s'il s'agit « d'un revenu, d'une dépense, d'un surplus ou déficit annuel, d'un actif financier, d'un actif non financier, d'un passif ou d'un déficit cumulé ».</li>
+          <li><strong>Poste</strong> (colonne « REGRP_Nom ») : selon la fiche, le poste ou le regroupement de postes de l'état consolidé des résultats ou de l'état consolidé de la situation financière. Les dépenses sont présentées par portefeuille : trois portefeuilles et le service de la dette sont nommés ; les autres sont regroupés sous « Autres portefeuilles », sans détail dans le fichier.</li>
+          <li><strong>Montant</strong> : écrit avec des espaces entre les milliers. La fiche ne précise pas l'unité ; nous lisons les montants en dollars, parce qu'ils concordent ainsi avec le volume 1, présenté en millions de dollars (voir les vérifications). Tous les montants du fichier sont des multiples d'un million de dollars ; la page les affiche en millions (M$) ou en milliards (G$, à une décimale).</li>
+          <li><strong>Signes</strong> : le fichier inscrit les passifs et le déficit cumulé avec un signe négatif, de même que les déficits annuels. La fiche ne décrit pas ces signes ; notre lecture repose sur deux constats : les revenus moins les dépenses du fichier redonnent exactement le montant annuel, signe compris, et le tableau 1.3 du volume 1 présente les mêmes montants entre parenthèses, sous « Déficits cumulés » et « Surplus (déficit) comptable ». Avec ces signes, pour chaque année, la somme des actifs financiers, des actifs non financiers et des passifs redonne le montant du déficit cumulé. Les graphiques et le tableau gardent les signes du fichier ; le texte donne les montants sans signe en précisant s'il s'agit d'un surplus ou d'un déficit.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Traitement, étape par étape</h3>
+        <ol id="fiche-etapes"></ol>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul id="fiche-limites"></ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul id="fiche-verifs"></ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p>Une ligne par année et par poste, montants en dollars tels que publiés, avec leur signe, et le numéro de la ligne dans le fichier du ministère (« ligne_source »). Les colonnes sont renommées (annee, regroupement, poste, montant), les espaces de tête et de fin des champs texte et les espaces entre les milliers des montants sont retirés ; aucune valeur n'est modifiée autrement.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/comptes_publics.csv" download>Télécharger les comptes publics (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = {"annees":["2015-2016","2016-2017","2017-2018","2018-2019","2019-2020","2020-2021","2021-2022","2022-2023","2023-2024","2024-2025"],"postes":[["Revenus","Impôt sur le revenu et les biens",[44473,44849,46134,49168,50482,51503,62328,64521,62948,69081]],["Revenus","Taxes à la consommation",[18517,19292,20329,21001,21348,21377,24597,26597,27083,28377]],["Revenus","Transferts du gouvernement fédéral",[18901,20179,22485,23120,25228,30716,29184,28737,30876,30498]],["Revenus","Revenus provenant des entreprises du gouvernement",[5013,4899,5093,5548,4419,4491,5960,6620,5241,5689]],["Revenus","Autres revenus",[13244,13876,14382,15927,15497,14613,16770,17768,19393,22443]],["Dépenses","Santé et Services sociaux",[37669,38856,40372,41758,44437,53649,56598,59341,61000,64195]],["Dépenses","Éducation",[13056,13806,14218,14891,15875,16546,17415,19511,20058,23352]],["Dépenses","Enseignement supérieur",[7042,7156,7582,7873,8302,8338,8747,9655,10476,11383]],["Dépenses","Service de la dette",[10124,9644,9376,8880,7835,7848,8804,10222,9982,9969]],["Dépenses","Autres portefeuilles",[28988,29689,34071,33687,38680,40697,44708,48640,50019,52364]],["Surplus (déficits) annuels","Surplus (déficits) annuels",[3269,3944,2804,7675,1845,-4378,2567,-3126,-5994,-5175]],["Actifs financiers","Trésorerie et équivalents de trésorerie",[7682,9647,10271,10500,13418,11792,9967,9981,14981,19858]],["Actifs financiers","Débiteurs",[15387,15759,18340,18753,19047,21489,23232,25112,32912,29806]],["Actifs financiers","Placements",[2350,3761,4615,5287,4881,7395,6318,7804,11157,10214]],["Actifs financiers","Participations dans les entreprises du gouvernement",[23993,25225,26188,25500,27974,32886,34877,36815,38555,39105]],["Actifs financiers","Prêts",[3877,3860,4191,4333,4297,5167,5356,5875,7083,7045]],["Actifs financiers","Fonds des générations",[8522,10523,12816,8293,8899,12212,15829,18911,18458,16855]],["Actifs financiers","Fonds d’amortissement afférents à des emprunts",[12966,14238,15681,16515,17619,19103,18355,18249,21748,18097]],["Actifs financiers","Actifs liés aux instruments financiers dérivés",[5664,5517,5225,4732,6660,4279,5292,11209,10049,11008]],["Actifs financiers","Actifs nets des avantages sociaux futurs",[167,257,355,467,508,462,431,452,423,381]],["Actifs financiers","Autres actifs financiers",[320,315,322,177,311,343,908,199,314,510]],["Passifs","Autres",[-13,-8,0,0,0,0,0,0,0,0]],["Passifs","Dettes",[-201716,-208680,-214321,-210741,-217602,-233726,-239783,-257390,-287594,-296885]],["Passifs","Passifs liés aux instruments financiers dérivés",[-6794,-4563,-4600,-3777,-5375,-3824,-1274,-10684,-9911,-10439]],["Passifs","Passifs nets des avantages sociaux futurs",[-26912,-24904,-22258,-18829,-15224,-12830,-9888,-7237,-4043,-3716]],["Passifs","Obligations liées à la mise hors service d’immobilisations et passif environnemental",[-7370,-7423,-7453,-7610,-7750,-7766,-7952,-8094,-8002,-8518]],["Passifs","Revenus reportés",[-6290,-6562,-6599,-6805,-7692,-8101,-9213,-8306,-8437,-8574]],["Passifs","Créditeurs, frais à payer et autres provisions",[-29885,-32113,-34776,-35372,-38023,-43470,-49244,-51716,-57709,-60910]],["Actifs non financiers","Immobilisations",[67516,69251,69364,72319,76012,80319,85355,91850,100088,109976]],["Actifs non financiers","Autres actifs non financiers",[725,752,759,794,1054,2113,2536,2034,1623,1775]],["Déficit cumulé","Déficit cumulé",[-129811,-125148,-121880,-115464,-110986,-112157,-108898,-114936,-118305,-124412]]]};
+const META = {"archive":"2026-11-13","fichier":"donnees_ouvertes_vol1_statistiques_24-25.csv","modifie":"2025-10-21","fiche_modifiee":"2025-10-21","frequence":"annual","lignes":310,"nb_postes":31,"retouches":{"Annee":200,"REGRP_Nom":10},"volume":"CPTFR_vol1-2025-2026.pdf","volume_modifie":"2026-07-17","verifs":{"annees_volume":["2016-2017","2024-2025"],"postes_volume":12,"totaux_volume":5,"ecarts_reclassement":[{"annee":"2024-2025","poste":"Santé et Services sociaux","fichier":64195000000,"volume":64227000000},{"annee":"2024-2025","poste":"Autres portefeuilles","fichier":52364000000,"volume":52332000000}],"variations":[{"annee":"2016-2017","variation":4663000000,"surplus":3944000000},{"annee":"2017-2018","variation":3268000000,"surplus":2804000000},{"annee":"2018-2019","variation":6416000000,"surplus":7675000000},{"annee":"2019-2020","variation":4478000000,"surplus":1845000000},{"annee":"2020-2021","variation":-1171000000,"surplus":-4378000000},{"annee":"2021-2022","variation":3259000000,"surplus":2567000000},{"annee":"2022-2023","variation":-6038000000,"surplus":-3126000000},{"annee":"2023-2024","variation":-3369000000,"surplus":-5994000000},{"annee":"2024-2025","variation":-6107000000,"surplus":-5175000000}]}};
+
+const $ = id => document.getElementById(id);
+const fmtNb = new Intl.NumberFormat("fr-CA", { maximumFractionDigits: 0 });
+const fmt1 = new Intl.NumberFormat("fr-CA", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtPct = new Intl.NumberFormat("fr-CA", { style: "percent", minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s.slice(0, 10) + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const moins = s => s.replace(/^-/, "−");
+// Montants reçus en millions de dollars (entiers exacts).
+const M = v => moins(`${fmtNb.format(v)} M$`);
+const G = v => `${fmt1.format(Math.abs(v) / 1000)} G$`;
+const Gs = v => moins(`${fmt1.format(v / 1000)} G$`);
+const V = META.verifs;
+const ANNEES = DONNEES.annees;
+const N = ANNEES.length;
+const DERNIERE = ANNEES[N - 1];
+const postes = s => DONNEES.postes.filter(p => p[0] === s);
+const somme = (s, i) => postes(s).reduce((t, p) => t + p[2][i], 0);
+const un = s => postes(s)[0][2];
+const RESULTAT = un("Surplus (déficits) annuels");
+const CUMULE = un("Déficit cumulé");
+const NOMMES = postes("Dépenses").map(p => p[1]).filter(n => n !== "Autres portefeuilles" && n !== "Service de la dette");
+const sd = v => v < 0 ? "déficit" : v > 0 ? "surplus" : "résultat nul";
+const pluriel = (n, s, p) => `${fmtNb.format(n)} ${n > 1 ? p : s}`;
+const li = t => `<li>${t}</li>`;
+
+// ---------------------------------------------------------------- Textes tirés des données
+const iD = N - 1;
+$("titre").textContent = `Les comptes publics, ${ANNEES[0]} à ${DERNIERE}`;
+$("chapeau").innerHTML = `Selon le fichier du ministère des Finances, les revenus consolidés du gouvernement du Québec s'élèvent à <strong>${G(somme("Revenus", iD))}</strong> en ${DERNIERE} et les dépenses consolidées à <strong>${G(somme("Dépenses", iD))}</strong>, pour un ${sd(RESULTAT[iD])} annuel de <strong>${G(RESULTAT[iD])}</strong>. À la fin de cette année financière, le déficit cumulé publié est de ${G(CUMULE[iD])}. Le fichier reprend certaines données du volume 1 des comptes publics, de ${ANNEES[0]} à ${DERNIERE}.`;
+$("fraicheur").textContent = `Fichier du ministère des Finances modifié le ${dateFr(META.modifie)} selon Données Québec, extrait le ${dateFr(META.archive)}. Montants en milliards (G$) ou en millions de dollars (M$).`;
+$("bref-date").textContent = `Années financières ${ANNEES[0]} à ${DERNIERE} ; fichier modifié le ${dateFr(META.modifie)}, extrait le ${dateFr(META.archive)}.`;
+$("bref-limite").textContent = `selon la fiche, les données des années antérieures sont présentées telles que publiées dans les comptes publics ${DERNIERE}, en tenant compte des retraitements. Le fichier ne contient pas l'année 2025-2026, que présente le volume 1 des Comptes publics 2025-2026, proposé sur Québec.ca au moment de l'extraction ; certaines données de ${DERNIERE} y sont reclassées. Les dépenses ne détaillent que ${NOMMES.length} portefeuilles et le service de la dette.`;
+$("fiche-archive").textContent = `Version archivée : extraction du ${dateFr(META.archive)}, fichier « ${META.fichier} » (modifié le ${dateFr(META.modifie)} selon Données Québec), avec la page « Volumes des comptes publics » et le volume 1 des Comptes publics 2025-2026 (« ${META.volume} »${META.volume_modifie ? `, modifié le ${dateFr(META.volume_modifie)} selon l'en-tête du serveur` : ""}).`;
+$("fiche-fraicheur").textContent = `La fiche annonce une mise à jour annuelle. Le fichier a été modifié le ${dateFr(META.modifie)} selon Données Québec et va de ${ANNEES[0]} à ${DERNIERE}. La page « Volumes des comptes publics » de Québec.ca propose, au moment de l'extraction, le volume 1 des Comptes publics 2025-2026 ; les chiffres de 2025-2026 ne sont pas dans le fichier, et cette page ne les montre pas.`;
+$("fiche-citer").textContent = `Le Relevé, « Les comptes publics, ${ANNEES[0]} à ${DERNIERE} », d'après le ministère des Finances, Comptes publics du gouvernement – Volume 1 (CC-BY 4.0), extrait le ${dateFr(META.archive)}. https://le-releve.github.io/comptes-publics/`;
+
+const R = META.retouches;
+const retouches = Object.entries(R).map(([c, n]) => `${pluriel(n, "valeur", "valeurs")} de la colonne « ${c} »`);
+$("fiche-etapes").innerHTML = [
+  `Lecture du fichier CSV tel qu'archivé (séparateur point-virgule) : ${fmtNb.format(META.lignes)} lignes, soit ${META.nb_postes} postes pour chacune des ${N} années. Aucune ligne n'est retirée.`,
+  retouches.length ? `Retrait des espaces de tête ou de fin dans ${retouches.join(" et ")} (par exemple « ${ANNEES[0]} » écrit avec des espaces autour dans la partie sur la situation financière). Aucune valeur n'est fusionnée avec une autre par ce retrait : chaque année compte toujours ${META.nb_postes} postes distincts.` : "Aucun espace superflu à retirer.",
+  "Lecture des montants : les espaces entre les milliers sont retirés. Tout montant d'une autre forme, toute colonne, tout regroupement ou toute année inattendus, tout poste manquant ou en double arrête le traitement.",
+  "Sommes par regroupement (revenus, dépenses, actifs financiers, passifs, actifs non financiers) pour chaque année. Les parts affichées et la variation du déficit cumulé d'une année à l'autre sont aussi nos calculs. Aucun autre calcul.",
+  "Contrôles et comparaison avec le volume 1 (voir les vérifications). Tout écart non documenté arrête le traitement.",
+].map(li).join("");
+
+const variations = V.variations;
+const egales = variations.filter(v => v.variation === v.surplus);
+$("note-variation").textContent = `D'une année à l'autre, la variation du déficit cumulé du fichier ${egales.length ? `n'est égale au surplus ou au déficit annuel que pour ${pluriel(egales.length, "année", "années")} sur ${variations.length} (${egales.map(v => v.annee).join(", ")})` : `n'est égale au surplus ou au déficit annuel pour aucune des ${variations.length} années de ${ANNEES[1]} à ${DERNIERE}`}. Par exemple, en ${DERNIERE}, le déficit annuel est de ${M(Math.abs(RESULTAT[iD]))} et le montant du déficit cumulé passe de ${M(CUMULE[iD - 1])} à ${M(CUMULE[iD])}, une variation de ${M(CUMULE[iD] - CUMULE[iD - 1])}. Pour les années 2017-2018 à 2025-2026, le volume 1 des Comptes publics 2025-2026 présente cette variation en trois parties, dans le tableau « Facteurs d'évolution de la dette représentant les déficits cumulés » (p. 70, numéro imprimé) : le déficit (surplus) comptable, les autres éléments du résultat étendu des entreprises du gouvernement et, à compter du 1er avril 2022 selon la note du tableau, les pertes (gains) de réévaluation nets. Ces deux derniers éléments ne sont pas dans le fichier, et cette page ne les montre pas.`;
+
+const ec = V.ecarts_reclassement;
+$("fiche-limites").innerHTML = [
+  `La fiche indique : « Les données comparatives présentent les informations telles qu'elles ont été publiées dans les comptes publics ${DERNIERE}. » Elle ajoute que les données retraitées ont été utilisées lorsque les états financiers ont fait l'objet d'un retraitement dans une année postérieure. Nous en comprenons que les années antérieures du fichier sont présentées comme dans les comptes publics ${DERNIERE}. Ni la fiche ni le fichier ne décrivent ces retraitements.`,
+  `Le volume 1 des Comptes publics 2025-2026 indique que certaines données de ${DERNIERE} y ont été reclassées pour les rendre conformes à la présentation adoptée en 2025-2026 (note 3). Pour les postes du fichier, nous constatons un écart dans ${pluriel(ec.length, "poste", "postes")} : ${ec.map(e => `« ${e.poste} », ${M(e.fichier / 1e6)} dans le fichier et ${M(e.volume / 1e6)} dans le volume`).join(" ; ")}. La note ne détaille pas les montants reclassés. Cette page montre les montants du fichier.`,
+  `Les dépenses ne sont détaillées que pour ${NOMMES.length} portefeuilles (${NOMMES.join(", ")}) et le service de la dette ; « Autres portefeuilles » en regroupe d'autres, que le fichier ne nomme pas. Les revenus sont présentés en ${postes("Revenus").length} regroupements.`,
+  ...(() => { const z = ANNEES.filter((_, i) => DONNEES.postes.some(p => p[0] === "Passifs" && p[1] === "Autres" && p[2][i] === 0)); return z.length ? [`Le poste « Autres » des passifs vaut 0 dans le fichier pour ${pluriel(z.length, "année", "années")} (${z.join(", ")}) ; la fiche n'en précise pas le sens. Il est gardé tel que publié et n'entre dans aucune phrase de la page.`] : []; })(),
+  "Le fichier ne contient que des montants, sans population ni produit intérieur brut ; cette page ne calcule aucun ratio et ne tient pas compte de l'inflation.",
+  "La variation du déficit cumulé d'une année à l'autre n'est pas toujours égale au surplus ou au déficit annuel du fichier. Le volume 1 présente d'autres éléments qui entrent dans cette variation (voir la note sous le graphique du déficit cumulé), que le fichier ne contient pas.",
+].map(li).join("");
+
+$("fiche-verifs").innerHTML = [
+  `Pour chacune des ${N} années, les revenus moins les dépenses du fichier redonnent exactement le surplus ou déficit annuel publié dans le fichier (par exemple, en ${DERNIERE} : ${M(somme("Revenus", iD))} − ${M(somme("Dépenses", iD))} = ${M(RESULTAT[iD])}).`,
+  `Pour chacune des ${N} années, la somme des actifs financiers, des actifs non financiers et des passifs (inscrits en négatif) redonne exactement le déficit cumulé publié dans le fichier (en ${DERNIERE} : ${M(somme("Actifs financiers", iD))} + ${M(somme("Actifs non financiers", iD))} ${M(somme("Passifs", iD)).replace("−", "− ")} = ${M(CUMULE[iD])}).`,
+  `Comparaison avec le tableau 1.3, « Historique des postes des états financiers consolidés », du volume 1 des Comptes publics 2025-2026 (p. 75, numéro imprimé), pour ${V.annees_volume[0]} à ${V.annees_volume[1]} : les ${V.postes_volume} postes de revenus, de dépenses, de surplus ou déficit annuel et de déficit cumulé, ainsi que les totaux des revenus, des dépenses, des actifs financiers, des passifs et des actifs non financiers, sont identiques, en millions de dollars, à l'exception de ${pluriel(ec.length, "poste", "postes")} de dépenses de ${DERNIERE} (voir les limites). Selon la note 3 de ce volume (p. 99, numéro imprimé), les reclassements des données de ${DERNIERE} « n'ont aucune incidence sur les résultats annuels liés aux activités, la dette nette et le déficit cumulé » ; le total des dépenses de ${DERNIERE} concorde.`,
+  `Le tableau 1.3 ne détaille pas les postes d'actifs et de passifs (seulement leurs totaux), et ne commence qu'en ${V.annees_volume[0]} : les montants de ${ANNEES[0]} et le détail des actifs et des passifs ne sont vérifiés que par les deux contrôles internes ci-dessus.`,
+  "Aucun recoupement avec le volume 1 des Comptes publics " + DERNIERE + " lui-même : la page des volumes de Québec.ca ne propose, au moment de l'extraction, que les volumes 2025-2026.",
+].map(li).join("");
+
+// ---------------------------------------------------------------- Graphiques
+const NS = "http://www.w3.org/2000/svg";
+const COULEURS = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)", "var(--s5)"];
+let flux = "Revenus", choisi = N - 1;
+const largeur = el => Math.max(300, Math.round(el.clientWidth || 600));
+const etiquetteAnnee = (a, L) => L < 560 ? `${a.slice(2, 4)}-${a.slice(7)}` : a;
+function pas(max) {
+  const brut = max / 4, p10 = 10 ** Math.floor(Math.log10(brut));
+  return [1, 2, 2.5, 5, 10].map(m => m * p10).find(s => s >= brut);
+}
+
+function colonnes(el, { series, couleurs, aria, valeurs, etiquettes }) {
+  // series : [[valeur par année]...] empilées (toutes positives) ou une seule série signée.
+  const L = largeur(el), H = L < 560 ? 240 : 280, g = 44, d = 8, h = 24, b = 26;
+  const tot = ANNEES.map((_, i) => series.reduce((t, s) => t + Math.max(0, s[i]), 0));
+  const neg = ANNEES.map((_, i) => series.reduce((t, s) => t + Math.min(0, s[i]), 0));
+  const maxV = Math.max(0, ...tot), minV = Math.min(0, ...neg);
+  const st = pas(Math.max(maxV - minV, 1));
+  const haut = Math.ceil(maxV / st) * st, bas = Math.floor(minV / st) * st;
+  const y = v => h + (haut - v) / (haut - bas || 1) * (H - h - b);
+  const bw = (L - g - d) / N;
+  let s = `<svg viewBox="0 0 ${L} ${H}" role="img" aria-label="${echapper(aria)}">`;
+  for (let v = bas; v <= haut + 1e-9; v += st) {
+    s += `<line class="${v === 0 ? "zero" : "grille"}" x1="${g}" x2="${L - d}" y1="${y(v)}" y2="${y(v)}"/>`;
+    s += `<text x="${g - 6}" y="${y(v) + 4}" text-anchor="end">${moins(fmtNb.format(v / 1000))}</text>`;
+  }
+  s += `<text x="${g - 6}" y="10" text-anchor="end">G$</text>`;
+  ANNEES.forEach((a, i) => {
+    const x = g + i * bw, w = bw * 0.62, x0 = x + (bw - w) / 2;
+    s += `<g class="colonne-annee" data-i="${i}"><rect class="fond" x="${x}" y="${h}" width="${bw}" height="${H - h - b}" fill="transparent"/>`;
+    let haut0 = 0, bas0 = 0;
+    series.forEach((ser, k) => {
+      const v = ser[i];
+      if (v >= 0) { s += `<rect x="${x0}" y="${y(haut0 + v)}" width="${w}" height="${Math.max(0, y(haut0) - y(haut0 + v))}" fill="${couleurs[k]}"/>`; haut0 += v; }
+      else { s += `<rect x="${x0}" y="${y(bas0)}" width="${w}" height="${Math.max(0, y(bas0 + v) - y(bas0))}" fill="${couleurs[k]}"/>`; bas0 += v; }
+    });
+    if (choisi === i && el.id === "graphique-flux") s += `<rect x="${x + 1}" y="${h}" width="${bw - 2}" height="${H - h - b}" fill="none" stroke="var(--ink)" stroke-width="1.5" rx="2"/>`;
+    if (valeurs) {
+      const v = valeurs[i], yy = v >= 0 ? y(v) - 4 : y(v) + 12;
+      if (L >= 560 || i % 2 === (N - 1) % 2) s += `<text class="val" x="${x + bw / 2}" y="${yy}" text-anchor="middle">${moins(fmt1.format(v / 1000))}</text>`;
+    }
+    const estChoisi = choisi === i && el.id === "graphique-flux";
+    if (bw >= 40 || estChoisi || (i % 2 === (N - 1) % 2 && !(el.id === "graphique-flux" && Math.abs(choisi - i) === 1)))
+      s += `<text class="${estChoisi ? "choisi" : ""}" x="${x + bw / 2}" y="${H - 8}" text-anchor="middle">${etiquetteAnnee(a, L)}</text>`;
+    s += "</g>";
+  });
+  el.innerHTML = s + "</svg>";
+}
+
+function dessinerFlux() {
+  const ps = postes(flux);
+  $("legende-flux").innerHTML = ps.map((p, k) => `<li><i style="background:${COULEURS[k]}"></i>${echapper(p[1])}</li>`).join("");
+  colonnes($("graphique-flux"), { series: ps.map(p => p[2]), couleurs: COULEURS,
+    aria: `${flux === "Revenus" ? "Revenus consolidés par source" : "Dépenses consolidées par portefeuille"}, ${ANNEES[0]} à ${DERNIERE}, en milliards de dollars. Le détail de l'année choisie est donné à côté.` });
+  const tot = somme(flux, choisi);
+  $("lecture-flux").innerHTML = `<h3>${flux === "Revenus" ? "Revenus consolidés" : "Dépenses consolidées"}, ${ANNEES[choisi]}</h3>
+    <dl>${ps.map((p, k) => `<dt><i style="background:${COULEURS[k]}"></i>${echapper(p[1])}</dt><dd>${M(p[2][choisi])}</dd><dd class="part">${fmtPct.format(p[2][choisi] / tot)}</dd>`).join("")}
+    <span class="sep"></span><dt class="fort">Somme</dt><dd class="fort">${M(tot)}</dd><dd class="part"></dd></dl>
+    <p>Montants tels que publiés ; parts et somme calculées par Le Relevé.${choisi > 0 ? ` En ${ANNEES[choisi - 1]} : ${M(somme(flux, choisi - 1))}.` : ""}</p>`;
+}
+
+function dessinerResultat() {
+  colonnes($("graphique-resultat"), { series: [RESULTAT], couleurs: ["var(--barre)"], valeurs: RESULTAT,
+    aria: `Surplus ou déficit annuel, ${ANNEES[0]} à ${DERNIERE}, en milliards de dollars ; une barre sous zéro est un déficit.` });
+}
+const surplusAns = ANNEES.filter((_, i) => RESULTAT[i] > 0), deficitAns = ANNEES.filter((_, i) => RESULTAT[i] < 0);
+$("texte-resultat").textContent = `Revenus moins dépenses, tel que publié dans le fichier (« Surplus (déficits) annuels »). Une barre sous zéro est un déficit. Sur les ${N} années du fichier, ${pluriel(surplusAns.length, "année présente", "années présentent")} un surplus (${surplusAns.join(", ")}) et ${pluriel(deficitAns.length, "année", "années")} un déficit (${deficitAns.join(", ")}). Valeurs en milliards de dollars, à une décimale.`;
+
+let choisiSituation = N - 1;
+function dessinerSituation() {
+  colonnes($("graphique-cumule"), { series: [CUMULE], couleurs: ["var(--barre)"], valeurs: CUMULE,
+    aria: `Déficit cumulé à la fin de chaque année, ${ANNEES[0]} à ${DERNIERE}, en milliards de dollars, inscrit en négatif dans le fichier.` });
+  const i = choisiSituation;
+  const bloc = s => `<dt class="fort" style="grid-column:1/-1">${s}</dt>` + postes(s).map(p => `<dt>${echapper(p[1])}</dt><dd>${M(p[2][i])}</dd>`).join("") + `<dt class="fort">Somme</dt><dd class="fort">${M(somme(s, i))}</dd><span class="sep"></span>`;
+  $("lecture-situation").innerHTML = `<div class="champ"><label for="annee-situation">Année financière</label><select id="annee-situation">${ANNEES.map((a, k) => `<option value="${k}"${k === i ? " selected" : ""}>${a}</option>`).join("")}</select></div>
+    <dl style="grid-template-columns:1fr auto">${bloc("Actifs financiers")}${bloc("Actifs non financiers")}${bloc("Passifs")}<dt class="fort">Déficit cumulé (fichier)</dt><dd class="fort">${M(CUMULE[i])}</dd></dl>
+    <p>Montants tels que publiés, avec leur signe : les passifs et le déficit cumulé sont inscrits en négatif. Les sommes sont nos additions ; ensemble, elles redonnent le déficit cumulé du fichier.</p>`;
+  $("annee-situation").addEventListener("input", e => { choisiSituation = +e.target.value; dessinerSituation(); $("annee-situation").focus(); });
+}
+$("texte-situation").textContent = `Les actifs financiers, les actifs non financiers, les passifs et le déficit cumulé, tels que publiés pour la fin de chaque année financière. En ${DERNIERE}, le fichier inscrit ${G(somme("Actifs financiers", iD))} d'actifs financiers, ${G(somme("Actifs non financiers", iD))} d'actifs non financiers et ${G(somme("Passifs", iD))} de passifs (inscrits en négatif), pour un déficit cumulé de ${G(CUMULE[iD])} (inscrit ${Gs(CUMULE[iD])}).`;
+
+// ---------------------------------------------------------------- Tableau
+const GROUPES = ["Revenus", "Dépenses", "Surplus (déficits) annuels", "Actifs financiers", "Actifs non financiers", "Passifs", "Déficit cumulé"];
+$("table-tete").innerHTML = `<tr><th scope="col">Poste</th>${ANNEES.map(a => `<th scope="col">${a}</th>`).join("")}</tr>`;
+$("table-corps").innerHTML = GROUPES.map(s => {
+  const ps = postes(s);
+  if (ps.length === 1) return `<tr class="total"><td class="texte-long">${echapper(s)}</td>${ps[0][2].map(v => `<td>${moins(fmtNb.format(v))}</td>`).join("")}</tr>`;
+  return `<tr class="groupe"><td colspan="${N + 1}">${echapper(s)}</td></tr>` +
+    ps.map(p => `<tr><td class="texte-long retrait">${echapper(p[1])}</td>${p[2].map(v => `<td>${moins(fmtNb.format(v))}</td>`).join("")}</tr>`).join("") +
+    `<tr class="total"><td class="texte-long retrait">Somme</td>${ANNEES.map((_, i) => `<td>${moins(fmtNb.format(somme(s, i)))}</td>`).join("")}</tr>`;
+}).join("");
+
+// ---------------------------------------------------------------- Interactions
+$("annee").innerHTML = ANNEES.map((a, i) => `<option value="${i}"${i === choisi ? " selected" : ""}>${a}</option>`).join("");
+$("annee").addEventListener("input", e => { choisi = +e.target.value; dessinerFlux(); });
+$("graphique-flux").addEventListener("click", e => {
+  const c = e.target.closest(".colonne-annee");
+  if (!c) return;
+  choisi = +c.dataset.i; $("annee").value = String(choisi); dessinerFlux();
+});
+document.querySelectorAll("[data-flux]").forEach(b => b.addEventListener("click", () => {
+  flux = b.dataset.flux;
+  document.querySelectorAll("[data-flux]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  dessinerFlux();
+}));
+function tout() { dessinerFlux(); dessinerResultat(); dessinerSituation(); }
+let attente;
+window.addEventListener("resize", () => { clearTimeout(attente); attente = setTimeout(tout, 120); });
+tout();
+</script>
