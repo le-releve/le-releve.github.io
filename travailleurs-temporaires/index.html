@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Les permis de travail temporaires</title>
+<style>
+/* Page légère de la deuxième série (D-039) : barres groupées par année, comparaison des éditions, répartitions publiées. */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* Accent de la page : séries (palette de la page ges). */
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+a { color: inherit; }
+
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
+.champ label, .groupe-titre { font-size: 13px; color: var(--ink-2); }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 100%; }
+.bascule { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--axis); border-radius: 6px; overflow: hidden; }
+.bascule button { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface); border: 0; padding: 6px 12px; cursor: pointer; }
+.bascule button + button { border-left: 1px solid var(--axis); }
+.bascule button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+button:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.deux { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.graphique { width: 100%; min-width: 0; }
+.graphique svg { display: block; width: 100%; height: auto; overflow: visible; }
+.graphique text { font-family: var(--font-texte); font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.graphique .grille { stroke: var(--grid); }
+.graphique .zero { stroke: var(--axis); }
+.legende { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--ink-2); margin: 0; padding: 0; list-style: none; }
+.legende i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.note { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; max-width: 80ch; }
+
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; vertical-align: top; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); }
+th:first-child, td:first-child { text-align: left; }
+td.texte-long, th.texte-long { white-space: normal; min-width: 10em; }
+tr.total td { font-weight: 650; color: var(--ink); }
+tr.sous td { color: var(--muted); font-size: 12px; padding-top: 12px; }
+td.retrait { padding-left: 22px; }
+td.vide { color: var(--muted); }
+td.barre-cellule { width: 40%; min-width: 48px; vertical-align: middle; }
+td.serie { white-space: normal; min-width: 7.5em; }
+@media (max-width: 480px) { th, td { padding: 6px 6px; } td.texte-long, th.texte-long { min-width: 7em; } }
+.barre-fond { height: 10px; border-radius: 2px; background: var(--barre); }
+td i.pastille-serie { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul, .fiche ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 860px) {
+  .deux { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail" aria-current="page">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Travail</div>
+    <h1 id="titre">Les permis de travail temporaires (PTET et PMI)</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <section class="colonne" aria-labelledby="titre-recent">
+    <div class="section-titre">
+      <h2 id="titre-recent"></h2>
+      <p id="texte-recent"></p>
+    </div>
+    <ul class="legende" id="legende-recent"></ul>
+    <div class="deux">
+      <div class="carte">
+        <h3>Programme des travailleurs étrangers temporaires (PTET)</h3>
+        <div class="graphique" id="graphique-PTET"></div>
+        <div class="defile"><table id="table-PTET"></table></div>
+      </div>
+      <div class="carte">
+        <h3>Programme de mobilité internationale (PMI), permis à des fins d'emploi</h3>
+        <div class="graphique" id="graphique-PMI"></div>
+        <div class="defile"><table id="table-PMI"></table></div>
+      </div>
+    </div>
+    <p class="note" id="note-recent"></p>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-editions">
+    <div class="section-titre">
+      <h2 id="titre-editions">D'une édition à l'autre</h2>
+      <p id="texte-editions"></p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages de la comparaison des éditions">
+      <div class="champ">
+        <span class="groupe-titre" id="titre-prog-ed">Programme</span>
+        <div class="bascule" role="group" aria-labelledby="titre-prog-ed">
+          <button type="button" data-prog-ed="PTET" aria-pressed="true">PTET</button>
+          <button type="button" data-prog-ed="PMI" aria-pressed="false">PMI</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span class="groupe-titre" id="titre-mes-ed">Mesure</span>
+        <div class="bascule" role="group" aria-labelledby="titre-mes-ed">
+          <button type="button" data-mes-ed="signature" aria-pressed="true">Année de signature</button>
+          <button type="button" data-mes-ed="31dec" aria-pressed="false">Valides au 31 décembre</button>
+        </div>
+      </div>
+    </div>
+    <div class="carte">
+      <h3 id="titre-graphique-ed"></h3>
+      <ul class="legende" id="legende-ed"></ul>
+      <div class="graphique" id="graphique-ed"></div>
+      <p class="note" id="lecture-ed" aria-live="polite"></p>
+      <div class="defile"><table id="table-ed"></table></div>
+    </div>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-detail">
+    <div class="section-titre">
+      <h2 id="titre-detail"></h2>
+      <p id="texte-detail"></p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages des répartitions">
+      <div class="champ">
+        <span class="groupe-titre" id="titre-prog-d">Programme</span>
+        <div class="bascule" role="group" aria-labelledby="titre-prog-d">
+          <button type="button" data-prog-d="PTET" aria-pressed="true">PTET</button>
+          <button type="button" data-prog-d="PMI" aria-pressed="false">PMI</button>
+        </div>
+      </div>
+      <div class="champ">
+        <span class="groupe-titre" id="titre-mes-d">Mesure</span>
+        <div class="bascule" role="group" aria-labelledby="titre-mes-d">
+          <button type="button" data-mes-d="signature" aria-pressed="true">Année de signature</button>
+          <button type="button" data-mes-d="31dec" aria-pressed="false">Valides au 31 décembre</button>
+        </div>
+      </div>
+      <div class="champ">
+        <label for="groupe-d">Répartition</label>
+        <select id="groupe-d"></select>
+      </div>
+      <div class="champ">
+        <label for="annee-d">Année</label>
+        <select id="annee-d"></select>
+      </div>
+    </div>
+    <div class="carte">
+      <h3 id="titre-table-d"></h3>
+      <div class="defile"><table id="table-d"></table></div>
+      <p class="note" id="note-d"></p>
+    </div>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> ministère de l'Immigration, de la Francisation et de l'Intégration (MIFI), jeu <a href="https://www.donneesquebec.ca/recherche/dataset/portraits-annuels-des-admissions-temporaires-au-quebec-flux-et-stock-au-31-decembre" target="_blank" rel="noopener">Portraits annuels des admissions temporaires au Québec - flux et stock au 31 décembre</a> (Données Québec, licence CC-BY 4.0). <span id="bref-date"></span></p>
+    <p><strong>Ce qu'on compte :</strong> les titulaires (personnes uniques) d'un permis de travail à des fins d'emploi du PTET et du PMI, de deux façons publiées séparément : selon l'année de signature du permis, et selon la validité du permis au 31 décembre. Les deux mesures ne s'additionnent pas.</p>
+    <p><strong>Principale limite :</strong> <span id="bref-limite"></span> Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère de l'Immigration, de la Francisation et de l'Intégration (Direction de la recherche, de la statistique et de la veille, selon la fiche), jeu <a href="https://www.donneesquebec.ca/recherche/dataset/portraits-annuels-des-admissions-temporaires-au-quebec-flux-et-stock-au-31-decembre" target="_blank" rel="noopener">Portraits annuels des admissions temporaires au Québec - flux et stock au 31 décembre</a> (Données Québec), licence CC-BY 4.0. Documentation : la fiche du jeu (description et méthodologie) et la <a id="lien-pdf" href="#" target="_blank" rel="noopener">description des champs</a> (PDF d'une page).</p>
+        <p id="fiche-archive"></p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li><strong>Les programmes</strong> : selon la méthodologie de la fiche, le PTET « encadre les titulaires de permis de travail qui requièrent une étude d'impact sur le marché du travail (EIMT) » et le PMI « englobe les titulaires de permis de travail dispensés d'une EIMT ».</li>
+          <li><strong>Selon l'année de signature (flux)</strong> : selon la description des champs, le nombre de « titulaires de permis de travail à des fins d'emploi ayant un ou plusieurs permis » dans l'année ; selon les descriptions des ressources, ces tableaux sont établis « selon la date de signature du permis ». La fiche présente le jeu comme portant sur les « nouvelles entrées » de personnes immigrantes temporaires ; ces tableaux distinguent les permis initiaux et subséquents, et la documentation ne définit pas ce qu'est une nouvelle entrée.</li>
+          <li><strong>Valides au 31 décembre (stock)</strong> : selon la description des champs, le nombre de titulaires de permis de travail à des fins d'emploi « ayant un permis valide en date du 31 décembre ».</li>
+          <li><strong>Total (personnes uniques)</strong> : chaque tableau se termine par cette ligne. La description des champs précise : « La somme des titulaires de permis n'égale pas le Total (personnes uniques). » Les chiffres de la page sont ces totaux, tels que publiés ; nous ne les recalculons pas.</li>
+          <li><strong>« x »</strong> : selon la description des champs, « Les x fournis dans les tableaux sont des données confidentielles en vertu des dispositions de la Loi sur la statistique. » Ils sont affichés tels quels et ne sont jamais comptés comme des zéros.</li>
+          <li id="fiche-plusieurs"></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Les autres tableaux du jeu</h3>
+        <p id="fiche-autres-texte"></p>
+        <div class="defile"><table id="table-autres"></table></div>
+      </section>
+      <section>
+        <h3>Traitement, étape par étape</h3>
+        <ol id="fiche-etapes"></ol>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul id="fiche-limites"></ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul id="fiche-verifs"></ul>
+      </section>
+      <section>
+        <h3>Les fichiers</h3>
+        <p id="fiche-fichiers"></p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/travailleurs_temporaires.csv" download>Télécharger les permis de travail temporaires (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = {"editions":["2015-2020","2016-2021","2018-2022","2020-2024"],"series":{"PTET":{"signature":{"2015-2020":{"annees":[2015,2016,2017,2018,2019,2020],"total":[11500,12210,13030,17660,23230,22090]},"2016-2021":{"annees":[2016,2017,2018,2019,2020,2021],"total":[12205,13025,17660,23225,21925,30480]},"2018-2022":{"annees":[2018,2019,2020,2021,2022],"total":[17660,23225,21910,30310,38505]},"2020-2024":{"annees":[2020,2021,2022,2023,2024],"total":[21910,30285,38320,58545,56740]}},"31dec":{"2015-2020":{"annees":[2015,2016,2017,2018,2019,2020],"total":[7370,7650,7185,9640,15420,17155]},"2016-2021":{"annees":[2016,2017,2018,2019,2020,2021],"total":[7650,7180,9640,15415,17035,23795]},"2018-2022":{"annees":[2018,2019,2020,2021,2022],"total":[9640,15415,17020,23630,35215]},"2020-2024":{"annees":[2020,2021,2022,2023,2024],"total":[17020,23610,35030,59490,72405]}}},"PMI":{"signature":{"2015-2020":{"annees":[2015,2016,2017,2018,2019,2020],"total":[29280,29815,34050,36970,40950,31265]},"2016-2021":{"annees":[2016,2017,2018,2019,2020,2021],"total":[29955,34395,37525,44555,32420,42910]},"2018-2022":{"annees":[2018,2019,2020,2021,2022],"total":[37590,44795,33800,43295,51260]},"2020-2024":{"annees":[2020,2021,2022,2023,2024],"total":[41410,54750,63260,78125,77095]}},"31dec":{"2015-2020":{"annees":[2015,2016,2017,2018,2019,2020],"total":[35625,39195,45140,52295,60160,57090]},"2016-2021":{"annees":[2016,2017,2018,2019,2020,2021],"total":[39390,45605,53165,64250,61890,62270]},"2018-2022":{"annees":[2018,2019,2020,2021,2022],"total":[53265,64530,63490,64120,73195]},"2020-2024":{"annees":[2020,2021,2022,2023,2024],"total":[74245,73870,84650,116765,125200]}}}},"detail":{"PTET":{"signature":{"annees":[2020,2021,2022,2023,2024],"total":[21910,30285,38320,58545,56740],"groupes":[{"id":"permis","titre":"Permis initial ou subséquent","lignes":[{"p":"Permis initial ou subséquent","l":"Permis initial","n":[5715,10985,15825,30150,22465]},{"p":"Permis initial ou subséquent","l":"Permis subséquent","n":[16495,19520,22705,28835,34695]}]},{"id":"volet","titre":"Volet","lignes":[{"p":"Programmes concernant les aides familiaux résidants","l":"Programme des aides familiaux résidants (PAFR)","n":[5,10,5,10,null]},{"p":"Programmes concernant les aides familiaux résidants","l":"Aides familiaux résidants - professions","n":[150,285,340,495,530]},{"p":"Aides familiaux","l":"Aides familiaux","n":[165,185,175,295,200]},{"p":"Travailleurs agricoles","l":"Programme de travailleurs agricole saisonnier (PTAS)","n":[5315,6295,6795,6590,6155]},{"p":"Travailleurs agricoles","l":"Volet agricole ou autre agricole","n":[10915,13785,16280,16510,14845]},{"p":"Autres travailleurs étrangers temporaires avec EIMT","l":"Autres travailleurs étrangers temporaires avec EIMT","n":[5395,9790,14790,34860,35070]}]},{"id":"age","titre":"Groupe d'âge","lignes":[{"p":"Groupe d'âge","l":"0 à 14 ans","n":[0,0,0,0,0]},{"p":"Groupe d'âge","l":"15 à 29 ans","n":[7315,9850,12530,18095,17210]},{"p":"Groupe d'âge","l":"30 à 44 ans","n":[11955,16785,21075,33280,31940]},{"p":"Groupe d'âge","l":"45 à 59 ans","n":[2590,3540,4570,6955,7310]},{"p":"Groupe d'âge","l":"60 ans et plus","n":[85,135,175,265,320]}]},{"id":"langue","titre":"Langue connue","lignes":[{"p":"Langue connue","l":"Français","n":[1445,3000,3715,10330,11150]},{"p":"Langue connue","l":"Bilingue (français et anglais)","n":[1945,3810,4075,8205,7885]},{"p":"Langue connue","l":"Anglais","n":[2065,3190,3485,6705,5635]},{"p":"Langue connue","l":"Aucune (ni français ni anglais)","n":[15730,19975,22995,24850,26415]},{"p":"Langue connue","l":"Non précisée","n":[885,405,4210,8915,5965]}]},{"id":"niveau","titre":"Profession spécialisée, peu spécialisée ou non précisée","lignes":[{"p":"Profession spécialisée","l":"0 - Gestion","n":[160,205,270,570,555]},{"p":"Profession spécialisée","l":"A - Postes professionnels","n":[1475,2255,2905,3990,3190]},{"p":"Profession spécialisée","l":"B - Postes techniques et spécialisés","n":[2180,4415,6100,17010,18570]},{"p":"Profession peu spécialisée","l":"C - Postes intermédiaires et de bureau","n":[16450,20420,24130,22040,11600]},{"p":"Profession peu spécialisée","l":"D - Postes élémentaires et manoeuvres","n":[1665,3040,5015,15435,22980]},{"p":"Profession non précisée","l":"Profession non précisée","n":[10,25,15,30,10]}]},{"id":"categorie","titre":"Catégorie professionnelle","lignes":[{"p":"Catégorie professionnelle","l":"Gestion","n":[160,205,270,570,555]},{"p":"Catégorie professionnelle","l":"Affaires, finance et administration","n":[145,250,560,1540,2170]},{"p":"Catégorie professionnelle","l":"Sciences naturelles et appliquées","n":[1150,1850,2505,3635,2800]},{"p":"Catégorie professionnelle","l":"Secteur de la santé","n":[435,795,960,1880,2255]},{"p":"Catégorie professionnelle","l":"Enseignement, droit et services sociaux, communautaires et gouvernementaux","n":[500,725,825,1460,1650]},{"p":"Catégorie professionnelle","l":"Arts, culture, sports et loisirs","n":[315,295,665,935,555]},{"p":"Catégorie professionnelle","l":"Vente et services","n":[565,1430,2235,8350,8390]},{"p":"Catégorie professionnelle","l":"Métiers, transport et machinerie","n":[1625,2930,3955,8190,7765]},{"p":"Catégorie professionnelle","l":"Ressources naturelles, agriculture et production connexe","n":[15360,18665,21540,23100,24250]},{"p":"Catégorie professionnelle","l":"Fabrication et services d'utilité publique","n":[1675,3150,4860,8980,6435]},{"p":"Catégorie professionnelle","l":"Autres catégories","n":[10,10,10,30,10]},{"p":"Catégorie professionnelle","l":"Non précisée","n":[null,15,5,null,null]}]},{"id":"pays","titre":"Principaux pays de naissance","lignes":[{"p":"Principaux pays de naissance","l":"Guatemala","n":[9965,12315,14890,16005,16670]},{"p":"Principaux pays de naissance","l":"Mexique","n":[6235,8020,10090,12150,11320]},{"p":"Principaux pays de naissance","l":"Tunisie","n":[595,1095,1570,3965,3895]},{"p":"Principaux pays de naissance","l":"Philippines","n":[1005,1875,2240,4580,3600]},{"p":"Principaux pays de naissance","l":"France","n":[915,1530,1830,3205,3570]},{"p":"Principaux pays de naissance","l":"Maroc","n":[330,565,845,3410,2810]},{"p":"Principaux pays de naissance","l":"Algérie","n":[70,235,465,1705,2500]},{"p":"Principaux pays de naissance","l":"Cameroun","n":[85,320,585,1680,2140]},{"p":"Principaux pays de naissance","l":"Colombie","n":[250,570,750,1350,1255]},{"p":"Principaux pays de naissance","l":"Madagascar","n":[115,405,605,1330,965]},{"p":"Principaux pays de naissance","l":"Autre pays","n":[2350,3355,4450,9165,8010]}]},{"id":"region","titre":"Région économique","lignes":[{"p":"Région économique","l":"Abitibi-Témiscamingue","n":[125,195,285,720,865]},{"p":"Région économique","l":"Bas-Saint-Laurent","n":[220,285,495,1020,965]},{"p":"Région économique","l":"Capitale-Nationale","n":[2870,4550,4970,6890,5655]},{"p":"Région économique","l":"Centre-du-Québec","n":[1385,1760,2290,3105,2935]},{"p":"Région économique","l":"Chaudière-Appalaches","n":[1445,2070,2905,4170,3600]},{"p":"Région économique","l":"Côte-Nord","n":[45,185,255,465,600]},{"p":"Région économique","l":"Estrie","n":[1135,1535,2060,3145,2930]},{"p":"Région économique","l":"Gaspésie–Îles-de-la-Madeleine","n":[95,330,325,565,470]},{"p":"Région économique","l":"Lanaudière","n":[1665,1920,2305,3100,3005]},{"p":"Région économique","l":"Laurentides","n":[1910,2325,2865,3585,3990]},{"p":"Région économique","l":"Laval","n":[555,695,925,1640,1610]},{"p":"Région économique","l":"Mauricie","n":[415,490,660,1060,1070]},{"p":"Région économique","l":"Montérégie","n":[4675,5830,7060,10170,10160]},{"p":"Région économique","l":"Montréal","n":[1990,2990,4430,8345,8450]},{"p":"Région économique","l":"Nord-du-Québec","n":[20,80,55,165,115]},{"p":"Région économique","l":"Outaouais","n":[125,210,320,630,695]},{"p":"Région économique","l":"Saguenay–Lac-Saint-Jean","n":[695,1050,1090,2175,1940]},{"p":"Région économique","l":"Non précisée","n":[2985,4245,5425,8165,8060]}]}]},"31dec":{"annees":[2020,2021,2022,2023,2024],"total":[17020,23610,35030,59490,72405],"groupes":[{"id":"permis","titre":"Permis initial ou subséquent","lignes":[{"p":"Permis initial ou subséquent","l":"Permis initial","n":[7415,11815,19470,37225,40840]},{"p":"Permis initial ou subséquent","l":"Permis subséquent","n":[9605,11795,15560,22255,31510]}]},{"id":"volet","titre":"Volet","lignes":[{"p":"Programmes concernant les aides familiaux résidants","l":"Programmes concernant les aides familiaux résidants","n":[260,380,510,715,850]},{"p":"Aides familiaux","l":"Aides familiaux","n":[275,290,310,420,420]},{"p":"Travailleurs agricoles","l":"Volet agricole ou autre agricole","n":[7700,10175,13640,13865,12395]},{"p":"Autres travailleurs étrangers temporaires avec EIMT","l":"Autres travailleurs étrangers temporaires avec EIMT","n":[8785,12765,20570,44495,58745]}]},{"id":"age","titre":"Groupe d'âge","lignes":[{"p":"Groupe d'âge","l":"0 à 14 ans","n":[0,0,0,0,0]},{"p":"Groupe d'âge","l":"15 à 29 ans","n":[5250,7270,10675,16175,18120]},{"p":"Groupe d'âge","l":"30 à 44 ans","n":[10070,13960,20770,36655,44895]},{"p":"Groupe d'âge","l":"45 à 59 ans","n":[1655,2325,3485,6470,9070]},{"p":"Groupe d'âge","l":"60 ans et plus","n":[40,60,95,190,325]}]},{"id":"langue","titre":"Langue connue","lignes":[{"p":"Langue connue","l":"Français","n":[1870,3715,5660,13230,18495]},{"p":"Langue connue","l":"Bilingue (français et anglais)","n":[3050,5145,6835,11310,13705]},{"p":"Langue connue","l":"Anglais","n":[2285,3315,4795,8770,10345]},{"p":"Langue connue","l":"Aucune (ni français ni anglais)","n":[7740,10435,14200,16050,18075]},{"p":"Langue connue","l":"Non précisée","n":[2075,1005,3535,10135,11785]}]},{"id":"niveau","titre":"Profession spécialisée, peu spécialisée ou non précisée","lignes":[{"p":"Profession spécialisée","l":"0 - Gestion","n":[285,310,410,775,1000]},{"p":"Profession spécialisée","l":"A - Postes professionnels","n":[3005,3445,4765,6370,6295]},{"p":"Profession spécialisée","l":"B - Postes techniques et spécialisés","n":[3910,6175,9395,21890,30780]},{"p":"Profession peu spécialisée","l":"C - Postes intermédiaires et de bureau","n":[8615,11270,15855,17640,16735]},{"p":"Profession peu spécialisée","l":"D - Postes élémentaires et manoeuvres","n":[1190,2385,4580,12785,17570]},{"p":"Profession non précisée","l":"Profession non précisée","n":[20,25,25,35,30]}]},{"id":"categorie","titre":"Catégorie professionnelle","lignes":[{"p":"Catégorie professionnelle","l":"Gestion","n":[285,310,410,775,1000]},{"p":"Catégorie professionnelle","l":"Affaires, finance et administration","n":[225,320,705,1925,3220]},{"p":"Catégorie professionnelle","l":"Sciences naturelles et appliquées","n":[2435,2605,3795,5400,5435]},{"p":"Catégorie professionnelle","l":"Secteur de la santé","n":[625,1190,1705,2860,3870]},{"p":"Catégorie professionnelle","l":"Enseignement, droit et services sociaux, communautaires et gouvernementaux","n":[820,1095,1380,2105,2745]},{"p":"Catégorie professionnelle","l":"Arts, culture, sports et loisirs","n":[510,395,775,1140,1070]},{"p":"Catégorie professionnelle","l":"Vente et services","n":[705,1680,3100,9945,14440]},{"p":"Catégorie professionnelle","l":"Métiers, transport et machinerie","n":[2870,4260,6045,11620,14905]},{"p":"Catégorie professionnelle","l":"Ressources naturelles, agriculture et production connexe","n":[7075,8945,11760,13145,14440]},{"p":"Catégorie professionnelle","l":"Fabrication et services d'utilité publique","n":[1455,2785,5330,10550,11255]},{"p":"Catégorie professionnelle","l":"Autres catégories","n":[15,15,15,35,25]},{"p":"Catégorie professionnelle","l":"Non précisée","n":[null,15,10,null,null]}]},{"id":"pays","titre":"Principaux pays de naissance","lignes":[{"p":"Principaux pays de naissance","l":"Guatemala","n":[6710,8810,11840,13165,13675]},{"p":"Principaux pays de naissance","l":"Philippines","n":[1715,2725,3675,6785,8020]},{"p":"Principaux pays de naissance","l":"Mexique","n":[1235,1550,3350,5970,7065]},{"p":"Principaux pays de naissance","l":"Tunisie","n":[995,1440,2260,5200,6870]},{"p":"Principaux pays de naissance","l":"France","n":[1620,2320,3165,4855,6285]},{"p":"Principaux pays de naissance","l":"Maroc","n":[505,775,1260,3985,4425]},{"p":"Principaux pays de naissance","l":"Algérie","n":[110,260,635,2065,3720]},{"p":"Principaux pays de naissance","l":"Cameroun","n":[130,355,805,2100,3320]},{"p":"Principaux pays de naissance","l":"Colombie","n":[405,775,1190,2095,2680]},{"p":"Principaux pays de naissance","l":"Madagascar","n":[125,450,845,1785,2055]},{"p":"Principaux pays de naissance","l":"Autre pays","n":[3470,4150,6005,11485,14295]}]},{"id":"region","titre":"Région de destination","lignes":[{"p":"Région de destination","l":"Abitibi-Témiscamingue","n":[195,285,430,980,1435]},{"p":"Région de destination","l":"Bas-Saint-Laurent","n":[185,265,465,970,1355]},{"p":"Région de destination","l":"Capitale-Nationale","n":[2415,3700,4930,7770,8580]},{"p":"Région de destination","l":"Centre-du-Québec","n":[1035,1430,2115,3320,3705]},{"p":"Région de destination","l":"Chaudière-Appalaches","n":[1405,2130,3330,5330,5905]},{"p":"Région de destination","l":"Côte-Nord","n":[40,130,230,485,805]},{"p":"Région de destination","l":"Estrie","n":[930,1270,2020,3555,4125]},{"p":"Région de destination","l":"Gaspésie–Îles-de-la-Madeleine","n":[60,105,215,455,535]},{"p":"Région de destination","l":"Lanaudière","n":[945,1110,1780,2530,3280]},{"p":"Région de destination","l":"Laurentides","n":[890,1225,1845,3155,3900]},{"p":"Région de destination","l":"Laval","n":[230,290,545,1365,1850]},{"p":"Région de destination","l":"Mauricie","n":[320,435,655,1220,1575]},{"p":"Région de destination","l":"Montérégie","n":[2600,3470,5115,8620,10975]},{"p":"Région de destination","l":"Montréal","n":[3380,4085,6245,11035,14120]},{"p":"Région de destination","l":"Nord-du-Québec","n":[30,95,125,220,275]},{"p":"Région de destination","l":"Outaouais","n":[120,210,370,760,995]},{"p":"Région de destination","l":"Saguenay–Lac-Saint-Jean","n":[495,910,1105,2025,2505]},{"p":"Région de destination","l":"Non précisée","n":[1740,2470,3510,5695,6490]}]}]}},"PMI":{"signature":{"annees":[2020,2021,2022,2023,2024],"total":[41410,54750,63260,78125,77095],"groupes":[{"id":"permis","titre":"Permis initial ou subséquent","lignes":[{"p":"Permis initial","l":"Permis initial","n":[9525,14575,30675,35590,28110]},{"p":"Permis subséquent","l":"Permis subséquent","n":[32415,40750,34195,44675,50540]}]},{"id":"ouvert","titre":"Permis ouvert ou non ouvert","lignes":[{"p":"Permis non ouvert","l":"Permis non ouvert","n":[8555,10565,15790,15690,15835]},{"p":"Permis ouvert","l":"Permis ouvert","n":[33000,44345,47860,63405,61815]}]},{"id":"volet","titre":"Volet","lignes":[{"p":"Ententes","l":"Ententes","n":[1270,1515,2145,1010,715]},{"p":"Intérêts canadiens-Avantage important","l":"Avantage important","n":[11985,14295,8970,7100,10445]},{"p":"Intérêts canadiens-Emploi réciproque","l":"Expérience internationale Canada (EIC)","n":[4720,4585,10335,9055,6725]},{"p":"Intérêts canadiens-Emploi réciproque","l":"Professeurs d'échange, conférenciers invités","n":[100,75,185,175,175]},{"p":"Intérêts canadiens-Emploi réciproque","l":"Autre emploi réciproque","n":[570,970,1685,1740,1710]},{"p":"Intérêts canadiens-Programmes de recherche","l":"Programmes de recherche","n":[40,35,30,40,20]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Époux/conjoints de fait des travailleurs qualifiés","n":[6590,8970,10530,13380,11590]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Époux/conjoints de fait des étudiants","n":[2730,3970,4995,5610,3015]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Travail postdiplôme","n":[11920,15065,15630,22070,16995]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Détenteurs d’une bourse de perfectionnement (Ph.D.) et titulaires d’une bourse","n":[1520,1860,1910,2015,1905]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Dependant d'un travailleur qualifié","n":[0,0,null,1450,1825]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Membres de famille des applicants de la RP économique","n":[0,0,0,245,330]},{"p":"Intérêts canadiens-Employés d’organismes religieux et de bienfaisance","l":"Employés d’organismes religieux et de bienfaisance","n":[270,410,365,380,450]},{"p":"Travailleurs vulnérables","l":"Travailleurs vulnérables","n":[105,140,210,630,1480]},{"p":"Autres titulaires de permis de travail du PMI","l":"Autres titulaires de permis de travail du PMI","n":[20,3590,6795,14375,20745]}]},{"id":"age","titre":"Groupe d'âge","lignes":[{"p":"Groupe d'âge","l":"0 à 14 ans","n":[null,5,40,175,185]},{"p":"Groupe d'âge","l":"15 à 29 ans","n":[20370,26590,31910,37535,33630]},{"p":"Groupe d'âge","l":"30 à 44 ans","n":[18425,24330,25805,32240,33930]},{"p":"Groupe d'âge","l":"45 à 59 ans","n":[2495,3585,4385,6575,7595]},{"p":"Groupe d'âge","l":"60 ans et plus","n":[225,320,1190,1695,1860]}]},{"id":"langue","titre":"Langue connue","lignes":[{"p":"Langue connue","l":"Français","n":[6145,9275,8740,11650,17325]},{"p":"Langue connue","l":"Bilingue (français et anglais)","n":[19380,25535,21835,25765,28185]},{"p":"Langue connue","l":"Anglais","n":[9665,14405,16170,24415,20825]},{"p":"Langue connue","l":"Aucune (ni français ni anglais)","n":[180,370,1315,1970,1595]},{"p":"Langue connue","l":"Non disponible","n":[6785,5920,16345,15350,9945]}]},{"id":"niveau","titre":"Profession spécialisée, peu spécialisée ou non précisée","lignes":[{"p":"Catégorie professionnelle-Profession spécialisée","l":"0 - Gestion","n":[1695,2155,1870,1455,1475]},{"p":"Catégorie professionnelle-Profession spécialisée","l":"A - Postes professionnels","n":[7815,8730,9010,7715,7790]},{"p":"Catégorie professionnelle-Profession spécialisée","l":"B - Postes techniques et spécialisés","n":[5875,7355,7905,6135,5665]},{"p":"Catégorie professionnelle-Profession peu spécialisée","l":"C - Postes intermédiaires et de bureau","n":[1175,1445,1200,955,905]},{"p":"Catégorie professionnelle-Profession peu spécialisée","l":"D - Postes élémentaires et manoeuvres","n":[320,330,320,220,195]},{"p":"Profession non précisée","l":"Profession non précisée","n":[24905,35265,43295,61985,61345]}]},{"id":"categorie","titre":"Catégorie professionnelle","lignes":[{"p":"Catégorie professionnelle","l":"Gestion","n":[1695,2155,1870,1455,1475]},{"p":"Catégorie professionnelle","l":"Affaires, finance et administration","n":[2575,2725,2565,2120,2050]},{"p":"Catégorie professionnelle","l":"Sciences naturelles et appliquées","n":[4575,5090,5375,4320,4145]},{"p":"Catégorie professionnelle","l":"Secteur de la santé","n":[790,915,960,915,1025]},{"p":"Catégorie professionnelle","l":"Enseignement, droit et services sociaux, communautaires et gouvernementaux","n":[2360,2770,3075,2890,2835]},{"p":"Catégorie professionnelle","l":"Arts, culture, sports et loisirs","n":[2240,2910,2955,2050,2160]},{"p":"Catégorie professionnelle","l":"Vente et services","n":[1545,1975,2085,1615,1445]},{"p":"Catégorie professionnelle","l":"Métiers, transport et machinerie","n":[740,1070,960,730,560]},{"p":"Catégorie professionnelle","l":"Ressources naturelles, agriculture et production connexe","n":[60,90,105,130,145]},{"p":"Catégorie professionnelle","l":"Fabrication et services d'utilité publique","n":[325,335,360,260,200]},{"p":"Catégorie professionnelle","l":"Autres catégories","n":[24900,35265,43290,61985,61345]},{"p":"Catégorie professionnelle","l":"Non précisé","n":[null,null,5,0,0]}]},{"id":"pays","titre":"Principaux pays de naissance","lignes":[{"p":"Principaux pays de naissance","l":"France","n":[14955,17915,18290,16195,13530]},{"p":"Principaux pays de naissance","l":"Maroc","n":[1505,2180,2005,3330,6600]},{"p":"Principaux pays de naissance","l":"Ukraine","n":[90,115,4905,4660,6575]},{"p":"Principaux pays de naissance","l":"Iran","n":[985,1625,1485,6100,5235]},{"p":"Principaux pays de naissance","l":"Inde","n":[3745,5910,8005,7715,4240]},{"p":"Principaux pays de naissance","l":"Algérie","n":[1230,1520,1895,3065,3935]},{"p":"Principaux pays de naissance","l":"Haïti","n":[250,315,425,940,3175]},{"p":"Principaux pays de naissance","l":"Tunisie","n":[1320,1930,1775,2790,3070]},{"p":"Principaux pays de naissance","l":"Cameroun","n":[605,945,925,2225,2545]},{"p":"Principaux pays de naissance","l":"États-unis-d'Amérique","n":[1530,1995,2055,2225,2275]},{"p":"Principaux pays de naissance","l":"Autres pays","n":[15195,20305,21495,28880,25920]}]},{"id":"region","titre":"Région économique","lignes":[{"p":"Région économique","l":"Abitibi-Témiscamingue","n":[135,195,280,315,320]},{"p":"Région économique","l":"Bas-Saint-Laurent","n":[265,335,350,460,550]},{"p":"Région économique","l":"Capitale-Nationale","n":[1740,2640,2675,2515,2475]},{"p":"Région économique","l":"Centre-du-Québec","n":[275,510,600,735,840]},{"p":"Région économique","l":"Chaudière-Appalaches","n":[735,1155,1210,1430,1525]},{"p":"Région économique","l":"Côte-Nord","n":[70,120,145,170,225]},{"p":"Région économique","l":"Estrie","n":[990,1545,1870,2070,2230]},{"p":"Région économique","l":"Gaspésie–Îles-de-la-Madeleine","n":[45,90,100,100,155]},{"p":"Région économique","l":"Lanaudière","n":[310,385,505,565,870]},{"p":"Région économique","l":"Laurentides","n":[555,835,1265,1545,1660]},{"p":"Région économique","l":"Laval","n":[785,1130,1315,1860,2420]},{"p":"Région économique","l":"Mauricie","n":[435,645,710,900,1060]},{"p":"Région économique","l":"Montérégie","n":[2380,3355,4140,5100,5565]},{"p":"Région économique","l":"Montréal","n":[27865,34920,38315,43020,39495]},{"p":"Région économique","l":"Nord-du-Québec","n":[25,50,40,55,70]},{"p":"Région économique","l":"Outaouais","n":[645,830,1140,1655,2290]},{"p":"Région économique","l":"Saguenay–Lac-Saint-Jean","n":[340,535,610,765,920]},{"p":"Région économique","l":"Non précisée","n":[4135,5930,8325,15250,14745]}]}]},"31dec":{"annees":[2020,2021,2022,2023,2024],"total":[74245,73870,84650,116765,125200],"groupes":[{"id":"permis","titre":"Permis initial ou subséquent","lignes":[{"p":"Permis initial ou subséquent","l":"Permis initial","n":[20280,20215,35235,49780,44400]},{"p":"Permis initial ou subséquent","l":"Permis subséquent","n":[53970,53670,49670,67890,82015]}]},{"id":"ouvert","titre":"Permis ouvert ou non ouvert","lignes":[{"p":"Permis ouvert ou non ouvert","l":"Permis non ouvert","n":[13775,13935,18225,20310,19415]},{"p":"Permis ouvert ou non ouvert","l":"Permis ouvert","n":[60475,59950,66675,97360,107000]}]},{"id":"volet","titre":"Volet","lignes":[{"p":"Ententes","l":"Ententes","n":[2870,2640,3050,2370,1735]},{"p":"Intérêts canadiens","l":"Avantage important","n":[16510,14395,9225,8095,10510]},{"p":"Intérêts canadiens-Emploi réciproque","l":"Expérience internationale Canada (EIC)","n":[9635,7025,11865,13270,8750]},{"p":"Intérêts canadiens-Emploi réciproque","l":"Professeurs d'échange, conférenciers invités","n":[85,75,145,125,125]},{"p":"Intérêts canadiens-Emploi réciproque","l":"Autre emploi réciproque","n":[945,1165,1625,1730,1705]},{"p":"Intérêts canadiens-Programmes de recherche","l":"Programmes de recherche","n":[55,50,45,45,30]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Époux/conjoints de fait des travailleurs qualifiés","n":[11190,11650,13675,19115,19395]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Époux/conjoints de fait des étudiants","n":[4675,4805,6170,7305,4570]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Travail postdiplôme","n":[25855,26825,28830,40720,40600]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Détenteurs d’une bourse de perfectionnement (Ph.D.) et titulaires d’une bourse","n":[1845,2080,2165,2155,2145]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Dependant d'un travailleur qualifié","n":[0,0,null,1385,2465]},{"p":"Intérêts canadiens-Concurrence et politique générale","l":"Membres de famille des applicants de la RP économique","n":[0,0,0,165,200]},{"p":"Employés d’organismes religieux et de bienfaisance","l":"Employés d’organismes religieux et de bienfaisance","n":[465,545,585,635,725]},{"p":"Travailleurs vulnérables","l":"Travailleurs vulnérables","n":[100,120,185,585,1360]},{"p":"Autres titulaires de permis de travail du PMI","l":"Autres titulaires de permis de travail du PMI","n":[25,2505,7080,19070,30880]}]},{"id":"age","titre":"Groupe d'âge","lignes":[{"p":"Groupe d'âge","l":"0 à 14 ans","n":[null,null,20,130,140]},{"p":"Groupe d'âge","l":"15 à 29 ans","n":[34490,34485,41305,54500,53120]},{"p":"Groupe d'âge","l":"30 à 44 ans","n":[34310,33330,35575,49220,54900]},{"p":"Groupe d'âge","l":"45 à 59 ans","n":[4945,5510,6345,10100,13030]},{"p":"Groupe d'âge","l":"60 ans et plus","n":[500,540,1405,2815,4015]}]},{"id":"langue","titre":"Langue connue","lignes":[{"p":"Langue connue","l":"Français","n":[9340,11135,11130,15345,21195]},{"p":"Langue connue","l":"Bilingue (français et anglais)","n":[28895,31640,29445,36005,38795]},{"p":"Langue connue","l":"Anglais","n":[15240,19285,25265,37875,40800]},{"p":"Langue connue","l":"Aucune (ni français ni anglais)","n":[280,430,1290,2680,3125]},{"p":"Langue connue","l":"Non précisée","n":[20485,11380,17520,24860,21290]}]},{"id":"pays","titre":"Principaux pays de naissance","lignes":[{"p":"Principaux pays de naissance","l":"France","n":[27070,24055,24240,25305,21035]},{"p":"Principaux pays de naissance","l":"Inde","n":[6510,8135,13140,16510,13695]},{"p":"Principaux pays de naissance","l":"Ukraine","n":[170,150,4890,8765,10915]},{"p":"Principaux pays de naissance","l":"Iran","n":[1685,2115,2245,6805,9700]},{"p":"Principaux pays de naissance","l":"Maroc","n":[2405,2710,2520,4390,7985]},{"p":"Principaux pays de naissance","l":"Algérie","n":[2005,2025,2400,4440,5800]},{"p":"Principaux pays de naissance","l":"Colombie","n":[1460,2090,2610,4045,4050]},{"p":"Principaux pays de naissance","l":"Tunisie","n":[2140,2195,1900,3425,3985]},{"p":"Principaux pays de naissance","l":"Chine","n":[5110,4285,3035,3580,3505]},{"p":"Principaux pays de naissance","l":"État-Unis d'Amérique","n":[3225,3200,2990,3230,3450]},{"p":"Principaux pays de naissance","l":"Autres pays","n":[22460,22915,24685,36270,41075]}]},{"id":"niveau","titre":"Profession spécialisée, peu spécialisée ou non précisée","lignes":[{"p":"Profession spécialisée","l":"0 - Gestion","n":[3220,3055,2880,2780,2705]},{"p":"Profession spécialisée","l":"A - Postes professionnels","n":[10810,9865,9730,9745,9540]},{"p":"Profession spécialisée","l":"B - Postes techniques et spécialisés","n":[8635,7755,8100,7480,6455]},{"p":"Profession peu spécialisée","l":"C - Postes intermédiaires et de bureau","n":[1590,1390,1165,1050,800]},{"p":"Profession peu spécialisée","l":"D - Postes élémentaires et manoeuvres","n":[380,375,330,265,165]},{"p":"Profession non précisée","l":"Profession non précisée","n":[49605,51425,62445,95440,105535]}]},{"id":"categorie","titre":"Catégorie professionnelle","lignes":[{"p":"Catégorie professionnelle","l":"Gestion","n":[3220,3055,2880,2780,2705]},{"p":"Catégorie professionnelle","l":"Affaires, finance et administration","n":[3405,2755,2605,2500,2345]},{"p":"Catégorie professionnelle","l":"Sciences naturelles et appliquées","n":[7080,5825,5925,6115,5590]},{"p":"Catégorie professionnelle","l":"Secteur de la santé","n":[1140,1180,1190,1250,1355]},{"p":"Catégorie professionnelle","l":"Enseignement, droit et services sociaux, communautaires et gouvernementaux","n":[2875,2990,3120,3055,3005]},{"p":"Catégorie professionnelle","l":"Arts, culture, sports et loisirs","n":[2900,2945,2760,2100,1955]},{"p":"Catégorie professionnelle","l":"Vente et services","n":[2405,2085,2365,2235,1615]},{"p":"Catégorie professionnelle","l":"Métiers, transport et machinerie","n":[1130,1115,905,810,770]},{"p":"Catégorie professionnelle","l":"Ressources naturelles, agriculture et production connexe","n":[70,90,80,100,95]},{"p":"Catégorie professionnelle","l":"Fabrication et services d'utilité publique","n":[425,405,365,380,240]},{"p":"Catégorie professionnelle","l":"Autres catégories","n":[49590,51420,62440,95440,105530]},{"p":"Catégorie professionnelle","l":"Non précisée","n":[15,null,5,null,null]}]},{"id":"region","titre":"Région de destination","lignes":[{"p":"Région de destination","l":"Abitibi-Témiscamingue","n":[215,210,290,430,435]},{"p":"Région de destination","l":"Bas-Saint-Laurent","n":[445,445,475,640,735]},{"p":"Région de destination","l":"Capitale-Nationale","n":[2745,2865,2995,3285,3175]},{"p":"Région de destination","l":"Centre-du-Québec","n":[460,630,725,1040,1170]},{"p":"Région de destination","l":"Chaudière-Appalaches","n":[1195,1355,1440,2010,2145]},{"p":"Région de destination","l":"Côte-Nord","n":[115,155,195,250,285]},{"p":"Région de destination","l":"Estrie","n":[1725,1935,2270,2905,3190]},{"p":"Région de destination","l":"Gaspésie–Îles-de-la-Madeleine","n":[90,90,120,135,190]},{"p":"Région de destination","l":"Lanaudière","n":[465,465,565,800,1110]},{"p":"Région de destination","l":"Laurentides","n":[1035,970,1240,1845,2135]},{"p":"Région de destination","l":"Laval","n":[1260,1400,1665,2660,3455]},{"p":"Région de destination","l":"Mauricie","n":[710,835,875,1205,1420]},{"p":"Région de destination","l":"Montérégie","n":[3865,4135,5080,7305,8155]},{"p":"Région de destination","l":"Montréal","n":[50525,48540,54160,69560,70470]},{"p":"Région de destination","l":"Nord-du-Québec","n":[40,60,65,80,95]},{"p":"Région de destination","l":"Outaouais","n":[1105,1140,1485,2360,3280]},{"p":"Région de destination","l":"Saguenay–Lac-Saint-Jean","n":[640,700,805,1150,1360]},{"p":"Région de destination","l":"Non précisée","n":[7615,7940,10205,19115,22395]}]}]}}},"autres":[{"tableau":"rp","titre":"à des fins de résidence permanente","annees":[2020,2021,2022,2023,2024],"signature":[5360,5885,11330,8105,14045],"31dec":[6170,5195,11645,14750,18370]},{"tableau":"humanitaire","titre":"à des fins humanitaires","annees":[2020,2021,2022,2023,2024],"signature":[19320,19780,32495,58145,62795],"31dec":[34785,27000,38075,75270,109930]},{"tableau":"etudes","titre":"à des fins d'études","annees":[2020,2021,2022,2023,2024],"signature":[16915,18900,20590,28910,32960],"31dec":[24805,25480,25690,35645,46180]}],"ecarts":[{"programme":"PTET","mesure":"signature","communes":[2016,2017,2018,2019,2020,2021,2022],"identiques":[2018],"ecart_max":195},{"programme":"PTET","mesure":"31dec","communes":[2016,2017,2018,2019,2020,2021,2022],"identiques":[2016,2018],"ecart_max":185},{"programme":"PMI","mesure":"signature","communes":[2016,2017,2018,2019,2020,2021,2022],"identiques":[],"ecart_max":12000},{"programme":"PMI","mesure":"31dec","communes":[2016,2017,2018,2019,2020,2021,2022],"identiques":[],"ecart_max":17155}]};
+const META = {"archive":"2026-11-13","metadata_modified":"2026-10-27","temporal":"2015-01-01/2020-12-31","frequence":"annual","fichiers":[{"fichier":"programme-mobilite-internationale-pmi-31-decembre-2015-2020.csv","programme":"PMI","tableau":"emploi","mesure":"31dec","edition":"2015-2020","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":192,"nb_totaux":2},{"fichier":"programme-mobilite-internationale-pmi-annee-permis-2015-2020.csv","programme":"PMI","tableau":"emploi","mesure":"signature","edition":"2015-2020","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":191,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-31-decembre-2015-2020.csv","programme":"PTET","tableau":"emploi","mesure":"31dec","edition":"2015-2020","modifie":"2022-03-31","encodage":"UTF-8","separateur":",","lignes":174,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-annee-permis-2015-2020.csv","programme":"PTET","tableau":"emploi","mesure":"signature","edition":"2015-2020","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":175,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-31-decembre-2016-2021.csv","programme":"PMI","tableau":"emploi","mesure":"31dec","edition":"2016-2021","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":170,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-annee-permis-2016-2021.csv","programme":"PMI","tableau":"emploi","mesure":"signature","edition":"2016-2021","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":172,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-31-decembre-2016-2021.csv","programme":"PTET","tableau":"emploi","mesure":"31dec","edition":"2016-2021","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":156,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-annee-permis-2016-2021.csv","programme":"PTET","tableau":"emploi","mesure":"signature","edition":"2016-2021","modifie":"2025-06-02","encodage":"UTF-8","separateur":";","lignes":157,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-31-decembre-2018-2022.csv","programme":"PMI","tableau":"emploi","mesure":"31dec","edition":"2018-2022","modifie":"2024-07-19","encodage":"UTF-8","separateur":";","lignes":76,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-annee-permis-2018-2022_v2.csv","programme":"PMI","tableau":"emploi","mesure":"signature","edition":"2018-2022","modifie":"2024-07-19","encodage":"UTF-8","separateur":";","lignes":76,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-31-decembre-2018-2022.csv","programme":"PTET","tableau":"emploi","mesure":"31dec","edition":"2018-2022","modifie":"2024-07-19","encodage":"UTF-8","separateur":";","lignes":69,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-annee-permis-2018-2022.csv","programme":"PTET","tableau":"emploi","mesure":"signature","edition":"2018-2022","modifie":"2024-07-23","encodage":"UTF-8","separateur":";","lignes":70,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fins-emploi-31-decembre-2020-2024.csv","programme":"PMI","tableau":"emploi","mesure":"31dec","edition":"2020-2024","modifie":"2026-10-20","encodage":"UTF-8","separateur":",","lignes":77,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-annee-permis-2020-2024.csv","programme":"PMI","tableau":"emploi","mesure":"signature","edition":"2020-2024","modifie":"2026-10-20","encodage":"UTF-8","separateur":",","lignes":77,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fin-etude-31-decembre-2020-2024.csv","programme":"PMI","tableau":"etudes","mesure":"31dec","edition":"2020-2024","modifie":"2026-10-27","encodage":"UTF-8","separateur":",","lignes":49,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fin-etude-annee-permis-2020-2024.csv","programme":"PMI","tableau":"etudes","mesure":"signature","edition":"2020-2024","modifie":"2026-10-27","encodage":"UTF-8","separateur":",","lignes":48,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fin-humanitaire-31-decembre-2020-2024.csv","programme":"PMI","tableau":"humanitaire","mesure":"31dec","edition":"2020-2024","modifie":"2026-10-27","encodage":"UTF-8","separateur":",","lignes":47,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fin-humanitaire-annee-permis-2020-2024.csv","programme":"PMI","tableau":"humanitaire","mesure":"signature","edition":"2020-2024","modifie":"2026-10-27","encodage":"UTF-8","separateur":",","lignes":47,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fin-rp-31-decembre-2020-2024.csv","programme":"PMI","tableau":"rp","mesure":"31dec","edition":"2020-2024","modifie":"2026-10-27","encodage":"UTF-8","separateur":",","lignes":46,"nb_totaux":1},{"fichier":"programme-mobilite-internationale-pmi-fin-rp-annee-permis-2020-2024.csv","programme":"PMI","tableau":"rp","mesure":"signature","edition":"2020-2024","modifie":"2026-10-27","encodage":"UTF-8","separateur":",","lignes":46,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-fins-emploi-31-decembre-2020-2024.csv","programme":"PTET","tableau":"emploi","mesure":"31dec","edition":"2020-2024","modifie":"2026-10-20","encodage":"UTF-8","separateur":",","lignes":64,"nb_totaux":1},{"fichier":"programme-travailleurs-etrangers-temporaires-ptet-annee-permis-2020-2024.csv","programme":"PTET","tableau":"emploi","mesure":"signature","edition":"2020-2024","modifie":"2026-10-20","encodage":"UTF-8","separateur":",","lignes":66,"nb_totaux":1}],"nb_ressources":31,"nb_etudiants":8,"fiche_pdf":"https://www.donneesquebec.ca/recherche/dataset/2991db70-8aff-4bba-a288-4491696f6cd4/resource/0ed7de29-f932-4f5e-9284-3a9e44d77ecc/download/description-champs-temporaires.pdf","lignes_propre":1518,"licence":"Attribution (CC-BY 4.0)","x_recent":17,"nb_valeurs":1501,"non_multiples_5":0};
+
+const $ = id => document.getElementById(id);
+const fmtNb = new Intl.NumberFormat("fr-CA", { maximumFractionDigits: 0 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s.slice(0, 10) + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const nb = v => v === null ? "x" : fmtNb.format(v);
+const pluriel = (n, s, p) => `${fmtNb.format(n)} ${n > 1 ? p : s}`;
+const li = t => `<li>${t}</li>`;
+const listeEt = a => a.length < 2 ? a.join("") : `${a.slice(0, -1).join(", ")} et ${a[a.length - 1]}`;
+
+const ED = DONNEES.editions, RECENTE = ED[ED.length - 1];
+const S = DONNEES.series, D = DONNEES.detail;
+const PROGS = ["PTET", "PMI"], MESURES = ["signature", "31dec"];
+const NOM_MES = { signature: "selon l'année de signature du permis", "31dec": "avec un permis valide au 31 décembre" };
+const COURT_MES = { signature: "Année de signature (flux)", "31dec": "Valides au 31 décembre (stock)" };
+const COUL_MES = { signature: "var(--s1)", "31dec": "var(--s2)" };
+const COUL_ED = ["var(--s3)", "var(--s4)", "var(--s5)", "var(--s1)"];
+const R = (p, m) => S[p][m][RECENTE];
+const AN_R = R("PTET", "signature").annees, DER = AN_R[AN_R.length - 1], iD = AN_R.length - 1;
+const dernier = (p, m) => R(p, m).total[iD];
+const NOM_PROG = { PTET: "Programme des travailleurs étrangers temporaires (PTET)", PMI: "Programme de mobilité internationale (PMI)" };
+const nomEd = e => `édition ${e}`;
+
+// ---------------------------------------------------------------- Textes tirés des données
+$("chapeau").innerHTML = `Selon les tableaux du ministère de l'Immigration, de la Francisation et de l'Intégration (MIFI), <strong>${nb(dernier("PTET", "31dec"))}</strong> personnes étaient titulaires d'un permis de travail du ${NOM_PROG.PTET} valide au 31 décembre ${DER}, et <strong>${nb(dernier("PMI", "31dec"))}</strong> d'un permis de travail à des fins d'emploi du ${NOM_PROG.PMI}. Les tableaux comptent aussi, séparément, les titulaires selon l'année de signature du permis : ${nb(dernier("PTET", "signature"))} pour le PTET et ${nb(dernier("PMI", "signature"))} pour le PMI en ${DER}. Ces deux mesures ne s'additionnent pas.`;
+$("fraicheur").textContent = `Édition ${RECENTE} des tableaux du MIFI, fichiers modifiés le ${listeEt([...new Set(META.fichiers.filter(f => f.edition === RECENTE && f.tableau === "emploi").map(f => dateFr(f.modifie)))])} selon Données Québec, extraits le ${dateFr(META.archive)}. Les éditions précédentes sont comparées plus bas.`;
+
+$("titre-recent").textContent = `Les titulaires de permis, ${AN_R[0]} à ${DER}`;
+$("texte-recent").textContent = `Deux mesures publiées séparément par le MIFI pour chaque programme : les titulaires d'un ou de plusieurs permis signés dans l'année (« flux »), et les titulaires d'un permis valide au 31 décembre (« stock »). D'après ces définitions, une personne dont le permis a été signé dans l'année et est encore valide au 31 décembre entre dans les deux : les barres d'une même année ne s'additionnent pas. Chiffres de l'édition ${RECENTE}, totaux en personnes uniques, même échelle pour les deux programmes.`;
+$("legende-recent").innerHTML = MESURES.map(m => `<li><i style="background:${COUL_MES[m]}"></i>${COURT_MES[m]}</li>`).join("");
+$("note-recent").textContent = `Le PTET et le PMI sont présentés côte à côte, sans total commun : la documentation ne précise pas si une même personne peut être comptée dans les deux programmes la même année.`;
+
+const EC = DONNEES.ecarts;
+const ecPMI = EC.filter(e => e.programme === "PMI").reduce((a, e) => Math.max(a, e.ecart_max), 0);
+const ecPTET = EC.filter(e => e.programme === "PTET").reduce((a, e) => Math.max(a, e.ecart_max), 0);
+$("texte-editions").textContent = `Le jeu publie ${ED.length} éditions des tableaux (${listeEt(ED)}), qui se chevauchent : une même année figure dans plusieurs éditions. Les totaux publiés pour une même année ne sont pas toujours les mêmes d'une édition à l'autre. Les écarts vont jusqu'à ${pluriel(ecPTET, "titulaire", "titulaires")} pour le PTET et jusqu'à ${pluriel(ecPMI, "titulaire", "titulaires")} pour le PMI. Ni la fiche ni la description des champs ne parlent de révision ou n'expliquent ces écarts. Cette page ne choisit pas entre les éditions : chaque édition est montrée telle que publiée ; les autres sections utilisent l'édition ${RECENTE}.`;
+
+$("bref-date").textContent = `Éditions ${listeEt(ED)} ; années ${S.PTET.signature[ED[0]].annees[0]} à ${DER} ; extraction du ${dateFr(META.archive)}.`;
+$("bref-limite").textContent = `pour une même année, les éditions successives ne publient pas toujours le même total (jusqu'à ${fmtNb.format(ecPMI)} titulaires d'écart pour le PMI), sans explication dans la documentation. Les tableaux comptent des titulaires de permis, et non des emplois.`;
+
+$("titre-detail").textContent = `Les répartitions publiées, édition ${RECENTE}`;
+$("texte-detail").textContent = `Les catégories telles que publiées par le MIFI dans les tableaux de l'édition ${RECENTE}, dans l'ordre des fichiers. Les tableaux ne croisent pas les catégories entre elles (par exemple l'âge et la région). Les libellés de catégories et la liste des répartitions diffèrent d'un tableau à l'autre. Les titres du menu « Répartition » sont de notre rédaction, formés des libellés publiés ; celui de la région reprend le libellé du fichier.`;
+
+$("lien-pdf").href = META.fiche_pdf;
+const fR = META.fichiers.filter(f => f.edition === RECENTE);
+$("fiche-archive").textContent = `Version archivée : extraction du ${dateFr(META.archive)}, ${META.nb_ressources} ressources de la fiche telles que téléchargées (${META.fichiers.length + META.nb_etudiants} fichiers CSV et la description des champs en PDF). La page utilise ${META.fichiers.length} des fichiers CSV ; les ${META.nb_etudiants} tableaux des étudiants internationaux sont archivés mais pas utilisés, parce qu'ils ne portent pas sur les permis de travail.`;
+$("fiche-fraicheur").textContent = `La fiche ${META.frequence === "annual" ? "annonce une mise à jour annuelle" : `indique la fréquence de mise à jour « ${META.frequence} »`} et indique une couverture temporelle du ${dateFr(META.temporal.slice(0, 10))} au ${dateFr(META.temporal.slice(11, 21))} ; les fichiers vont de ${S.PTET.signature[ED[0]].annees[0]} à ${DER}. Les fichiers de l'édition ${RECENTE} ont été modifiés entre le ${dateFr(fR.map(f => f.modifie).sort()[0])} et le ${dateFr(fR.map(f => f.modifie).sort().slice(-1)[0])} selon Données Québec ; la fiche a été modifiée le ${dateFr(META.metadata_modified)}. Cette page n'est pas mise à jour automatiquement.`;
+$("fiche-plusieurs").innerHTML = `<strong>Une personne dans plusieurs tableaux</strong> : la documentation ne précise pas si une même personne peut être comptée à la fois dans un tableau du PTET et dans un tableau du PMI, ni dans plusieurs tableaux du PMI (permis à des fins d'emploi, de résidence permanente, humanitaires ou d'études). D'après les définitions, une même personne peut entrer dans le tableau selon l'année de signature et dans celui des permis valides au 31 décembre. Cette page n'additionne donc aucun tableau à un autre.`;
+
+const A = DONNEES.autres, anA = A[0].annees;
+$("fiche-autres-texte").textContent = `Pour ${anA[0]} à ${anA[anA.length - 1]} seulement, le jeu publie aussi des tableaux de titulaires de permis de travail du PMI ${listeEt(A.map(a => a.titre))}. Les titres des fichiers les distinguent des permis à des fins d'emploi ; la documentation ne dit pas si une même personne peut figurer dans plusieurs de ces tableaux, ni dans un tableau à des fins d'emploi. Cette page ne les utilise pas ailleurs ; leurs totaux sont donnés ici tels que publiés, pour situer les tableaux à des fins d'emploi, sans les additionner. Les tableaux des étudiants internationaux (permis d'études) ne sont pas repris.`;
+$("table-autres").innerHTML = `<thead><tr><th scope="col" class="texte-long">Titulaires d'un permis de travail du PMI (total, personnes uniques)</th>${anA.map(a => `<th scope="col">${a}</th>`).join("")}</tr></thead><tbody>` +
+  A.map(a => MESURES.map(m => `<tr><td class="texte-long">${echapper(a.titre)}, ${NOM_MES[m]}</td>${a[m].map(v => `<td>${nb(v)}</td>`).join("")}</tr>`).join("")).join("") + "</tbody>";
+
+const encod = [...new Set(META.fichiers.map(f => f.encodage))], seps = [...new Set(META.fichiers.map(f => f.separateur === ";" ? "point-virgule" : "virgule"))];
+const doubles = META.fichiers.filter(f => f.nb_totaux > 1);
+$("fiche-etapes").innerHTML = [
+  `Lecture des ${META.fichiers.length} fichiers CSV utilisés, tels qu'archivés. Ils n'ont pas tous la même forme : encodage ${listeEt(encod)}, séparateur ${listeEt(seps)}, nombres écrits avec ou sans espace entre les milliers, « x » en minuscule ou en majuscule. Le script le détecte fichier par fichier.`,
+  `Pour chaque fichier, l'année de chaque colonne est lue dans son nom (« n_2024 » ou « n_31_dec_2020 ») et la mesure (année de signature ou valide au 31 décembre) dans le nom du fichier et la description de la ressource : les colonnes des tableaux au 31 décembre s'appellent aussi « n_xxxx » dans tous les fichiers du PTET et dans ceux du PMI des éditions 2018-2022 et ${RECENTE}.`,
+  `Pour chacune des ${ED.length} éditions, lecture de la ligne « Total (personnes uniques) » des tableaux du PTET et du PMI à des fins d'emploi. Les éditions ne sont jamais fusionnées.`,
+  `Pour l'édition ${RECENTE}, lecture de toutes les lignes des quatre tableaux du PTET et du PMI : chaque ligne est rangée dans une répartition d'après sa première colonne (« Groupe d'âge », « Langue connue »…), sans changer ni regrouper les catégories. Le titre de chaque répartition est de notre rédaction, formé des mots publiés (par exemple « Volet » pour les lignes « Volet: Ententes », « Travailleurs agricoles »…) ; pour la région, c'est le libellé publié (« Région économique » ou « Région de destination »). Les espaces de tête et de fin des libellés sont retirés.`,
+  `Aucun calcul sur les nombres : la page affiche les nombres publiés. Les barres des répartitions sont proportionnelles au plus grand nombre de la répartition affichée.`,
+  `Tout fichier, toute colonne, toute catégorie ou toute valeur d'une forme inattendue, et toute discordance entre deux lignes de total d'un même fichier, arrêtent le traitement.`,
+].map(li).join("");
+
+// Écarts entre l'édition la plus récente et la précédente, pour les années communes, par mesure.
+function ecartRecent(p) {
+  const prec = ED[ED.length - 2];
+  const parties = MESURES.map(m => {
+    const a0 = S[p][m][prec], a1 = S[p][m][RECENTE];
+    const com = a1.annees.filter(a => a0.annees.includes(a));
+    const d = com.map(a => a1.total[a1.annees.indexOf(a)] - a0.total[a0.annees.indexOf(a)]);
+    const mn = Math.min(...d), mx = Math.max(...d);
+    const sens = mn > 0 ? "supérieurs" : mx < 0 ? "inférieurs" : null;
+    const ab = [Math.abs(mn), Math.abs(mx)].sort((x, y) => x - y);
+    return sens ? `${NOM_MES[m]}, des totaux ${sens} de ${fmtNb.format(ab[0])} à ${fmtNb.format(ab[1])} titulaires pour ${com[0]} à ${com[com.length - 1]}`
+                : `${NOM_MES[m]}, des écarts de ${fmtNb.format(mn)} à ${fmtNb.format(mx)} titulaires pour ${com[0]} à ${com[com.length - 1]}`;
+  });
+  return `Pour le ${p}, l'édition ${RECENTE} publie, par rapport à l'édition ${prec} : ${parties.join(" ; ")}.`;
+}
+$("fiche-limites").innerHTML = [
+  `Les éditions successives ne publient pas toujours le même total pour une même année (voir « D'une édition à l'autre »). ${ecartRecent("PMI")} Le fichier du PMI selon l'année de signature de l'édition 2018-2022 porte un nom qui se termine par « _v2 » ; la fiche ne dit pas ce qui a changé.`,
+  `Les tableaux comptent des titulaires de permis, et non des emplois. Les tableaux selon l'année de signature comprennent des titulaires de permis subséquents ; la documentation ne définit pas les « nouvelles entrées » dont parle la fiche.`,
+  `Selon la description des champs, la somme des titulaires de permis n'égale pas le total (personnes uniques) ; les catégories d'une répartition ne s'additionnent donc pas pour redonner le total. La documentation ne définit pas les catégories (par exemple « Langue connue », « Région économique » ou « Région de destination ») ; dans l'édition ${RECENTE}, les tableaux selon l'année de signature répartissent les titulaires par « Région économique » et ceux au 31 décembre par « Région de destination ».`,
+  `${pluriel(META.x_recent, "nombre est confidentiel", "nombres sont confidentiels")} (« x ») dans les quatre tableaux détaillés de l'édition ${RECENTE}. Aucun total n'est confidentiel.`,
+  `Tous les nombres utilisés par la page (${fmtNb.format(META.nb_valeurs)}) ${META.non_multiples_5 === 0 ? "sont des multiples de 5" : `ne sont pas tous des multiples de 5 (${fmtNb.format(META.non_multiples_5)} font exception)`} ; la documentation ne dit pas s'ils sont arrondis.`,
+  `Les tableaux portent sur le Québec ; ils ne donnent aucune population ni aucun nombre d'emplois de référence, et cette page ne calcule aucun taux.`,
+].map(li).join("");
+
+const comp = EC.map(e => `${e.programme}, ${NOM_MES[e.mesure]} : ${e.identiques.length ? `même total dans toutes les éditions qui la publient pour ${listeEt(e.identiques.map(String))}, ` : "aucune année au total identique dans toutes les éditions qui la publient, "}écart maximal de ${pluriel(e.ecart_max, "titulaire", "titulaires")}`);
+$("fiche-verifs").innerHTML = [
+  `Comparaison des éditions pour les années publiées dans au moins deux éditions (${EC[0].communes[0]} à ${EC[0].communes[EC[0].communes.length - 1]}) : ${comp.join(" ; ")}. Ces écarts sont montrés tels quels.`,
+  doubles.length ? `${pluriel(doubles.length, "fichier contient", "fichiers contiennent")} plusieurs lignes « Total (personnes uniques) » ; ${doubles.length > 1 ? "dans chacun, elles concordent" : "elles concordent"}.` : "Chaque fichier contient une seule ligne « Total (personnes uniques) ».",
+  `Aucun total publié ailleurs par le MIFI n'a été utilisé pour recouper ces chiffres : la page s'en tient aux tableaux de Données Québec.`,
+].map(li).join("");
+
+$("fiche-fichiers").textContent = `${fmtNb.format(META.lignes_propre)} lignes : une par fichier, catégorie et année. Toutes les lignes des quatre tableaux détaillés de l'édition ${RECENTE}, et la ligne « Total (personnes uniques) » de chacun des ${META.fichiers.length} fichiers utilisés (toutes éditions, y compris les trois autres tableaux du PMI). Colonnes : édition, programme, tableau, mesure (« annee_signature » ou « valide_31_decembre »), répartition, libellés publiés (première et deuxième colonne du fichier), année, nombre, « x » si confidentiel, fichier et numéro de ligne d'origine. Les nombres sont écrits sans espace ; aucune valeur n'est modifiée autrement.`;
+$("fiche-citer").textContent = `Le Relevé, « Les permis de travail temporaires (PTET et PMI) », d'après le ministère de l'Immigration, de la Francisation et de l'Intégration, Portraits annuels des admissions temporaires au Québec - flux et stock au 31 décembre (CC-BY 4.0), extrait le ${dateFr(META.archive)}. https://le-releve.github.io/travailleurs-temporaires/`;
+
+// ---------------------------------------------------------------- Graphiques
+const largeur = el => Math.max(280, Math.round(el.clientWidth || 600));
+function pas(max) {
+  const brut = max / 4, p10 = 10 ** Math.floor(Math.log10(brut));
+  return [1, 2, 2.5, 5, 10].map(m => m * p10).find(s => s >= brut);
+}
+const milliers = v => v === 0 ? "0" : `${fmtNb.format(v / 1000)} k`;
+
+const MAX_R = Math.max(...PROGS.flatMap(p => MESURES.flatMap(m => R(p, m).total)));
+function barres(p) {
+  const el = $(`graphique-${p}`), L = largeur(el), H = L < 420 ? 200 : 230, g = 40, d = 6, h = 12, b = 22;
+  const st = pas(MAX_R), haut = Math.ceil(MAX_R / st) * st;
+  const y = v => h + (haut - v) / haut * (H - h - b);
+  const bw = (L - g - d) / AN_R.length;
+  let s = `<svg viewBox="0 0 ${L} ${H}" role="img" aria-label="${echapper(`${NOM_PROG[p]} : titulaires selon l'année de signature du permis et titulaires d'un permis valide au 31 décembre, ${AN_R[0]} à ${DER}, édition ${RECENTE}. Les valeurs sont dans le tableau sous le graphique.`)}">`;
+  for (let v = 0; v <= haut + 1e-9; v += st) {
+    s += `<line class="${v === 0 ? "zero" : "grille"}" x1="${g}" x2="${L - d}" y1="${y(v)}" y2="${y(v)}"/>`;
+    s += `<text x="${g - 6}" y="${y(v) + 4}" text-anchor="end">${milliers(v)}</text>`;
+  }
+  AN_R.forEach((a, i) => {
+    const x = g + i * bw, w = bw * 0.34;
+    MESURES.forEach((m, k) => {
+      const v = R(p, m).total[i], x0 = x + bw / 2 - w + k * w;
+      s += `<rect x="${x0 + 1}" y="${y(v)}" width="${w - 2}" height="${y(0) - y(v)}" fill="${COUL_MES[m]}"><title>${a}, ${COURT_MES[m]} : ${nb(v)}</title></rect>`;
+    });
+    s += `<text x="${x + bw / 2}" y="${H - 6}" text-anchor="middle">${a}</text>`;
+  });
+  el.innerHTML = s + "</svg>";
+  $(`table-${p}`).innerHTML = `<thead><tr><th scope="col">Titulaires</th>${AN_R.map(a => `<th scope="col">${a}</th>`).join("")}</tr></thead><tbody>` +
+    MESURES.map(m => `<tr><td class="serie"><i class="pastille-serie" style="background:${COUL_MES[m]}"></i>${COURT_MES[m]}</td>${R(p, m).total.map(v => `<td>${nb(v)}</td>`).join("")}</tr>`).join("") + "</tbody>";
+}
+
+let progEd = "PTET", mesEd = "signature";
+const TOUTES = [...new Set(ED.flatMap(e => S.PTET.signature[e].annees))].sort((a, b) => a - b);
+function editions() {
+  const el = $("graphique-ed"), L = largeur(el), H = L < 420 ? 220 : 260, g = 40, d = 10, h = 12, b = 22;
+  const ser = ED.map(e => S[progEd][mesEd][e]);
+  const max = Math.max(...ser.flatMap(s => s.total)), st = pas(max), haut = Math.ceil(max / st) * st;
+  const y = v => h + (haut - v) / haut * (H - h - b);
+  const x = a => g + (a - TOUTES[0]) / (TOUTES[TOUTES.length - 1] - TOUTES[0]) * (L - g - d - 12) + 6;
+  $("titre-graphique-ed").textContent = `${NOM_PROG[progEd]}${progEd === "PMI" ? ", permis à des fins d'emploi" : ""} : titulaires ${NOM_MES[mesEd]}, par édition`;
+  $("legende-ed").innerHTML = ED.map((e, k) => `<li><i style="background:${COUL_ED[k]}"></i>${nomEd(e)}</li>`).join("");
+  let s = `<svg viewBox="0 0 ${L} ${H}" role="img" aria-label="${echapper(`${NOM_PROG[progEd]}, titulaires ${NOM_MES[mesEd]} : une ligne par édition des tableaux. Les valeurs sont dans le tableau sous le graphique.`)}">`;
+  for (let v = 0; v <= haut + 1e-9; v += st) {
+    s += `<line class="${v === 0 ? "zero" : "grille"}" x1="${g}" x2="${L - d}" y1="${y(v)}" y2="${y(v)}"/>`;
+    s += `<text x="${g - 6}" y="${y(v) + 4}" text-anchor="end">${milliers(v)}</text>`;
+  }
+  TOUTES.forEach((a, i) => { if (L >= 480 || i % 2 === (TOUTES.length - 1) % 2) s += `<text x="${x(a)}" y="${H - 6}" text-anchor="middle">${a}</text>`; });
+  ser.forEach((sr, k) => {
+    const pts = sr.annees.map((a, i) => `${x(a)},${y(sr.total[i])}`).join(" ");
+    s += `<polyline points="${pts}" fill="none" stroke="${COUL_ED[k]}" stroke-width="${k === ED.length - 1 ? 2.5 : 1.75}"/>`;
+    sr.annees.forEach((a, i) => { s += `<circle cx="${x(a)}" cy="${y(sr.total[i])}" r="3" fill="${COUL_ED[k]}"><title>${nomEd(ED[k])}, ${a} : ${nb(sr.total[i])}</title></circle>`; });
+  });
+  el.innerHTML = s + "</svg>";
+  // Tableau : années en lignes, éditions en colonnes.
+  $("table-ed").innerHTML = `<thead><tr><th scope="col">Année</th>${ED.map((e, k) => `<th scope="col"><i class="pastille-serie" style="background:${COUL_ED[k]}"></i>${e}</th>`).join("")}</tr></thead><tbody>` +
+    TOUTES.map(a => `<tr><td>${a}</td>${ser.map(sr => { const i = sr.annees.indexOf(a); return i < 0 ? `<td class="vide">—</td>` : `<td>${nb(sr.total[i])}</td>`; }).join("")}</tr>`).join("") + "</tbody>";
+  // Lecture : chaque édition comparée à la précédente, pour les années communes.
+  const phrases = [];
+  for (let k = 1; k < ED.length; k++) {
+    const a0 = ser[k - 1], a1 = ser[k];
+    const communes = a1.annees.filter(a => a0.annees.includes(a));
+    const diffs = communes.map(a => a1.total[a1.annees.indexOf(a)] - a0.total[a0.annees.indexOf(a)]);
+    if (!communes.length) continue;
+    const plage = `${communes[0]} à ${communes[communes.length - 1]}`;
+    if (diffs.every(v => v === 0)) { phrases.push(`l'${nomEd(ED[k])} publie les mêmes totaux que l'${nomEd(ED[k - 1])} pour ${plage}`); continue; }
+    const det = communes.map((a, i) => `${a} : ${diffs[i] === 0 ? "identique" : `${diffs[i] > 0 ? "+" : "−"}${fmtNb.format(Math.abs(diffs[i]))}`}`);
+    phrases.push(`l'${nomEd(ED[k])} par rapport à l'${nomEd(ED[k - 1])}, pour ${plage} : ${det.join(", ")}`);
+  }
+  $("lecture-ed").textContent = `Écart entre éditions, en titulaires (${phrases.join(" ; ")}).`;
+}
+
+let progD = "PTET", mesD = "signature", groupeD = null, anneeD = iD;
+function detail() {
+  const t = D[progD][mesD], gs = t.groupes;
+  if (!gs.some(g => g.id === groupeD)) groupeD = gs.find(g => g.id === "age") ? "age" : gs[0].id;
+  $("groupe-d").innerHTML = gs.map(g => `<option value="${g.id}"${g.id === groupeD ? " selected" : ""}>${echapper(g.titre)}</option>`).join("");
+  $("annee-d").innerHTML = t.annees.map((a, i) => `<option value="${i}"${i === anneeD ? " selected" : ""}>${a}</option>`).join("");
+  const g = gs.find(x => x.id === groupeD), i = anneeD;
+  const max = Math.max(1, ...g.lignes.map(l => l.n[i] ?? 0));
+  $("titre-table-d").textContent = `${progD}, titulaires ${NOM_MES[mesD]}, ${t.annees[i]} : ${g.titre}`;
+  let parent = null, corps = "";
+  g.lignes.forEach(l => {
+    const sous = l.p !== l.l && l.p !== g.titre;
+    if (sous && l.p !== parent) corps += `<tr class="sous"><td colspan="3" class="texte-long">${echapper(l.p)}</td></tr>`;
+    parent = sous ? l.p : null;
+    const v = l.n[i];
+    corps += `<tr><td class="texte-long${sous ? " retrait" : ""}">${echapper(l.l)}</td><td class="barre-cellule">${v === null ? "" : `<div class="barre-fond" style="width:${(v / max * 100).toFixed(2)}%"></div>`}</td><td${v === null ? ' class="vide"' : ""}>${nb(v)}</td></tr>`;
+  });
+  corps += `<tr class="total"><td class="texte-long">Total (personnes uniques)</td><td></td><td>${nb(t.total[i])}</td></tr>`;
+  $("table-d").innerHTML = `<thead><tr><th scope="col" class="texte-long">Catégorie publiée</th><th scope="col"><span class="vide">Barre proportionnelle</span></th><th scope="col">Titulaires</th></tr></thead><tbody>${corps}</tbody>`;
+  const nx = g.lignes.filter(l => l.n[i] === null).length;
+  $("note-d").textContent = `Nombres tels que publiés. Selon la description des champs, « La somme des titulaires de permis n'égale pas le Total (personnes uniques). » ${nx ? `${pluriel(nx, "catégorie porte", "catégories portent")} « x » : donnée confidentielle en vertu de la Loi sur la statistique, selon la description des champs ; aucune barre n'est tracée. ` : ""}Les catégories ne sont ni triées ni regroupées par Le Relevé.`;
+}
+
+// ---------------------------------------------------------------- Interactions
+function bascule(attr, rappel) {
+  document.querySelectorAll(`[${attr}]`).forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(`[${attr}]`).forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    rappel(b.getAttribute(attr));
+  }));
+}
+bascule("data-prog-ed", v => { progEd = v; editions(); });
+bascule("data-mes-ed", v => { mesEd = v; editions(); });
+bascule("data-prog-d", v => { progD = v; detail(); });
+bascule("data-mes-d", v => { mesD = v; detail(); });
+$("groupe-d").addEventListener("input", e => { groupeD = e.target.value; detail(); });
+$("annee-d").addEventListener("input", e => { anneeD = +e.target.value; detail(); });
+
+function tout() { PROGS.forEach(barres); editions(); }
+let attente;
+window.addEventListener("resize", () => { clearTimeout(attente); attente = setTimeout(tout, 120); });
+tout();
+detail();
+</script>
