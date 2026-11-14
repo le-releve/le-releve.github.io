@@ -6,7 +6,19 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; }
-.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+/* Une teinte par catégorie (D-042), dans l'ordre de CATEGORIES. Repère visuel seulement :
+   elle ne porte aucun sens sur les données. Contraste d'au moins 4,5:1 sur les fonds du site. */
+:root { --t-travail: #8f5a06; --t-sante: #0b7268; --t-education: #4b4fb0; --t-environnement: #46702a; --t-finances: #7a3b69; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --t-travail: #e3a948; --t-sante: #4cc0b3; --t-education: #a3a6f2; --t-environnement: #97c46e; --t-finances: #d197c2; }
+}
+:root[data-theme="dark"] { --t-travail: #e3a948; --t-sante: #4cc0b3; --t-education: #a3a6f2; --t-environnement: #97c46e; --t-finances: #d197c2; }
+.site-nav {
+  background-color: var(--surface); border-bottom: 1px solid var(--ligne); padding-top: 4px;
+  background-image: linear-gradient(90deg, var(--t-travail) 0 20%, var(--t-sante) 20% 40%,
+    var(--t-education) 40% 60%, var(--t-environnement) 60% 80%, var(--t-finances) 80%);
+  background-size: 100% 4px; background-repeat: no-repeat;
+}
 .site-nav > div {
   max-width: 1280px; margin: 0 auto; padding-block: 10px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
