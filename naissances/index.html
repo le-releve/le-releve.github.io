@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Accouchements, césariennes et naissances par région</title>
+<style>
+/* Page légère de la deuxième série (D-039) : barres par exercice, puis tableau par région de traitement. */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --survol: rgba(16, 21, 25, 0.04);
+  --barre: #2a78d6;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --choisi: #101519;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+    --barre: #3987e5; color-scheme: dark; --choisi: #eef0f2;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --survol: rgba(255, 255, 255, 0.04);
+  --barre: #3987e5; color-scheme: dark; --choisi: #eef0f2;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre {
+  font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--ink-2); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.pastille { font-size: 11px; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--axis); color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 22px; margin: 0; text-wrap: balance; }
+h3 { font-size: 14px; font-weight: 650; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+.chapeau strong { color: var(--ink); font-weight: 650; }
+.fraicheur { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+a { color: inherit; }
+
+.colonne { display: flex; flex-direction: column; gap: 12px; }
+.section-titre { display: flex; flex-direction: column; gap: 6px; max-width: 80ch; }
+.section-titre p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.commandes { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; padding-block: 12px; border-top: 1px solid var(--ligne); border-bottom: 1px solid var(--ligne); }
+.champ { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-width: 0; }
+.champ label, .groupe-titre { font-size: 13px; color: var(--ink-2); }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--axis); border-radius: 6px; padding: 6px 10px; max-width: 100%; min-width: 0; }
+#territoire { max-width: min(340px, 100%); }
+.bascule { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--axis); border-radius: 6px; overflow: hidden; }
+.bascule button { font: inherit; font-size: 13px; color: var(--ink-2); background: var(--surface); border: 0; border-right: 1px solid var(--axis); padding: 6px 12px; cursor: pointer; }
+.bascule button:last-child { border-right: 0; }
+.bascule button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.bouton { font: inherit; font-size: 13px; color: var(--ink); background: var(--surface); cursor: pointer; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; text-decoration: none; display: inline-block; }
+button:focus-visible, select:focus-visible, summary:focus-visible, a:focus-visible, svg:focus-visible { outline: 2px solid var(--barre); outline-offset: 2px; }
+
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.lecture { font-size: 14px; line-height: 1.45; min-height: 2.9em; font-variant-numeric: tabular-nums; }
+.lecture strong { font-weight: 650; }
+#barres { display: block; width: 100%; height: auto; touch-action: manipulation; }
+#barres text { font-family: var(--font-texte); font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.ligne-grille { stroke: var(--grid); stroke-width: 1; fill: none; }
+.axe { stroke: var(--axis); stroke-width: 1; }
+.colonne-ex { cursor: pointer; }
+.colonne-ex .fond { fill: transparent; }
+.colonne-ex:hover .fond { fill: var(--survol); }
+.repere { fill: none; stroke: var(--choisi); stroke-width: 1.5; }
+
+.defile { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 6px 10px; border-bottom: 1px solid var(--grid); text-align: right; white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; font-size: 12px; border-bottom-color: var(--axis); white-space: normal; vertical-align: bottom; }
+th:first-child, td:first-child { text-align: left; }
+td.texte, th.texte { text-align: left; white-space: normal; min-width: 14ch; }
+tr.total td, tr.total th { font-weight: 650; color: var(--ink); border-top: 1px solid var(--axis); }
+tbody th { font-weight: 400; color: var(--ink); text-align: left; white-space: normal; font-size: 13px; }
+details.pli > summary { cursor: pointer; font-size: 14px; font-weight: 600; }
+details.pli[open] > summary { margin-bottom: 10px; }
+
+.en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
+.en-bref p { margin: 0; }
+.en-bref strong { color: var(--ink); font-weight: 600; }
+.fiche { display: flex; flex-direction: column; gap: 14px; max-width: 80ch; }
+.fiche section { display: flex; flex-direction: column; gap: 4px; }
+.fiche p, .fiche li { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.fiche ul, .fiche ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.fiche table { font-size: 12px; }
+.boutons { display: flex; flex-wrap: wrap; gap: 8px; }
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../#sante" aria-current="page">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé · Santé et services sociaux</div>
+    <h1 id="titre">Accouchements, césariennes et naissances par région</h1>
+    <p class="chapeau" id="chapeau"></p>
+    <p class="fraicheur" id="fraicheur"></p>
+  </header>
+
+  <section class="colonne" aria-labelledby="titre-exercices">
+    <div class="section-titre">
+      <h2 id="titre-exercices">Par exercice</h2>
+      <p>Chaque barre reprend un nombre publié (ou, pour la part des césariennes, notre calcul à partir de deux nombres publiés) pour un exercice financier (du 1er avril au 31 mars), en soins physiques et psychiatriques de courte durée, pour l'ensemble du Québec ou pour une région de traitement. Les chiffres sont présentés tels que publiés ; la documentation ne commente pas leurs variations.</p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages du graphique">
+      <div class="champ">
+        <label for="territoire">Territoire</label>
+        <select id="territoire" autocomplete="off"><option value="">Ensemble du Québec</option></select>
+      </div>
+      <div class="champ">
+        <span class="groupe-titre" id="titre-indic">Nombre montré</span>
+        <div class="bascule" role="group" aria-labelledby="titre-indic">
+          <button type="button" data-indic="0" aria-pressed="true">Accouchements et césariennes</button>
+          <button type="button" data-indic="1" aria-pressed="false">Césariennes</button>
+          <button type="button" data-indic="2" aria-pressed="false">Naissances vivantes</button>
+          <button type="button" data-indic="3" aria-pressed="false">Mortinaissances</button>
+          <button type="button" data-indic="4" aria-pressed="false">Part des césariennes (notre calcul)</button>
+        </div>
+      </div>
+    </div>
+    <div class="carte">
+      <div class="lecture" id="lecture" aria-live="polite"></div>
+      <svg id="barres" tabindex="0" role="img" aria-describedby="aide-barres"></svg>
+      <p class="fraicheur" id="aide-barres">Survolez ou touchez une barre pour lire ses chiffres ; au clavier, flèches gauche et droite. Choisir un exercice l'affiche aussi dans le tableau par région plus bas.</p>
+      <p class="fraicheur" id="note-indic"></p>
+    </div>
+    <details class="pli carte">
+      <summary>Les chiffres en tableau</summary>
+      <div class="defile">
+        <table>
+          <thead><tr><th scope="col">Exercice</th><th scope="col">Accouchements et césariennes</th><th scope="col">Césariennes</th><th scope="col">Naissances vivantes</th><th scope="col">Mortinaissances</th><th scope="col">Part des césariennes (notre calcul)</th></tr></thead>
+          <tbody id="table-serie"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-regions">
+    <div class="section-titre">
+      <h2 id="titre-regions">Par région de traitement</h2>
+      <p id="intro-regions"></p>
+    </div>
+    <div class="commandes" role="group" aria-label="Réglages du tableau">
+      <div class="champ">
+        <label for="exercice">Exercice</label>
+        <select id="exercice" autocomplete="off"></select>
+      </div>
+    </div>
+    <div class="carte defile">
+      <table>
+        <thead><tr><th scope="col" class="texte">Région de traitement (code et nom)</th><th scope="col">Accouchements et césariennes</th><th scope="col">Césariennes</th><th scope="col">Naissances vivantes</th><th scope="col">Mortinaissances</th><th scope="col">Part des césariennes (notre calcul)</th></tr></thead>
+        <tbody id="table-regions"></tbody>
+      </table>
+    </div>
+    <p class="fraicheur" id="note-regions"></p>
+  </section>
+
+  <section class="colonne" aria-labelledby="titre-autres">
+    <div class="section-titre">
+      <h2 id="titre-autres">Les autres types de soins</h2>
+      <p id="intro-autres"></p>
+    </div>
+    <details class="pli carte">
+      <summary id="resume-autres"></summary>
+      <div class="defile">
+        <table>
+          <thead><tr><th scope="col">Exercice</th><th scope="col" class="texte">Type de soins</th><th scope="col" class="texte">Région de traitement</th><th scope="col">Accouchements et césariennes</th><th scope="col">Césariennes</th><th scope="col">Naissances vivantes</th><th scope="col">Mortinaissances</th></tr></thead>
+          <tbody id="table-autres"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section class="en-bref" aria-label="En bref">
+    <p><strong>Source :</strong> ministère de la Santé et des Services sociaux, jeu <a href="https://www.donneesquebec.ca/recherche/dataset/med-echo-rapport-s15-distribution-accouch-cesar-naiss-vivantes-mortinaiss-par-region-traitement" target="_blank" rel="noopener">MED-ÉCHO – Rapport S15 - Accouchements, césariennes, naissances par région de traitement</a> (Données Québec, licence CC-BY 4.0). <span id="bref-date"></span></p>
+    <p><strong>Ce qu'on compte :</strong> les nombres publiés d'accouchements et de césariennes, de césariennes, de naissances vivantes et de mortinaissances, par région sociosanitaire de traitement et pour l'ensemble du Québec, pour chaque exercice financier.</p>
+    <p><strong>Principale limite :</strong> les chiffres sont répartis selon la région de traitement, terme que la documentation consultée ne définit pas ; le rapport ne donne pas la région de résidence. Les régions 10, 17 et 18 sont publiées ensemble. Voir <a href="#fiche">comment on a fait</a>.</p>
+  </section>
+
+  <section class="colonne" id="fiche" aria-labelledby="titre-fiche">
+    <h2 id="titre-fiche">Comment on a fait</h2>
+    <div class="fiche">
+      <section>
+        <h3>Source et licence</h3>
+        <p>Ministère de la Santé et des Services sociaux, <a href="https://www.donneesquebec.ca/recherche/dataset/med-echo-rapport-s15-distribution-accouch-cesar-naiss-vivantes-mortinaiss-par-region-traitement" target="_blank" rel="noopener">MED-ÉCHO – Rapport S15 - Accouchements, césariennes, naissances par région de traitement</a>, un fichier CSV par exercice, licence CC-BY 4.0. Selon la fiche du jeu, ces données « sont produites par la Régie de l'assurance maladie du Québec à partir de la banque de données MED-ECHO. Elles portent sur l'ensemble du Québec. » Définitions : « Liste de variables » du rapport S15, publiée avec le jeu.</p>
+        <p id="fiche-archive"></p>
+      </section>
+      <section>
+        <h3>Fraîcheur</h3>
+        <p id="fiche-fraicheur"></p>
+      </section>
+      <section>
+        <h3>Ce qu'on compte</h3>
+        <ul>
+          <li>Selon la fiche, « ce tableau donne par région sociosanitaire le nombre d'accouchements, césariennes, naissances et mortinaissances ». La banque MED-ÉCHO « contient les données relatives aux séjours hospitaliers survenus dans les centres hospitaliers québécois dispensant des soins généraux et spécialisés ».</li>
+          <li>Les quatre nombres, avec les mots de la liste de variables : « Nombre d'accouchements et de césariennes » ; « Nombre de césariennes » ; « Nombre de naissances vivantes » ; « Nombre de mortinaissances ».</li>
+          <li>Région : la liste de variables décrit la colonne comme « Code et Nom de la région sociosanitaire ». Le titre du rapport parle de « région de traitement ». Les fichiers ne contiennent aucune autre région, notamment aucune région de résidence.</li>
+          <li>Type de soins : selon la liste de variables, « l'une des trois catégories suivantes » : soins physiques et psychiatriques de courte durée, soins en chirurgie d'un jour, soins post-mortem. Le graphique et le tableau par région ne montrent que la première ; les lignes des deux autres sont présentées à part.</li>
+          <li>Chaque ligne des fichiers porte cette note : « Les interventions qui constituent des abandons sont exclues » (écrite en majuscules dans les fichiers plus anciens). La documentation ne précise pas ce qu'est un abandon.</li>
+          <li>Ni la fiche ni la liste de variables ne définissent davantage ces termes, ni la région de traitement. <span id="fiche-liens"></span></li>
+        </ul>
+      </section>
+      <section>
+        <h3>Traitement, étape par étape</h3>
+        <ol id="fiche-etapes"></ol>
+      </section>
+      <section>
+        <h3>Les fichiers lus</h3>
+        <div class="defile">
+          <table>
+            <thead><tr><th scope="col">Exercice</th><th scope="col">Période inscrite</th><th scope="col">Date de production inscrite</th><th scope="col">Modifié sur Données Québec</th><th scope="col">Encodage</th><th scope="col">Lignes</th></tr></thead>
+            <tbody id="table-fichiers"></tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h3>Limites connues</h3>
+        <ul id="fiche-limites"></ul>
+      </section>
+      <section>
+        <h3>Vérifications</h3>
+        <ul id="fiche-verifs"></ul>
+      </section>
+      <section>
+        <h3>Le fichier</h3>
+        <p>Une ligne par exercice, type de soins et région, avec le code de la région, le nom affiché sur la page, le nom tel que publié dans le fichier de l'exercice, et les quatre nombres publiés. Les lignes « TOTAL PROVINCIAL » n'y figurent pas : elles se recalculent en additionnant les régions. La part des césariennes n'y figure pas non plus.</p>
+        <div class="boutons">
+          <a class="bouton" href="../donnees/naissances.csv" download>Télécharger les chiffres par région (CSV)</a>
+        </div>
+      </section>
+      <section>
+        <h3>Comment citer</h3>
+        <p id="fiche-citer"></p>
+      </section>
+      <section>
+        <h3>Corrections</h3>
+        <p>Corrections apportées : aucune à ce jour.</p>
+      </section>
+    </div>
+  </section>
+</div>
+
+<script>
+const DONNEES = {"serie":[{"ex":"2011-2012","q":[84387,19739,85272,372],"r":[[1877,438,1891,8],[2765,653,2802,5],[8563,2177,8685,52],[4799,958,4833,20],[2979,560,3037,12],[28094,7274,28445,197],[2784,735,2811,6],[1949,468,1970,2],[926,176,933,3],[323,59,321,1],[595,158,600,1],[3282,730,3304,5],[4570,935,4601,17],[3976,729,4007,5],[3945,829,3973,11],[12960,2860,13059,27]]},{"ex":"2012-2013","q":[84276,20021,85121,348],"r":[[1791,437,1813,9],[2787,588,2816,6],[8542,2242,8657,47],[4686,960,4732,7],[2952,675,3008,8],[28436,7419,28732,191],[2657,641,2676,12],[1887,441,1901,4],[846,172,855,3],[346,54,347,0],[603,169,606,1],[3260,847,3272,10],[4388,886,4430,9],[4086,779,4132,6],[4210,895,4243,5],[12799,2816,12901,30]]},{"ex":"2013-2014","q":[83968,20194,84874,363],"r":[[1664,370,1676,3],[2704,612,2744,5],[8573,2362,8715,37],[4789,902,4830,17],[3020,620,3057,12],[28315,7466,28641,202],[2569,664,2598,10],[1839,476,1852,3],[879,172,882,4],[319,41,319,0],[626,168,629,1],[3219,839,3235,7],[4309,928,4347,12],[4154,852,4194,10],[4235,867,4276,8],[12754,2855,12879,32]]},{"ex":"2014-2015","q":[82369,20195,83316,365],"r":[[1654,411,1677,1],[2716,668,2769,8],[8521,2339,8661,35],[4411,865,4467,10],[2979,703,3024,16],[27754,7384,28045,208],[2467,663,2485,8],[1881,465,1904,4],[869,191,876,2],[342,53,339,3],[594,152,598,3],[3207,867,3237,6],[4106,836,4167,11],[4227,907,4270,13],[4112,862,4159,5],[12529,2829,12638,32]]},{"ex":"2015-2016","q":[81950,20397,82884,357],"r":[[1656,420,1679,4],[2650,625,2684,6],[8456,2475,8576,33],[4522,889,4551,19],[2929,654,2973,12],[27764,7439,28109,190],[2629,704,2650,4],[1820,500,1831,9],[815,174,828,3],[339,44,337,2],[540,162,543,1],[3124,830,3152,6],[4062,847,4120,10],[4214,973,4258,15],[4134,875,4175,8],[12296,2786,12418,35]]},{"ex":"2016-2017","q":[80505,20102,81401,367],"r":[[1616,416,1640,2],[2547,615,2577,8],[7875,2351,7976,64],[4583,896,4617,16],[4445,1022,4522,14],[26862,7381,27189,177],[2622,616,2634,8],[1824,480,1851,4],[771,167,777,3],[331,54,331,0],[544,152,551,2],[3352,928,3382,11],[4004,810,4040,12],[4181,948,4226,7],[4222,923,4268,15],[10726,2343,10820,24]]},{"ex":"2017-2018","q":[78758,19567,79603,340],"r":[[1584,377,1599,5],[2434,585,2472,6],[7618,2118,7716,33],[4293,859,4354,9],[4299,965,4353,15],[26831,7472,27137,191],[2447,574,2475,8],[1738,427,1752,5],[799,164,811,1],[339,45,335,2],[574,178,577,1],[3184,880,3216,7],[3833,811,3872,11],[4110,891,4151,6],[4171,933,4203,9],[10504,2288,10580,31]]},{"ex":"2018-2019","q":[79000,20077,79838,343],"r":[[1508,401,1516,4],[2425,608,2457,5],[7560,2132,7660,40],[4470,870,4490,20],[4346,996,4405,9],[26809,7706,27157,178],[2434,628,2450,9],[1727,399,1739,7],[755,159,764,0],[340,37,335,2],[584,171,589,2],[3346,856,3371,7],[3642,849,3669,15],[4423,960,4477,6],[4098,896,4131,14],[10533,2409,10628,25]]},{"ex":"2019-2020","q":[79891,20442,80703,406],"r":[[1530,386,1547,2],[2438,633,2476,3],[7548,2136,7610,52],[4534,845,4567,15],[4335,1001,4379,35],[26701,7797,27042,211],[2441,630,2467,8],[1816,440,1837,3],[722,159,727,1],[323,50,317,2],[612,181,614,4],[3475,890,3492,5],[3933,858,3974,9],[4363,967,4401,19],[4233,1033,4277,6],[10887,2436,10976,31]]},{"ex":"2020-2021","q":[76552,19851,77146,544],"r":[[1476,419,1490,4],[2316,608,2333,8],[7351,2086,7393,80],[4504,886,4540,11],[4262,1020,4296,27],[24613,7124,24836,272],[2324,617,2326,21],[1764,410,1778,10],[739,137,746,4],[336,41,335,1],[596,195,597,1],[3421,958,3441,12],[3814,916,3849,18],[4377,1026,4406,10],[4042,1012,4086,11],[10617,2396,10694,54]]},{"ex":"2021-2022","q":[79983,20900,80649,569],"r":[[1494,418,1503,10],[2563,687,2608,8],[7957,2257,8070,69],[4755,928,4775,24],[4532,1187,4570,31],[25295,7317,25505,291],[2497,620,2517,17],[1814,435,1826,7],[734,151,741,2],[286,34,283,3],[646,188,650,1],[3634,981,3659,17],[4108,962,4137,17],[4610,1082,4662,15],[4200,1066,4226,19],[10858,2587,10917,38]]},{"ex":"2022-2023","q":[75135,20450,75771,555],"r":[[1449,386,1467,4],[2223,586,2242,8],[7579,2321,7676,61],[4304,915,4325,26],[4107,1030,4155,32],[24829,7714,25039,297],[2379,605,2392,13],[1548,355,1565,10],[706,161,719,1],[306,58,306,2],[591,179,595,3],[3316,934,3326,11],[3790,909,3844,4],[4061,965,4081,18],[3861,930,3869,21],[10086,2402,10170,44]]},{"ex":"2023-2024","q":[73759,20407,74404,558],"r":[[1363,433,1379,3],[2154,555,2180,8],[7356,2130,7414,81],[4214,924,4242,15],[4099,1124,4146,24],[24847,7771,25094,293],[2487,635,2504,21],[1442,324,1453,10],[574,101,580,0],[219,25,218,1],[541,160,548,0],[3360,957,3379,7],[3598,931,3626,18],[3982,979,4011,15],[3765,928,3786,21],[9758,2430,9844,41]]},{"ex":"2024-2025","q":[72607,20018,73141,619],"r":[[1288,361,1306,4],[2084,549,2098,14],[7612,2177,7689,82],[4144,870,4164,22],[3843,1001,3894,26],[25012,7802,25156,335],[2413,684,2426,19],[1463,327,1469,11],[590,112,589,4],[239,36,238,1],[486,150,492,0],[3192,858,3210,9],[3307,832,3335,16],[3720,925,3753,17],[3728,886,3749,20],[9486,2448,9573,39]]},{"ex":"2025-2026","q":[73379,20862,73847,595],"r":[[1384,424,1402,2],[2125,579,2143,7],[7796,2318,7847,79],[4187,892,4216,24],[4058,1119,4090,25],[24745,8053,24846,321],[2664,811,2670,15],[1419,337,1430,11],[585,114,592,3],[223,33,221,0],[514,149,516,4],[3306,863,3316,14],[3230,956,3265,11],[3866,969,3911,15],[3769,888,3807,22],[9508,2357,9575,42]]}],"autres":[["2014-2015",1,4,1,0,0,1],["2014-2015",1,-1,1,0,0,1],["2015-2016",1,1,1,0,0,1],["2015-2016",1,-1,1,0,0,1],["2017-2018",1,6,1,0,0,0],["2017-2018",1,-1,1,0,0,0],["2018-2019",1,4,4,0,0,4],["2018-2019",1,-1,4,0,0,4],["2019-2020",1,4,11,0,0,11],["2019-2020",1,-1,11,0,0,11],["2020-2021",1,2,1,0,0,1],["2020-2021",1,4,28,0,0,28],["2020-2021",1,5,1,0,0,1],["2020-2021",1,-1,30,0,0,30],["2021-2022",1,4,21,0,0,22],["2021-2022",1,-1,21,0,0,22],["2022-2023",1,2,1,0,0,1],["2022-2023",1,4,17,1,0,17],["2022-2023",1,5,1,0,0,1],["2022-2023",1,-1,19,1,0,19],["2023-2024",1,2,1,0,0,1],["2023-2024",1,4,22,0,0,24],["2023-2024",1,5,2,1,0,2],["2023-2024",1,-1,25,1,0,27],["2024-2025",1,2,1,0,0,1],["2024-2025",1,4,19,0,0,21],["2024-2025",1,5,3,0,0,3],["2024-2025",1,-1,23,0,0,25],["2025-2026",1,4,16,0,0,16],["2025-2026",1,5,2,0,0,2],["2025-2026",1,-1,18,0,0,18],["2025-2026",2,2,1,1,0,0],["2025-2026",2,-1,1,1,0,0]]};
+const META = {"archive":"2026-11-13","regions":[["01","01 Bas-Saint-Laurent"],["02","02 Saguenay-Lac-Saint-Jean"],["03","03 Capitale-Nationale"],["04","04 Mauricie et Centre-du-Québec"],["05","05 Estrie"],["06","06 Montréal"],["07","07 Outaouais"],["08","08 Abitibi-Témiscamingue"],["09","09 Côte-Nord"],["10-17-18","10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James"],["11","11 Gaspésie-Îles-de-la-Madeleine"],["12","12 Chaudière-Appalaches"],["13","13 Laval"],["14","14 Lanaudière"],["15","15 Laurentides"],["16","16 Montérégie"]],"variantes_noms_regions":17,"types":["Soins physiques et psychiatriques de courte durée","Soins en chirurgie d'un jour","Soins post-mortem"],"exercices":[{"ex":"2011-2012","debut":"2011-04-01","fin":"2012-03-31","production":"2012-10-03","encodage":"UTF-8","lignes":17,"types":1,"modifie":"2017-08-18"},{"ex":"2012-2013","debut":"2012-04-01","fin":"2013-03-31","production":"2013-10-05","encodage":"UTF-8","lignes":17,"types":1,"modifie":"2017-08-18"},{"ex":"2013-2014","debut":"2013-04-01","fin":"2014-03-31","production":"2015-01-08","encodage":"UTF-8","lignes":17,"types":1,"modifie":"2017-08-18"},{"ex":"2014-2015","debut":"2014-04-01","fin":"2015-03-31","production":"2016-01-14","encodage":"UTF-8","lignes":19,"types":2,"modifie":"2017-08-18"},{"ex":"2015-2016","debut":"2015-04-01","fin":"2016-03-31","production":"2016-11-29","encodage":"UTF-8","lignes":19,"types":2,"modifie":"2017-08-18"},{"ex":"2016-2017","debut":"2016-04-01","fin":"2017-03-31","production":"2017-10-18","encodage":"UTF-8","lignes":17,"types":1,"modifie":"2018-02-27"},{"ex":"2017-2018","debut":"2017-04-01","fin":"2018-03-31","production":"2019-05-22","encodage":"UTF-8","lignes":19,"types":2,"modifie":"2019-09-13"},{"ex":"2018-2019","debut":"2018-04-01","fin":"2019-03-31","production":"2019-09-05","encodage":"UTF-8","lignes":19,"types":2,"modifie":"2019-09-27"},{"ex":"2019-2020","debut":"2019-04-01","fin":"2020-03-31","production":"2020-08-17","encodage":"Windows-1252","lignes":19,"types":2,"modifie":"2020-08-26"},{"ex":"2020-2021","debut":"2020-04-01","fin":"2021-03-31","production":"2021-07-08","encodage":"Windows-1252","lignes":21,"types":2,"modifie":"2021-08-19"},{"ex":"2021-2022","debut":"2021-04-01","fin":"2022-03-31","production":"2022-09-02","encodage":"Windows-1252","lignes":19,"types":2,"modifie":"2022-09-16"},{"ex":"2022-2023","debut":"2022-04-01","fin":"2023-03-31","production":"2023-08-29","encodage":"Windows-1252","lignes":21,"types":2,"modifie":"2023-09-07"},{"ex":"2023-2024","debut":"2023-04-01","fin":"2024-03-31","production":"2024-09-17","encodage":"Windows-1252","lignes":21,"types":2,"modifie":"2024-10-01"},{"ex":"2024-2025","debut":"2024-04-01","fin":"2025-03-31","production":"2025-10-01","encodage":"UTF-8","lignes":21,"types":2,"modifie":"2025-10-14"},{"ex":"2025-2026","debut":"2025-04-01","fin":"2026-03-31","production":"2026-09-29","encodage":"UTF-8","lignes":22,"types":3,"modifie":"2026-10-21"}],"nb_lignes_csv":261,"metadata_modified":"2026-10-21","liens_inaccessibles":[{"url":"https://www.donneesquebec.ca/wp-content/uploads/2018/04/S15_ListeVariables.pdf","erreur":"HTTP 404","date":"2026-11-13"},{"url":"https://www.donneesquebec.ca/wp-content/uploads/2017/10/Med-echo_methodologie.pdf","erreur":"HTTP 404","date":"2026-11-13"}],"non_archivees":["CIM-10-CA/CCI – Versions 2012 à 2018"],"liste_variables_modifiee":"2018-04-26","periode_fiche":"2011-04-01 / 2026-03-31","frequence":"annual","recoupement":{"exercice":"2015-2016","production":"2016-11-29","cellules":68}};
+
+const $ = id => document.getElementById(id);
+const fmtNb = new Intl.NumberFormat("fr-CA", { maximumFractionDigits: 0 });
+const fmtPct = new Intl.NumberFormat("fr-CA", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+const fmtDate = new Intl.DateTimeFormat("fr-CA", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+const dateFr = s => fmtDate.format(Date.parse(s.slice(0, 10) + "T00:00:00Z")).replace(/^1 /, "1er ");
+const echapper = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const NS = "http://www.w3.org/2000/svg";
+const INDIC = ["Accouchements et césariennes", "Césariennes", "Naissances vivantes", "Mortinaissances", "Part des césariennes"];
+const REGIONS = META.regions;              // [[code, nom], ...] dans l'ordre des codes
+const EX = META.exercices;
+const SERIE = DONNEES.serie;               // [{ex, q: [acc, ces, nv, mort], r: [[...] x 16]}]
+const AUTRES = DONNEES.autres;             // [ex, type, région (-1 = total), acc, ces, nv, mort]
+const LISTE = SERIE.map(s => s.ex);
+const DERNIER = EX[EX.length - 1], PREMIER = EX[0];
+const exInfo = ex => EX.find(e => e.ex === ex);
+const somme = (tab, f) => tab.reduce((s, x) => s + f(x), 0);
+const part = v => v[0] ? 100 * v[1] / v[0] : null;
+const pct = v => { const p = part(v); return p === null ? "—" : `${fmtPct.format(p)} %`; };
+const pluriel = (n, mot, motP) => `${fmtNb.format(n)} ${n > 1 ? (motP || mot + "s") : mot}`;
+const li = t => `<li>${t}</li>`;
+const enListe = a => a.length > 1 ? `${a.slice(0, -1).join(", ")} et ${a[a.length - 1]}` : a.join("");
+const nomType = k => META.types[k].replace(/^Soins /, "soins ");
+
+// ---------------------------------------------------------------- textes tirés des données
+const qD = SERIE[SERIE.length - 1].q;
+$("chapeau").innerHTML = `Le rapport S15 de la banque MED-ÉCHO, publié par le ministère de la Santé et des Services sociaux, donne pour l'ensemble du Québec <strong>${pluriel(qD[0], "accouchement et césarienne", "accouchements et césariennes")}</strong> en soins physiques et psychiatriques de courte durée pour l'exercice ${DERNIER.ex} (du ${dateFr(DERNIER.debut)} au ${dateFr(DERNIER.fin)}). Le même rapport publie, pour cet exercice, ${pluriel(qD[1], "césarienne")}, ${pluriel(qD[2], "naissance vivante", "naissances vivantes")} et ${pluriel(qD[3], "mortinaissance")}. La page reprend les chiffres publiés de ${PREMIER.ex} à ${DERNIER.ex}, pour le Québec et par région de traitement.`;
+$("fraicheur").textContent = `Fichier de l'exercice ${DERNIER.ex} : date de production inscrite dans le fichier, ${dateFr(DERNIER.production)} ; fichier modifié sur Données Québec le ${dateFr(DERNIER.modifie)}. Données extraites le ${dateFr(META.archive)}.`;
+$("bref-date").textContent = `Exercices ${PREMIER.ex} à ${DERNIER.ex} ; données extraites le ${dateFr(META.archive)}.`;
+
+const mortsReg = SERIE.flatMap(s => s.r.map(v => v[3]));
+const NOTES_INDIC = [
+  "Nombre publié dans la colonne NBR_ACCOUCH_ET_CESARIEN, « Nombre d'accouchements et de césariennes » selon la liste de variables.",
+  "Nombre publié dans la colonne NBR_CESARIENNES, « Nombre de césariennes » selon la liste de variables.",
+  "Nombre publié dans la colonne NBR_NAISS_VIVANT, « Nombre de naissances vivantes » selon la liste de variables.",
+  `Nombre publié dans la colonne NBR_MORTINAISSANC, « Nombre de mortinaissances » selon la liste de variables. Par région, ces nombres vont de ${fmtNb.format(Math.min(...mortsReg))} à ${fmtNb.format(Math.max(...mortsReg))} selon la région et l'exercice ; ils sont repris tels que publiés, sans calcul de proportion.`,
+  "Notre calcul : nombre de césariennes divisé par le nombre d'accouchements et de césariennes, deux nombres publiés. Le rapport ne publie pas cette proportion, et la liste de variables ne précise pas comment ces deux nombres se recoupent.",
+];
+
+const nbLignes = somme(EX, e => e.lignes);
+$("fiche-archive").textContent = `Version archivée : extraction du ${dateFr(META.archive)}, les ${EX.length} fichiers CSV du rapport S15 et la liste de variables, tels que téléchargés. Le fichier ${DERNIER.ex} a été modifié le ${dateFr(DERNIER.modifie)} selon Données Québec ; la fiche du jeu a été modifiée le ${dateFr(META.metadata_modified)}.${META.non_archivees.length ? ` La ressource « ${META.non_archivees.map(echapper).join(" », « ")} » du jeu renvoie hors de Données Québec ; elle n'est pas archivée et n'a pas servi.` : ""}`;
+const periode = META.periode_fiche.split("/").map(s => s.trim());
+$("fiche-fraicheur").textContent = `La fiche annonce une mise à jour ${META.frequence === "annual" ? "annuelle" : `de fréquence « ${META.frequence} »`} et une période du ${dateFr(periode[0])} au ${dateFr(periode[1])}. Chaque fichier reprend un rapport produit à une date inscrite dans le fichier (le ${dateFr(DERNIER.production)} pour ${DERNIER.ex}) ; selon la liste de variables, la colonne PERIODE donne « la période des données extraites ». La documentation ne dit pas si les chiffres d'un exercice sont révisés après la publication de son fichier.`;
+const liens = META.liens_inaccessibles;
+$("fiche-liens").textContent = liens.length ? `La section « Méthodologie » de la fiche renvoie à deux documents, « Liste de variables » et « Méthodologie » ; le ${dateFr(liens[0].date)}, ${liens.length === 2 ? "ces deux liens menaient" : "un de ces liens menait"} à une page introuvable (erreur 404). La liste de variables est aussi publiée comme ressource du jeu (modifiée le ${dateFr(META.liste_variables_modifiee)}), et c'est cette version que nous avons lue et archivée${liens.length === 2 ? " ; le document « Méthodologie » n'a pas pu être consulté" : ""}.` : "";
+$("fiche-citer").textContent = `Le Relevé, « Accouchements, césariennes et naissances par région », d'après le ministère de la Santé et des Services sociaux, MED-ÉCHO – Rapport S15 - Accouchements, césariennes, naissances par région de traitement (CC-BY 4.0), extrait le ${dateFr(META.archive)}. https://le-releve.github.io/naissances/`;
+
+const exAutres = [...new Set(AUTRES.map(a => a[0]))];
+const exSansAutres = LISTE.filter(ex => !exAutres.includes(ex));
+const lignesAutres = AUTRES.filter(a => a[2] >= 0);
+const mortSup = lignesAutres.filter(a => a[6] > a[3]).length;
+const typesAutres = [...new Set(AUTRES.map(a => a[1]))].sort();
+const exPM = [...new Set(AUTRES.filter(a => a[1] === 2).map(a => a[0]))];
+
+$("fiche-etapes").innerHTML = [
+  `Lecture des ${EX.length} fichiers CSV tels qu'archivés (encodage UTF-8 ou Windows-1252 selon le fichier, voir le tableau ci-dessous) : ${fmtNb.format(nbLignes)} lignes au total. Deux en-têtes coexistent : la colonne du type de soins s'appelle TYPE_SOINS ou TYPE_DE_SOINS, celle de la note NOTE1 ou NOTE_1, selon le fichier.`,
+  `Choix des fichiers : le jeu publie une ressource CSV par exercice, de ${PREMIER.ex} à ${DERNIER.ex}. Plusieurs ressources portent la même date de modification sur Données Québec (voir le tableau ci-dessous). Nous avons vérifié que la colonne PERIODE de chaque fichier correspond, du 1er avril au 31 mars, à l'exercice inscrit dans le nom de la ressource, qu'aucune période ne revient dans deux fichiers et qu'aucun fichier n'est identique à un autre. Aucun fichier ne double ni ne chevauche un autre : les ${EX.length} sont retenus.`,
+  `Séparation des lignes « TOTAL PROVINCIAL » (une par type de soins) et des lignes régionales. Les lignes de total ne sont jamais additionnées aux régions : elles servent de contrôle.`,
+  `Code de la région : les deux premiers chiffres du nom publié (« 01--Bas-Saint-Laurent » ou « 01 Bas-Saint-Laurent », selon le fichier). Les régions 10, 17 et 18 forment une seule ligne dans tous les fichiers, écrite de plusieurs façons (« 10-17 ET 18 », par exemple). Les noms affichés sont ceux du fichier le plus récent ; le nom publié dans chaque fichier reste dans le CSV (colonne region_publiee).`,
+  "Aucun nombre n'est modifié. La part des césariennes est calculée dans la page, à partir des nombres publiés, et affichée avec une décimale.",
+  "Le tableau par région suit l'ordre des codes de région. Ce tri ne classe pas les régions selon leurs nombres.",
+].map(li).join("");
+$("table-fichiers").innerHTML = EX.map(e => `<tr><td>${e.ex}</td><td>${dateFr(e.debut)} au ${dateFr(e.fin)}</td><td>${dateFr(e.production)}</td><td>${dateFr(e.modifie)}</td><td>${e.encodage}</td><td>${e.lignes}</td></tr>`).join("");
+$("fiche-limites").innerHTML = [
+  "« Région de traitement » est le terme du titre du rapport ; la documentation consultée ne le définit pas. Le rapport ne donne pas la région de résidence.",
+  "Selon la fiche, la banque MED-ÉCHO porte sur les séjours dans les centres hospitaliers québécois qui dispensent des soins généraux et spécialisés. La documentation ne dit pas si des accouchements faits ailleurs sont comptés ; les nombres de la page ne sont pas présentés comme le total des naissances au Québec.",
+  "Les régions 10, 17 et 18 sont publiées ensemble ; la page ne peut pas les séparer.",
+  `Certains nombres sont petits, en particulier les mortinaissances par région (de ${fmtNb.format(Math.min(...mortsReg))} à ${fmtNb.format(Math.max(...mortsReg))} selon la région et l'exercice). Ils sont repris tels que publiés ; la page ne calcule aucune proportion à partir d'eux.`,
+  "La part des césariennes est notre calcul. La liste de variables ne précise pas comment le nombre de césariennes et le nombre d'accouchements et de césariennes se recoupent ; la part est un rapport entre deux nombres publiés.",
+  `Les lignes en ${typesAutres.map(nomType).join(" et en ")} sont peu nombreuses (${pluriel(lignesAutres.length, "ligne régionale", "lignes régionales")} sur l'ensemble des fichiers) et ne sont pas expliquées par la documentation. Elles ne sont pas comprises dans le graphique ni dans le tableau par région.`,
+].map(li).join("");
+const rec = META.recoupement;
+$("fiche-verifs").innerHTML = [
+  `Pour chacun des ${EX.length} fichiers et pour chaque type de soins, la somme des régions redonne exactement la ligne « TOTAL PROVINCIAL » publiée, pour les quatre nombres.`,
+  `Chaque fichier compte une ligne par région en soins physiques et psychiatriques de courte durée (${REGIONS.length} lignes, les régions 10, 17 et 18 étant réunies), sans région répétée.`,
+  rec ? `Recoupement avec un document du producteur : la liste de variables reproduit, comme modèle, le tableau du rapport S15 de ${rec.exercice} en soins physiques et psychiatriques de courte durée (date de production du ${dateFr(rec.production)}). Ses ${rec.cellules} cellules, recopiées à la main dans notre traitement, sont égales à celles du fichier CSV de ${rec.exercice}. Pour les autres exercices, nous n'avons pas trouvé de total publié par le producteur sur Données Québec pour recouper.` : "Aucun total publié par le producteur n'a été trouvé pour recouper.",
+  `Le fichier téléchargeable compte ${fmtNb.format(META.nb_lignes_csv)} lignes, une par exercice, type de soins et région publiés.`,
+].map(li).join("");
+
+// ---------------------------------------------------------------- graphique
+let indic = 0, choisi = DERNIER.ex;
+$("territoire").innerHTML += REGIONS.map(([c, nom], i) => `<option value="${i}">${echapper(nom)}</option>`).join("");
+
+function valeurs(s) {
+  const t = $("territoire").value;
+  return t === "" ? s.q : s.r[+t];
+}
+const nomTerritoire = () => $("territoire").value === "" ? "Ensemble du Québec" : REGIONS[+$("territoire").value][1];
+const mesure = v => indic === 4 ? part(v) : v[indic];
+function graduations(max) {
+  const brut = max / 5, p = 10 ** Math.floor(Math.log10(brut || 1));
+  const pas = [1, 2, 2.5, 5, 10].map(m => m * p).find(s => s >= brut);
+  return Array.from({ length: Math.ceil(max / pas) + 1 }, (_, i) => i * pas);
+}
+const court = v => indic === 4 ? `${fmtNb.format(v)} %` : v >= 1e4 ? `${fmtNb.format(v / 1e3)} k` : fmtNb.format(v);
+function el(nom, attrs, parent) {
+  const e = document.createElementNS(NS, nom);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+function dessiner() {
+  const svg = $("barres"), L = Math.max(300, svg.clientWidth || 800), H = Math.round(Math.min(340, Math.max(220, L * 0.38)));
+  const g = { gauche: 46, droite: 8, haut: 10, bas: 24 };
+  svg.setAttribute("viewBox", `0 0 ${L} ${H}`);
+  svg.replaceChildren();
+  const max = Math.max(...SERIE.map(s => mesure(valeurs(s)) || 0), indic === 4 ? 1 : 5);
+  const ticks = graduations(max), haut = ticks[ticks.length - 1];
+  const y = v => g.haut + (H - g.haut - g.bas) * (1 - v / haut);
+  for (const t of ticks) {
+    el("line", { x1: g.gauche, x2: L - g.droite, y1: y(t), y2: y(t), class: t ? "ligne-grille" : "axe" }, svg);
+    el("text", { x: g.gauche - 6, y: y(t) + 4, "text-anchor": "end" }, svg).textContent = court(t);
+  }
+  const larg = (L - g.gauche - g.droite) / SERIE.length, bar = Math.max(2, larg * 0.72);
+  SERIE.forEach((s, i) => {
+    const x = g.gauche + i * larg, m = mesure(valeurs(s));
+    const col = el("g", { class: "colonne-ex", "data-ex": s.ex }, svg);
+    el("rect", { class: "fond", x, y: g.haut, width: larg, height: H - g.haut - g.bas }, col);
+    if (m) el("rect", { x: x + (larg - bar) / 2, y: y(m), width: bar, height: Math.max(0, y(0) - y(m)), fill: "var(--barre)" }, col);
+    if (s.ex === choisi) el("rect", { class: "repere", x: x + 0.75, y: g.haut + 0.75, width: larg - 1.5, height: H - g.haut - g.bas - 1.5 }, svg);
+    const pas = larg < 34 ? 2 : 1;
+    if ((SERIE.length - 1 - i) % pas === 0) {
+      el("text", { x: x + larg / 2, y: H - 6, "text-anchor": "middle" }, svg).textContent = larg < 46 ? `${s.ex.slice(2, 4)}-${s.ex.slice(7)}` : s.ex;
+    }
+  });
+  svg.setAttribute("aria-label", `Graphique en barres : ${INDIC[indic].toLowerCase()}${indic === 4 ? " (notre calcul)" : ""} en soins physiques et psychiatriques de courte durée, ${nomTerritoire()}, de ${PREMIER.ex} à ${DERNIER.ex}. Exercice choisi : ${choisi}.`);
+  $("note-indic").textContent = NOTES_INDIC[indic];
+  lire();
+  tableSerie();
+}
+function lire() {
+  const s = SERIE.find(s => s.ex === choisi), v = valeurs(s), e = exInfo(choisi);
+  $("lecture").innerHTML = `<strong>${s.ex}</strong> (du ${dateFr(e.debut)} au ${dateFr(e.fin)}), ${echapper(nomTerritoire())}, soins de courte durée : ${pluriel(v[0], "accouchement et césarienne", "accouchements et césariennes")} ; ${pluriel(v[1], "césarienne")} ; ${pluriel(v[2], "naissance vivante", "naissances vivantes")} ; ${pluriel(v[3], "mortinaissance")}. Part des césariennes (notre calcul) : ${pct(v)}.`;
+}
+function tableSerie() {
+  $("table-serie").innerHTML = SERIE.map(s => {
+    const v = valeurs(s);
+    return `<tr><td>${s.ex}</td>${v.map(n => `<td>${fmtNb.format(n)}</td>`).join("")}<td>${pct(v)}</td></tr>`;
+  }).join("");
+}
+function choisir(ex, versTable) {
+  if (!LISTE.includes(ex)) return;
+  choisi = ex;
+  dessiner();
+  if (versTable) { $("exercice").value = ex; tableRegions(); }
+}
+$("barres").addEventListener("pointermove", e => {
+  const c = e.target.closest(".colonne-ex");
+  if (c && c.dataset.ex !== choisi) { choisi = c.dataset.ex; dessiner(); }
+});
+$("barres").addEventListener("click", e => {
+  const c = e.target.closest(".colonne-ex");
+  if (c) choisir(c.dataset.ex, true);
+});
+$("barres").addEventListener("keydown", e => {
+  const pas = { ArrowLeft: -1, ArrowRight: 1, Home: -999, End: 999 }[e.key];
+  if (pas === undefined) return;
+  e.preventDefault();
+  choisir(LISTE[Math.min(LISTE.length - 1, Math.max(0, LISTE.indexOf(choisi) + pas))], true);
+});
+document.querySelectorAll("[data-indic]").forEach(b => b.addEventListener("click", () => {
+  indic = +b.dataset.indic;
+  document.querySelectorAll("[data-indic]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  dessiner();
+}));
+$("territoire").addEventListener("input", dessiner);
+
+// ---------------------------------------------------------------- tableau par région
+$("exercice").innerHTML = LISTE.slice().reverse().map(ex => `<option value="${ex}">${ex}</option>`).join("");
+$("exercice").value = DERNIER.ex;
+$("intro-regions").textContent = `Les ${REGIONS.length} lignes régionales publiées pour l'exercice choisi, en soins physiques et psychiatriques de courte durée, dans l'ordre des codes de région, puis la ligne « TOTAL PROVINCIAL » publiée. Les régions 10, 17 et 18 sont publiées ensemble.`;
+const cellules = v => v.map(n => `<td>${fmtNb.format(n)}</td>`).join("") + `<td>${pct(v)}</td>`;
+function tableRegions() {
+  const ex = $("exercice").value, s = SERIE.find(s => s.ex === ex);
+  $("table-regions").innerHTML = REGIONS.map(([c, nom], i) => `<tr><th scope="row">${echapper(nom)}</th>${cellules(s.r[i])}</tr>`).join("")
+    + `<tr class="total"><th scope="row">TOTAL PROVINCIAL (publié)</th>${cellules(s.q)}</tr>`;
+  $("note-regions").textContent = `Exercice ${ex}, du ${dateFr(exInfo(ex).debut)} au ${dateFr(exInfo(ex).fin)}. Noms des régions : ceux du fichier ${DERNIER.ex}. Part des césariennes : notre calcul (césariennes ÷ accouchements et césariennes).`;
+}
+$("exercice").addEventListener("input", () => {
+  tableRegions();
+  if ($("exercice").value !== choisi) { choisi = $("exercice").value; dessiner(); }
+});
+
+// ---------------------------------------------------------------- autres types de soins
+$("intro-autres").textContent = `Les fichiers publient aussi quelques lignes en ${typesAutres.map(nomType).join(" et en ")}${exPM.length ? ` (soins post-mortem : ${enListe(exPM)} seulement)` : ""}. Elles sont reprises telles que publiées ; la documentation ne les explique pas. ${exSansAutres.length ? `Les fichiers de ${enListe(exSansAutres)} n'en contiennent pas. ` : ""}${mortSup ? `Dans ${pluriel(mortSup, "ligne régionale", "lignes régionales")}, le nombre de mortinaissances publié dépasse le nombre d'accouchements et de césariennes.` : ""}`;
+$("resume-autres").textContent = `Voir les ${pluriel(AUTRES.length, "ligne")} publiées (${pluriel(lignesAutres.length, "ligne régionale", "lignes régionales")} et leurs totaux)`;
+$("table-autres").innerHTML = AUTRES.map(a => `<tr${a[2] < 0 ? ' class="total"' : ""}><td>${a[0]}</td><td class="texte">${META.types[a[1]]}</td><td class="texte">${a[2] < 0 ? "TOTAL PROVINCIAL (publié)" : echapper(REGIONS[a[2]][1])}</td>${a.slice(3).map(n => `<td>${fmtNb.format(n)}</td>`).join("")}</tr>`).join("");
+
+let attente;
+window.addEventListener("resize", () => { clearTimeout(attente); attente = setTimeout(dessiner, 120); });
+dessiner();
+tableRegions();
+</script>

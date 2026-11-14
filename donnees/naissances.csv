@@ -1,0 +1,262 @@
+﻿exercice,debut,fin,type_soins,code_region,region,region_publiee,accouchements_et_cesariennes,cesariennes,naissances_vivantes,mortinaissances
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01--Bas-Saint-Laurent,1877,438,1891,8
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02--Saguenay - Lac-Saint-Jean,2765,653,2802,5
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03--Capitale-Nationale,8563,2177,8685,52
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04--Mauricie et Centre-du-Québec,4799,958,4833,20
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05--Estrie,2979,560,3037,12
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06--Montréal,28094,7274,28445,197
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07--Outaouais,2784,735,2811,6
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08--Abitibi-Témiscamingue,1949,468,1970,2
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09--Côte-Nord,926,176,933,3
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10 17 et 18,323,59,321,1
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11--Gaspésie - Îles-de-la-Madeleine,595,158,600,1
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12--Chaudière-Appalaches,3282,730,3304,5
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13--Laval,4570,935,4601,17
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14--Lanaudière,3976,729,4007,5
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15--Laurentides,3945,829,3973,11
+2011-2012,2011-04-01,2012-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16--Montérégie,12960,2860,13059,27
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01--Bas-Saint-Laurent,1791,437,1813,9
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02--Saguenay - Lac-Saint-Jean,2787,588,2816,6
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03--Capitale-Nationale,8542,2242,8657,47
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04--Mauricie et Centre-du-Québec,4686,960,4732,7
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05--Estrie,2952,675,3008,8
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06--Montréal,28436,7419,28732,191
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07--Outaouais,2657,641,2676,12
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08--Abitibi-Témiscamingue,1887,441,1901,4
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09--Côte-Nord,846,172,855,3
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10 17 et 18,346,54,347,0
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11--Gaspésie - Îles-de-la-Madeleine,603,169,606,1
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12--Chaudière-Appalaches,3260,847,3272,10
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13--Laval,4388,886,4430,9
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14--Lanaudière,4086,779,4132,6
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15--Laurentides,4210,895,4243,5
+2012-2013,2012-04-01,2013-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16--Montérégie,12799,2816,12901,30
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01--Bas-Saint-Laurent,1664,370,1676,3
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02--Saguenay - Lac-Saint-Jean,2704,612,2744,5
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03--Capitale-Nationale,8573,2362,8715,37
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04--Mauricie et Centre-du-Québec,4789,902,4830,17
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05--Estrie,3020,620,3057,12
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06--Montréal,28315,7466,28641,202
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07--Outaouais,2569,664,2598,10
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08--Abitibi-Témiscamingue,1839,476,1852,3
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09--Côte-Nord,879,172,882,4
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10 17 et 18,319,41,319,0
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11--Gaspésie - Îles-de-la-Madeleine,626,168,629,1
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12--Chaudière-Appalaches,3219,839,3235,7
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13--Laval,4309,928,4347,12
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14--Lanaudière,4154,852,4194,10
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15--Laurentides,4235,867,4276,8
+2013-2014,2013-04-01,2014-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16--Montérégie,12754,2855,12879,32
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01--Bas-Saint-Laurent,1654,411,1677,1
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02--Saguenay - Lac-Saint-Jean,2716,668,2769,8
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03--Capitale-Nationale,8521,2339,8661,35
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04--Mauricie et Centre-du-Québec,4411,865,4467,10
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05--Estrie,2979,703,3024,16
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06--Montréal,27754,7384,28045,208
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07--Outaouais,2467,663,2485,8
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08--Abitibi-Témiscamingue,1881,465,1904,4
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09--Côte-Nord,869,191,876,2
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10 17 et 18,342,53,339,3
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11--Gaspésie - Îles-de-la-Madeleine,594,152,598,3
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12--Chaudière-Appalaches,3207,867,3237,6
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13--Laval,4106,836,4167,11
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14--Lanaudière,4227,907,4270,13
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15--Laurentides,4112,862,4159,5
+2014-2015,2014-04-01,2015-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16--Montérégie,12529,2829,12638,32
+2014-2015,2014-04-01,2015-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05--Estrie,1,0,0,1
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01--Bas-Saint-Laurent,1656,420,1679,4
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02--Saguenay - Lac-Saint-Jean,2650,625,2684,6
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03--Capitale-Nationale,8456,2475,8576,33
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04--Mauricie et Centre-du-Québec,4522,889,4551,19
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05--Estrie,2929,654,2973,12
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06--Montréal,27764,7439,28109,190
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07--Outaouais,2629,704,2650,4
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08--Abitibi-Témiscamingue,1820,500,1831,9
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09--Côte-Nord,815,174,828,3
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10 17 et 18,339,44,337,2
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11--Gaspésie - Îles-de-la-Madeleine,540,162,543,1
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12--Chaudière-Appalaches,3124,830,3152,6
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13--Laval,4062,847,4120,10
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14--Lanaudière,4214,973,4258,15
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15--Laurentides,4134,875,4175,8
+2015-2016,2015-04-01,2016-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16--Montérégie,12296,2786,12418,35
+2015-2016,2015-04-01,2016-03-31,Soins en chirurgie d'un jour,02,02 Saguenay-Lac-Saint-Jean,02--Saguenay - Lac-Saint-Jean,1,0,0,1
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1616,416,1640,2
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2547,615,2577,8
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7875,2351,7976,64
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4583,896,4617,16
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4445,1022,4522,14
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,26862,7381,27189,177
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2622,616,2634,8
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1824,480,1851,4
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,771,167,777,3
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,331,54,331,0
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,544,152,551,2
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3352,928,3382,11
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,4004,810,4040,12
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4181,948,4226,7
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,4222,923,4268,15
+2016-2017,2016-04-01,2017-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10726,2343,10820,24
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1584,377,1599,5
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2434,585,2472,6
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7618,2118,7716,33
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4293,859,4354,9
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4299,965,4353,15
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,26831,7472,27137,191
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2447,574,2475,8
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1738,427,1752,5
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,799,164,811,1
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,339,45,335,2
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,574,178,577,1
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3184,880,3216,7
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3833,811,3872,11
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4110,891,4151,6
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,4171,933,4203,9
+2017-2018,2017-04-01,2018-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10504,2288,10580,31
+2017-2018,2017-04-01,2018-03-31,Soins en chirurgie d'un jour,07,07 Outaouais,07 Outaouais,1,0,0,0
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1508,401,1516,4
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2425,608,2457,5
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7560,2132,7660,40
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4470,870,4490,20
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4346,996,4405,9
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,26809,7706,27157,178
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2434,628,2450,9
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1727,399,1739,7
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,755,159,764,0
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,340,37,335,2
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,584,171,589,2
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3346,856,3371,7
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3642,849,3669,15
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4423,960,4477,6
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,4098,896,4131,14
+2018-2019,2018-04-01,2019-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10533,2409,10628,25
+2018-2019,2018-04-01,2019-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,4,0,0,4
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1530,386,1547,2
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2438,633,2476,3
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7548,2136,7610,52
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4534,845,4567,15
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4335,1001,4379,35
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,26701,7797,27042,211
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2441,630,2467,8
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1816,440,1837,3
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,722,159,727,1
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,323,50,317,2
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,612,181,614,4
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3475,890,3492,5
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3933,858,3974,9
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4363,967,4401,19
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,4233,1033,4277,6
+2019-2020,2019-04-01,2020-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10887,2436,10976,31
+2019-2020,2019-04-01,2020-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,11,0,0,11
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1476,419,1490,4
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2316,608,2333,8
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7351,2086,7393,80
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4504,886,4540,11
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4262,1020,4296,27
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,24613,7124,24836,272
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2324,617,2326,21
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1764,410,1778,10
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,739,137,746,4
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,336,41,335,1
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,596,195,597,1
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3421,958,3441,12
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3814,916,3849,18
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4377,1026,4406,10
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,4042,1012,4086,11
+2020-2021,2020-04-01,2021-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10617,2396,10694,54
+2020-2021,2020-04-01,2021-03-31,Soins en chirurgie d'un jour,03,03 Capitale-Nationale,03 Capitale-Nationale,1,0,0,1
+2020-2021,2020-04-01,2021-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,28,0,0,28
+2020-2021,2020-04-01,2021-03-31,Soins en chirurgie d'un jour,06,06 Montréal,06 Montréal,1,0,0,1
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1494,418,1503,10
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2563,687,2608,8
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7957,2257,8070,69
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4755,928,4775,24
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4532,1187,4570,31
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,25295,7317,25505,291
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2497,620,2517,17
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1814,435,1826,7
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,734,151,741,2
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,286,34,283,3
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,646,188,650,1
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3634,981,3659,17
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,4108,962,4137,17
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4610,1082,4662,15
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,4200,1066,4226,19
+2021-2022,2021-04-01,2022-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10858,2587,10917,38
+2021-2022,2021-04-01,2022-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,21,0,0,22
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1449,386,1467,4
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2223,586,2242,8
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7579,2321,7676,61
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4304,915,4325,26
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4107,1030,4155,32
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,24829,7714,25039,297
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2379,605,2392,13
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1548,355,1565,10
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,706,161,719,1
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,306,58,306,2
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,591,179,595,3
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3316,934,3326,11
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3790,909,3844,4
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,4061,965,4081,18
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,3861,930,3869,21
+2022-2023,2022-04-01,2023-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,10086,2402,10170,44
+2022-2023,2022-04-01,2023-03-31,Soins en chirurgie d'un jour,03,03 Capitale-Nationale,03 Capitale-Nationale,1,0,0,1
+2022-2023,2022-04-01,2023-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,17,1,0,17
+2022-2023,2022-04-01,2023-03-31,Soins en chirurgie d'un jour,06,06 Montréal,06 Montréal,1,0,0,1
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1363,433,1379,3
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2154,555,2180,8
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7356,2130,7414,81
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4214,924,4242,15
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4099,1124,4146,24
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,24847,7771,25094,293
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2487,635,2504,21
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1442,324,1453,10
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,574,101,580,0
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",10-17 ET 18,219,25,218,1
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,541,160,548,0
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3360,957,3379,7
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3598,931,3626,18
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,3982,979,4011,15
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,3765,928,3786,21
+2023-2024,2023-04-01,2024-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,9758,2430,9844,41
+2023-2024,2023-04-01,2024-03-31,Soins en chirurgie d'un jour,03,03 Capitale-Nationale,03 Capitale-Nationale,1,0,0,1
+2023-2024,2023-04-01,2024-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,22,0,0,24
+2023-2024,2023-04-01,2024-03-31,Soins en chirurgie d'un jour,06,06 Montréal,06 Montréal,2,1,0,2
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1288,361,1306,4
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2084,549,2098,14
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7612,2177,7689,82
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4144,870,4164,22
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,3843,1001,3894,26
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,25012,7802,25156,335
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2413,684,2426,19
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1463,327,1469,11
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,590,112,589,4
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James","10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",239,36,238,1
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,486,150,492,0
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3192,858,3210,9
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3307,832,3335,16
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,3720,925,3753,17
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,3728,886,3749,20
+2024-2025,2024-04-01,2025-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,9486,2448,9573,39
+2024-2025,2024-04-01,2025-03-31,Soins en chirurgie d'un jour,03,03 Capitale-Nationale,03 Capitale-Nationale,1,0,0,1
+2024-2025,2024-04-01,2025-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,19,0,0,21
+2024-2025,2024-04-01,2025-03-31,Soins en chirurgie d'un jour,06,06 Montréal,06 Montréal,3,0,0,3
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,01,01 Bas-Saint-Laurent,01 Bas-Saint-Laurent,1384,424,1402,2
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,02,02 Saguenay-Lac-Saint-Jean,02 Saguenay-Lac-Saint-Jean,2125,579,2143,7
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,03,03 Capitale-Nationale,03 Capitale-Nationale,7796,2318,7847,79
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,04,04 Mauricie et Centre-du-Québec,04 Mauricie et Centre-du-Québec,4187,892,4216,24
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,05,05 Estrie,05 Estrie,4058,1119,4090,25
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,06,06 Montréal,06 Montréal,24745,8053,24846,321
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,07,07 Outaouais,07 Outaouais,2664,811,2670,15
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,08,08 Abitibi-Témiscamingue,08 Abitibi-Témiscamingue,1419,337,1430,11
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,09,09 Côte-Nord,09 Côte-Nord,585,114,592,3
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,10-17-18,"10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James","10 Nord du Québec, 17 Nunavik et 18 Terre-Cries-de-la-Baie-James",223,33,221,0
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,11,11 Gaspésie-Îles-de-la-Madeleine,11 Gaspésie-Îles-de-la-Madeleine,514,149,516,4
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,12,12 Chaudière-Appalaches,12 Chaudière-Appalaches,3306,863,3316,14
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,13,13 Laval,13 Laval,3230,956,3265,11
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,14,14 Lanaudière,14 Lanaudière,3866,969,3911,15
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,15,15 Laurentides,15 Laurentides,3769,888,3807,22
+2025-2026,2025-04-01,2026-03-31,Soins physiques et psychiatriques de courte durée,16,16 Montérégie,16 Montérégie,9508,2357,9575,42
+2025-2026,2025-04-01,2026-03-31,Soins en chirurgie d'un jour,05,05 Estrie,05 Estrie,16,0,0,16
+2025-2026,2025-04-01,2026-03-31,Soins en chirurgie d'un jour,06,06 Montréal,06 Montréal,2,0,0,2
+2025-2026,2025-04-01,2026-03-31,Soins post-mortem,03,03 Capitale-Nationale,03 Capitale-Nationale,1,1,0,0
