@@ -116,6 +116,15 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
 .chiffre .libelle { font-size: 13px; color: var(--ink-2); }
 .prelim { align-self: flex-start; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--axis); border-radius: 4px; padding: 1px 5px; }
 
+/* Catégorie repliée : seules les trois premières cartes restent visibles. */
+.theme.replie .carte:nth-child(n+4) { display: none; }
+.deplier {
+  align-self: flex-start; font: 600 13px var(--font-texte); color: var(--ink-2); background: var(--surface);
+  border: 1px solid var(--ligne); border-left: 3px solid var(--teinte); border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.deplier:hover { color: var(--ink); border-color: var(--teinte); }
+.deplier:focus-visible { outline: 2px solid var(--greve); outline-offset: 2px; }
+
 .en-bref { display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5; color: var(--ink-2); max-width: 80ch; }
 .en-bref p { margin: 0; }
 .en-bref strong { color: var(--ink); font-weight: 600; }
@@ -145,7 +154,7 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
 
   <section class="theme" id="travail" aria-labelledby="titre-travail">
     <h2 id="titre-travail">Travail</h2>
-    <div class="cartes">
+    <div class="cartes" id="cartes-travail">
       <a class="carte" href="mur/">
         <h3>Le mur des conflits</h3>
         <p>Les arrêts de travail actifs depuis 2016, une ligne par arrêt. La longueur de la ligne montre la durée, et son épaisseur le nombre de travailleurs touchés.</p>
@@ -213,11 +222,12 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
         </div>
       </a>
     </div>
+    <button type="button" class="deplier" aria-controls="cartes-travail" aria-expanded="true" hidden>Afficher les 5 autres pages</button>
   </section>
 
   <section class="theme" id="sante" aria-labelledby="titre-sante">
     <h2 id="titre-sante">Santé et services sociaux</h2>
-    <div class="cartes">
+    <div class="cartes" id="cartes-sante">
       <a class="carte" href="urgences/">
         <h3>Les urgences, installation par installation</h3>
         <p>Les indicateurs du fichier cumulatif des urgences du ministère de la Santé, comparés d'un exercice à l'autre, et un relevé horaire des civières, pour chaque installation.</p>
@@ -275,11 +285,12 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
         </div>
       </a>
     </div>
+    <button type="button" class="deplier" aria-controls="cartes-sante" aria-expanded="true" hidden>Afficher les 4 autres pages</button>
   </section>
 
   <section class="theme" id="education" aria-labelledby="titre-education">
     <h2 id="titre-education">Éducation</h2>
-    <div class="cartes">
+    <div class="cartes" id="cartes-education">
       <a class="carte" href="etablissements-scolaires/">
         <h3>Les établissements d'enseignement</h3>
         <p>Les écoles, centres, collèges et universités du fichier du ministère de l'Éducation et du ministère de l'Enseignement supérieur, à chercher par nom, municipalité, MRC ou région.</p>
@@ -329,11 +340,12 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
         </div>
       </a>
     </div>
+    <button type="button" class="deplier" aria-controls="cartes-education" aria-expanded="true" hidden>Afficher les 3 autres pages</button>
   </section>
 
   <section class="theme" id="environnement" aria-labelledby="titre-environnement">
     <h2 id="titre-environnement">Environnement et territoire</h2>
-    <div class="cartes">
+    <div class="cartes" id="cartes-environnement">
       <a class="carte" href="feux-de-foret/">
         <h3>Les feux de forêt depuis 1972</h3>
         <p>Le nombre de feux de forêt et leur superficie officielle par année, par cause et par zone de protection, avec la carte des points d'origine, tels que publiés par le ministère des Ressources naturelles et des Forêts.</p>
@@ -391,11 +403,12 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
         </div>
       </a>
     </div>
+    <button type="button" class="deplier" aria-controls="cartes-environnement" aria-expanded="true" hidden>Afficher les 4 autres pages</button>
   </section>
 
   <section class="theme" id="finances" aria-labelledby="titre-finances">
     <h2 id="titre-finances">Finances publiques et État</h2>
-    <div class="cartes">
+    <div class="cartes" id="cartes-finances">
       <a class="carte" href="infrastructures/">
         <h3>Les projets d'infrastructure de 20 M$ et plus</h3>
         <p>Les projets du tableau de bord des projets d'infrastructure de 20 millions de dollars et plus du Secrétariat du Conseil du trésor, à chercher par secteur, région, état d'avancement ou organisme, avec le coût et l'échéance tels que publiés.</p>
@@ -445,6 +458,7 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
         </div>
       </a>
     </div>
+    <button type="button" class="deplier" aria-controls="cartes-finances" aria-expanded="true" hidden>Afficher les 3 autres pages</button>
   </section>
 
   <section class="en-bref" aria-label="En bref">
@@ -452,6 +466,41 @@ h3 { font-family: var(--font-titre); font-stretch: 80%; font-weight: 750; font-s
     <p>Le Relevé n'est pas un site gouvernemental et n'est affilié à aucun organisme public, employeur ou syndicat.</p>
   </section>
 </div>
+
+<script>
+// Replie les catégories de plus de trois pages. La catégorie demandée par la navigation
+// (#travail, #sante…) est affichée en entier, à l'arrivée comme lors d'un clic.
+(() => {
+  const libelles = new Map();
+  function regler(section, ouverte) {
+    const bouton = section.querySelector(".deplier");
+    if (!bouton) return;
+    section.classList.toggle("replie", !ouverte);
+    bouton.setAttribute("aria-expanded", String(ouverte));
+    bouton.textContent = ouverte ? "Réduire" : libelles.get(bouton);
+  }
+  function ouvrirCible() {
+    const cible = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (cible && cible.classList.contains("theme")) regler(cible, true);
+  }
+  document.querySelectorAll(".theme .deplier").forEach((bouton) => {
+    libelles.set(bouton, bouton.textContent);
+    bouton.hidden = false;
+    const section = bouton.closest(".theme");
+    regler(section, false);
+    bouton.addEventListener("click", () => regler(section, section.classList.contains("replie")));
+  });
+  ouvrirCible();
+  addEventListener("hashchange", ouvrirCible);
+  // Un clic sur la catégorie déjà dans l'adresse ne déclenche pas « hashchange ».
+  document.querySelectorAll('.site-nav a[href^="./#"]').forEach((lien) => {
+    lien.addEventListener("click", () => {
+      const section = document.getElementById(lien.getAttribute("href").slice(3));
+      if (section) regler(section, true);
+    });
+  });
+})();
+</script>
 <footer class="site-pied"><div>
 <p>Une erreur, une question ? Écrivez-nous : <a href="mailto:lereleve@proton.me">lereleve@proton.me</a></p>
 <p><a href="./soutenir/">Soutenir Le Relevé</a></p>
