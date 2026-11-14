@@ -17,6 +17,17 @@ body { margin: 0; }
 .site-nav a:hover { color: var(--ink); text-decoration: underline; }
 .site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
 .site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-pied { background: var(--surface); border-top: 1px solid var(--ligne); margin-top: 16px; }
+.site-pied > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 18px 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.5;
+}
+.site-pied p { margin: 0; }
+.site-pied a { color: var(--ink); overflow-wrap: anywhere; }
+.site-pied a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
 .site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
 </style>
 <link rel="stylesheet" href="../polices/archivo.css">
@@ -143,6 +154,7 @@ tr.ensemble td { font-weight: 600; border-top: 1px solid var(--axis); }
 <a href="../#environnement">Environnement et territoire</a>
 <a href="../#finances">Finances publiques et État</a>
 <a href="../comment-on-a-fait/">Comment on a fait</a>
+<a href="../soutenir/">Soutenir</a>
 </div></nav>
 <div class="page">
   <header>
@@ -437,3 +449,7 @@ $("corps").addEventListener("click", e => {
 });
 tout();
 </script>
+<footer class="site-pied"><div>
+<p>Une erreur, une question ? Écrivez-nous : <a href="mailto:lereleve@proton.me">lereleve@proton.me</a></p>
+<p><a href="../soutenir/">Soutenir Le Relevé</a></p>
+</div></footer>

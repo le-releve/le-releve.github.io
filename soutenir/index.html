@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+.site-nav { background: var(--surface); border-bottom: 1px solid var(--ligne); }
+.site-nav > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 10px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px;
+}
+.site-nav a { color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+.site-nav a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
+.site-pied { background: var(--surface); border-top: 1px solid var(--ligne); margin-top: 16px; }
+.site-pied > div {
+  max-width: 1280px; margin: 0 auto; padding-block: 18px 24px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px;
+  color: var(--ink-2); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.5;
+}
+.site-pied p { margin: 0; }
+.site-pied a { color: var(--ink); overflow-wrap: anywhere; }
+.site-pied a:focus-visible { outline: 2px solid var(--greve, currentColor); outline-offset: 2px; }
+.site-nav .site-marque { font-family: "Archivo", system-ui, sans-serif; font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--ink); margin-right: 8px; }
+</style>
+<link rel="stylesheet" href="../polices/archivo.css">
+<title>Soutenir — Le Relevé</title>
+<style>
+/* Page « Soutenir » : contact et lien vers Buy Me a Coffee. Les marques {{…}} sont remplacées
+   par pipeline/construire_site.py (COURRIEL, LIEN_SOUTIEN). */
+:root {
+  --page: #f2f4f5;
+  --surface: #fbfcfc;
+  --ink: #101519;
+  --ink-2: #48525c;
+  --muted: #7f8892;
+  --grid: #e1e5e8;
+  --axis: #bcc3ca;
+  --ligne: rgba(16, 21, 25, 0.10);
+  --greve: #2a78d6;
+  --sur-greve: #ffffff;
+  --font-titre: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-texte: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+    --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --greve: #3987e5; --sur-greve: #ffffff; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0e1012; --surface: #16191b; --ink: #eef0f2; --ink-2: #bec5cb; --muted: #858e97;
+  --grid: #252a2e; --axis: #3b4147; --ligne: rgba(255, 255, 255, 0.10); --greve: #3987e5; --sur-greve: #ffffff; color-scheme: dark;
+}
+
+body { background: var(--page); color: var(--ink); font-family: var(--font-texte); }
+.page {
+  max-width: 1280px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+header { display: flex; flex-direction: column; gap: 10px; max-width: 70ch; }
+.surtitre { font-family: var(--font-titre); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+h1 {
+  font-family: var(--font-titre); font-stretch: 72%; font-weight: 800;
+  font-size: clamp(36px, 7vw, 64px); line-height: 0.95; letter-spacing: -0.01em; margin: 0; text-wrap: balance;
+}
+h2 { font-family: var(--font-titre); font-stretch: 85%; font-weight: 750; font-size: 24px; margin: 0; }
+.chapeau { font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 0; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--greve); outline-offset: 3px; }
+
+.blocs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 900px; }
+.carte { background: var(--surface); border: 1px solid var(--ligne); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.carte p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+.carte .adresse { font-size: 17px; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.bouton {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px;
+  background: var(--greve); color: var(--sur-greve); text-decoration: none;
+  font-weight: 600; font-size: 15px; padding: 10px 16px; border-radius: 6px;
+}
+.bouton:hover { filter: brightness(1.08); text-decoration: underline; }
+.notes { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; max-width: 80ch; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+
+@media (max-width: 760px) {
+  .blocs { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+
+<nav class="site-nav" aria-label="Navigation du site"><div>
+<a class="site-marque" href="../">Le Relevé</a>
+<a href="../#travail">Travail</a>
+<a href="../#sante">Santé et services sociaux</a>
+<a href="../#education">Éducation</a>
+<a href="../#environnement">Environnement et territoire</a>
+<a href="../#finances">Finances publiques et État</a>
+<a href="../comment-on-a-fait/">Comment on a fait</a>
+<a href="../soutenir/" aria-current="page">Soutenir</a>
+</div></nav>
+<div class="page">
+  <header>
+    <div class="surtitre">Le Relevé</div>
+    <h1>Soutenir Le Relevé</h1>
+    <p class="chapeau">Le Relevé est gratuit et sans publicité. Si le site vous est utile, vous pouvez soutenir sa poursuite par un don ponctuel.</p>
+  </header>
+
+  <div class="blocs">
+    <section class="carte" aria-labelledby="titre-don">
+      <h2 id="titre-don">Offrir un café</h2>
+      <p>Les dons passent par Buy Me a Coffee, un service externe. Le paiement se fait sur ce service, selon ses propres conditions.</p>
+      <a class="bouton" href="https://buymeacoffee.com/lereleve" target="_blank" rel="noopener">Ouvrir Buy Me a Coffee <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <section class="carte" aria-labelledby="titre-contact">
+      <h2 id="titre-contact">Nous écrire</h2>
+      <p>Pour signaler une erreur, poser une question sur une page ou ses données :</p>
+      <a class="adresse" href="mailto:lereleve@proton.me">lereleve@proton.me</a>
+    </section>
+  </div>
+
+  <ul class="notes" aria-label="À savoir">
+    <li>Un don ne donne aucune influence sur le choix des sujets ni sur le contenu des pages.</li>
+    <li>Le Relevé n'est pas un organisme de bienfaisance : les dons ne donnent pas droit à un reçu fiscal.</li>
+    <li>Le Relevé n'est pas un site gouvernemental et n'est affilié à aucun organisme public, employeur ou syndicat.</li>
+  </ul>
+</div>
+<footer class="site-pied"><div>
+<p>Une erreur, une question ? Écrivez-nous : <a href="mailto:lereleve@proton.me">lereleve@proton.me</a></p>
+<p><a href="../soutenir/">Soutenir Le Relevé</a></p>
+</div></footer>
